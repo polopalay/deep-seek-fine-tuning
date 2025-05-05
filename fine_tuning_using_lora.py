@@ -51,14 +51,14 @@ def tokenize_function(examples):
         combined_inputs,
         truncation=True,
         padding="max_length",
-        max_length=512,
+        max_length=256,
     )
 
     labels = tokenizer(
         examples["output"],
         truncation=True,
         padding="max_length",
-        max_length=512,
+        max_length=256,
     )["input_ids"]
 
     model_inputs["labels"] = labels
@@ -77,9 +77,9 @@ training_args = TrainingArguments(
     output_dir="./deepseek_finetuned",
     per_device_train_batch_size=1,  # nhỏ nhất để tránh nghẽn RAM
     per_device_eval_batch_size=1,
-    gradient_accumulation_steps=2,  # tăng batch hiệu dụng lên 2
+    gradient_accumulation_steps=4,  # tăng batch hiệu dụng lên 2
     num_train_epochs=1,  # huấn luyện 1 vòng đủ để test chất lượng
-    max_steps=50,  # giới hạn chỉ train 50 step
+    max_steps=300,  # giới hạn chỉ train 50 step
     logging_steps=5,  # in log thường xuyên để theo dõi
     save_strategy="no",  # không lưu model giữa chừng
     evaluation_strategy="no",  # bỏ eval để tiết kiệm thời gian
