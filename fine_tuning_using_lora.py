@@ -22,7 +22,8 @@ model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 # **6. Load model (KHÔNG dùng 4-bit quantization)**
-model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+model = AutoModelForCausalLM.from_pretrained(model_name)
+model = model.to(device)
 
 # **7. Áp dụng LoRA để fine-tune nhanh hơn**
 lora_config = LoraConfig(
@@ -114,5 +115,5 @@ qa_pipeline = pipeline("text-generation", model="deepseek_finetuned_model")
 question = "Tên gọi nào được Phạm Văn Đồng sử dụng khi làm Phó chủ nhiệm cơ quan Biện sự xứ tại Quế Lâm?"
 context = "Lâm Bá Kiệt"
 
-result = qa_pipeline(question + " " + context)
+result = print(result[0]["generated_text"])
 print(result)
