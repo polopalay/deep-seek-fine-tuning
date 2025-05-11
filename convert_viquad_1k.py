@@ -13,8 +13,8 @@ for row in dataset:
         continue
 
     entry = {
-        "instruction": "Trả lời câu hỏi dựa trên đoạn văn sau:",
-        "input": f"Câu hỏi: {row['question']}\n\nVăn bản: {row['context']}",
+        "instruction": row["question"],
+        "input": row["context"],
         "output": answer,
     }
     converted_data.append(entry)

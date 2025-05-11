@@ -40,25 +40,19 @@ model = get_peft_model(model, lora_config)
 
 # **8. Tokenization**
 def tokenize_function(examples):
-    # Nối từng cặp instruction + input
-    combined_inputs = [
-        instr + "\n" + inp
-        for instr, inp in zip(examples["instruction"], examples["input"])
-    ]
-
     # Tokenize đầu vào và đầu ra
     model_inputs = tokenizer(
-        combined_inputs,
+        examples["instruction"],
         truncation=True,
         padding="max_length",
-        max_length=256,
+        max_length=128,
     )
 
     labels = tokenizer(
         examples["output"],
         truncation=True,
         padding="max_length",
-        max_length=256,
+        max_length=128,
     )["input_ids"]
 
     model_inputs["labels"] = labels
@@ -79,7 +73,7 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=1,
     gradient_accumulation_steps=4,  # tăng batch hiệu dụng lên 2
     num_train_epochs=1,  # huấn luyện 1 vòng đủ để test chất lượng
-    max_steps=300,  # giới hạn chỉ train 50 step
+    # max_steps=500,  # giới hạn chỉ train 50 step
     logging_steps=5,  # in log thường xuyên để theo dõi
     save_strategy="no",  # không lưu model giữa chừng
     evaluation_strategy="no",  # bỏ eval để tiết kiệm thời gian
@@ -106,14 +100,3 @@ trainer.train()
 # **13. Lưu model sau khi train**
 model.save_pretrained("deepseek_finetuned_model")
 tokenizer.save_pretrained("deepseek_finetuned_model")
-
-# **14. Test mô hình sau khi train**
-from transformers import pipeline
-
-qa_pipeline = pipeline("text-generation", model="deepseek_finetuned_model")
-
-question = "Tên gọi nào được Phạm Văn Đồng sử dụng khi làm Phó chủ nhiệm cơ quan Biện sự xứ tại Quế Lâm?"
-context = "Lâm Bá Kiệt"
-result = qa_pipeline(question + " " + context, return_full_text=False)
-result = print(result[0]["generated_text"])
-print(result)

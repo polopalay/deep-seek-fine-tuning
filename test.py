@@ -1,9 +1,9 @@
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-qa_pipeline = pipeline("text-generation", model="deepseek_finetuned_model")
+model_path = "deepseek_finetuned_model"
+qa_pipeline = pipeline("text-generation", model=model_path, tokenizer=model_path)
 
-question = "Tên gọi nào được Phạm Văn Đồng sử dụng khi làm Phó chủ nhiệm cơ quan Biện sự xứ tại Quế Lâm?"
-context = "Lâm Bá Kiệt"
-result = qa_pipeline(question + " " + context, return_full_text=False)
-result = print(result[0]["generated_text"])
+prompt = "Tên gọi nào được Phạm Văn Đồng sử dụng khi làm Phó chủ nhiệm cơ quan Biện sự xứ tại Quế Lâm?"
+
+result = qa_pipeline(prompt, return_full_text=False)
 print(result)
