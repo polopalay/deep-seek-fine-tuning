@@ -1,102 +1,83 @@
 import torch
-import os
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
-from peft import LoraConfig, get_peft_model, TaskType
+from transformers import (
+    AutoTokenizer,
+    AutoModelForCausalLM,
+    TrainingArguments,
+    Trainer,
+    DataCollatorForLanguageModeling,
+)
+from peft import LoraConfig, get_peft_model, PeftModel
 
-# **1. Chọn thiết bị (Mac M1/M2 hỗ trợ MPS)**
-device = "mps" if torch.backends.mps.is_available() else "cpu"
-print(f"Using device: {device}")
-
-# **2. Tắt giới hạn VRAM trên Mac MPS**
-os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
-
-# **3. Load dataset**
-dataset_path = "lora_general_1k.jsonl"
-dataset = load_dataset("json", data_files=dataset_path, split="train")
-
-# **4. Chọn model**
+# Cấu hình mô hình và dữ liệu
 model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+data_path = "deepseek_finetune_invoice_10k.jsonl"
+output_dir = "./deepseek_lora_invoice_cpu"
 
-# **5. Load tokenizer**
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+# Load tokenizer
+tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+tokenizer.pad_token = tokenizer.eos_token  # Đặt token kết thúc làm padding token
 
-# **6. Load model (KHÔNG dùng 4-bit quantization)**
-model = AutoModelForCausalLM.from_pretrained(model_name)
-model = model.to(device)
+# Load model
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    trust_remote_code=True,
+    torch_dtype=torch.float32,  # CPU chỉ hỗ trợ float32
+)
+model = model.to("cpu")
 
-# **7. Áp dụng LoRA để fine-tune nhanh hơn**
+# Cấu hình LoRA
 lora_config = LoraConfig(
-    r=8,  # Rank
+    r=8,
     lora_alpha=16,
-    lora_dropout=0.1,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+    lora_dropout=0.05,
     bias="none",
-    task_type=TaskType.CAUSAL_LM,
+    task_type="CAUSAL_LM",
 )
-
 model = get_peft_model(model, lora_config)
-# model = model.to(device)
+
+# Load dataset JSONL
+dataset = load_dataset("json", data_files=data_path, split="train")
 
 
-# **8. Tokenization**
-def tokenize_function(examples):
-    # Tokenize đầu vào và đầu ra
-    model_inputs = tokenizer(
-        examples["instruction"],
-        truncation=True,
-        padding="max_length",
-        max_length=128,
-    )
-
-    labels = tokenizer(
-        examples["output"],
-        truncation=True,
-        padding="max_length",
-        max_length=128,
-    )["input_ids"]
-
-    model_inputs["labels"] = labels
-    return model_inputs
+# Tiền xử lý
+def tokenize(example):
+    prompt = example["instruction"]
+    if example.get("input"):
+        prompt += "\n" + example["input"]
+    prompt += "\n" + example["output"]
+    tokens = tokenizer(prompt, padding="max_length", max_length=128, truncation=True)
+    tokens["labels"] = tokens["input_ids"].copy()
+    return tokens
 
 
-tokenized_datasets = dataset.map(tokenize_function, batched=True)
+tokenized_dataset = dataset.map(tokenize, remove_columns=dataset.column_names)
 
-# **9. Chia train/test**
-split_datasets = tokenized_datasets.train_test_split(train_size=0.8, seed=42)
-train_dataset = split_datasets["train"]
-eval_dataset = split_datasets["test"]
-
-# **10. Cấu hình Training**
+# Cấu hình huấn luyện
 training_args = TrainingArguments(
-    output_dir="./deepseek_finetuned",
-    per_device_train_batch_size=1,  # nhỏ nhất để tránh nghẽn RAM
-    per_device_eval_batch_size=1,
-    gradient_accumulation_steps=4,  # tăng batch hiệu dụng lên 2
-    num_train_epochs=1,  # huấn luyện 1 vòng đủ để test chất lượng
-    # max_steps=500,  # giới hạn chỉ train 50 step
-    logging_steps=5,  # in log thường xuyên để theo dõi
-    save_strategy="no",  # không lưu model giữa chừng
-    evaluation_strategy="no",  # bỏ eval để tiết kiệm thời gian
-    logging_dir="./logs",
-    remove_unused_columns=False,  # bắt buộc với PEFT
-    optim="adamw_torch",  # native optimizer của PyTorch
-    report_to="none",  # tắt WandB/huggingface logging
-    fp16=False,  # MPS không hỗ trợ fp16
-    bf16=False,
+    output_dir=output_dir,
+    per_device_train_batch_size=1,  # CPU nên để thấp
+    gradient_accumulation_steps=4,
+    learning_rate=5e-5,
+    num_train_epochs=3,
+    logging_steps=10,
+    save_strategy="epoch",
+    save_total_limit=2,
+    fp16=False,  # CPU không hỗ trợ fp16
+    evaluation_strategy="no",
+    report_to="none",
+    resume_from_checkpoint=True,  # Bỏ qua nếu không cần resume
 )
 
-
-# **11. Khởi tạo Trainer**
+# Huấn luyện
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=train_dataset,
-    eval_dataset=eval_dataset,
+    train_dataset=tokenized_dataset,
+    tokenizer=tokenizer,
+    data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
+    # resume_from_checkpoint=True,
 )
 
-# **12. Bắt đầu huấn luyện**
 trainer.train()
-
-# **13. Lưu model sau khi train**
-model.save_pretrained("deepseek_finetuned_model")
-tokenizer.save_pretrained("deepseek_finetuned_model")

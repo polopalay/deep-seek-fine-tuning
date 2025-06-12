@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Mac/Git/python/deepseek/lora/mlruns/0/1fd46f5778c04bb9abafa85adc339a28/artifacts
+end_time: 1749458107656
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1fd46f5778c04bb9abafa85adc339a28
+run_name: ./results_task_suggest
+run_uuid: 1fd46f5778c04bb9abafa85adc339a28
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749457601761
+status: 3
+tags: []
+user_id: machd
