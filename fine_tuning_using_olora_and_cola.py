@@ -14,6 +14,9 @@ from transformers import (
 )
 from peft import prepare_model_for_kbit_training
 import numpy as np
+import os
+
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 
 class LoRAExpert(nn.Module):
@@ -81,20 +84,21 @@ class CoLAOrthogonalLoRALinear(nn.Module):
 
     def orthogonalize_weights(self):
         with torch.no_grad():
-            Q, _ = torch.linalg.qr(self.shared_lora_A.T)
-            self.shared_lora_A.data = Q.T[: self.r]
-            Q, _ = torch.linalg.qr(self.shared_lora_B)
-            self.shared_lora_B.data = Q[:, : self.r]
+            Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
+            self.shared_lora_A.data = Q.T[: self.r].to(self.shared_lora_A.device)
+
+            Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
+            self.shared_lora_B.data = Q[:, : self.r].to(self.shared_lora_B.device)
 
             for task in self.task_names:
                 A = self.task_experts[task].lora_A
                 B = self.task_experts[task].lora_B
 
-                Q, _ = torch.linalg.qr(A.T)
-                self.task_experts[task].lora_A.data = Q.T[: self.r]
+                Q, _ = torch.linalg.qr(A.detach().cpu().T)
+                self.task_experts[task].lora_A.data = Q.T[: self.r].to(A.device)
 
-                Q, _ = torch.linalg.qr(B)
-                self.task_experts[task].lora_B.data = Q[:, : self.r]
+                Q, _ = torch.linalg.qr(B.detach().cpu())
+                self.task_experts[task].lora_B.data = Q[:, : self.r].to(B.device)
 
     def forward(self, x: torch.Tensor, task_id: Optional[str] = None) -> torch.Tensor:
         base_out = self.base_layer(x)
@@ -336,7 +340,7 @@ def train_cola_olora(
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
     orthogonalize_freq: int = 100,
-    device: str = "cuda" if torch.cuda.is_available() else "cpu",
+    device: str = "cpu",
 ):
     """
     Train model với CoLA + O-LoRA
@@ -375,7 +379,7 @@ def train_cola_olora(
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
         trust_remote_code=True,
-        torch_dtype=torch.float16 if device == "cuda" else torch.float32,
+        torch_dtype=torch.float32,
     )
     model = prepare_model_for_kbit_training(model)
     model = model.to(device)
@@ -433,7 +437,7 @@ def train_cola_olora(
         save_total_limit=2,
         learning_rate=lr,
         weight_decay=0.01,
-        fp16=device == "cuda",
+        fp16=False,
         bf16=False,
         report_to="none",
         remove_unused_columns=False,
@@ -472,10 +476,10 @@ def train_cola_olora(
                 # Save task-specific LoRAs
                 for task in task_names:
                     lora_state_dict[f"{name}.task_experts.{task}.lora_A"] = (
-                        module.task_experts[task]["lora_A"].data
+                        module.task_experts[task].lora_A.data
                     )
                     lora_state_dict[f"{name}.task_experts.{task}.lora_B"] = (
-                        module.task_experts[task]["lora_B"].data
+                        module.task_experts[task].lora_B.data
                     )
 
                 # Save collaboration weight and router
