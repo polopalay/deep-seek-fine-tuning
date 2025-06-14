@@ -26,7 +26,8 @@ model = model.to(device)
 # 🧩 Cấu hình LoRA
 lora_config = LoraConfig(
     r=8,
-    lora_alpha=16,
+    # lora_alpha=16,
+    lora_alpha=5.6,  # Áp dụng theo công thức rsLora
     target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
     lora_dropout=0.05,
     bias="none",
@@ -67,8 +68,8 @@ tokenized_dataset = dataset.map(tokenize)
 # 🏋️ Cấu hình huấn luyện
 training_args = TrainingArguments(
     output_dir="./deepseek_lora_invoice_output",
-    num_train_epochs=3,
-    per_device_train_batch_size=1,
+    num_train_epochs=1,
+    per_device_train_batch_size=4,
     logging_steps=20,
     save_steps=500,
     save_total_limit=2,

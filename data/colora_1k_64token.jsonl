@@ -1,0 +1,1000 @@
+{"task": "support", "instruction": "Hệ thống hiển thị popup xác nhận gửi như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản lý tình trạng thanh toán hóa đơn, cho phép người sử dụng chọn hóa đơn để đối soát thanh toán", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Tạo hóa đơn thay thế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cho phép NSD có thể tra cứu các hóa đơn của mình được phát hành trong khoảng thời gian 1 năm kể từ ngày hiện tại theo từng tháng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện đính kèm file bảng kê cho hóa đơn theo số hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DVTTe>Đơn vị tiền tệ *</DVTTe>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string AdjustReplaceInvWithToken(string Account, string ACpass, string xmlInvData, string username, string password, int type, string pattern = \"\", string serial = \"\")", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "userName / userPass: Tài khoản được cấp phát cho khách hàng để gọi đến webservice (tài khoản có quyền ServiceRole trong hệ thống)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "fkey : Chuỗi fkey xác định hóa đơn cần lấy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Danh sách chứng thư số của đơn vị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<LADHDDT></LADHDDT>*//Loại áp dụng hóa đơn điện tử", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nhất nút Không để bỏ qua việc xóa hóa đơn và quay lại trang “Danh mục hóa đơn thử nghiệm”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<HDKTSo>HDKTSO</HDKTSo>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ValidFrom>dd/MM/yyyy</ValidFrom>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bỏ gạch nợ hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tìm kiếm nhân viên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện bỏ gạch nợ hóa đơn theo danh sách chuỗi fkey truyền vào", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "NSD chọn OK để xác nhận gửi tờ khai đăng ký đến Cơ quan Thuế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Danh sách báo cáo sửa đổi hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình Tạo lập hóa đơn thay thế và trở về trang Danh mục thay thế, sửa hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DiscountRate>21</DiscountRate>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép phát hành hóa đơn theo 1 khoảng thời gian truyền vào", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn THỐNG KÊ  Báo cáo tình hình sử dụng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String downloadInvNoPayError (string invToken, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Thêm thông tin ghi chú cho hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ToDate>Ngày kết thúc</ToDate>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép phát hành hóa đơn với dữ liệu XML của khách hàng cho phép truyền số hóa đơn khi phát hành, tối đa cho 5000 hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "16: Lỗi kết nối cơ quan thuế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản lý danh sách các hóa đơn thử nghiệm của doanh nghiệp", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thay đổi mật khẩu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về chuỗi xml của hóa đơn theo fkey truyền lên, cho phép tải cả hóa đơn chưa thanh toán", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<MST>Mã số thuế (Bắt buộc nếu có)</MST>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Sẽ xuất hiện popup xác nhận xóa :", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<idInv>10</idInv>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<CusBankName>Tên ngân hàng</CusBankName>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Chọn 1 sản phẩm trên danh sách ở trang Quản lý cấu hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 26: Tìm kiếm cho token", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống xóa thất bại sẽ hiện thông báo “Xóa bảng kê đính kèm thất bại”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "NSD bấm chọn ĐỒNG Ý để xác nhận phát hành hóa đơn, phát hành thành công các hóa đơn sẽ chọn sẽ được gán số và kí số, hệ thống đưa ra thông báo “Phát hành thành công”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hủy hóa đơn (không thay thế, sửa đổi)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string publishInvWithToken (string Account, string ACpass, string xmlInvData, string username, string password, string pattern = \"\", string serial = \"\")", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "invToken: chuỗi token hóa đơn = mẫu số;ký hiệu;số hóa đơn (ví dụ: 01GTKT0/001;AA/17E;1)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin và trở về trang Tìm kiếm email", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem thông tin giao dịch", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Khi đó hệ thống sẽ hiển thị cửa sổ yêu cầu NSD xác nhận việc xóa hóa đơn hủy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem chi tiết hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện điều chỉnh thông tin hóa đơn mà không phát sinh hóa đơn mới", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<CusSignStatus>1.1</CusSignStatus>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DCTDTu>Địa chỉ thư điện tử </DCTDTu>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chú ý:  Một số role do site sadmin tạo sẽ không được phép sửa và có ký hiệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập và chọn các nội dung vào các trường tương ứng như:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "PageSize: Số bản ghi trong 1 trang", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<MST>2222222222-945</MST>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện hủy hóa đơn theo giá trị fkey truyền vào", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Mẫu số được lấy từ mẫu số đã chọn từ trang Danh mục hóa đơn, NSD không được sửa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Mở trình duyệt gõ địa chỉ portal của khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Tích chọn/bỏ tích vào ô checkbox   để thực hiện việc hiển thị/ẩn các cột thông tin trên danh sách", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: chọn “TÌM KIẾM CHO TOKEN” trên danh sách menu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thống kê chi tiết tất cả những hóa đơn đã xóa và đang sử dụng trong hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu xóa thành công thì ngày hóa đơn tối đa của dải ký hiệu đó sẽ được set là MiNSDate", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<HVTNNHang>Họ và tên người nhận hàng (phiếu xuất kho)</HVTNNHang>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập các giá trị phục vụ mục đích thống kê", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chuột ra ngoài hóa đơn hoặc nhấn nút ESC", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Các bước thực hiện:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "InvNo (định dạng số (decima))", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Dữ liệu message được trao đổi qua Web Service theo định dạng  XML", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chọn Phát hành hóa đơn đã chọn ở góc dưới phía bên trái của màn hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "sử dụng cho việc đối soát thông tin của đơn vị)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chuột ra ngoài hóa đơn hoặc ấn nút ESC ở phía trên bên phải của màn hình để thoát khỏi trang xem hóa đơn, trở về trang Danh mục  hóa đơn thử nghiệm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TaxCode>Mã số thuế (bắt buộc với khách hàng là doanh nghiệp)</TaxCode>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Tạo danh sách hóa đơn hủy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Lưu  để thêm đường thu cho nhân viên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Mã khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String GetInvErrorViewFkey (string fkey, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "pattern: mẫu số hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tạo mới role:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu phát hiện sai sót, người dùng thực hiện giao dịch hủy lô hóa đơn đó", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hóa đơn thay thế  sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Username/pass: Tài khoản được cấp phát cho khách hàng để gọi đến webservice ( tài khoản có quyền ServiceRole trong hệ thống)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hộp thoại để người dùng lựa chọn đường dẫn để lưu file Báo cáo Excel về máy, và hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về dạng pdf của hóa đơn lỗi gửi cơ quan thuế theo token truyền lên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<HDSo>Hợp đồng số (Hợp đồng vận chuyển) (phiếu xuất kho vận chuyển nội bộ)</HDSo>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cho phép người sử dụng tìm kiếm, tạo mới, sửa, xóa đường thu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string HandleInvoiceErrors (string Account, string ACpass, string username, string password, string mtd)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Discount>Chiết khấu</Discount>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string cancelInvNoPay(string Account, string ACpass, string Fkey, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chọn Gửi lại Mail cho những mail đã chọn ở góc dưới phía bên trái của màn hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tại giao diện danh sách tờ khai đăng ký, NSD bấm chọn icon để gửi tờ khai đăng ký sử dụng hóa đơn điện tử đến cơ quan thuế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<VATAmount>6</VATAmount>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<CusBankNo>Số tài khoản ngân hàng</CusBankNo>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về dạng HTML của hóa đơn lỗi gửi cơ quan thuế theo token truyền lên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "fkey:Chuỗi xác định hóa đơn cần điều chỉnh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn THÔNG TIN KHÁCH HÀNG", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<invToken>Pattern;Serial;So hoa don </invToken >", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cấu trúc chuỗi XML đầu vào của thông điệp: (dấu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Các bạn thực hiện tuần tự các bước như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tải hóa đơn dạng PDF", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<PaymentStatus>1</PaymentStatus>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Chọn 1 email trên danh sách ở trang Tạo Email", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "100: Thông điệp gửi tờ khai đăng ký/thay đổi thông tin sử dụng hóa đơn điện tử", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Bấm chọn button  để thực hiện việc xuất file excel danh sách thống kê", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "tag <OrganizationCA>: Nhà cung cấp chứng thư", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Download hóa đơn theo Fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: NSD có thể sửa tất cả các thông tin về vùng dữ liệu: Mã vùng dữ liệu, Tên vùng dữ liệu, Mô tả", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Trên màn hình Xem thông tin hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem chi tiết:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Danh sách hóa đơn sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Loai> </Loai>*//Loại (Loại thông báo) (1: Thông báo hủy/giải trình của NNT, 2: Thông báo hủy/giải trình của NNT theo thông báo của CQT)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Để thoát ra đúng cách, người sử dụng thực hiện click vào nút “Thoát” trên menu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình Thông tin gửi lại email", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Lấy danh sách hóa đơn từ số, đến số", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Serial: Ký hiệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình thêm thông báo hủy sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<NTBao></NTBao>*//Ngày thông báo", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Sửa thông tin hóa đơn hủy sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Account>Tài khoản *</Account>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích Start Download để thực hiện lưu bảng kê", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Lấy thông tin chi tiết hóa đơn tạo mới theo fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Note>Note</Note>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 29: Tìm kiếm cho token theo mã tra cứu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Báo cáo tình hình sử dụng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Trên menu ngang, NSD bấm chọn menu [HÓA ĐƠN], hệ thống hiển thị danh sách hóa đơn tương ứng với tài khoản khách hàng như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Báo cáo hệ thống sẽ tự tổng hợp ra bảng kê hóa đơn hàng tháng  và hiển thị như bảng:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<pattern>Mẫu số</pattern>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Tạo mới tài khoản người dùng nếu muốn tạo mới tài khoản cho người dùng, nếu không có thể sử dụng tài khoản đã được tạo trong hệ thống nhưng chưa khách hàng nào sử dụng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String downloadInvErrorPDF(string token, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thêm cấu hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "TÀI LIỆU MÔ TẢ ĐẦU HÀM TÍCH HỢP HÓA ĐƠN ĐIỆN TỬ", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình thêm mới và trở về trang Quản lý sản phẩm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình đăng nhập hệ thống sẽ xuất hiện", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: NSD có thể sửa tất cả các thông tin về sản phẩm trừ Mã sản phẩm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Lập hóa đơn thay thế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TThue>Tiền thuế</TThue>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Báo cáo nhanh hệ thống sẽ tự tổng hợp ra bảng chi tiết hóa đơn, và hiển thị như bảng:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Certificate>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình In báo cáo tình hình sử dụng hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Các thông tin: Tên tổ chức, Mã số thuế, Địa chỉ sẽ được hệ thống hiển thị từ thông tin đơn vị phát hành", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cách 1: Bấm chọn vào icon  trên dòng tương ứng của file muốn xóa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "HTTP METHOD", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phân trang:Mỗi trang sẽ hiển thị 10 hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "AttachFile: Đường dẫn file biên bản hoặc key để sinh biên bản tự động (=10: sinh biên bản tự động, =11: sinh và ký biên bản tự động,  != 10 và !=11: Đường dẫn file biên bản)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Danh sách cảnh báo sẽ được hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thông tin đơn vị phát hành trên mẫu hóa đơn là cố định, theo thông tin gán khi tạo thông báo phát hành", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 4: Gửi tờ khai thay đổi thông tin sử dụng hóa đơn điện tử đến cơ quan thuế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Quản trị Email sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<MKHang>KH1706</MKHang>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "NSD có thể sửa Loại hóa đơn, Mẫu số", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xóa giao dịch", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về chuỗi xml của hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TgTTTBChu>Tổng tiền thanh toán bằng chữ *</TgTTTBChu>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<HVTNXHang>HVTNXHANG</HVTNXHang>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Khi đó hệ thống sẽ hiển thị cửa sổ yêu cầu NSD xác nhận việc xóa sản phẩm đã chọn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Chọn thông tin để tìm kiếm mẫu hóa đơn đã đăng ký: mẫu số và ký hiệu của mẫu hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình Tạo lập hóa đơn điều chỉnh và trở về trang Danh mục thay thể sửa hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String resetPassword(string Account, string oldPass, string newPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hộp thoại để người dùng lựa chọn đường dẫn để lưu file Báo cáo Excel về máy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình hiển thị thông tin user cần sửa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Certificates>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "không tồn tại hóa đơn cũ vớiToken", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<CusCode>Mã khách hàng</CusCode>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "xmlInvData: Chuỗi XML dữ liệu hóa đơn ( theo cấu trúc mô tả)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "28: Thông báo kết quả đối chiếu sơ bộ thông tin của Bảng tổng hợp khác xăng dầu, Tờ khai dữ liệu hóa đơn, chứng từ hàng hóa, dịch vụ bán ra không hợp lệ", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Danh sách vùng dữ liệu sẽ hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tìm kiếm hóa đơn cần điều chỉnh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<MHSo>Mã hồ sơ</MHSo>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Sửa thông tin cấu hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản lý danh sách tạo và gửi lại email của khách hàng và nhân viên trong hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập tên cần tạo (phần này bắt nhập) và chọn những quyền để tạo role", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Id: Id của Packagetranscation trong", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Ví dụ 01/12/2021)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "REQUEST BODY", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Xem bảng kê hóa đơn, chứng từ hàng hóa dịch vụ bán ra", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thanh menu: sẽ hiển thị danh sách các chức năng của hệ thống, được phần chia theo các đề mục:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Lưu để thêm mới người dùng với các thông tin như đã nhập", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện điều chỉnh nhiều hóa đơn cùng lúc", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Upload hóa đơn phát hành lại", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Mẫu số, Ký hiệu, Số hóa đơn, Ngày phát hành của hóa đơn bị thay thế (Từ ngày HĐ", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phát hành hóa đơn sử dụng token (bước 2)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3.2 Xóa giải hóa đơn hủy ( trong tạo thông báo hủy)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Popup sẽ hiển thị để xác nhận:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<THHDVu>sản phẩm 1</THHDVu>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<GrossValue>GrossValue</GrossValue>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 4: Người dùng bấm vào icon để tải hóa đơn định dạng PDF về máy cá nhân", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Bảng kê tạo lập, phát hành hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<converted>1: đã chuyển đổi / 0: chưa chuyển đổi</payment >", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cấu hình chữ ký số", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Chọn 1 email trên danh sách ở trang Tìm kiếm email", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Chọn 1 cấu hình trên danh sách ở trang Quản lý cấu hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<GrossValue10>GrossValue10</GrossValue10>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string ReplaceInvoiceNoPublish(string Account, string ACpass, string xmlInvData, string username, string pass, string fkey, int? convert, string pattern = null, string serial = null)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phương thức chuyển dữ liệu hóa đơn điện tử", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ComFax>0462952034</ComFax>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thêm đường thu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về chuỗi xml của hóa đơn lỗi gửi cơ quan thuế theo fkey truyền lên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Các nút chức năng chính:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phân quyền cho người, cho phép admin thực hiện Thêm / Tìm kiếm / Sửa thông tin role", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình danh mục thanh toán đối soát hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "</ReplaceInv>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Customers>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.19 Quản lý nhân viên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "xml: chuỗi xml dữ liệu ký hash", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu gặp lỗi trong quá trình xóa hệ thống sẽ đưa ra thông báo “Xóa không thành công.”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Sau khi mở tờ khai Thông báo kết quả hủy hóa đơn mẫu (TB03/AC) lên các bạn thực hiện hủy hóa đơn còn tồn như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string AdjustInvoiceNoPublish(string Account, string ACpass, string xmlInvData, string username, string pass, string fkey, int? convert, string pattern = null, string serial = null)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<key>Fkey của hóa đơn cần thay thế *</key>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Chỉnh sửa để lưu lại các thông tin được sửa đổi", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Thay đổi mật khẩu sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cho phép NSD Tìm kiếm / Sửa/ Xóa email người nhận", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện thay thế hóa đơn cho phép truyền số hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chọn Chỉnh sửa để thực hiện phát hành (gán số, ký số) hóa đơn thay thế cho hóa đơn đã chọn với các thông tin như đã nhập", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "lsFkey: Danh sách Fkey truyền vào được ngăn cách bởi dấu “_”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<invNum>Số hóa đơn</invNum>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<serial>AA/17E</serial>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Danh sách các hàm tích hợp", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống quay về màn hình danh sách tờ khai", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép cập nhật thông tin khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phát hành hóa đơn theo danh sách fkey truyền vào", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<cusname>Tên người mua hàng</cusname>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: chọn “DANH MỤC HÓA ĐƠN” trên danh sách menu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Định dạng chuỗi xml đầu vào (các trường", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép đăng ký dải số", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "SAU KHI ĐƯỢC CHẤP NHẬN PHÁT HÀNH HDDT THEO TT78 THÌ HỆ THỐNG THEO TT32 CỦA KHÁCH HÀNG SẼ DỪNG PHÁT HÀNH HÓA ĐƠN VÀ CHUYỂN TRẠNG THÁI", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Sau khi kích Lưu& tạo mới, hóa đơn hủy vừa thêm sẽ được hiển thị trong Danh sách hóa đơn hủy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Nếu NSD nhập các thông tin không hợp lệ như: Chưa nhập Mật khẩu cũ, chưa nhập Mật khẩu mới, chưa Nhập lại mật khẩu mới, Mật khẩu cũ sai, Xác nhận mật khẩu không trùng với Mật khẩu mới,..", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Để thoát ra đúng cách, người sử dụng thực hiện click vào nút “Đăng xuất” trên menu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hóa đơn giấy: “Cắt góc; Đốt; Xé nhỏ”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích chuột vào ở trang Phân quyền người dùng để chuyển sang màn hình Quyền truy cập hệ thống sẽ được hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu hóa đơn khi tạo lập không chọn ký hiệu thì khi phát hành ký hiệu hóa đơn sẽ được gán là ký hiệu của dải hóa đơn đang được sử dụng trong hệ thống và có ngày hết hạn sử dụng dải hóa đơn sớm nhất", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Gạch nợ hóa đơn theo fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1:  Nhập tên đường thu vào Textbox Tên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Tích chọn vào checkbox  trên dòng tương ứng của Email, hoặc kích nút Chọn tất cả mail thì tất cả các email trong form tìm kiếm được chọn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.61 Màn hình Tạo hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thống kê về tình hình sử dụng hóa đơn trong từng tháng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<PublishInvFkey>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thay thế hóa đơn theo fkey, pattern, serial truyền vào", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Có thể in hóa đơn bằng cách kích vào In hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "tag <Status>: Trạng thái chứng thư (0-chưa sử dụng, 1-đang sử dụng)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích chuột vào  ở trang Quản lý cấu hình để chuyển sang trang Thêm cấu hình", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String downloadInvPDFNoPayError (string token, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Yêu cầu bắt buộc chọn cả mẫu số, ký hiệu và khoảng thời gian tạo lập Từ ngày..đến ngày", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu phát hành thành công các hóa đơn sẽ chọn sẽ được gán số và kí số, hệ thống đưa ra thông báo “Phát hành thành công”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "NSD có thể sửa tất cả các thông tin trừ Mã khách hàng và Tài khoản trong hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string convertForStore (string invToken, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Ký hiệu sẽ mặc định, NSD không được sửa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "</Certificate>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<KHHDon></KHHDon>*//Ký hiệu hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Hệ thống  Ngày hóa đơn tối đa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Chọn 1 sản phẩm trên danh sách ở trang Quản lý sản phẩm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chú ý:chuyển đổi hóa đơn nhằm chứng minh nguồn gốc xuất xử của hàng hóa chỉ được chuyển đổi 1 lần", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Phát hành hóa đơn theo lô sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phần mẫu số: hệ thống sẽ hiển thị các thông tin Mẫu số, Ký hiệu, dải số còn lại chưa dùng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống thêm thành công sẽ hiện thông báo “Đính kèm bảng kê thành công”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép thay thế , điều chỉnh hóa đơn cho các khách hàng sử dụng token", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem thông tin khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Điều chỉnh nhiều hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Báo cáo hủy hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Tin bảng kê chi tiết hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chọn Đối soát hóa đơn thanh toán", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xóa vùng dữ liệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Tìm kiếm hóa đơn điều chỉnh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bỏ gạch nợ hóa đơn theo fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình Tạo thông tin Email gửi lại", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chọn Tìm kiếm cho token theo thông tin hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hộp thoại hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Loại hóa đơn đăng ký", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "định dạng: YYYY-MM-YY", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xóa cảnh báo:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.70 Màn hình Upload và phát hành hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chỉ chấp nhận phát hành lô tối đa 5000 hóa đơn, hoặc cấu hình theo từng app", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Thống kê  Báo cáo sửa đổi hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cho phép NSD Tìm kiếm /Thêm mới/Sửa/ Xóa sản phẩm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn chọn menu [Thống kê]-->[Tờ khai dữ liệu hóa đơn, chứng từ hàng hóa, dịch vụ bán ra], hệ thống hiển thị giao diện:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Chọn 1 thông báo phát hành trên danh sách ở trang Danh mục hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Trên menu ngang, ND bấm chọn menu [HÓA ĐƠN] [Tìm kiếm hóa đơn], hệ thống hiển thị màn hình tìm kiếm hóa đơn như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "attachFile: đường dẫn tài liệu đính kèm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống sẽ hiển thị danh sách các chứng thư có trong keystore", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu hủy lô hóa đơn thành công, giao dịch chuyển sang trạng thái thành công", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TGia>Tỷ giá (Bắt buộc (Trừ trường hợp Đơn vị tiền tệ là VND))</TGia>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Fkey></Fkey>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Thêm giao dịch sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống hiển thị kết quả tìm kiếm hóa đơn như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem/Sửa thông tin cá nhân", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Dowload file bảng kê của hóa đơn theo Fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Mã giao dịch, Trạng thái", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: ND bấm vào icon để xem chi tiết nội dung hóa đơn, hệ thống hiển thị màn hình hóa đơn như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "19: Tiếp nhận Tờ khai đăng ký thay đổi thông tin sử dụng hóa đơn điện tử", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Thống kê chi tiết hóa đơn sẽ  hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tìm kiếm hóa đơn theo fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<PaymentMethod>Phương thức thanh toán</PaymentMethod>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem hóa đơn:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hóa đơn điện tử: “Thực hiện hủy trên phần mềm hóa đơn điện tử”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thay thế hóa đơn theo số hóa đơn truyền vào", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ComBankName>Tên ngân hàng</ComBankName>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản trị phát hành lại hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản lý danh sách NSD của hệ thống, cho phép NSD Tìm kiếm, Xem thông tin, phân quyền các account khác trong hệ thống mà NSD có quyền thao tác", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string SendInvNoticeErrors(string Account, string ACpass, string xml, string username, string password, string pattern = \"\", int convert = 0)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xóa cấu hình ngày hóa đơn tối đa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DDanh></DDanh>*//Địa danh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<SerialOld> ký hiệu của hóa đơn bị điều chỉnh, thay thế </SerialOld>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TChat>Tính chất", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tên hóa đơn được hệ thống lấy từ tên mặc định hóa đơn của mẫu đăng ký đã chọn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chọn tệp(định dạng doc,docx,xlsx,xls,pdf)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "31: Thông báo kết quả đối chiếu thông tin gói dữ liệu không hợp lệ các trường hợp khác", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cancel để thoát khỏi hộp thoại download", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service xem chi tiết bản ghi lịch sử truyền nhận", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<PaymentStatus>Trạng thái thanh toán</PaymentStatus>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<GrossValue_NonTax></GrossValue_NonTax>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kết quả trả về : Tiền tố ERR  có lỗi khi thực hiện hàm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DChi>Địa chỉ của bên mua lô 2A Làng Quốc Tế Thăng Long, phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội</DChi>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cấu trúc của xmlCusData (các trường", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nhận kết quả thông điệp hóa đơn sai sót", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "convert: Mặc định là 0, 0", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "invFromNo: Số bắt đầu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Tạo hóa đơn điều chỉnh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<KindOfService>Tháng hóa đơn</KindOfService>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: NSD bấm chọn Tạo mới, hệ thống hiển thị màn hình nhập thông tin tờ khai đăng ký", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Lkhông tồn tại hóa đơn cũ vớiToken", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2:Nhập các thông tin tương ứng vào các textbox.Yêu cầu bắt buộc nhập: Mã sản phẩm, Tên sản phẩm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản lý ngày hóa đơn tối đa của hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string deleteInvoiceByFkey(string lstFkey, string username, string password, string Account, string ACpass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Mẫu số, Trạng thái thanh toán, Ký hiệu, Số hóa đơn, Ngày hóa đơn, Tên khách hàng, Mã khách hàng Sau đó kích chọn “Tìm kiếm”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.3 Màn hình Xem thông tin chữ ký số", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.65 Màn hình Phát hành hóa đơn theo lô", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thoát khỏi hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Lưu để lưu lại các thông tin của vùng dữ liệu đã được sửa đổi", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thay thế hóa đơn giữ số khác mẫu số", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Ký bảng kê đính kèm(ký với file docx)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "tag <NoOlde>: số hóa đơn của hóa đơn bị điều chỉnh, thay thế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Quản lý thông báo hủy hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "201: Thông điệp gửi hóa đơn điện tử tới cơ quan thuế để cấp mã theo từng lần phát sinh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Inv>...</Inv>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 9: Màn hình sửa thông tin khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình sẽ hiển thị danh sách đường thu tương ứng với điều kiện tìm kiếm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích chuột vào  ở trang Quản lýnhân viên để chuyển sang trang Thêm nhân viên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Mẫu số, Ký hiệu, Kiểu hóa đơn, Số hóa đơn, Từ ngày, Đến ngày, Tên khách hàng, Mã số thuế, Mã khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "nhập để NSD thêm mới  hóa đơn hủy khác", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình tìm kiếm nhân viên sẽ được hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tạo danh sách vùng dữ liệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string GetMCCQThueByFkeys (string Account, string ACpass, string username, string password, string pattern, string fkeys)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Log hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<CusBankNo>Số tài khoản</CusBankNo>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập vào Mã tra cứu và Mã xác thực để tìm kiếm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Ngoài ra khi NSD không thao tác hệ thống trong một thời gian nhất định, hệ thống tự động thoát khỏi phiên làm việc hiện tại và yêu cầu NSD đăng nhập lại", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string listInvByCusFkey(string fkey, string fromDate, string toDate, string userName, string userPass)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tên tài khoản: Tên tài khoản được cấp", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String UpdateCertificate(string Account, string ACpass,  string certinfo, string serialCert, int certType, int id = 0)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chuột ra ngoài hóa đơn hoặc ấn nút ESC ở phía trên bên phải của màn hình để thoát khỏi trang xem hóa đơn, trở về trang Danh mục  hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chọn file(*) file dữ liệu hóa đơn hủy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Sửa thông tin đơn vị phát hành sẽ hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích chuột vào  ở trang Danh sách hóa đơn thay thế để xem hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Lưu để lưu lại các thông tin của hóa đơn hủy đã sửa đổi", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cho phép người dùng thực hiện Tìm kiếm/ Xem/ In mẫu HDDT", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<IsEmail>Khách hàng nhận gửi mail khi phát hành hay không, 1: Có nhận/0: không nhận (Nếu không có thẻ này mặc định có nhận mail)</IsEmail >", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Sửa thông tin nhân viên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "account / accPass:  Tài khoản được cấp phát cho nhân viên gọi lệnh phát hành hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình gửi lại mail sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích vào  trên danh sách file log cần xem", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Chọn Tìm kiếm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Tìm kiếm hóa đơn cần thay thế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ProdQuantity>Số lượng</ProdQuantity>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nhấn nút OK nếu thực sự muốn xóa hóa đơn hủy này", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Name>Tên khách hàng*</Name>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin và trở về trang Tạo thông tin email gửi lại", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<OrganizationCA>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "NSD chọn Lưu để lưu lại thông tin mẫu hóa đơn phát hành vừa nhập", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Xem thống kê chi tiết hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Từ màn hình giao diện hệ thống chọn menu [Xử lý hóa đơn]-->[Lập hóa đơn thay thế]", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chuyển đổi hóa đơn chứng minh nguồn gốc, xuất xử theo fkey", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Xem thông tin chi tiết thông báo hủy sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "tag <SerialNumber>: Serial chứng thư", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cho phép NSD Tìm kiếm / Tạo email/ Tạo và gửi lại email/ Tạo và gửi email hóa đơn đã chọn trên danh sách", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hộp thoại in sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem file danh sách đã tải về máy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<key>Fkey của hóa đơn *</key>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống đưa ra thông báo “Xóa thành công.”Nếu gặp lỗi trong quá trình xóa hệ thống sẽ đưa ra thông báo “Xóa không thành Công”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String theo định dạng dd/MM/yyyy  (20/05/2020)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xóa tài khoản", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "xmlInvData: chuỗi xml hóa đơn (theo mẫu mô tả kèm theo)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Yêu cầu bắt buộc nhập Tên khách hàng, Địa chỉ khách hàng, Email, Serial chứng thư (nếu khách hàng là đơn vị kế toán)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<KDLieu>Kiểu dữ liệu</KDLieu>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Danh mục tài khoản sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Báo cáo hủy hóa đơn (không thay thế)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 1: Màn hình Đăng nhập hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<SHDon></SHDon>*//Số hóa đơn (Số hóa đơn điện tử)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chuột vào số trang ở phía dưới để nhảy đến trang mong muốn (Ví dụ: kích chuột vào số 2 để nhảy đến trang 2)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Nhập thông tin khách hàng mới sẽ hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "0: Giá trị mặc định sẽ lất tất cả", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xóa hàng hóa, dịch vụ: Chọn 1 hàng hóa, dịch vụ trên danh sách, sau đó kích chuột vào  trên dòng tương ứng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TNVChuyen>TNVCHUYEN</TNVChuyen>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Type>2</Type>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "convert: Mặc định là 0, (0", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service đăng ký/cập nhật loại hình ký số và chứng thư số của đơn vị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chuột vào nút  để đến trang liền trước của trang hiện tại", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DChi>Địa chỉ </DChi>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Phân trang (Giống như phần tìm kiếm hóa đơn)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu upload và phát hành không thành công hệ thống chuyển giao dịch sang trạng thái lỗi phát hành", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "fkey: Chuỗi xác định hóa đơn cần thay thế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<CusSignStatus></CusSignStatus>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem thông tin kết quả", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem thông tin hóa đơn muốn gửi email", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xem chi tiết bản ghi trong lịch sử truyền nhận", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Quản lý sản phẩm sẽ được hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "25: Thông báo hóa đơn không đủ điều kiện cấp mã", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Người dùng bấm chọn vào dòng “Quên mật khẩu”, hệ thống hiển thị giao diện như sau:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "convert: Mặc định là 0 (0", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Sửa thông tin sản phẩm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình thêm nhân viên sẽ hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "TÊN CHỨC NĂNG CỦA HỆ THỐNG TRÊN MENU", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Kích chọn OK để xác nhận xóa cảnh báo", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tìm kiếm giao dịch", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.73 Hiển thị thông tin giao dịch hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 3: Đăng nhập HTKK phiên bản 4.6.2", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "certType: loại hình ký số (4-token; 6-SmartCA)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<idInv>128923</idInv>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Status (định dạng số (int))", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 23: Màn hình tìm kiếm theo mã tra cứu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2:  Nhập các thông tin của hóa đơn mới", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3 Hệ thống hiển thị dữ liệu hóa đơn, chứng từ hàng hóa, dịch vụ bán ra theo kỳ báo cáo đã chọn, có thể xem chi tiết dữ liệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Danh sách hóa đơn thay thế", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nếu upload và phát hành thành công, giao dịch hóa đơn chuyển sang trạng thái phát hành thành công", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kích chọn Quay lại trở về trang Danh sách vùng dữ liệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống sẽ tải về file excel danh sách khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện điều chỉnh hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TgTThue>Tổng tiền thuế (Tổng cộng tiền thuế GTGT) (Bắt buộc với hóa đơn GTGT)</TgTThue>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chọn Tìm kiếm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Chọn hóa đơn để chuyển đổi", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình tạo mới thông tin vùng dũ liệu sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Địa chỉ người nhận", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hộp thoại thông báo xóa giao dịch sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<serial>Serial hóa đơn</serial>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Lấy thông tin khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "TÀI LIỆU HƯỚNG DẪN SỬ DỤNG", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống sẽ tự động lấy về Serial của chứng thư đó", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 21: Chuyển đổi hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 15: Màn hình tải hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<GrossValue>14</GrossValue>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Sửa thông tin dải hóa đơn hủy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "string ReplaceInvoiceAction(string Account, string ACpass, string xmlInvData, string username, string pass, string fkey, string Attachfile, int? convert, string pattern = null, string serial = null)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống báo “Hệ thống đang tạo và gửi lại mail”", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hộp thoại thông báo hủy thanh toán sẽ được hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<EmailDeliver>EmailDeliver</EmailDeliver>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<VatAmount0>16</VatAmount0>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Mã giao dịch, Trạng thái (có 5 trạng thái giao dịch: Mới lập, đang xử lý, phát hành thành công, Lỗi phát hành, Lỗi file upload)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service thực hiện chuyển đổi với mục đích lưu trữ, mỗi hóa đơn sẽ được chuyển đổi nhiều lần", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tải file đính kèm hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Code>Mã khách hàng*</Code>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Trong đó: \ttag <SerialCert>: serial chứng thư của công ty", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hệ thống cho phép Upload và phát hành hóa đơn theo lô", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Quản lý danh sách file log của hệ thống, cho phép NSD Tìm kiếm, Xem thông tin file log và các thao tác người dùng thực hiện đối với hệ thống", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<HVTNXHang>Họ và tên người xuất hàng (phiếu xuất kho vận chuyển nội bộ)</HVTNXHang>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "TRA CỨU HÓA ĐƠN XEM HÓA ĐƠN VÀ DOWNLOAD HÓA ĐƠN", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Vì thế với những hóa đơn đã chuyển đổi cho mục đích này thì sẽ không được chuyển đổi nữa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<STT>1</STT>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ComPhone>Điện thoại công ty</ComPhone>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Thay thế, điều chỉnh hóa đơn sử dụng token", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hình 2.35 Xác nhận xóa vùng dữ diệu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích chuột vào  ở trang Quản lý thông báo phát hành HDDTđể hiển thị mẫu hóa đơn tương ứng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Extra_Value>Extra_Value</Extra_Value>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<taxcode>{0}</taxcode>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bắt buộc phải chọn: Mẫu số, Ký hiệu, Số hóa đơn;", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Kết xuất Excel", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DVTTe>VND</DVTTe>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "String theo định dạng dd/MM/yyyy  (20/05/2013)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Nhấn nút OK nếu thực sự muốn xóa khách hàng này", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Chọn những quyền để sửa role", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Cập nhật để lưu lại các thông tin khách hàng đã được sửa đổi", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 3: Kích chọn Điều chỉnh hóa đơn để chuyển sang màn hình Tạo hóa đơn điều chỉnh", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Phone>Điện thoại</Phone>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Chọn dải hóa đơn hủy cần sửa", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Mã số thuế, Đơn vị, Địa chỉ sẽ được hệ thống lấy từ thông tin đơn vị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Danh mục tài khoản, cho phép admin thực hiện Tìm kiếm / Sửa thông tin tài khoản có quyền role service hàng thuộc công ty đó", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<AdjustInv>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<status>Trạng thái hóa đơn</status>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Xuất file excel:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ProdPrice>Đơn giá</ProdPrice>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Tìm kiếm hóa đơn theo khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Cấu trúc của xmlInvData (các trường", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Sửa cấu hình sẽ hiển thị", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Khi đó hệ thống sẽ hiển thị cửa sổ yêu cầu NSD xác nhận việc xóa cấu hình đã chọn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ProcessInvNote>ProcessInvNote</ProcessInvNote>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 9: Kích chọn Kiết xuất PDF", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về dạng pdf của hóa đơn theo fkey truyền lên, cho phép tải cả hóa đơn chưa thanh toán", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Hướng dẫn sử dụng chức năng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Chọn hóa đơn hủy", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chuyển đổi hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<TgTCThue>441</TgTCThue>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Popup xác nhận xóa sẽ hiển thị:", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đổi mật khẩu", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<ValidTo>dd/MM/yyyy</ValidTo>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "NSD có thể sửa tất cả các thông tin Địa chỉ email người nhận trong form", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Màn hình Quản trị hủy lô hóa đơn", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Khi NSD chọn một khách hàng mà hệ thống gợi ý thì các thông tin về khách hàng như Mã số thuế, Địa chỉ, Số điện thoại, Mã khách hàng sẽ được hệ thống tự lấy từ thông tin khách hàng", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Chuyển trạng thái thanh toán", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<Ten>txt Tên đơn vị mua hàng test bị lỗi</Ten>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Chọn các thông tin tương ứng vào các list", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 2: Nhập vào Mã số thuế của đơn vị phát hành, Mẫu số, Ký hiệu, Số hóa đơn và Mã xác thực để tìm kiếm", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "<DLieu>489.51</DLieu>", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Bước 1: Kích chuột vào số trang ở phía dưới để nhảy đến trang mong muốn (Ví dụ: kích chuột vào số 2 để nhảy đến trang 2)", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "support", "instruction": "Đây là web service cho phép tải về dạng pdf của hóa đơn theo token truyền lên", "output": "Đã tiếp nhận và xử lý theo hướng dẫn."}
+{"task": "dev", "instruction": "Không cần convert từ TCVN3 sang Unicode / 1", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Account/ACPass :  Tài khoản được cấp phát cho nhân viên gọi lệnh phát hành hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<LDo></LDo> //Lý do", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tạo hóa đơn thay thế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "xmlInvData: String XML dữ liệu hóa đơn điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 4: Nhập vào Tên khách hàng và kích chọn Xem Chi Tiết để xem hóa đơn hoặc Quay lại để vể trang chính", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nhất nút Cancel để bỏ qua việc xóa vùng dữ liệu và quay lại trang Danh sách vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Discount>7</Discount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Fkey>Fkey</Fkey>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.12 Màn hình Sửa thông tin khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string ReceivedInvoiceErrors (string Account, string ACpass, string username, string password, string mtd)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Phân trang: Mỗi trang sẽ hiển thị 10 Mẫu hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Trong màn hình chi tiết hóa đơn, lựa chọn nút Tải hóa đơn để thực hiện tải hóa đơn về máy tính", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu có lỗi trong quá trình phát hành thì sẽ không có hóa đơn nào được phát hành, hệ thống đưa ra thông báo “Có lỗi trong quá trình phát hành”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn THỐNG KÊ Bảng kê tạo lập và phát hành hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Chọn 1 role trên danh sách ở trang Phân quyền người dùng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CusAddress>Địa chỉ KH</CusAddress>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: NSD nhập thông tin cần thay đổi", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "fkey*: Mã xác định hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "PH đến ngày", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<phone>{0}</phone>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Yêu cầu bắt buộc nhập Tên khách hàng, Mã khách hàng, Địa chỉ khách hàng, Email, Tài khoản trong hệ thống, Serial chứng thư (nếu khách hàng là đơn vị kế toán)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tích chọn vào (1) để chọn tất cả cả các file", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bấm [Lưu lại] để hệ thống gửi email cấp lại mật khẩu truy cập hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string getInvViewFkeyNoPay (string fkey, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 4: Kích chọn In", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chú ý: tối đa lấy ra 100 hóa đơn hoặc theo cấu hình trên từng app", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chuột vào số trang ở phía dưới để nhảy đến trang mong muốn (Ví dụ: kích chuột vào số 10 để nhảy đến trang 10)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Upload dữ liệu hủy hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chuyển đổi hóa đơn để lưu trữ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "OldPattern: Mẫu số cũ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép tải về dạng pdf của hóa đơn mới tạo theo Fkey truyền lên", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ExchangeRate>23</ExchangeRate>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string GetMCCQThueByInvTokens(string Account, string ACpass, string username, string password, string invTokens)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình thêm mới và trở về trang Quản lý nhân viên", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<HVTNXHang/>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<key></key>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình tìm kiếm hóa đơn cần thay thế sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.5 Kết quả tìm kiếm file log", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.66 Màn hình Quản trị giao dịch hóa đơn mới", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Email>Email</Email>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Kích chọn Tạo và gửi lại mail để gửi lại các thông tin cho khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Amount>13</Amount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<MHHDVu>Mã hàng hóa, dịch vụ (Bắt buộc nếu có)</MHHDVu>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string GetHashInvNoticeErrors(string Account, string ACpass, string xml, string username, string password, string pattern = \"\", int convert = 0)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Trên màn hình thông tin người dùng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Lập hóa đơn  Quản lý hóa đơn thử nghiệm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích nút sửa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "tag <signValue>:  chuỗi ký", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1 : Kích chọn Kiết xuất Excel", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service thực hiện lấy thông tin khách hàng dựa vào mã khách hàng truyền vào", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mỗi trang sẽ hiển thị 10 sản phẩm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Danh sách hóa đơn thay thế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CertType></CertType>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chức năng cảnh báo hóa đơn được thao tác cho người dùng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<key>456</key>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình thông tin giao dịch sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sau khi kích Lưu NSD sẽ quay về màn hình Thêm mới hóa đơn hủy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "FromDate: Ngày bắt đầu (so sánh với trường publishdate)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Quản lý cấu hình sẽ được hiển thị:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Xử lý kêt quả thông điệp hóa đơn sai sót", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Muốn thêm hóa đơn cho mẫu nào thì chọn mẫu đó rồi kích chuột vào ở trang Danh mục hóa đơn thử nghiệm để chuyển sang trang Thêm hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu có lỗi trong quá trình phát hành thì sẽ không có hóa đơn nào được phát hành", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 4: Chọn “Thông báo kết quả hủy hóa đơn mẫu (TB03/AC)”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình Danh sách tạo và gửi lại email hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Step (định dạng số (int))", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Tạo Email sẽ hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Cancel để thoát khỏi hộp thoại thoại", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<key>123</key>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Download hóa đơn lỗi gửi thuế định dạng Pdf, không kiểm tra trạng thái thanh toán theo fkey", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chuột vào   trên dòng tương ứng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Item >…</Item > //Hóa đơn khác", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tải danh sách khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "serialCert: Serial của chứng thư số công ty đã đăng ký trong hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<TgTCThue>Tổng tiền chưa thuế (Tổng cộng thành tiền chưa có thuế GTGT) (Bắt buộc với hóa đơn GTGT)</TgTCThue>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tìm kiếm tên tài khoản", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin và trở về trang Quản lý khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "id: giá trị id chứng thư số cần xóa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Popup xác nhận xóa cảnh báo", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép gửi thông điệp hóa đơn điện tử có sai sót với các hệ thống sử dụng token, sau khi thực hiện gọi hàm Lấy giá trị Hash ở bước 1 (3.1.9)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "String downloadInvFkey (string fkey, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Gửi thông điệp hóa đơn điện tử có sai sót sử dụng SmartCA (bước 2)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "là bắt buộc):", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<TLCKhau>Tỷ lệ % chiết khấu</TLCKhau>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sửa thông tin hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<VatAmount10> VatAmount10</VatAmount10>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Chọn “TÌM KIẾM BẰNG MÃ TRA CỨU” trên danh sách menu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Phân quyền -> Phân quyền người dùng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Khi đó hệ thống sẽ hiển thị cửa sổ yêu cầu NSD xác nhận việc xóa hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kết quả tải về", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mô tả: các đầu hàm web service nằm trong PublishService.asmx, thực hiện các nghiệp vụ liên quan đến tạo lập, phát hành và xử lý hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cho phép người dùng thực hiện Tìm kiếm/ Xem/ Thêm/ Sửa/ Xóa/ Phát hành hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn QUẢN TRỊ NGƯỜI DÙNG", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc chuỗi Hash trả về:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<GrossValue0>GrossValue0</GrossValue0>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<DiscountAmount>8</DiscountAmount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CreateDate>CreateDate</CreateDate>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string getCus(string cusCode, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Tích chọn vào đính kèm file  trên dòng tương ứng của các hóa đơn mới tạo lập muốn đính kèm file ở trang Danh mục hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tìm kiếm danh mục thanh toán đối soát hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Kích chọn Tạo mới đểthực hiện phát hành (gán số, ký số) hóa đơn điều chỉnh cho hóa đơn đã chọn với các thông tin như đã nhập", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống quay về giao diện danh sách tờ khai", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Extra1>Extra1</Extra1>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Riêng đối với khách hàng là đơn vị kế toán cần phải ký confirm thì có thêm chức năng cấu hình chữ ký sẽ hiển thị trên hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "AdjustReplaceWithOutInvToken", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string GetFile(string userName, string userPass, string fkey, string pattern)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Pattern: mẫu số hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Item >//tương ứng với 1 hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<GrossValue> GrossValue </GrossValue>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Phát hành hóa đơn theo số hóa đơn truyền vào", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Download hóa đơn lỗi gửi cơ quan thuế với cả các hóa đơn chưa thanh toán theo invtoken", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Tại màn hình đăng nhập phần mềm HTKK 4.6.2 các bạn điền MST của Đơn vị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin và trở về trang Thông tin khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Xử Lý Hóa Đơn Lập báo cáo hủy Màn hình tìm kiếm thông báo hủy sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Tài Khoản RoleService", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chú ý: Chỉ được sửa thông tin của hóa đơn khi hóa đơn vừa tạo lập, hóa đơn đã phát hành thì không được phép sửa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ThTien>441</ThTien>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.68 Hiển thị thông tin giao dịch hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<RepresentPerson>Người đại diện</RepresentPerson>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 4: Tại giao diện danh sách hóa đơn, NSD có thể chọn hóa đơn và tải về file PDF/Excel danh sách hóa đơn của khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<DLieu>Dữ liệu</DLieu>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Ten>Tên </Ten>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc của xmlInvData trường hợp không có trường mở rộng (các trường", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn THỐNG KÊ  Bảng kê hóa đơn hàng tháng.Màn hình thống kê  bảng kê hóa đơn hàng tháng của khách hàng hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<SerialCert></SerialCert> *//serial chứng thư của công ty", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tìm kiếm sản phẩm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Thay đổi mật khẩu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chuột vào   ở trang Thông tin khách hàng để chuyển sang trang Sửa thông tin khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "10: TCTN đã phản hồi TDiep kỹ thuật", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.61 Màn hình Tạo hóa đơn thử nghiệm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<IsSum> Tính chất", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CusType>Loại khách hàng (1: Doanh nghiệp/0: Cá nhân)*</CusType>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<DVTinh>Đơn vị tính (Bắt buộc nếu có)</DVTinh>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống cho phép Upload và phát hành lại lô hóa đơn nếu lô hóa đơn cũ sai sót bị hủy bỏ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ACpass>Mật khẩu *</ACpass>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Account/ACPass:  Tài khoản được cấp phát cho nhân viên có quyền gửi mail", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thêm thông báo hủy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "String downloadInvNoPay (string invToken, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string getNewInvViewFkey(string fkey, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<TNVChuyen/>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<key>Fkey cua hoa don</key>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chuột vào  ở Cột chọn trong danh sách hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Cancel để bỏ qua việc xóa nhân viên và quay lại trang Quản lý nhân viên Nếu xóa thành công thì nhân viên đó sẽ bị xóa khỏi hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<HashValue></HashValue > *//chuỗi Hash lấy từ bước 1", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mỗi trang sẽ hiển thị 30 Vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống hiển thị popup danh sách file được đính kèm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu User/ Password không đúng thì hệ thống sẽ hiện thị thông báo lỗi", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép gửi thông điệp hóa đơn điện tử có sai sót bằng hsm hoặc p12", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string getInvViewFkey (string fkey, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "invToken: Chuỗi token xác định hóa đơn cần lấy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc của xmlInvData trường hợp Có trường mở rộng (các trường", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "AdjustReplaceWithOutInvSmartCA", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 7: Màn hình xem thông tin khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống hiển thị kết quả lọc tương ứng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "*Trường hợp quên mật khẩu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: NSD chọn kiểu điều chỉnh “Điều chỉnh thông tin không tạo hóa đơn mới”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Quản lý danh sách các giao dịch khách hàng của hệ thống, cho phép NSD Tìm kiếm/ Thêm/ Xóa/ đơnload kết quả/ Đối soát/ Xem chi tiết giao dịch khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lấy thông tin chi tiết hóa đơn, không kiểm tra trạng thái thanh toán", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu hệ thống thực hiện chuyển trạng thái thanh toán thành công thì sẽ hiển thị thông báo “Chuyển trạng thái thanh toán thành công”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<TSuat>Thuế suất (Thuế suất thuế GTGT)</TSuat>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Thêm mới hóa đơn hủy sẽ được xóa các thông tin vừa chọn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Danh mục sản phẩm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<SerialCert>540171AA56FDB2F8476BBD781251C83D</SerialCert>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "lstFkey: danh sách fkey cần xóa bỏ, các Fkey phân biệt nhau bằng “_”)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "invTokens: danh sách chuỗi token xác định hóa đơn cần lấy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Total>9</Total>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thêm hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "NSD có thể sửa Địa chỉ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bottom of Form", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đổi mật khẩu hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Phân trang:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Danh sách các tài khoản có quyền role service", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "26: Thông báo kết quả đối chiếu thông tin gói dữ liệu hợp lệ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.65 Màn hình In mẫu hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Hệ thống hiển thị giao diện chi tiết nội dung thông báo như sau:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tích chọn ký mẫu thông báo hóa đơn điện tử có sai sót 04/SS-HĐ ĐT", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Trong cột Thao tác, với hóa đơn muốn tải kích Xem trên dòng tương ứng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "fkey: Chuỗi xác định hóa đơn cần điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Danh mục chuyển đổi hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "106: Thông điệp gửi Đơn đề nghị cấp hóa đơn điện tử có mã của CQT theo từng lần phát sinh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mltdiep (định dạng chữ (string))", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tại giao diện danh sách tờ khai, NSD bấm chọn icon để gửi tờ khai thay đổi thông tin sử dụng hóa đơn điện tử đến cơ quan thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tên khách hàng sẽ được hệ thống gợi ý (các khách hàng trong hệ thống có tên chứa chuỗi khách hàng nhập vào)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Chọn Quý và chọn năm lập báo cáo", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sửa thông tin vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chọn file quyết định: file ảnh định dạng jpg hặc png", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service thực hiện lấy dữ liệu html hóa đơn mới của điều chỉnh hóa đơn trước khi ký số phát hành", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<publishDate>Ngày phát hành hóa đơn</publishDate>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép phát hành hóa đơn theo 1 danh sách fkey truyền vào, tối đa 200 fkey", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 6: Kết xuất file XML tờ khai “Thông báo kết quả hủy hóa đơn mẫu (TB03/AC)”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thời gian tạo thông báo phát hành cho mẫu hóa đơn(từ ngày… tới ngày)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<PublishInvByDate>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Download hóa đơn lỗi gửi thuế định dạng Pdf, không kiểm tra trạng thái thanh toán theo Token", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "token: Chuỗi token xác định hóa đơn cần lấy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Pattern: Mẫu số mới", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<DieuChinhHD>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hướng dẫn lập thông báo hủy hóa đơn trên phần mềm HTKK của Tổng cục thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ComTaxCode>0105762069-002</ComTaxCode>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Để đóng view hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "xmlInvData: chuỗi xml hóa đơn ( theo mô tả)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Chọn 1 đường thu trên danh sách ở trang Quản lý vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Tích chọn vào gửi lại mail  trên dòng tương ứng của các hóa đơn muốn gửi lại mail ở trang Danh mục hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CusTaxCode>0105762069-001</CusTaxCode>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CusCode>Mã khách hàng*</CusCode>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tìm kiếm cấu hình", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ValidTo> dd/MM/yyyy </ValidTo>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Notification", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CurrencyUnit>Đơn vị tiền tệ</CurrencyUnit>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Nhập dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 25: Màn hình kết quả (Trường hợp không có hóa đơn trên hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Xem chi tiết file log", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "(1:Hóa đơn điện tử theo Nghị định 123/2020/NĐ-CP;", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Tên khách hàng, Mã khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống xóa thành công sẽ hiện thông báo “Xóa bảng kê đính kèm thành công”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1:  Chọn 1 role trên danh sách ở trang Phân quyền người dùng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<DiscountRate>Chiết khấu</DiscountRate>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mỗi hóa đơn sẽ chỉ được chuyển đổi 1 lần duy nhất", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hộp thoại sẽ xuất hiện", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình tạo mới role", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Thêm hóa đơn hủy sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "2) Ghi phương thức hủy hóa đơn:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Các thông tin khác nhập như ở phần Thêm mới hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thống kê chi tiết tất cả thông tin trong bảng hóa đơn (dữ liệu thô", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Ngày tạo hóa đơn (Từ ngày", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: NSD chỉ có thể sửa tất cả các thông tin ngày hóa đơn tối đa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Xem danh sách file log của hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<KHMSHDon></KHMSHDon>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu không tồn tại hóa đơn như thế hệ thống sẽ đưa ra thông báo “Nhập đúng số hóa đơn cần điều chỉnh”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<SDThoai>0916996622</SDThoai>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chuột vào   ở dòng tương ứng cột chi tiết", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<STCKhau>Số tiền chiết khấu </STCKhau>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc chuỗi xml gửi lên:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Download hóa đơn lỗi gửi thuế định dạng Pdf theo Fkey", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Danh sách các hàm tích hợp thông tư 78", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<idInv>128668</idInv>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "NSD chọn OK để xác nhận gửi tờ khai thay đổi thông tin đến Cơ quan Thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cập nhật dữ liệu khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.64 Màn hình chọn In mẫu hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Quản lý Upload khách hàng sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string GetInvDataByFkey(string fkey, string userName, string userPass, string account, string accPass, string pattern = \"\")", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu tồn tại hóa đơn có ký hiệu mẫu, ký hiệu loại và số hóa đơn như đã nhập thì hệ thống sẽ chuyển sang màn hình Tạo hóa đơn điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Convert: Mặc định là 0, (0", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu không tồn tại dữ liệu tìm kiếm thì không có kết quả nào hiển thị trên danh sách", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Xóa hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Trên mẫu hóa đơn có ghi rõ chữ “Mẫu”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.34 Sửa vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Yêu cầu bắt buộc nhập: mã đường thu, tên vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chọn vào button Tải file Excel, chương trình sẽ hiển thị dialog để người dùng chọn nơi lưu file về máy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2:Chọn nội dùng tìm kiếm như: Mẫu số, Kí hiệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Chọn điều kiện cho bảng kê tạo lập và phát hành hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 8: Nhập thông tin để đăng nhập trang Thuế điện tử của Tổng cục thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "bytes: file dạng byte", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Gạch nợ hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "String GetCertInfo (string userName, string password)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Extra_Value>100</Extra_Value>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Chọn 1 hóa đơn trên danh sách ở trang Danh mục hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Thống kê  Báo cáo thay thế hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin hóa đơn hủy, trở lại màn hình Thêm mới thông báo hủy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bảng kê hóa đơn hàng tháng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép phát hành hóa đơn với các hệ thống sử dụng token, sau khi thực hiện gọi hàm Lấy giá trị Hash ở bước 1 (2.1.4)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "String downloadInvErrorFkey (string fkey, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<hashValue>rKdYgeYc7CYLOhjfNFDZ8nBaWjA=</hashValue>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chuột vào nút  để đến trang liền sau của trang hiện tại", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin và trở về trang Quản lý nhân viên", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ComName>Tên công ty</ComName>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Extra2>Mở rộng 2</Extra2>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "5: Đã gửi TDiep tới TCTN", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống đưa ra thông báo “Xóa thành công.”Nếu gặp lỗi trong quá trình xóa hệ thống sẽ đưa ra thông báo “Xóa không thành công.”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Fax>Số fax</Fax>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Tích chọn vào checkbox  trên dòng tương ứng của các hóa đơn mới tạo lập muốn phát hành ở trang Danh mục hóa đơn thử nghiệm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "ToDate: Ngày kết thúc (dd/MM/yyyy)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "xmlCusData: chuỗi xml dữ liệu khách hàng ( theo mô tả)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.31 Xóa Email", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chuột vào  ở cột Chi tiết trong danh sách hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống sẽ hiển thị hộp thoại in", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Sau đó kích chọn “Tìm kiếm”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "//Tên người nộp thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "7.10 Bảng tổng hợp dữ liệu hóa đơn điện tử gửi cơ quan thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Account: Tên tài khoản được cấp phát cho khách hàng để đăng nhập vào hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "1) Điền đầy đủ thông tin như mẫu số hóa đơn, ký hiệu hóa đơn, số lượng hóa đơn tồn từ số … đến số…", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Trong màn hình chi tiết hóa đơn, lựa chọn nút Chuyển đổi để thực hiện tải hóa đơn về máy tính", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "-1: Giá trị mặc định, lấy tất cả", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Nhập nội dung cần tìm kiếm vào các trường như: Tên nhân viên, Phòng ban", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thành tiền sẽ được hệ thống tự tính từ Đơn giá và Số lượng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 6: Nộp tờ khai dưới dạng xml qua mạng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Base64Hash></Base64Hash> *//chuỗi Hash lấy từ bước 3.1.9", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu gửi lại mail thành công thì sẽ thay đổi trạng thái “Mail đã được gửi lại” hoặc “Mail đang chờ để hệ thống gửi lại”, và hệ thống đưa ra thông báo “Đã gửi lại mail”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tìm kiếm thông báo hủy hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<amount>Tổng tiền sau thuế của hóa đơn</amount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích Ok để thực hiện in bảng kê", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "NSD nhập email mới và kích chọn Gửi email", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "</PublishInvFkey>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nhóm các hàm webservice xử lý hóa đơn ( BussinessService)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ConvertedAmount>24</ConvertedAmount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 10: Tùy chọn các thông tin in", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Trên danh sách hóa đơn ở trang Xem thông tin hóa đơn (theo tháng) hoặc trang Tìm kiếm hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Nhập các thông tin tương ứng vào các textbox", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<TTruong>VATAmount</TTruong>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình thức gửi dữ liệu hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.30 Sửa thông tin Email", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bảng kê lập và phát hành hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "32: TCT tiếp nhận lỗi", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "9: TCTN đã tiếp nhận và chưa xử lý", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "tag <pattern>: mẫu số", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép gửi lại email thông báo phát hành hóa đơn tới khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "NSD bấm [Quay lại] để thoát khỏi chức năng thay đổi thông tin", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 28: Xem chi tiết hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cho phép NSD quản lý các hóa đơn được phát hành cho họ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.74 Download kết quả đối soát", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chuột vào “Vùng dữ liệu” trên dòng tương ứng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chuyển đổi lưu trữ hóa đơn theo Fkey", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "11: TCTN đã gửi TDiep lên CQT", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ProdName>Tên sản phẩm</ProdName>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn THỐNG KÊ  Báo cáo chi tiết hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.21 Màn hình danh mục quản lý Vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu tồn tại hóa đơn có ký hiệu, ký hiệu loại và số hóa đơn như đã nhập thì hệ thống sẽ chuyển sang màn hình Tạo hóa đơn thay thế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<HDKTNgay>Hợp đồng kinh tế ngày (phiếu xuất kho gửi bán đại lý)</HDKTNgay>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thay đổi thông tin sử dụng hóa đơn điện tử", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép đăng ký tờ khai 01", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bắt buộc nhập: Loại hóa đơn, Mẫu số", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string ImportAttachmentByNo (string Account, string ACpass, string username, string pass, byte[] bytes, string pattern, string serial, int no)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Điều chỉnh hóa đơn không phát sinh hóa đơn mới", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Danh mục  Quản trị Email", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Kích chọn Lưu để lưu lại các thông tin của tài khoảnđãđược sửađổi", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Hệ thống hiển thị dữ liệu hóa đơn điện tử gửi cơ quan thuế theo kỳ dữ liệu đã chọn, có thể xem chi tiết dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service thực hiện chuyển đổi với mục đích lưu trữ PDF, mỗi hóa đơn sẽ được chuyển đổi nhiều lần", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "fkey: fkey của hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Phát hành hóa đơn theo lô", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Xem thông tin hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Danh sách hóa đơn điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "userName/userPass*: account/password để gọi web services", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string AdjustInvoiceMulti (string Account, string ACpass, string xmlInvData, string username, string pass, string fkeys, string AttachFile, int? convert, string pattern = null, string serial = null)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn Quay lại để thoát khỏi màn hình sửa thông tin và trở về trang thông tin đơn vị phát hành hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Chọn OK để xóa role", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thay thế hóa đơn cũ (hóa đơn không tồn tại trên hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<key>789</key>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ComFax>Company Fax</ComFax>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chọn một chứng thư khách hàng sẽ sử dụng ký hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Base64 format", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mỗi trang sẽ hiển thị 10 nhân viên", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Định dạng chuỗi xml đầu vào, trường hợp có dùng thêm các trường mở rộng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Click OK để thực download file hóa đơn về máy cá nhân", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Ten>Tên *</Ten>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc của xmlInvData  trường hợp Có trường mở rộng (các trường", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bấm chọn “Tải xuống” để tải những file đã chọn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "FromDate: Ngày bắt đầu (dd/MM/yyyy)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 24: Màn hình kết quả (Trường hợp có hóa đơn trên hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<signValue> chuỗi ký </signValue>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống đưa ra thông báo “Xóa thành công.” Nếu gặp lỗi trong quá trình xóa hệ thống sẽ đưa ra thông báo “Xóa không thành công.”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "cusCode: Mã khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nhất nút Cancel để bỏ qua việc xóa khách hàng và quay lại trang Quản lý khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích OK để thực hiện lưu báo cáo file PDF về máy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mỗi khi bắt đầu vào hệ thống NSD bắt buộc phải qua bước kiểm tra này", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lưu ý: Với hóa đơn dạng PDF, NSD có thể tải tất cả các loại hóa đơn (bao gồm cả Hóa đơn Đã ký và Hóa đơn Chưa ký)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Trong cột Tải PDF, với hóa đơn muốn tải kích Tải trên dòng tương ứng để tải hóa đơn về máy", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "userName/userPass: Tài khoản được cấp phát cho khách hàng để gọi đến webservice (tài khoản có quyền ServiceRole trong hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Kích chuột vào  ở Cột chi tiết trong danh sách hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Sửa thông tin sản phẩm sẽ hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Chọn 1 thông báo hủy trên danh sách ở trang Quản lý hủy hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Xóa chứng thư số", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<MCQTCap> </MCQTCap> //Mã CQT cấp", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "4: Hóa đơn đặt in theo Nghị định 123/2020/NĐ-CP)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Quản lý ngày hóa đơn tối đa sẽ được hiện thị:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Extra_Value>value’s Extra </Extra_Value>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Kích chọn Tạo và gửi email hóa đơn đã chọn cho những mail đã chọn ở góc dưới phía bên trái của màn hình", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<payment>Trạng thái thanh toán (0/1)</payment>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ComTaxCode>Mã số thuế</ComTaxCode>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lập hóa đơn điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1:  Kích vào menu “Hệ thống”->”Thông tin đơn vị”  hiển thị ra thông tin đơn vị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "userName/password: Tài khoản được cấp phát cho khách hàng để gọi đến webservice (tài khoản có quyền ServiceRole trong hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Quản lý cấu hình ngày hóa đơn tối đa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình tìm kiếm hóa đơn cần điều chỉnh sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chuột vào  trên dòng tương ứng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: NSD bấm icon xem thông báo phát hành", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Nhập dữ liệu: NSD có thể sửa tất cả các thông tin của mình trừ Tên tài khoản, Tên khách hàng, Email, Mã khách hàng, Mã số thuế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Trên danh sách hóa đơn ở trang Xem thông tin hóa đơn (theo tháng) hoặc trang Tìm kiếm hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Html xem trước khi thay thế hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "String RegisterPublish(string Account, string ACpass, string xmlInvData, string username, string password, int type)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sửa thông tin tài khoản", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Chọn chi tiết để xem hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "EInvoice-Portal", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Để nộp tờ khai “Thông báo kết quả hủy hóa đơn mẫu (TB03/AC)” qua mạng thì trước tiên các bạn cần đăng nhập trang Thuế điện tử của Tổng cục thuế tại địa chỉ:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình sửa role", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "mtd: Mã thông điệp tờ khai 01", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Xem thông báo hủy hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tạo giao dịch khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình danh sách cảnh báo", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sau đó kích chọn Tìm kiếm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "</DieuChinhHD>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ProdQuantity>1</ProdQuantity>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<InvoiceNo>Số hóa đơn*</InvoiceNo>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích Ok để thực hiện chuyển đổi", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "</OrganizationCA>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Kích chọn Tạo Mới để lưu lại role", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép trả về định dạng html của hóa đơn theo fkey truyền vào, không kiểm tra trạng thái thanh toán", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "chỉ cần khi thay thế/ điều chỉnh; phát hành thì để trống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "string listInvFromNoToNo (string invFromNo, string invToNo, string invPattern, string invSerial, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<AmountInWords>Số tiền viết bằng chữ</AmountInWords>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Các kịch bản hướng dẫn người dùng sử dụng các chức năng cơ bản của hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Phân quyền sử dụng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 11: Thay đổi mật khẩu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sửa cấu hình ngày hóa đơn tối đa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "invSerial: Ký hiệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lấy serial chứng thư (Giống như phần thêm mới khách hàng)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Điều chỉnh hóa đơn cũ (hóa đơn không tồn tại trên hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<MKHang>Mã khách hàng</MKHang>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống đưa ra thông báo “Có lỗi trong quá trình phát hành”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Trong đó: \t            tag <key>: fkey", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Các mục cập nhật HDSD", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu hình ngày hóa đơn tối đa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<CusAddress>Địa chỉ khách hàng*</CusAddress>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Tìm kiếm vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<NTBCCQT></NTBCCQT>//Ngày thông báo của CQT", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thay thế hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<VATAmount>Tổng tiền thuế*</VATAmount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lấy thông tin chi tiết của hóa đơn theo fkey, không kiểm tra trạng thái thanh toán", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 4: Thoát hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Item >             //tương ứng với 1 hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 1: Từ màn hình giao diện hệ thống kích chọn Lập HĐ  Quản trị giao dịch hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép trả về định dạng html của hóa đơn mới tạo theo fkey truyền vào", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép gửi thông điệp hóa đơn điện tử có sai sót với các hệ thống sử dụng token, thực hiện truyền dữ liệu hóa đơn và lấy giá trị hash value để ký số bằng token ở client", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn ký số", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Kích chọn Xử lý hóa đơn để lưu lại thông tin điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Sau khi đăng nhập vào phần mềm HTKK, các bạn chọn mục Hóa đơn 🡺 Tiếp tục chọn đến “Thông báo kết quả hủy hóa đơn mẫu (TB03/AC)”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Download hóa đơn lỗi gửi cơ quan thuế định dạng HTML", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<Remark>Remark</Remark>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chuyển đổi lưu trữ hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc xmlInvData", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Do Hệ thống HĐĐT cung cấp", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chuột vào   ở Cột đối soát trong danh sách giao dịch để hiển thị thông tin kết quả giao dịch", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<amount>Tổng tiền của hóa đơn </amount>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "DESCRIPTION", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<GrossValue5>GrossValue5</GrossValue5>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Quản lý danh sách email của khách hàng và nhân viên trong hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lấy trạng thái và XMLData hóa đơn có mã, trạng thái của hóa đơn không mã gửi CQT trả về theo danh sách invToken", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "oldPass: mật khẩu cũ", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống đưa ra thông báo “Xóa thành công", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Chọn Quay lại từ màn hình tìm kiếm  Trở về trang Danh sách vùng dữ liệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Quản trị giao dịch sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "oldPattern, oldSerial, oldNo: Các thông số mẫu số, ký hiệu, số hóa đơn của hóa đơn cũ (hóa đơn không tồn tại trên hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "pattern: Mẫu số", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Thêm thông tin ghi chú cho hóa đơn điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Sau khi phân quyền, người dùng sẽ chỉ có quyền thao tác trên các serial được phân quyền", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Pattern: Mẫu số hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép tải về chuỗi xml của hóa đơn theo fkey truyền lên", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hiển thị thông tin giao dịch hủy lô hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Trong đó: \t\ttag <SerialCert>: serial chứng thư của công ty", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lkhông tồn tại hóa đơn cũ với", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Chú ý:  Một số role do site sadmin tạo sẽ không được phép xóa và có ký hiệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Kích chọn Tạo mới để thêm mới cấu hình với các thông tin như đã nhập", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Các lỗi trả về theo bảng mô tả mã lỗi tương ứng mỗi đầu hàm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<FromDate>Ngày bắt đầu</FromDate >", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "NSD bấm [Lưu] để lưu lại thông tin thay đổi đã nhập, hệ thống quay về danh sách tờ khai đăng ký/thay đổi thông tin", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service thực hiện tạo bản ghi deliver cho việc phân phối hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đến ngày), Tên khách hàng, Mã khách hàng", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu gặp lỗi trong quá trình xóa hệ thống sẽ đưa ra thông báo “Xóa không thành Công”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đăng ký dải số", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "ToDate: Ngày kết thúc (so sánh với trường publishdate)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<BankNumber>Số tài khoản</BankNumber>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Thông tin tài khoản", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Nếu xóa thành công thì khách hàng đó sẽ bị xóa khỏi hệ thống", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kích chọn OK nếu thực sự muốn xóa cấu hình này", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "CancelPublishInvoice(string Account, string ACpass, string username, string password, string Pattern, string Serial)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Quản trị hủy lô hóa đơn sẽ được hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Các thông tin này NSD không được phép sửa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 3: Kích chọn Báo cáo hệ thống sẽ tự tổng hợp ra báo cáo tình hình sử dụng hóa đơn và hiển thị ra", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Kiểm tra username/password của NSD", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 17: Tải phần mềm xem hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Ngày thực hiện (Ngày dịch vụ hóa đơn)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Xem hóa đơn thay thế", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Cấu trúc xmlInvData:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ValidFrom> dd/MM/yyyy </ValidFrom>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service cho phép trả về thông tin cơ bản của hóa đơn dạng chuỗi xml theo fkey truyền vào", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 2.58 Màn hình chọn In mẫu hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đây là web service thực hiện thay thế hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 4: Nhập thông tin đăng ký mẫu hóa đơn phát hành gồm: Loại hóa đơn, mẫu hóa đơn, ký hiệu, số lượng hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Khi đó hệ thống sẽ hiển thị màn hình ghi chú hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<STT>Số thứ tự</STT>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "String downloadInvPDFFkeyNoPay (string fkey, string userName, string userPass)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Có 2 cách để tải file đính kèm như sau:", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "File excel down về gồm danh sách các email ở trong form Tìm kiếm", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Yêu cầu bắt buộc nhập Mẫu số, Ký hiệu, Ngày hóa đơn tối đa", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Mã xác thực: Nhập mã xác thực được in sẵn trên màn hình", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Đính kèm file vào hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<TLCKhau>0</TLCKhau>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<SBKe>Số bảng kê (Số của bảng kê các loại hàng hóa, dịch vụ đã bán kèm theo hóa đơn)</SBKe>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Lấy serial chứng thư: khi chọn khách hàng là đơn vị kế toán NSD cần cắm thiết bị chứa chứng thư của khách hàng sẽ sử dụng để ký hóa đơn (như token) để lấy ra serial của chứng thư", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Bước 2: Chọn nội dung cần tìm kiếm vào các trường như: Mẫu số, Ký hiệu", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình xác nhận xóa tài khoản", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<SLuong>21</SLuong>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Account / ACpass: Tài khoản được cấp phát cho khách hàng để gọi đến webservice (tài khoản có quyền ServiceRole trong hệ thống)", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "fkeys: Danh sách chuỗi fkey xác định các hóa đơn cần điều chỉnh", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Màn hình Bảng kê tạo lập và phát hành hóa đơn sẽ  hiển thị", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hệ thống đưa ra thông báo “Xóa thành công”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<ComAddress>Địa chỉ công ty</ComAddress>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Quản trị hủy lô hóa đơn", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<InvoiceNo>Số hóa đơn *</InvoiceNo>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Click OK để thực download file kết quả về máy cá nhân", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "<GrossValue0> GrossValue0</GrossValue0>", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
+{"task": "dev", "instruction": "Hình 5: Cách điền “Thông báo kết quả hủy hóa đơn mẫu (TB03/AC)”", "output": "Thực hiện theo tài liệu kỹ thuật và đảm bảo tham số đầu vào đúng định dạng."}
