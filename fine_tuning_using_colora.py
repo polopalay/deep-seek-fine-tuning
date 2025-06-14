@@ -332,7 +332,7 @@ def train_cola_olora(
     jsonl_path: str,
     adapter_name: str,
     base_model: str = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-    output_dir: str = "./cola_olora_output",
+    output_dir: str = "./colora_output",
     max_seq_len: int = 256,
     batch_size: int = 4,
     epochs: int = 3,
@@ -442,6 +442,7 @@ def train_cola_olora(
         report_to="none",
         remove_unused_columns=False,
         dataloader_pin_memory=False,
+        max_grad_norm=1.0,
     )
 
     # Data collator
@@ -524,44 +525,15 @@ def train_cola_olora(
     return model, tokenizer
 
 
-model, tokenizer = train_cola_olora(
-    jsonl_path="./data/colora_1k_64token.jsonl",
-    adapter_name="dev_support_cola_olora",
-    lambda_orth=0.01,
-    lambda_collab=0.001,
-    orthogonalize_freq=100,
-    epochs=2,
-    lr=3e-4,
-    batch_size=2,
-    max_seq_len=64,
-)
-
-
-# Test với specific task
-def test_task_specific(model, tokenizer, prompt, task_id=None):
-    inputs = tokenizer(prompt, return_tensors="pt")
-
-    # Manually call với task_id nếu cần
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=100,
-            temperature=0.7,
-            do_sample=True,
-            pad_token_id=tokenizer.eos_token_id,
-        )
-    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    return response[len(prompt) :].strip()
-
-
-# Test DEV task
-dev_prompt = "### Câu hỏi:\n[DEV] Hàm ImportAndPublishInv trả về lỗi ERR:99 nghĩa là gì?\n\n### Trả lời:"
-dev_response = test_task_specific(model, tokenizer, dev_prompt, task_id="dev")
-print(f"🔧 DEV Response: {dev_response}")
-
-# Test SUPPORT task
-support_prompt = "### Câu hỏi:\n[SUPPORT] Làm sao để reset mật khẩu?\n\n### Trả lời:"
-support_response = test_task_specific(
-    model, tokenizer, support_prompt, task_id="support"
-)
-print(f"SUPPORT Response: {support_response}")
+if __name__ == "__main__":
+    model, tokenizer = train_cola_olora(
+        jsonl_path="./data/colora_1k_64token.jsonl",
+        adapter_name="dev_support_colora",
+        lambda_orth=0.01,
+        lambda_collab=0.001,
+        orthogonalize_freq=100,
+        epochs=2,
+        lr=3e-4,
+        batch_size=2,
+        max_seq_len=64,
+    )
