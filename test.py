@@ -45,6 +45,6 @@ def test_model(model_path: str, instruction: str, input_text: str = ""):
 
 test_model(
     model_path="./deepseek_lora_invoice_cpu/checkpoint-7500",
-    instruction="Muốn biết quy trình xuất hóa đơn theo NĐ 123",
+    instruction="Muốn biết ai đang phụ trách phần hóa đơn điều chỉnh",
     input_text="",
 )

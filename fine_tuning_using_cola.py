@@ -12,7 +12,7 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 
 # 🔧 Cấu hình
 model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-data_path = "deepseek_invoice_cola_vi_10k.jsonl"  # Đổi tên nếu khác
+data_path = "deepseek_invoice_cola_vi_2k.jsonl"  # Đổi tên nếu khác
 device = "cpu"
 
 # 🚀 Load tokenizer và model
