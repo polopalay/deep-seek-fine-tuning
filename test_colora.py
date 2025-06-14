@@ -61,16 +61,23 @@ def test_task_specific(model, tokenizer, prompt, max_new_tokens=100):
 
 if __name__ == "__main__":
     model_dir = "./colora_output/dev_support_colora"
-    device = "mps" if torch.backends.mps.is_available() else "cpu"
+    device = "cpu"
 
-    print(f"🧠 Loading model on device: {device}")
+    print(f"Loading model on device: {device}")
     model, tokenizer = load_model_and_tokenizer(model_dir, device=device)
+    # Test thử với dữ liệu cơ bản
+    prompt_support = "[SUPPORT] 1+1 bằng bao nhiêu?"
+    answer_support = test_task_specific(model, tokenizer, prompt_support)
+    print(f"\n[SUPPORT] → {answer_support}")
 
-    prompts = {
-        "🔧 DEV": "### Câu hỏi:\n[DEV] Hàm ImportAndPublishInv trả về lỗi ERR:99 nghĩa là gì?\n\n### Trả lời:",
-        "📞 SUPPORT": "### Câu hỏi:\n[SUPPORT] Làm sao để reset mật khẩu?\n\n### Trả lời:",
-    }
+    # Test thử với prompt support
+    prompt_support = (
+        "[SUPPORT] Tôi nhập sai tên khách hàng trên hóa đơn, bây giờ tôi cần làm gì?"
+    )
+    answer_support = test_task_specific(model, tokenizer, prompt_support)
+    print(f"\n[SUPPORT] → {answer_support}")
 
-    for tag, prompt in prompts.items():
-        response = test_task_specific(model, tokenizer, prompt)
-        print(f"{tag} Response: {response}\n")
+    # Test thử với prompt dev
+    prompt_dev = "[DEV] Làm sao cấu hình endpoint nhận hóa đơn trong .NET Core?"
+    answer_dev = test_task_specific(model, tokenizer, prompt_dev)
+    print(f"\n[DEV] → {answer_dev}")
