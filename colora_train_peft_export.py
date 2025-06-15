@@ -433,7 +433,7 @@ def train_cola_olora(
         save_strategy="no",
         remove_unused_columns=False,
         dataloader_pin_memory=False,
-        # max_steps=1,
+        max_steps=100,
     )
 
     trainer = CoLAOLoRATrainer(
@@ -462,7 +462,7 @@ def train_cola_round(
     jsonl_path: str,
     max_seq_len: int = 32,
     batch_size: int = 4,
-    epochs: int = 2,
+    epochs: int = 1,
     lr: float = 3e-4,
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
