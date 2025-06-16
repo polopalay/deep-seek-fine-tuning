@@ -1,0 +1,100 @@
+{"task": "dev", "instruction": "ERR:1 là gì?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Lỗi ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Vì sao ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Nguyên nhân ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Lỗi ERR:1 là gì?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Bị báo ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Lỗi hệ thống ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Khắc phục lỗi ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Thông báo ERR:1?", "output": "Sai tài khoản quyền"}
+{"task": "dev", "instruction": "Sai quyền là lỗi gì?", "output": "ERR:1"}
+{"task": "dev", "instruction": "ERR:3 là gì?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "Lỗi ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "Vì sao ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "Nguyên nhân ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "Thông báo ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "Bị báo ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "XML sai là lỗi gì?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "XML lỗi gì ra ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "ERR:3 là lỗi XML?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "Cách sửa ERR:3?", "output": "XML sai định dạng"}
+{"task": "dev", "instruction": "ERR:5 là gì?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Lỗi ERR:5?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Vì sao ERR:5?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Nguyên nhân ERR:5?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Không phát hành là lỗi gì?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Báo lỗi ERR:5?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Khắc phục lỗi ERR:5?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Thông báo ERR:5?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Lỗi gì khi không phát hành?", "output": "Không phát hành được"}
+{"task": "dev", "instruction": "Không phát hành được là mã lỗi gì?", "output": "ERR:5"}
+{"task": "dev", "instruction": "ERR:6 là gì?", "output": "Không đủ số hóa đơn"}
+{"task": "dev", "instruction": "Lỗi ERR:6?", "output": "Không đủ số hóa đơn"}
+{"task": "dev", "instruction": "Nguyên nhân ERR:6?", "output": "Không đủ số hóa đơn"}
+{"task": "dev", "instruction": "Tại sao lỗi ERR:6?", "output": "Không đủ số hóa đơn"}
+{"task": "dev", "instruction": "Khắc phục ERR:6 như thế nào?", "output": "Không đủ số hóa đơn"}
+{"task": "dev", "instruction": "Không đủ số hóa đơn là lỗi gì?", "output": "ERR:6"}
+{"task": "dev", "instruction": "Lỗi gì khi số hóa đơn không đủ?", "output": "ERR:6"}
+{"task": "dev", "instruction": "Hệ thống báo thiếu số hóa đơn là mã nào?", "output": "ERR:6"}
+{"task": "dev", "instruction": "Số hóa đơn không đủ thì báo lỗi gì?", "output": "ERR:6"}
+{"task": "dev", "instruction": "Thiếu hóa đơn thì là lỗi gì?", "output": "ERR:6"}
+{"task": "dev", "instruction": "ERR:7 là gì?", "output": "Sai tên đăng nhập"}
+{"task": "dev", "instruction": "Lỗi ERR:7?", "output": "Sai tên đăng nhập"}
+{"task": "dev", "instruction": "Nguyên nhân ERR:7?", "output": "Sai tên đăng nhập"}
+{"task": "dev", "instruction": "Thông báo ERR:7 có nghĩa gì?", "output": "Sai tên đăng nhập"}
+{"task": "dev", "instruction": "Khắc phục lỗi ERR:7 như thế nào?", "output": "Sai tên đăng nhập"}
+{"task": "dev", "instruction": "Sai tên đăng nhập là lỗi gì?", "output": "ERR:7"}
+{"task": "dev", "instruction": "Lỗi gì khi tên đăng nhập sai?", "output": "ERR:7"}
+{"task": "dev", "instruction": "Tài khoản sai thì báo lỗi gì?", "output": "ERR:7"}
+{"task": "dev", "instruction": "Nhập sai username thì là mã lỗi nào?", "output": "ERR:7"}
+{"task": "dev", "instruction": "Đăng nhập sai thì hệ thống báo gì?", "output": "ERR:7"}
+{"task": "support", "instruction": "Hóa đơn điện tử là gì?", "output": "Là tập tin ghi nhận giao dịch."}
+{"task": "support", "instruction": "Hóa đơn giấy khác gì?", "output": "Không xử lý bằng điện tử."}
+{"task": "support", "instruction": "Khi nào lập hóa đơn?", "output": "Khi bán hàng hoặc dịch vụ."}
+{"task": "support", "instruction": "Ai được dùng hóa đơn điện tử?", "output": "Tổ chức đủ điều kiện."}
+{"task": "support", "instruction": "Lập hóa đơn xong làm gì?", "output": "Gửi người mua."}
+{"task": "support", "instruction": "Hóa đơn máy tính tiền là gì?", "output": "Lập qua máy tính tiền."}
+{"task": "support", "instruction": "Máy tính tiền dùng để làm gì?", "output": "Lập hóa đơn nhanh gọn."}
+{"task": "support", "instruction": "Đơn vị nào dùng máy tính tiền?", "output": "Hộ kinh doanh nhỏ lẻ."}
+{"task": "support", "instruction": "Lập hóa đơn bằng máy tính tiền có hợp lệ?", "output": "Có, nếu kết nối thuế."}
+{"task": "support", "instruction": "Máy tính tiền có cần chữ ký?", "output": "Không, xác thực qua mã."}
+{"task": "support", "instruction": "Hóa đơn GTGT là gì?", "output": "Hóa đơn có dòng thuế GTGT."}
+{"task": "support", "instruction": "Hóa đơn bán hàng là gì?", "output": "Không có dòng thuế GTGT."}
+{"task": "support", "instruction": "Hóa đơn xuất khẩu dùng khi nào?", "output": "Bán hàng ra nước ngoài."}
+{"task": "support", "instruction": "Tem, vé có là hóa đơn không?", "output": "Là hóa đơn khác."}
+{"task": "support", "instruction": "Có bao nhiêu loại hóa đơn?", "output": "GTGT, bán hàng, xuất khẩu..."}
+{"task": "support", "instruction": "Mẫu hóa đơn gồm gì?", "output": "Tên, ký hiệu, số thứ tự."}
+{"task": "support", "instruction": "Nội dung hóa đơn cần gì?", "output": "Tên hàng, giá, thuế, chữ ký."}
+{"task": "support", "instruction": "Hóa đơn cần chữ ký gì?", "output": "Chữ ký điện tử người bán."}
+{"task": "support", "instruction": "Cách gửi hóa đơn điện tử?", "output": "Trực tiếp hoặc qua trung gian."}
+{"task": "support", "instruction": "Điều kiện dùng hóa đơn điện tử?", "output": "Có chữ ký và hạ tầng."}
+{"task": "support", "instruction": "Hóa đơn điện tử sai thì sao?", "output": "Lập điều chỉnh hoặc thay thế."}
+{"task": "support", "instruction": "Thay thế hóa đơn khi nào?", "output": "Khi chưa kê khai thuế."}
+{"task": "support", "instruction": "Điều chỉnh hóa đơn là gì?", "output": "Sửa lỗi hóa đơn đã lập."}
+{"task": "support", "instruction": "Điều chỉnh và thay khác gì?", "output": "Thay là hủy và lập lại."}
+{"task": "support", "instruction": "Hóa đơn điện tử hủy được không?", "output": "Có, nếu chưa kê khai."}
+{"task": "support", "instruction": "Chuyển đổi hóa đơn là gì?", "output": "In từ hóa đơn điện tử."}
+{"task": "support", "instruction": "Chuyển đổi mấy lần?", "output": "Chỉ 1 lần duy nhất."}
+{"task": "support", "instruction": "Chuyển đổi cần ký không?", "output": "Cần chữ ký người chuyển."}
+{"task": "support", "instruction": "Hóa đơn chuyển đổi dùng làm gì?", "output": "Chứng minh nguồn gốc hàng."}
+{"task": "support", "instruction": "Hóa đơn chuyển đổi hợp lệ không?", "output": "Không dùng để kê khai thuế."}
+{"task": "support", "instruction": "Lỗi lập hóa đơn xử lý sao?", "output": "Lập điều chỉnh hoặc thay thế."}
+{"task": "support", "instruction": "Không đủ thông tin hóa đơn thì sao?", "output": "Không hợp lệ."}
+{"task": "support", "instruction": "Hóa đơn bị trùng xử lý thế nào?", "output": "Hủy và lập lại."}
+{"task": "support", "instruction": "Hóa đơn đã ký sai gì?", "output": "Không sửa được, phải điều chỉnh."}
+{"task": "support", "instruction": "Không gửi được hóa đơn thì sao?", "output": "Kiểm tra kết nối hệ thống."}
+{"task": "support", "instruction": "Lưu hóa đơn điện tử như thế nào?", "output": "Lưu trên máy chủ hoặc USB."}
+{"task": "support", "instruction": "Thời gian lưu hóa đơn?", "output": "5 năm hoặc theo Luật Kế toán."}
+{"task": "support", "instruction": "Bị mất hóa đơn thì sao?", "output": "Xin lại từ bên bán."}
+{"task": "support", "instruction": "Người mua có cần ký hóa đơn?", "output": "Không bắt buộc."}
+{"task": "support", "instruction": "Cơ quan nào quản lý hóa đơn?", "output": "Cơ quan thuế các cấp."}
+{"task": "support", "instruction": "Thông tư 32 nói gì?", "output": "Quy định hóa đơn điện tử."}
+{"task": "support", "instruction": "Thông tư 78 là gì?", "output": "Cập nhật mới về hóa đơn."}
+{"task": "support", "instruction": "Nghị định 70 có nội dung gì?", "output": "Hướng dẫn sửa đổi hóa đơn."}
+{"task": "support", "instruction": "Chưa có kết nối thuế thì sao?", "output": "Không dùng hóa đơn điện tử được."}
+{"task": "support", "instruction": "Hóa đơn có cần định dạng không?", "output": "Có, phải theo chuẩn gửi nhận."}
+{"task": "support", "instruction": "Hóa đơn phải có mã gì?", "output": "Mã định danh của cơ quan thuế."}
+{"task": "support", "instruction": "Hóa đơn không có thuế suất thì sao?", "output": "Không phải hóa đơn GTGT."}
+{"task": "support", "instruction": "Sử dụng sai mẫu hóa đơn?", "output": "Phải điều chỉnh lại."}
+{"task": "support", "instruction": "Gửi hóa đơn trễ có sao không?", "output": "Có thể bị xử phạt hành chính."}
+{"task": "support", "instruction": "Hóa đơn điện tử dùng khi nào?", "output": "Khi bán hàng hoặc dịch vụ."}

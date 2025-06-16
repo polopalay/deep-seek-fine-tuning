@@ -25,8 +25,8 @@ def extract_single_task_adapter(
     print(f"\nExtracting adapter for task: {task_name}")
 
     lora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
+        r=4,
+        lora_alpha=8,
         lora_dropout=0.05,
         bias="none",
         task_type="CAUSAL_LM",
@@ -248,12 +248,12 @@ def apply_cola_orthogonal_lora(
     if target_modules is None:
         target_modules = [
             "q_proj",
-            # "k_proj",
+            "k_proj",
             "v_proj",
-            # "o_proj",
-            # "gate_proj",
-            # "up_proj",
-            # "down_proj",
+            "o_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj",
         ]
 
     modified_modules = []
@@ -454,6 +454,9 @@ def train_cola_olora(
     )
 
     trainer.train()
+    for name, module in model.named_modules():
+        if isinstance(module, CoLAOrthogonalLoRALinear):
+            module.orthogonalize_weights()
 
     return model, tokenizer
 
@@ -468,11 +471,11 @@ def train_cola_round(
     jsonl_path: str,
     max_seq_len: int = 16,
     batch_size: int = 8,
-    epochs: int = 15,
+    epochs: int = 10,
     lr: float = 3e-4,
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
-    orthogonalize_freq: int = 500,
+    orthogonalize_freq: int = 20,
     device: str = "mps",
 ):
     print(f"\nTraining task: {task} (rank={rank}) from base: {base_model_path}")
@@ -543,12 +546,12 @@ def run_cola_chain(
             task_name=task,
             target_modules=[
                 "q_proj",
-                # "k_proj",
+                "k_proj",
                 "v_proj",
-                # "o_proj",
-                # "gate_proj",
-                # "up_proj",
-                # "down_proj",
+                "o_proj",
+                "gate_proj",
+                "up_proj",
+                "down_proj",
             ],
             save_path=adapter_path,
             base_model_name=base_model_path,
@@ -574,7 +577,7 @@ if __name__ == "__main__":
     # Run the entire CoLA training chain
     run_cola_chain(
         train_cola_olora_fn=train_cola_olora,
-        jsonl_path="./data/data.jsonl",
+        jsonl_path="./data/data_100.jsonl",
         # jsonl_path="./data/colora_1k_64token.jsonl",
         cola_steps=[
             {
