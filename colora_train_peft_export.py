@@ -247,12 +247,12 @@ def apply_cola_orthogonal_lora(
     if target_modules is None:
         target_modules = [
             "q_proj",
-            "k_proj",
+            # "k_proj",
             "v_proj",
-            "o_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
+            # "o_proj",
+            # "gate_proj",
+            # "up_proj",
+            # "down_proj",
         ]
 
     modified_modules = []
@@ -433,7 +433,7 @@ def train_cola_olora(
         save_strategy="no",
         remove_unused_columns=False,
         dataloader_pin_memory=False,
-        max_steps=100,
+        # max_steps=60,
     )
 
     trainer = CoLAOLoRATrainer(
@@ -460,13 +460,13 @@ def train_cola_round(
     base_model_path: str,
     output_dir: str,
     jsonl_path: str,
-    max_seq_len: int = 32,
+    max_seq_len: int = 16,
     batch_size: int = 4,
-    epochs: int = 1,
+    epochs: int = 15,
     lr: float = 3e-4,
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
-    orthogonalize_freq: int = 100,
+    orthogonalize_freq: int = 200,
     device: str = "cpu",
 ):
     print(f"\nTraining task: {task} (rank={rank}) from base: {base_model_path}")
@@ -537,12 +537,12 @@ def run_cola_chain(
             task_name=task,
             target_modules=[
                 "q_proj",
-                "k_proj",
+                # "k_proj",
                 "v_proj",
-                "o_proj",
-                "gate_proj",
-                "up_proj",
-                "down_proj",
+                # "o_proj",
+                # "gate_proj",
+                # "up_proj",
+                # "down_proj",
             ],
             save_path=adapter_path,
             base_model_name=base_model_path,

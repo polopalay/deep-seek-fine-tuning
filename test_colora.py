@@ -16,25 +16,16 @@ def load_model(model_path: str, device: str = "cpu"):
 def test_model_response(model, tokenizer, prompts, device, max_new_tokens: int = 64):
     for prompt in prompts:
         input_text = prompt["instruction"]
-        task_id = prompt.get("task_id", None)
 
         full_input = f"{input_text}\n"
         inputs = tokenizer(full_input, return_tensors="pt").to(device)
 
         with torch.no_grad():
-            if task_id and "task_id" in model.forward.__code__.co_varnames:
-                output = model.generate(
-                    input_ids=inputs["input_ids"],
-                    attention_mask=inputs.get("attention_mask", None),
-                    max_new_tokens=max_new_tokens,
-                    task_id=task_id,
-                )
-            else:
-                output = model.generate(
-                    input_ids=inputs["input_ids"],
-                    attention_mask=inputs.get("attention_mask", None),
-                    max_new_tokens=max_new_tokens,
-                )
+            output = model.generate(
+                input_ids=inputs["input_ids"],
+                attention_mask=inputs.get("attention_mask", None),
+                max_new_tokens=max_new_tokens,
+            )
 
         decoded = tokenizer.decode(output[0], skip_special_tokens=True)
         response = decoded[len(full_input) :].strip()
@@ -47,10 +38,9 @@ if __name__ == "__main__":
     model, tokenizer = load_model(MODEL_PATH, DEVICE)
 
     test_prompts = [
-        {"instruction": "Làm sao để cấu hình HTTPS cho máy chủ?", "task_id": "dev"},
-        {"instruction": "Cần hỗ trợ ký số hóa đơn như thế nào?", "task_id": "support"},
-        {"instruction": "Cách xử lý lỗi khi server trả về 500?", "task_id": "dev"},
-        {"instruction": "Làm sao tôi liên hệ bộ phận kỹ thuật?", "task_id": "support"},
+        {"instruction": "ERR:1", "task_id": "dev"},
+        {"instruction": "Làm sao để hủy hóa đơn?", "task_id": "support"},
+        {"instruction": "1+1=", "task_id": "support"},
     ]
 
     test_model_response(model, tokenizer, test_prompts, DEVICE)
