@@ -89,21 +89,35 @@ class COLoRALinear(nn.Module):
 
     def orthogonalize_weights(self):
         with torch.no_grad():
-            Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
-            self.shared_lora_A.data = Q.T[: self.r].to(self.shared_lora_A.device)
+            if True:
+                self.shared_lora_A.data = F.normalize(
+                    self.shared_lora_A.data, p=2, dim=1
+                )
+                self.shared_lora_B.data = F.normalize(
+                    self.shared_lora_B.data, p=2, dim=0
+                )
 
-            Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
-            self.shared_lora_B.data = Q[:, : self.r].to(self.shared_lora_B.device)
+                for task in self.task_names:
+                    A = self.task_experts[task].lora_A
+                    B = self.task_experts[task].lora_B
+                    A.data = F.normalize(A.data, p=2, dim=1)
+                    B.data = F.normalize(B.data, p=2, dim=0)
+            else:
+                Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
+                self.shared_lora_A.copy_(Q.T[: self.r].to(self.shared_lora_A.device))
 
-            for task in self.task_names:
-                A = self.task_experts[task].lora_A
-                B = self.task_experts[task].lora_B
+                Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
+                self.shared_lora_B.copy_(Q[:, : self.r].to(self.shared_lora_B.device))
 
-                Q, _ = torch.linalg.qr(A.detach().cpu().T)
-                self.task_experts[task].lora_A.data = Q.T[: self.r].to(A.device)
+                for task in self.task_names:
+                    A = self.task_experts[task].lora_A
+                    B = self.task_experts[task].lora_B
 
-                Q, _ = torch.linalg.qr(B.detach().cpu())
-                self.task_experts[task].lora_B.data = Q[:, : self.r].to(B.device)
+                    Q, _ = torch.linalg.qr(A.detach().cpu().T)
+                    A.copy_(Q.T[: self.r].to(A.device))
+
+                    Q, _ = torch.linalg.qr(B.detach().cpu())
+                    B.copy_(Q[:, : self.r].to(B.device))
 
     def forward(self, x: torch.Tensor, task_id: Optional[str] = None) -> torch.Tensor:
         base_out = self.base_layer(x)
@@ -443,6 +457,7 @@ def train_colora(
         remove_unused_columns=False,
         dataloader_pin_memory=False,
         max_grad_norm=1.0,
+        # max_steps=1,
     )
 
     # Data collator
@@ -613,12 +628,18 @@ def run_cola_chain(
             orthogonalize_freq=orthogonalize_freq,
             device=device,
         )
+        convert_to_peft_adapter(
+            trained_model=model,
+            task_name=f"task_{adapter_name}",
+            base_model_path=current_model_path,
+            save_path=f"{output_root}/{adapter_name}_peft",
+        )
 
         # Merge adapter vào backbone → tie-a-knot
         merged_path = f"{output_root}/{adapter_name}_merged"
         merge_peft_adapter(
             base_model_path=current_model_path,
-            adapter_path=f"{output_root}/{adapter_name}",
+            adapter_path=f"{output_root}/{adapter_name}_peft",
             save_path=merged_path,
         )
 
@@ -639,11 +660,11 @@ if __name__ == "__main__":
         adapter_prefix="dev_support_colora",
         chain_length=3,
         max_seq_len=16,
-        batch_size=16,
-        epochs=10,
-        lr=3e-5,
+        batch_size=4,
+        epochs=5,
+        lr=1e-5,
         lambda_orth=0.01,
         lambda_collab=0.001,
-        orthogonalize_freq=10,
+        orthogonalize_freq=3,
         device="mps",
     )
