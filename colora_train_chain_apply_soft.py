@@ -87,38 +87,6 @@ class COLoRALinear(nn.Module):
             nn.Dropout(p=lora_dropout) if lora_dropout > 0 else nn.Identity()
         )
 
-    def orthogonalize_weights(self):
-        with torch.no_grad():
-            if True:
-                self.shared_lora_A.data = F.normalize(
-                    self.shared_lora_A.data, p=2, dim=1
-                )
-                self.shared_lora_B.data = F.normalize(
-                    self.shared_lora_B.data, p=2, dim=0
-                )
-
-                for task in self.task_names:
-                    A = self.task_experts[task].lora_A
-                    B = self.task_experts[task].lora_B
-                    A.data = F.normalize(A.data, p=2, dim=1)
-                    B.data = F.normalize(B.data, p=2, dim=0)
-            else:
-                Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
-                self.shared_lora_A.copy_(Q.T[: self.r].to(self.shared_lora_A.device))
-
-                Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
-                self.shared_lora_B.copy_(Q[:, : self.r].to(self.shared_lora_B.device))
-
-                for task in self.task_names:
-                    A = self.task_experts[task].lora_A
-                    B = self.task_experts[task].lora_B
-
-                    Q, _ = torch.linalg.qr(A.detach().cpu().T)
-                    A.copy_(Q.T[: self.r].to(A.device))
-
-                    Q, _ = torch.linalg.qr(B.detach().cpu())
-                    B.copy_(Q[:, : self.r].to(B.device))
-
     def forward(self, x: torch.Tensor, task_id: Optional[str] = None) -> torch.Tensor:
         base_out = self.base_layer(x)
 
@@ -277,14 +245,12 @@ class CoLAOLoRATrainer(Trainer):
         self,
         lambda_orth: float = 0.01,
         lambda_collab: float = 0.001,
-        orthogonalize_freq: int = 100,
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
         self.lambda_orth = lambda_orth
         self.lambda_collab = lambda_collab
-        self.orthogonalize_freq = orthogonalize_freq
         self.loss_fn = CoLAOrthogonalityLoss(lambda_orth, lambda_collab)
         self.step_count = 0
 
@@ -325,20 +291,7 @@ class CoLAOLoRATrainer(Trainer):
         return (total_loss, outputs) if return_outputs else total_loss
 
     def training_step(self, model, inputs, num_items):
-        loss = super().training_step(model, inputs, num_items)
-        self.step_count += 1
-        if self.step_count % self.orthogonalize_freq == 0:
-            self._orthogonalize_model_weights(model)
-        return loss
-
-    def _orthogonalize_model_weights(self, model):
-        count = 0
-        for name, module in model.named_modules():
-            if isinstance(module, COLoRALinear):
-                module.orthogonalize_weights()
-                count += 1
-        if count > 0:
-            print(f"Orthogonalized {count} COLoRA modules")
+        return super().training_step(model, inputs, num_items)
 
 
 def train_colora(
@@ -353,7 +306,6 @@ def train_colora(
     lr: float = 5e-5,
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
-    orthogonalize_freq: int = 100,
     device: str = "mps",
 ):
     """
@@ -472,7 +424,6 @@ def train_colora(
         data_collator=data_collator,
         lambda_orth=lambda_orth,
         lambda_collab=lambda_collab,
-        orthogonalize_freq=orthogonalize_freq,
     )
 
     # Train
@@ -600,12 +551,11 @@ def run_cola_chain(
     lr: float = 5e-4,
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
-    orthogonalize_freq: int = 100,
     device: str = "mps",
 ):
     # Khởi tạo mô hình ban đầu
     current_model_path = base_model_path
-    base_r = 8
+    r = 8
 
     for round_id in range(1, chain_length + 1):
         print(f"\nStarting COLA round {round_id}/{chain_length}")
@@ -625,7 +575,6 @@ def run_cola_chain(
             lr=lr,
             lambda_orth=lambda_orth,
             lambda_collab=lambda_collab,
-            orthogonalize_freq=orthogonalize_freq,
             device=device,
         )
         convert_to_peft_adapter(
@@ -645,7 +594,7 @@ def run_cola_chain(
 
         # Update path để dùng cho vòng sau
         current_model_path = merged_path
-        base_r = max(2, base_r // 2)
+        r = max(2, r // 2)
 
     print(
         f"\n✅ Done chaining {chain_length} COLA rounds. Final model at: {current_model_path}"
@@ -658,13 +607,12 @@ if __name__ == "__main__":
         data_path="./data/data_100.jsonl",
         base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         adapter_prefix="dev_support_colora",
-        chain_length=3,
+        chain_length=2,
         max_seq_len=16,
-        batch_size=4,
+        batch_size=8,
         epochs=5,
         lr=1e-5,
         lambda_orth=0.01,
         lambda_collab=0.001,
-        orthogonalize_freq=10,
         device="mps",
     )
