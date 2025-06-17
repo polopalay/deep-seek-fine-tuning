@@ -17,6 +17,7 @@ import numpy as np
 import os
 
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 
 
 class LoRAExpert(nn.Module):
@@ -46,7 +47,7 @@ class COLORADataCollator:
         return batch
 
 
-class CoLAOrthogonalLoRALinear(nn.Module):
+class COLoRALinear(nn.Module):
     def __init__(
         self,
         base_layer: nn.Linear,
@@ -76,7 +77,10 @@ class CoLAOrthogonalLoRALinear(nn.Module):
         self.shared_lora_B = nn.Parameter(torch.zeros(base_layer.out_features, r))
         nn.init.orthogonal_(self.shared_lora_A)
 
-        self.task_router = nn.Linear(base_layer.in_features, len(task_names))
+        self.task_embeddings = nn.Parameter(
+            torch.randn(len(task_names), base_layer.in_features) * 0.01
+        )
+        nn.init.orthogonal_(self.task_embeddings)
         self.collaboration_weight = nn.Parameter(torch.tensor(0.5))
         self.lora_dropout = (
             nn.Dropout(p=lora_dropout) if lora_dropout > 0 else nn.Identity()
@@ -115,10 +119,11 @@ class CoLAOrthogonalLoRALinear(nn.Module):
             task_out = self.lora_dropout(task_out)
             task_out = task_out @ task_B.T
             task_out *= self.scaling
-            collab_weight = torch.sigmoid(self.collaboration_weight)
-            lora_out = collab_weight * shared_out + (1 - collab_weight) * task_out
         else:
-            routing_scores = F.softmax(self.task_router(x.mean(dim=-2)), dim=-1)
+            x_mean = x.mean(dim=1) if x.dim() == 3 else x
+            attn_scores = torch.matmul(x_mean, self.task_embeddings.T)
+            routing_scores = F.softmax(attn_scores, dim=-1)
+
             task_out = 0
             for i, task in enumerate(self.task_names):
                 task_A = self.task_experts[task].lora_A
@@ -128,8 +133,8 @@ class CoLAOrthogonalLoRALinear(nn.Module):
                 expert_out = expert_out @ task_B.T
                 expert_out *= self.scaling
                 task_out += routing_scores[:, i : i + 1, None] * expert_out
-            collab_weight = torch.sigmoid(self.collaboration_weight)
-            lora_out = collab_weight * shared_out + (1 - collab_weight) * task_out
+        collab_weight = torch.sigmoid(self.collaboration_weight)
+        lora_out = collab_weight * shared_out + (1 - collab_weight) * task_out
 
         return base_out + lora_out
 
@@ -150,7 +155,7 @@ class CoLAOrthogonalityLoss(nn.Module):
         count = 0
 
         for name, module in model.named_modules():
-            if isinstance(module, CoLAOrthogonalLoRALinear):
+            if isinstance(module, COLoRALinear):
                 # Orthogonality loss for shared LoRA
                 A_shared = module.shared_lora_A
                 A_gram = torch.matmul(A_shared, A_shared.T)
@@ -230,9 +235,7 @@ def apply_cola_orthogonal_lora(
             setattr(
                 parent,
                 name,
-                CoLAOrthogonalLoRALinear(
-                    module, task_names, r, lora_alpha, lora_dropout
-                ),
+                COLoRALinear(module, task_names, r, lora_alpha, lora_dropout),
             )
             modified_modules.append(f"{parent.__class__.__name__}.{name}")
             return True
@@ -245,9 +248,7 @@ def apply_cola_orthogonal_lora(
                 apply_recursive(child, full_name)
 
     apply_recursive(model)
-    print(
-        f"Applied CoLA + O-LoRA to {len(modified_modules)} modules for tasks: {task_names}"
-    )
+    print(f"Applied COLoRA to {len(modified_modules)} modules for tasks: {task_names}")
 
     return model
 
@@ -279,11 +280,8 @@ class CoLAOLoRATrainer(Trainer):
 
         # Forward pass
         if task_id is not None:
-
-            def forward_with_task(input_ids, attention_mask=None, **kwargs):
-                return model.forward(input_ids, attention_mask=attention_mask, **kwargs)
-
-            outputs = forward_with_task(**inputs)
+            inputs["task_id"] = task_id
+            outputs = model(**inputs)
         else:
             outputs = model(**inputs)
 
@@ -297,7 +295,7 @@ class CoLAOLoRATrainer(Trainer):
                 raise ValueError(
                     "Labels not found in inputs for manual loss computation."
                 )
-            loss_fct = nn.CrossEntropyLoss(ignore_index=tokenizer.pad_token_id)
+            loss_fct = nn.CrossEntropyLoss(ignore_index=self.tokenizer.pad_token_id)
             loss = loss_fct(logits.view(-1, logits.size(-1)), labels.view(-1))
 
         # CoLA + O-LoRA regularization
@@ -306,7 +304,7 @@ class CoLAOLoRATrainer(Trainer):
 
         if self.state.global_step % 50 == 0:
             print(
-                f"Step {self.state.global_step}: LM Loss: {loss:.4f}, CoLA+O-LoRA Loss: {additional_loss:.4f}"
+                f"{self.state.global_step}: LM Loss: {loss:.4f}, CLoRA Loss: {additional_loss:.4f}"
             )
 
         return (total_loss, outputs) if return_outputs else total_loss
@@ -321,14 +319,14 @@ class CoLAOLoRATrainer(Trainer):
     def _orthogonalize_model_weights(self, model):
         count = 0
         for name, module in model.named_modules():
-            if isinstance(module, CoLAOrthogonalLoRALinear):
+            if isinstance(module, COLoRALinear):
                 module.orthogonalize_weights()
                 count += 1
         if count > 0:
-            print(f"🔄 Orthogonalized {count} CoLA+O-LoRA modules")
+            print(f"Orthogonalized {count} COLoRA modules")
 
 
-def train_cola_olora(
+def train_colora(
     jsonl_path: str,
     adapter_name: str,
     base_model: str = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
@@ -340,7 +338,7 @@ def train_cola_olora(
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
     orthogonalize_freq: int = 100,
-    device: str = "cpu",
+    device: str = "mps",
 ):
     """
     Train model với CoLA + O-LoRA
@@ -355,20 +353,16 @@ def train_cola_olora(
 
     # Tự động phát hiện task names
     task_names = list(set(item.get("task", "default") for item in raw_data))
-    print(f"Detected tasks: {task_names}")
 
     def format_instruction(sample):
-        task = sample.get("task", "default")
-        task_prompt = f"[{task.upper()}] "
-        prompt = f"### Câu hỏi:\n{task_prompt}{sample['instruction']}\n\n### Trả lời:"
-        return {"text": f"{prompt} {sample['output']}<|endoftext|>", "task_id": task}
+        return {
+            "text": f"{sample['instruction']}\n{sample['output']}",
+            "task_id": sample.get("task", "default"),
+        }
 
     print("Loading and formatting data...")
     formatted_data = [format_instruction(d) for d in raw_data]
     dataset = Dataset.from_list(formatted_data)
-
-    print(f"Dataset size: {len(dataset)} examples")
-    print(f"Sample: {formatted_data[0]['text'][:200]}...")
 
     # Load model
     print("Loading model and tokenizer...")
@@ -381,7 +375,7 @@ def train_cola_olora(
         trust_remote_code=True,
         torch_dtype=torch.float32,
     )
-    model = prepare_model_for_kbit_training(model)
+    # model = prepare_model_for_kbit_training(model)
     model = model.to(device)
 
     # Apply CoLA + O-LoRA
@@ -464,12 +458,12 @@ def train_cola_olora(
     trainer.train()
 
     # Save adapter
-    def save_cola_olora_adapter(model, save_path, task_names):
+    def save_colora_adapter(model, save_path, task_names):
         os.makedirs(save_path, exist_ok=True)
 
         lora_state_dict = {}
         for name, module in model.named_modules():
-            if isinstance(module, CoLAOrthogonalLoRALinear):
+            if isinstance(module, COLoRALinear):
                 # Save shared LoRA
                 lora_state_dict[f"{name}.shared_lora_A"] = module.shared_lora_A.data
                 lora_state_dict[f"{name}.shared_lora_B"] = module.shared_lora_B.data
@@ -486,12 +480,6 @@ def train_cola_olora(
                 # Save collaboration weight and router
                 lora_state_dict[f"{name}.collaboration_weight"] = (
                     module.collaboration_weight.data
-                )
-                lora_state_dict[f"{name}.task_router.weight"] = (
-                    module.task_router.weight.data
-                )
-                lora_state_dict[f"{name}.task_router.bias"] = (
-                    module.task_router.bias.data
                 )
 
         torch.save(lora_state_dict, f"{save_path}/cola_olora_weights.pt")
@@ -515,25 +503,23 @@ def train_cola_olora(
         with open(f"{save_path}/cola_olora_config.json", "w") as f:
             json.dump(config, f, indent=2)
 
-    save_cola_olora_adapter(model, f"{output_dir}/{adapter_name}", task_names)
+    save_colora_adapter(model, f"{output_dir}/{adapter_name}", task_names)
     tokenizer.save_pretrained(f"{output_dir}/{adapter_name}")
 
-    print(
-        f"CoLA + O-LoRA adapter '{adapter_name}' saved to {output_dir}/{adapter_name}"
-    )
+    print(f"COLoRA adapter '{adapter_name}' saved to {output_dir}/{adapter_name}")
 
     return model, tokenizer
 
 
 if __name__ == "__main__":
-    model, tokenizer = train_cola_olora(
-        jsonl_path="./data/colora_1k_64token.jsonl",
+    model, tokenizer = train_colora(
+        jsonl_path="./data/data_100.jsonl",
         adapter_name="dev_support_colora",
         lambda_orth=0.01,
         lambda_collab=0.001,
-        orthogonalize_freq=100,
-        epochs=2,
+        orthogonalize_freq=10,
+        epochs=5,
         lr=3e-4,
-        batch_size=2,
-        max_seq_len=64,
+        batch_size=8,
+        max_seq_len=32,
     )

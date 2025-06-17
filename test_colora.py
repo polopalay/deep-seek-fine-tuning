@@ -1,46 +1,89 @@
+import json
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-MODEL_PATH = "./colora_output/round_2/final_model"
-DEVICE = "cpu"
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from fine_tuning_using_colora_v2 import apply_cola_orthogonal_lora
 
 
-def load_model(model_path: str, device: str = "cpu"):
-    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-    model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
-    model.to(device)
+def test_cola_olora(
+    test_jsonl_path: str,
+    adapter_path: str,
+    base_model: str = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    max_seq_len: int = 256,
+    device: str = "mps",
+    num_samples: int = 5,
+):
+    import json
+    from transformers import AutoTokenizer, AutoModelForCausalLM
+
+    # Load tokenizer and base model
+    tokenizer = AutoTokenizer.from_pretrained(adapter_path, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(
+        base_model, trust_remote_code=True, torch_dtype=torch.float32
+    )
+    model = model.to(device)
+
+    # Load adapter weights
+    adapter_weights = torch.load(
+        f"{adapter_path}/cola_olora_weights.pt", map_location=device
+    )
+    config_path = f"{adapter_path}/cola_olora_config.json"
+    with open(config_path, "r") as f:
+        config = json.load(f)
+
+    # Apply CoLA + O-LoRA
+    model = apply_cola_orthogonal_lora(
+        model,
+        task_names=config["task_names"],
+        target_modules=config["target_modules"],
+        r=config["r"],
+        lora_alpha=config["lora_alpha"],
+        lora_dropout=config["lora_dropout"],
+    )
+    model = model.to(device)
+    model.load_state_dict(adapter_weights, strict=False)
     model.eval()
-    return model, tokenizer
 
+    # Load test samples
+    with open(test_jsonl_path, "r", encoding="utf-8") as f:
+        raw_data = [json.loads(line) for line in f]
 
-def test_model_response(model, tokenizer, prompts, device, max_new_tokens: int = 64):
-    for prompt in prompts:
-        input_text = prompt["instruction"]
+    samples = raw_data[:num_samples]
 
-        full_input = f"{input_text}\n"
-        inputs = tokenizer(full_input, return_tensors="pt").to(device)
+    for i, sample in enumerate(samples):
+        instruction = sample["instruction"]
+        task_id = sample.get("task", "default")
+        expected_output = sample.get("output", "")
+
+        prompt = f"{instruction}\n"
+        inputs = tokenizer(
+            prompt, return_tensors="pt", truncation=True, max_length=max_seq_len
+        )
+        inputs = {k: v.to(device) for k, v in inputs.items()}
 
         with torch.no_grad():
-            output = model.generate(
+            outputs = model.generate(
                 input_ids=inputs["input_ids"],
-                attention_mask=inputs.get("attention_mask", None),
-                max_new_tokens=max_new_tokens,
+                attention_mask=inputs["attention_mask"],
+                max_new_tokens=100,
+                do_sample=False,
+                num_beams=1,
+                pad_token_id=tokenizer.eos_token_id,
             )
+        generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        generated_output = (
+            generated_text[len(prompt) :].split("<|endoftext|>")[0].strip()
+        )
 
-        decoded = tokenizer.decode(output[0], skip_special_tokens=True)
-        response = decoded[len(full_input) :].strip()
-
-        print(f">>> Prompt: {input_text}")
-        print(f">>> Response: {response}")
+        print("=" * 50)
+        print(f"[Sample {i+1}] - Task ID: {task_id}")
+        print(f"Instruction:\n{instruction}")
+        print(f"Expected Output:\n{expected_output}")
+        print(f"Generated Output:\n{generated_output}")
 
 
 if __name__ == "__main__":
-    model, tokenizer = load_model(MODEL_PATH, DEVICE)
-
-    test_prompts = [
-        {"instruction": "ERR:1", "task_id": "dev"},
-        {"instruction": "Làm sao để hủy hóa đơn?", "task_id": "support"},
-        {"instruction": "1+1=", "task_id": "support"},
-    ]
-
-    test_model_response(model, tokenizer, test_prompts, DEVICE)
+    test_cola_olora(
+        test_jsonl_path="./data/test_data.jsonl",
+        adapter_path="./colora_output/dev_support_colora",
+        num_samples=5,
+    )
