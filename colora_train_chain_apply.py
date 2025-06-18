@@ -87,38 +87,6 @@ class COLoRALinear(nn.Module):
             nn.Dropout(p=lora_dropout) if lora_dropout > 0 else nn.Identity()
         )
 
-    def orthogonalize_weights(self):
-        with torch.no_grad():
-            if True:
-                self.shared_lora_A.data = F.normalize(
-                    self.shared_lora_A.data, p=2, dim=1
-                )
-                self.shared_lora_B.data = F.normalize(
-                    self.shared_lora_B.data, p=2, dim=0
-                )
-
-                for task in self.task_names:
-                    A = self.task_experts[task].lora_A
-                    B = self.task_experts[task].lora_B
-                    A.data = F.normalize(A.data, p=2, dim=1)
-                    B.data = F.normalize(B.data, p=2, dim=0)
-            else:
-                Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
-                self.shared_lora_A.copy_(Q.T[: self.r].to(self.shared_lora_A.device))
-
-                Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
-                self.shared_lora_B.copy_(Q[:, : self.r].to(self.shared_lora_B.device))
-
-                for task in self.task_names:
-                    A = self.task_experts[task].lora_A
-                    B = self.task_experts[task].lora_B
-
-                    Q, _ = torch.linalg.qr(A.detach().cpu().T)
-                    A.copy_(Q.T[: self.r].to(A.device))
-
-                    Q, _ = torch.linalg.qr(B.detach().cpu())
-                    B.copy_(Q[:, : self.r].to(B.device))
-
     def forward(self, x: torch.Tensor, task_id: Optional[str] = None) -> torch.Tensor:
         base_out = self.base_layer(x)
 
@@ -277,14 +245,12 @@ class CoLAOLoRATrainer(Trainer):
         self,
         lambda_orth: float = 0.01,
         lambda_collab: float = 0.001,
-        orthogonalize_freq: int = 100,
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
         self.lambda_orth = lambda_orth
         self.lambda_collab = lambda_collab
-        self.orthogonalize_freq = orthogonalize_freq
         self.loss_fn = CoLAOrthogonalityLoss(lambda_orth, lambda_collab)
         self.step_count = 0
 
@@ -325,20 +291,7 @@ class CoLAOLoRATrainer(Trainer):
         return (total_loss, outputs) if return_outputs else total_loss
 
     def training_step(self, model, inputs, num_items):
-        loss = super().training_step(model, inputs, num_items)
-        self.step_count += 1
-        if self.step_count % self.orthogonalize_freq == 0:
-            self._orthogonalize_model_weights(model)
-        return loss
-
-    def _orthogonalize_model_weights(self, model):
-        count = 0
-        for name, module in model.named_modules():
-            if isinstance(module, COLoRALinear):
-                module.orthogonalize_weights()
-                count += 1
-        if count > 0:
-            print(f"Orthogonalized {count} COLoRA modules")
+        return super().training_step(model, inputs, num_items)
 
 
 def train_colora(
@@ -353,7 +306,6 @@ def train_colora(
     lr: float = 5e-5,
     lambda_orth: float = 0.01,
     lambda_collab: float = 0.001,
-    orthogonalize_freq: int = 100,
     device: str = "mps",
 ):
     """
@@ -472,7 +424,6 @@ def train_colora(
         data_collator=data_collator,
         lambda_orth=lambda_orth,
         lambda_collab=lambda_collab,
-        orthogonalize_freq=orthogonalize_freq,
     )
 
     # Train
@@ -507,8 +458,8 @@ def train_colora(
 
         # Save config
         config = {
-            "r": 8,
-            "lora_alpha": 16,
+            "r": r,
+            "lora_alpha": alpha,
             "lora_dropout": 0.05,
             "task_names": task_names,
             "target_modules": [
@@ -532,139 +483,14 @@ def train_colora(
     return model, tokenizer
 
 
-def convert_to_peft_adapter(
-    trained_model, task_name: str, base_model_path: str, save_path: str
-):
-    print(f"Extracting PEFT adapter for task: {task_name}")
-
-    # Load lại mô hình gốc (chưa LoRA)
-    base_model = AutoModelForCausalLM.from_pretrained(
-        base_model_path, trust_remote_code=True
-    )
-
-    lora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
-        lora_dropout=0.05,
-        bias="none",
-        task_type="CAUSAL_LM",
-        target_modules=[
-            "q_proj",
-            "k_proj",
-            "v_proj",
-            "o_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
-        ],
-    )
-
-    # Khởi tạo PEFT model
-    peft_model = get_peft_model(base_model, lora_config)
-
-    # Copy A, B từ COLoRALinear → PEFT layer
-    for name, module in trained_model.named_modules():
-        if isinstance(module, COLoRALinear):
-            try:
-                peft_layer = dict(peft_model.named_modules())[name]
-            except KeyError:
-                continue
-            A = module.task_experts[task_name].lora_A
-            B = module.task_experts[task_name].lora_B
-            peft_layer.lora_A.default.weight.data.copy_(A)
-            peft_layer.lora_B.default.weight.data.copy_(B)
-
-    peft_model.save_pretrained(save_path)
-    print(f"Saved PEFT adapter at {save_path}")
-
-
-def merge_peft_adapter(base_model_path: str, adapter_path: str, save_path: str):
-    base = AutoModelForCausalLM.from_pretrained(base_model_path, trust_remote_code=True)
-    peft_model = PeftModel.from_pretrained(base, adapter_path)
-    merged = peft_model.merge_and_unload()
-    merged.save_pretrained(save_path)
-    tokenizer = AutoTokenizer.from_pretrained(base_model_path, trust_remote_code=True)
-    tokenizer.save_pretrained(save_path)
-    print(f"Merged adapter saved at {save_path}")
-
-
-def run_cola_chain(
-    data_path: str,
-    base_model_path: str,
-    output_root: str = "./colora_output",
-    adapter_prefix: str = "cola_adapter",
-    chain_length: int = 3,
-    max_seq_len: int = 16,
-    batch_size: int = 4,
-    epochs: int = 3,
-    lr: float = 5e-4,
-    lambda_orth: float = 0.01,
-    lambda_collab: float = 0.001,
-    orthogonalize_freq: int = 100,
-    device: str = "mps",
-):
-    # Khởi tạo mô hình ban đầu
-    current_model_path = base_model_path
-    base_r = 8
-
-    for round_id in range(1, chain_length + 1):
-        print(f"\nStarting COLA round {round_id}/{chain_length}")
-        adapter_name = f"{adapter_prefix}_round{round_id}"
-        output_dir = f"{output_root}/{adapter_name}"
-
-        # Fine-tune 1 vòng COLA
-        model, tokenizer = train_colora(
-            jsonl_path=data_path,
-            adapter_name=adapter_name,
-            base_model=current_model_path,
-            output_dir=output_root,
-            r=base_r,
-            max_seq_len=max_seq_len,
-            batch_size=batch_size,
-            epochs=epochs,
-            lr=lr,
-            lambda_orth=lambda_orth,
-            lambda_collab=lambda_collab,
-            orthogonalize_freq=orthogonalize_freq,
-            device=device,
-        )
-        convert_to_peft_adapter(
-            trained_model=model,
-            task_name=f"task_{adapter_name}",
-            base_model_path=current_model_path,
-            save_path=f"{output_root}/{adapter_name}_peft",
-        )
-
-        # Merge adapter vào backbone → tie-a-knot
-        merged_path = f"{output_root}/{adapter_name}_merged"
-        merge_peft_adapter(
-            base_model_path=current_model_path,
-            adapter_path=f"{output_root}/{adapter_name}_peft",
-            save_path=merged_path,
-        )
-
-        # Update path để dùng cho vòng sau
-        current_model_path = merged_path
-        base_r = max(2, base_r // 2)
-
-    print(
-        f"\n✅ Done chaining {chain_length} COLA rounds. Final model at: {current_model_path}"
-    )
-    return current_model_path, tokenizer
-
-
 if __name__ == "__main__":
-    final_model_path, tokenizer = run_cola_chain(
-        data_path="./data/data_100.jsonl",
-        base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        adapter_prefix="dev_support_colora",
-        chain_length=3,
-        max_seq_len=16,
-        batch_size=4,
-        epochs=5,
-        lr=1e-5,
+    model, tokenizer = train_colora(
+        jsonl_path="./data/data_100.jsonl",
+        adapter_name="qlcv_colora",
         lambda_orth=0.01,
         lambda_collab=0.001,
-        orthogonalize_freq=10,
-        device="mps",
+        epochs=10,
+        batch_size=16,
+        lr=1e-5,
+        max_seq_len=16,
     )

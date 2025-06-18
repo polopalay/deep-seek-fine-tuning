@@ -22,7 +22,7 @@ os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 
 
 class LoRAExpert(nn.Module):
-    def __init__(self, in_features, out_features, r, init_orthogonal=True):
+    def __init__(self, in_features, out_features, r, init_orthogonal=False):
         super().__init__()
         self.lora_A = nn.Parameter(torch.randn(r, in_features) * 0.01)
         self.lora_B = nn.Parameter(torch.zeros(out_features, r))
@@ -90,18 +90,15 @@ class COLoRALinear(nn.Module):
     def forward(self, x: torch.Tensor, task_id: Optional[str] = None) -> torch.Tensor:
         base_out = self.base_layer(x)
 
+        # Shared LoRA output
         shared_out = x @ self.shared_lora_A.T
         shared_out = self.lora_dropout(shared_out)
         shared_out = shared_out @ self.shared_lora_B.T
         shared_out *= self.scaling
 
+        # Task-specific output
         if task_id and task_id in self.task_experts:
-            task_A = self.task_experts[task_id].lora_A
-            task_B = self.task_experts[task_id].lora_B
-            task_out = x @ task_A.T
-            task_out = self.lora_dropout(task_out)
-            task_out = task_out @ task_B.T
-            task_out *= self.scaling
+            task_out = self.task_experts[task_id](x, self.lora_dropout, self.scaling)
         else:
             x_mean = x.mean(dim=1) if x.dim() == 3 else x
             attn_scores = torch.matmul(x_mean, self.task_embeddings.T)
@@ -109,13 +106,10 @@ class COLoRALinear(nn.Module):
 
             task_out = 0
             for i, task in enumerate(self.task_names):
-                task_A = self.task_experts[task].lora_A
-                task_B = self.task_experts[task].lora_B
-                expert_out = x @ task_A.T
-                expert_out = self.lora_dropout(expert_out)
-                expert_out = expert_out @ task_B.T
-                expert_out *= self.scaling
+                expert = self.task_experts[task]
+                expert_out = expert(x, self.lora_dropout, self.scaling)
                 task_out += routing_scores[:, i : i + 1, None] * expert_out
+
         collab_weight = torch.sigmoid(self.collaboration_weight)
         lora_out = collab_weight * shared_out + (1 - collab_weight) * task_out
 
@@ -139,7 +133,6 @@ class CoLAOrthogonalityLoss(nn.Module):
 
         for name, module in model.named_modules():
             if isinstance(module, COLoRALinear):
-                # Orthogonality loss for shared LoRA
                 A_shared = module.shared_lora_A
                 A_gram = torch.matmul(A_shared, A_shared.T)
                 I = torch.eye(
@@ -147,14 +140,6 @@ class CoLAOrthogonalityLoss(nn.Module):
                 )
                 orth_loss += torch.norm(A_gram - I, p="fro") ** 2
 
-                B_shared = module.shared_lora_B
-                B_gram = torch.matmul(B_shared.T, B_shared)
-                I = torch.eye(
-                    B_shared.size(1), device=B_shared.device, dtype=B_shared.dtype
-                )
-                orth_loss += torch.norm(B_gram - I, p="fro") ** 2
-
-                # Orthogonality loss for task-specific LoRAs
                 for task in module.task_names:
                     A_task = module.task_experts[task].lora_A
                     A_gram = torch.matmul(A_task, A_task.T)
@@ -163,20 +148,10 @@ class CoLAOrthogonalityLoss(nn.Module):
                     )
                     orth_loss += torch.norm(A_gram - I, p="fro") ** 2
 
-                    B_task = module.task_experts[task].lora_B
-                    B_gram = torch.matmul(B_task.T, B_task)
-                    I = torch.eye(
-                        B_task.size(1), device=B_task.device, dtype=B_task.dtype
-                    )
-                    orth_loss += torch.norm(B_gram - I, p="fro") ** 2
-
-                # Collaboration loss - encourage diversity between task experts
                 for i, task1 in enumerate(module.task_names):
                     for j, task2 in enumerate(module.task_names[i + 1 :], i + 1):
                         A1 = module.task_experts[task1].lora_A
                         A2 = module.task_experts[task2].lora_A
-
-                        # Encourage orthogonality between different task experts
                         similarity = torch.norm(torch.matmul(A1, A2.T), p="fro") ** 2
                         collab_loss += similarity
 
@@ -285,7 +260,7 @@ class CoLAOLoRATrainer(Trainer):
 
         if self.state.global_step % 1 == 0:
             print(
-                f"{self.state.global_step}: LM Loss: {loss:.4f}, CLoRA Loss: {additional_loss:.4f}"
+                f"{self.state.global_step}: LM Loss: {loss:.4f}, CLoRA Loss: {additional_loss:.6f}"
             )
 
         return (total_loss, outputs) if return_outputs else total_loss
@@ -397,7 +372,7 @@ def train_colora(
         num_train_epochs=epochs,
         per_device_train_batch_size=batch_size,
         gradient_accumulation_steps=2,
-        warmup_steps=100,
+        warmup_steps=10,
         logging_steps=20,
         save_steps=500,
         save_total_limit=2,
@@ -484,7 +459,12 @@ def train_colora(
 
 
 def convert_to_peft_adapter(
-    trained_model, task_name: str, base_model_path: str, save_path: str
+    trained_model,
+    task_name: str,
+    base_model_path: str,
+    save_path: str,
+    r: int = 8,
+    alpha: int = 16,
 ):
     print(f"Extracting PEFT adapter for task: {task_name}")
 
@@ -494,8 +474,8 @@ def convert_to_peft_adapter(
     )
 
     lora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
+        r=r,
+        lora_alpha=alpha,
         lora_dropout=0.05,
         bias="none",
         task_type="CAUSAL_LM",
@@ -555,7 +535,8 @@ def run_cola_chain(
 ):
     # Khởi tạo mô hình ban đầu
     current_model_path = base_model_path
-    r = 8
+    r = 16
+    alpha = r * 2
 
     for round_id in range(1, chain_length + 1):
         print(f"\nStarting COLA round {round_id}/{chain_length}")
@@ -582,6 +563,8 @@ def run_cola_chain(
             task_name=f"task_{adapter_name}",
             base_model_path=current_model_path,
             save_path=f"{output_root}/{adapter_name}_peft",
+            r=r,
+            alpha=alpha,
         )
 
         # Merge adapter vào backbone → tie-a-knot
@@ -609,8 +592,8 @@ if __name__ == "__main__":
         adapter_prefix="dev_support_colora",
         chain_length=2,
         max_seq_len=16,
-        batch_size=8,
-        epochs=5,
+        batch_size=4,
+        epochs=20,
         lr=1e-5,
         lambda_orth=0.01,
         lambda_collab=0.001,

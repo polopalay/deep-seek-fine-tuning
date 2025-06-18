@@ -12,7 +12,7 @@ from transformers import (
     Trainer,
     DataCollatorForLanguageModeling,
 )
-from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model, PeftModel
+from peft import prepare_model_for_kbit_training
 import numpy as np
 import os
 
@@ -21,7 +21,7 @@ os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 
 
 class LoRAExpert(nn.Module):
-    def __init__(self, in_features, out_features, r, init_orthogonal=True):
+    def __init__(self, in_features, out_features, r, init_orthogonal=False):
         super().__init__()
         self.lora_A = nn.Parameter(torch.randn(r, in_features) * 0.01)
         self.lora_B = nn.Parameter(torch.zeros(out_features, r))
@@ -88,21 +88,35 @@ class COLoRALinear(nn.Module):
 
     def orthogonalize_weights(self):
         with torch.no_grad():
-            Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
-            self.shared_lora_A.data = Q.T[: self.r].to(self.shared_lora_A.device)
+            if True:
+                self.shared_lora_A.data = F.normalize(
+                    self.shared_lora_A.data, p=2, dim=1
+                )
+                self.shared_lora_B.data = F.normalize(
+                    self.shared_lora_B.data, p=2, dim=0
+                )
 
-            Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
-            self.shared_lora_B.data = Q[:, : self.r].to(self.shared_lora_B.device)
+                for task in self.task_names:
+                    A = self.task_experts[task].lora_A
+                    B = self.task_experts[task].lora_B
+                    A.data = F.normalize(A.data, p=2, dim=1)
+                    B.data = F.normalize(B.data, p=2, dim=0)
+            else:
+                Q, _ = torch.linalg.qr(self.shared_lora_A.detach().cpu().T)
+                self.shared_lora_A.copy_(Q.T[: self.r].to(self.shared_lora_A.device))
 
-            for task in self.task_names:
-                A = self.task_experts[task].lora_A
-                B = self.task_experts[task].lora_B
+                Q, _ = torch.linalg.qr(self.shared_lora_B.detach().cpu())
+                self.shared_lora_B.copy_(Q[:, : self.r].to(self.shared_lora_B.device))
 
-                Q, _ = torch.linalg.qr(A.detach().cpu().T)
-                self.task_experts[task].lora_A.data = Q.T[: self.r].to(A.device)
+                for task in self.task_names:
+                    A = self.task_experts[task].lora_A
+                    B = self.task_experts[task].lora_B
 
-                Q, _ = torch.linalg.qr(B.detach().cpu())
-                self.task_experts[task].lora_B.data = Q[:, : self.r].to(B.device)
+                    Q, _ = torch.linalg.qr(A.detach().cpu().T)
+                    A.copy_(Q.T[: self.r].to(A.device))
+
+                    Q, _ = torch.linalg.qr(B.detach().cpu())
+                    B.copy_(Q[:, : self.r].to(B.device))
 
     def forward(self, x: torch.Tensor, task_id: Optional[str] = None) -> torch.Tensor:
         base_out = self.base_layer(x)
@@ -302,7 +316,7 @@ class CoLAOLoRATrainer(Trainer):
         additional_loss = self.loss_fn(model)
         total_loss = loss + additional_loss
 
-        if self.state.global_step % 50 == 0:
+        if self.state.global_step != 0:
             print(
                 f"{self.state.global_step}: LM Loss: {loss:.4f}, CLoRA Loss: {additional_loss:.4f}"
             )
@@ -511,82 +525,15 @@ def train_colora(
     return model, tokenizer
 
 
-def convert_to_peft_adapter(
-    trained_model, task_name: str, base_model_path: str, save_path: str
-):
-    print(f"Extracting PEFT adapter for task: {task_name}")
-
-    # Load lại mô hình gốc (chưa LoRA)
-    base_model = AutoModelForCausalLM.from_pretrained(
-        base_model_path, trust_remote_code=True
-    )
-
-    lora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
-        lora_dropout=0.05,
-        bias="none",
-        task_type="CAUSAL_LM",
-        target_modules=[
-            "q_proj",
-            "k_proj",
-            "v_proj",
-            "o_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
-        ],
-    )
-
-    # Khởi tạo PEFT model
-    peft_model = get_peft_model(base_model, lora_config)
-
-    # Copy A, B từ COLoRALinear → PEFT layer
-    for name, module in trained_model.named_modules():
-        if isinstance(module, COLoRALinear):
-            try:
-                peft_layer = dict(peft_model.named_modules())[name]
-            except KeyError:
-                continue
-            A = module.task_experts[task_name].lora_A
-            B = module.task_experts[task_name].lora_B
-            peft_layer.lora_A.default.weight.data.copy_(A)
-            peft_layer.lora_B.default.weight.data.copy_(B)
-
-    peft_model.save_pretrained(save_path)
-    print(f"Saved PEFT adapter at {save_path}")
-
-
-def merge_peft_adapter(base_model_path: str, adapter_path: str, save_path: str):
-    base = AutoModelForCausalLM.from_pretrained(base_model_path, trust_remote_code=True)
-    peft_model = PeftModel.from_pretrained(base, adapter_path)
-    merged = peft_model.merge_and_unload()
-    merged.save_pretrained(save_path)
-    tokenizer = AutoTokenizer.from_pretrained(base_model_path, trust_remote_code=True)
-    tokenizer.save_pretrained(save_path)
-    print(f"Merged adapter saved at {save_path}")
-
-
 if __name__ == "__main__":
     model, tokenizer = train_colora(
         jsonl_path="./data/data_100.jsonl",
         adapter_name="dev_support_colora",
         lambda_orth=0.01,
         lambda_collab=0.001,
-        orthogonalize_freq=30,
+        orthogonalize_freq=10,
         epochs=10,
-        lr=3e-4,
+        lr=1e-4,
         batch_size=16,
         max_seq_len=16,
-    )
-    convert_to_peft_adapter(
-        trained_model=model,
-        task_name="support",
-        base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        save_path="./peft_adapter_support",
-    )
-    merge_peft_adapter(
-        base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        adapter_path="./peft_adapter_support",
-        save_path="./merged_support_model",
     )
