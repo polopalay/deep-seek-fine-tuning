@@ -65,6 +65,7 @@ class COLoRALinear(nn.Module):
         self.scaling = lora_alpha / r
 
         for param in self.base_layer.parameters():
+            # Freeze các tham số của lớp gốc (đã bao gồm kiến thức từ vòng trước)
             param.requires_grad = False
 
         self.task_experts = nn.ModuleDict(
@@ -269,7 +270,7 @@ class CoLAOLoRATrainer(Trainer):
         return super().training_step(model, inputs, num_items)
 
 
-def train_colora(
+def train_olora(
     jsonl_path: str,
     adapter_name: str,
     base_model: str = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
@@ -544,7 +545,7 @@ def run_cola_chain(
         output_dir = f"{output_root}/{adapter_name}"
 
         # Fine-tune 1 vòng COLA
-        model, tokenizer = train_colora(
+        model, tokenizer = train_olora(
             jsonl_path=data_path,
             adapter_name=adapter_name,
             base_model=current_model_path,
@@ -592,7 +593,7 @@ if __name__ == "__main__":
         adapter_prefix="dev_support_colora",
         chain_length=2,
         max_seq_len=16,
-        batch_size=4,
+        batch_size=8,
         epochs=20,
         lr=1e-5,
         lambda_orth=0.01,

@@ -34,3 +34,21 @@ Orthogonalized 196 COLoRA modules
 10: LM Loss: 7.6324, CLoRA Loss: 0.2109
 
 https://arxiv.org/html/2406.01775v1
+- Khác biệt so với O-Lora gốc:
+	- Không học tuần tự học song song:
+		+ Tận dụng tri thức chia sẻ giữa các task
+		+ Tăng hiệu quả huấn luyện & giảm thời gian
+		+ Cập nhật cùng lúc tất cả adapter
+		- Một task mạnh có thể “nuốt” task yếu: vd dev có 90, mà support có 10 thì sẽ khiến các task support học kém
+		- Ở các vòng cola sau, mặc dù có phần dư nhưng model ko biết đc phần dư của task nào nếu train song song 
+	- Cặp adapter A, B dùng chung cho tất cả các task, Tăng khả năng biểu diễn chung, collaboration_weight là trọng số để kết quả của kết hợp shara A và adapter riêng của từng task
+	- Thêm collab_loss tính mức tương đồng giữa các task, đảm bảo các adapter không học trùng kiến thức khi không cần thiết.
+	- Thêm Hard Routing(để xác định dữ liệu thuộc về task nào), Soft Routing(để tính toán với những dữ liệu ko rõ task) để tính toán cho dừng adapter riêng
+
+Pipelines:
+	- Học song song nhiều task qua các cặp adapter A, B, collaboration_weight và task_experts
+	- Tận dụng O-LoRA để đảm bảo các task trực giao hóa, tránh học trùng nhau, trong đó collab_loss ép các adapter trực giao với nhau, trong khi orth_loss ép các adapter trực giao với chính chúng
+	- Nếu các task quá tương đồng, sẽ tăng collab_loss để ép các adapter phân biệt nhau rõ ràng hơn
+	- Nếu các task quá khác biệt, thì shared A/B và trọng số collaboration_weight sẽ giúp chia sẻ tri thức chung, tránh overfitting cho task nhỏ
+	- Kết quả mỗi vòng là 1 model duy nhất chứa toàn bộ adapter cho các task đã được huấn luyện song song
+	- Vòng tiếp theo fine-tuning dựa trên mô hình đã merge từ vòng trước, tận dụng Kỹ thuật "học phần dư" để tập trung vào những kiến thức chưa học tốt ở vòng trước
