@@ -116,12 +116,29 @@ class COLoRALinear(nn.Module):
 
         return base_out + lora_out
 
+    def merge_and_freeze(self):
+        with torch.no_grad():
+            # Merge shared weights
+            merged_weight = (self.shared_lora_B @ self.shared_lora_A) * self.scaling
+
+            # Merge each task-specific LoRA (simple average or sum)
+            for task in self.task_names:
+                A = self.task_experts[task].lora_A
+                B = self.task_experts[task].lora_B
+                merged_weight += (B @ A) * self.scaling  # You can average if needed
+
+            # Merge into base_layer weight
+            self.base_layer.weight += merged_weight.to(self.base_layer.weight.dtype)
+
+        # Optional: merge bias if any (you can skip this if bias=False in Lora)
+        # self.base_layer.bias += ...
+
+        # Freeze the whole module
+        for param in self.parameters():
+            param.requires_grad = False
+
 
 class CoLAOrthogonalityLoss(nn.Module):
-    """
-    Loss function for CoLA + O-LoRA with additional collaboration constraints
-    """
-
     def __init__(self, lambda_orth: float = 0.01, lambda_collab: float = 0.001):
         super().__init__()
         self.lambda_orth = lambda_orth
@@ -158,21 +175,18 @@ class CoLAOrthogonalityLoss(nn.Module):
 
                 count += 1
 
-        total_loss = 0
-        if count > 0:
-            total_loss += self.lambda_orth * orth_loss / count
-            if collab_loss > 0:
-                total_loss += self.lambda_collab * collab_loss / count
+        orth_loss_avg = orth_loss / count if count > 0 else 0.0
+        collab_loss_avg = collab_loss / count if count > 0 else 0.0
+        total_loss = (
+            self.lambda_orth * orth_loss_avg + self.lambda_collab * collab_loss_avg
+        )
 
-        return total_loss
+        return total_loss, orth_loss_avg, collab_loss_avg
 
 
 def apply_cola_orthogonal_lora(
     model, task_names, target_modules=None, r=8, lora_alpha=16, lora_dropout=0.05
 ):
-    """
-    Apply CoLA + Orthogonal LoRA to specified modules
-    """
     if target_modules is None:
         target_modules = [
             "q_proj",
@@ -256,12 +270,26 @@ class CoLAOLoRATrainer(Trainer):
             loss = loss_fct(logits.view(-1, logits.size(-1)), labels.view(-1))
 
         # CoLA + O-LoRA regularization
-        additional_loss = self.loss_fn(model)
+        additional_loss, orth_loss, collab_loss = self.loss_fn(model)
         total_loss = loss + additional_loss
 
-        if self.state.global_step % 1 == 0:
+        if self.state.global_step % 5 == 0:
+            collab_weight_val = -1  # fallback
+            for name, module in model.named_modules():
+                if isinstance(module, COLoRALinear):
+                    collab_weight_val = torch.sigmoid(
+                        module.collaboration_weight
+                    ).item()
+                    break
+            current_lr = self.optimizer.param_groups[0]["lr"]
             print(
-                f"{self.state.global_step}: LM Loss: {loss:.4f}, CLoRA Loss: {additional_loss:.6f}"
+                f"[Step {self.state.global_step}] "
+                f"LM Loss: {loss:.4f} | "
+                f"Orth: {orth_loss:.6f} | "
+                f"Collab: {collab_loss:.6f} | "
+                f"Total CLoRA Loss: {additional_loss:.6f} | "
+                f"Collab Weight: {collab_weight_val:.4f} | "
+                f"LR: {current_lr:.2e}"
             )
 
         return (total_loss, outputs) if return_outputs else total_loss
@@ -284,10 +312,6 @@ def train_olora(
     lambda_collab: float = 0.001,
     device: str = "mps",
 ):
-    """
-    Train model với CoLA + O-LoRA
-    """
-
     # Load data và phát hiện tasks
     def load_jsonl(path):
         with open(path, "r", encoding="utf-8") as f:
@@ -372,8 +396,8 @@ def train_olora(
         output_dir=f"{output_dir}/{adapter_name}",
         num_train_epochs=epochs,
         per_device_train_batch_size=batch_size,
-        gradient_accumulation_steps=2,
-        warmup_steps=10,
+        gradient_accumulation_steps=4,
+        warmup_steps=20,
         logging_steps=20,
         save_steps=500,
         save_total_limit=2,
@@ -459,65 +483,13 @@ def train_olora(
     return model, tokenizer
 
 
-def convert_to_peft_adapter(
-    trained_model,
-    task_name: str,
-    base_model_path: str,
-    save_path: str,
-    r: int = 8,
-    alpha: int = 16,
-):
-    print(f"Extracting PEFT adapter for task: {task_name}")
-
-    # Load lại mô hình gốc (chưa LoRA)
-    base_model = AutoModelForCausalLM.from_pretrained(
-        base_model_path, trust_remote_code=True
-    )
-
-    lora_config = LoraConfig(
-        r=r,
-        lora_alpha=alpha,
-        lora_dropout=0.05,
-        bias="none",
-        task_type="CAUSAL_LM",
-        target_modules=[
-            "q_proj",
-            "k_proj",
-            "v_proj",
-            "o_proj",
-            "gate_proj",
-            "up_proj",
-            "down_proj",
-        ],
-    )
-
-    # Khởi tạo PEFT model
-    peft_model = get_peft_model(base_model, lora_config)
-
-    # Copy A, B từ COLoRALinear → PEFT layer
-    for name, module in trained_model.named_modules():
+def merge_colora_adapters(model):
+    count = 0
+    for name, module in model.named_modules():
         if isinstance(module, COLoRALinear):
-            try:
-                peft_layer = dict(peft_model.named_modules())[name]
-            except KeyError:
-                continue
-            A = module.task_experts[task_name].lora_A
-            B = module.task_experts[task_name].lora_B
-            peft_layer.lora_A.default.weight.data.copy_(A)
-            peft_layer.lora_B.default.weight.data.copy_(B)
-
-    peft_model.save_pretrained(save_path)
-    print(f"Saved PEFT adapter at {save_path}")
-
-
-def merge_peft_adapter(base_model_path: str, adapter_path: str, save_path: str):
-    base = AutoModelForCausalLM.from_pretrained(base_model_path, trust_remote_code=True)
-    peft_model = PeftModel.from_pretrained(base, adapter_path)
-    merged = peft_model.merge_and_unload()
-    merged.save_pretrained(save_path)
-    tokenizer = AutoTokenizer.from_pretrained(base_model_path, trust_remote_code=True)
-    tokenizer.save_pretrained(save_path)
-    print(f"Merged adapter saved at {save_path}")
+            module.merge_and_freeze()
+            count += 1
+    print(f"Merged and froze {count} COLoRALinear modules.")
 
 
 def run_cola_chain(
@@ -559,25 +531,13 @@ def run_cola_chain(
             lambda_collab=lambda_collab,
             device=device,
         )
-        convert_to_peft_adapter(
-            trained_model=model,
-            task_name=f"task_{adapter_name}",
-            base_model_path=current_model_path,
-            save_path=f"{output_root}/{adapter_name}_peft",
-            r=r,
-            alpha=alpha,
-        )
+        merge_colora_adapters(model)
+        print(f"Saving full model for round {round_id}...")
+        full_save_path = f"{output_root}/{adapter_name}_full"
+        model.save_pretrained(full_save_path)
+        tokenizer.save_pretrained(full_save_path)
+        current_model_path = full_save_path
 
-        # Merge adapter vào backbone → tie-a-knot
-        merged_path = f"{output_root}/{adapter_name}_merged"
-        merge_peft_adapter(
-            base_model_path=current_model_path,
-            adapter_path=f"{output_root}/{adapter_name}_peft",
-            save_path=merged_path,
-        )
-
-        # Update path để dùng cho vòng sau
-        current_model_path = merged_path
         r = max(2, r // 2)
 
     print(
@@ -588,14 +548,15 @@ def run_cola_chain(
 
 if __name__ == "__main__":
     final_model_path, tokenizer = run_cola_chain(
-        data_path="./data/data_100.jsonl",
+        data_path="./data/data.jsonl",
         base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         adapter_prefix="dev_support_colora",
-        chain_length=2,
+        chain_length=3,
         max_seq_len=16,
-        batch_size=8,
-        epochs=20,
-        lr=1e-5,
+        batch_size=4,
+        epochs=10,
+        # lr=1e-5,
+        lr=5e-5,
         lambda_orth=0.01,
         lambda_collab=0.001,
         device="mps",

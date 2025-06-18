@@ -487,8 +487,8 @@ if __name__ == "__main__":
     model, tokenizer = train_colora(
         jsonl_path="./data/data_100.jsonl",
         adapter_name="qlcv_colora",
-        lambda_orth=0.01,
-        lambda_collab=0.001,
+        lambda_orth=0,
+        lambda_collab=0,
         epochs=10,
         batch_size=16,
         lr=1e-5,

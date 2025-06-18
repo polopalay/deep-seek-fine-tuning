@@ -52,3 +52,16 @@ Pipelines:
 	- Nếu các task quá khác biệt, thì shared A/B và trọng số collaboration_weight sẽ giúp chia sẻ tri thức chung, tránh overfitting cho task nhỏ
 	- Kết quả mỗi vòng là 1 model duy nhất chứa toàn bộ adapter cho các task đã được huấn luyện song song
 	- Vòng tiếp theo fine-tuning dựa trên mô hình đã merge từ vòng trước, tận dụng Kỹ thuật "học phần dư" để tập trung vào những kiến thức chưa học tốt ở vòng trước
+
+Dẫn chứng cho việc trực giao ảnh hưởng đến khả năng học:
+https://arxiv.org/abs/2505.11816?utm_source=chatgpt.com
+Complementary to prompt based methods, low-rank adaptation based approaches directly update
+model parameters in a parameter-efficient manner. InfLoRA [Liang and Li, 2024] constrains the
+parameter updates within a predetermined subspace to reduce the interference between tasks. SD-
+LoRA [Wu et al., 2025] decouples the learning of the magnitude and direction of LoRA components.
+However, both methods confine weight updates in a specific low-rank subspace, which inherently
+limits the model’s learning capacity. Unlike these methods, CoSO updates the parameters across a
+series of subspaces, enabling the learning of full-rank weights and thereby enhancing the model’s
+flexibility.
+https://arxiv.org/abs/2503.06213
+First, the orthogonal subspace diminishes over tasks, limiting plasticity improvement

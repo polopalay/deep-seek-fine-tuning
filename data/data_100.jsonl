@@ -1,100 +1,100 @@
-{"task": "dev", "instruction": "ERR:1 là gì?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Lỗi ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Vì sao ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Nguyên nhân ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Lỗi ERR:1 là gì?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Bị báo ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Lỗi hệ thống ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Khắc phục lỗi ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Thông báo ERR:1?", "output": "Sai tài khoản quyền"}
-{"task": "dev", "instruction": "Sai quyền là lỗi gì?", "output": "ERR:1"}
-{"task": "dev", "instruction": "ERR:3 là gì?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "Lỗi ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "Vì sao ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "Nguyên nhân ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "Thông báo ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "Bị báo ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "XML sai là lỗi gì?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "XML lỗi gì ra ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "ERR:3 là lỗi XML?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "Cách sửa ERR:3?", "output": "XML sai định dạng"}
-{"task": "dev", "instruction": "ERR:5 là gì?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Lỗi ERR:5?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Vì sao ERR:5?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Nguyên nhân ERR:5?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Không phát hành là lỗi gì?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Báo lỗi ERR:5?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Khắc phục lỗi ERR:5?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Thông báo ERR:5?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Lỗi gì khi không phát hành?", "output": "Không phát hành được"}
-{"task": "dev", "instruction": "Không phát hành được là mã lỗi gì?", "output": "ERR:5"}
-{"task": "dev", "instruction": "ERR:6 là gì?", "output": "Không đủ số hóa đơn"}
-{"task": "dev", "instruction": "Lỗi ERR:6?", "output": "Không đủ số hóa đơn"}
-{"task": "dev", "instruction": "Nguyên nhân ERR:6?", "output": "Không đủ số hóa đơn"}
-{"task": "dev", "instruction": "Tại sao lỗi ERR:6?", "output": "Không đủ số hóa đơn"}
-{"task": "dev", "instruction": "Khắc phục ERR:6 như thế nào?", "output": "Không đủ số hóa đơn"}
-{"task": "dev", "instruction": "Không đủ số hóa đơn là lỗi gì?", "output": "ERR:6"}
-{"task": "dev", "instruction": "Lỗi gì khi số hóa đơn không đủ?", "output": "ERR:6"}
-{"task": "dev", "instruction": "Hệ thống báo thiếu số hóa đơn là mã nào?", "output": "ERR:6"}
-{"task": "dev", "instruction": "Số hóa đơn không đủ thì báo lỗi gì?", "output": "ERR:6"}
-{"task": "dev", "instruction": "Thiếu hóa đơn thì là lỗi gì?", "output": "ERR:6"}
-{"task": "dev", "instruction": "ERR:7 là gì?", "output": "Sai tên đăng nhập"}
-{"task": "dev", "instruction": "Lỗi ERR:7?", "output": "Sai tên đăng nhập"}
-{"task": "dev", "instruction": "Nguyên nhân ERR:7?", "output": "Sai tên đăng nhập"}
-{"task": "dev", "instruction": "Thông báo ERR:7 có nghĩa gì?", "output": "Sai tên đăng nhập"}
-{"task": "dev", "instruction": "Khắc phục lỗi ERR:7 như thế nào?", "output": "Sai tên đăng nhập"}
-{"task": "dev", "instruction": "Sai tên đăng nhập là lỗi gì?", "output": "ERR:7"}
-{"task": "dev", "instruction": "Lỗi gì khi tên đăng nhập sai?", "output": "ERR:7"}
-{"task": "dev", "instruction": "Tài khoản sai thì báo lỗi gì?", "output": "ERR:7"}
-{"task": "dev", "instruction": "Nhập sai username thì là mã lỗi nào?", "output": "ERR:7"}
-{"task": "dev", "instruction": "Đăng nhập sai thì hệ thống báo gì?", "output": "ERR:7"}
-{"task": "support", "instruction": "Hóa đơn điện tử là gì?", "output": "Là tập tin ghi nhận giao dịch."}
-{"task": "support", "instruction": "Hóa đơn giấy khác gì?", "output": "Không xử lý bằng điện tử."}
-{"task": "support", "instruction": "Khi nào lập hóa đơn?", "output": "Khi bán hàng hoặc dịch vụ."}
-{"task": "support", "instruction": "Ai được dùng hóa đơn điện tử?", "output": "Tổ chức đủ điều kiện."}
-{"task": "support", "instruction": "Lập hóa đơn xong làm gì?", "output": "Gửi người mua."}
-{"task": "support", "instruction": "Hóa đơn máy tính tiền là gì?", "output": "Lập qua máy tính tiền."}
-{"task": "support", "instruction": "Máy tính tiền dùng để làm gì?", "output": "Lập hóa đơn nhanh gọn."}
-{"task": "support", "instruction": "Đơn vị nào dùng máy tính tiền?", "output": "Hộ kinh doanh nhỏ lẻ."}
-{"task": "support", "instruction": "Lập hóa đơn bằng máy tính tiền có hợp lệ?", "output": "Có, nếu kết nối thuế."}
-{"task": "support", "instruction": "Máy tính tiền có cần chữ ký?", "output": "Không, xác thực qua mã."}
-{"task": "support", "instruction": "Hóa đơn GTGT là gì?", "output": "Hóa đơn có dòng thuế GTGT."}
-{"task": "support", "instruction": "Hóa đơn bán hàng là gì?", "output": "Không có dòng thuế GTGT."}
-{"task": "support", "instruction": "Hóa đơn xuất khẩu dùng khi nào?", "output": "Bán hàng ra nước ngoài."}
-{"task": "support", "instruction": "Tem, vé có là hóa đơn không?", "output": "Là hóa đơn khác."}
-{"task": "support", "instruction": "Có bao nhiêu loại hóa đơn?", "output": "GTGT, bán hàng, xuất khẩu..."}
-{"task": "support", "instruction": "Mẫu hóa đơn gồm gì?", "output": "Tên, ký hiệu, số thứ tự."}
-{"task": "support", "instruction": "Nội dung hóa đơn cần gì?", "output": "Tên hàng, giá, thuế, chữ ký."}
-{"task": "support", "instruction": "Hóa đơn cần chữ ký gì?", "output": "Chữ ký điện tử người bán."}
-{"task": "support", "instruction": "Cách gửi hóa đơn điện tử?", "output": "Trực tiếp hoặc qua trung gian."}
-{"task": "support", "instruction": "Điều kiện dùng hóa đơn điện tử?", "output": "Có chữ ký và hạ tầng."}
-{"task": "support", "instruction": "Hóa đơn điện tử sai thì sao?", "output": "Lập điều chỉnh hoặc thay thế."}
-{"task": "support", "instruction": "Thay thế hóa đơn khi nào?", "output": "Khi chưa kê khai thuế."}
-{"task": "support", "instruction": "Điều chỉnh hóa đơn là gì?", "output": "Sửa lỗi hóa đơn đã lập."}
-{"task": "support", "instruction": "Điều chỉnh và thay khác gì?", "output": "Thay là hủy và lập lại."}
-{"task": "support", "instruction": "Hóa đơn điện tử hủy được không?", "output": "Có, nếu chưa kê khai."}
-{"task": "support", "instruction": "Chuyển đổi hóa đơn là gì?", "output": "In từ hóa đơn điện tử."}
-{"task": "support", "instruction": "Chuyển đổi mấy lần?", "output": "Chỉ 1 lần duy nhất."}
-{"task": "support", "instruction": "Chuyển đổi cần ký không?", "output": "Cần chữ ký người chuyển."}
-{"task": "support", "instruction": "Hóa đơn chuyển đổi dùng làm gì?", "output": "Chứng minh nguồn gốc hàng."}
-{"task": "support", "instruction": "Hóa đơn chuyển đổi hợp lệ không?", "output": "Không dùng để kê khai thuế."}
-{"task": "support", "instruction": "Lỗi lập hóa đơn xử lý sao?", "output": "Lập điều chỉnh hoặc thay thế."}
-{"task": "support", "instruction": "Không đủ thông tin hóa đơn thì sao?", "output": "Không hợp lệ."}
-{"task": "support", "instruction": "Hóa đơn bị trùng xử lý thế nào?", "output": "Hủy và lập lại."}
-{"task": "support", "instruction": "Hóa đơn đã ký sai gì?", "output": "Không sửa được, phải điều chỉnh."}
-{"task": "support", "instruction": "Không gửi được hóa đơn thì sao?", "output": "Kiểm tra kết nối hệ thống."}
-{"task": "support", "instruction": "Lưu hóa đơn điện tử như thế nào?", "output": "Lưu trên máy chủ hoặc USB."}
-{"task": "support", "instruction": "Thời gian lưu hóa đơn?", "output": "5 năm hoặc theo Luật Kế toán."}
-{"task": "support", "instruction": "Bị mất hóa đơn thì sao?", "output": "Xin lại từ bên bán."}
-{"task": "support", "instruction": "Người mua có cần ký hóa đơn?", "output": "Không bắt buộc."}
-{"task": "support", "instruction": "Cơ quan nào quản lý hóa đơn?", "output": "Cơ quan thuế các cấp."}
-{"task": "support", "instruction": "Thông tư 32 nói gì?", "output": "Quy định hóa đơn điện tử."}
-{"task": "support", "instruction": "Thông tư 78 là gì?", "output": "Cập nhật mới về hóa đơn."}
-{"task": "support", "instruction": "Nghị định 70 có nội dung gì?", "output": "Hướng dẫn sửa đổi hóa đơn."}
-{"task": "support", "instruction": "Chưa có kết nối thuế thì sao?", "output": "Không dùng hóa đơn điện tử được."}
-{"task": "support", "instruction": "Hóa đơn có cần định dạng không?", "output": "Có, phải theo chuẩn gửi nhận."}
-{"task": "support", "instruction": "Hóa đơn phải có mã gì?", "output": "Mã định danh của cơ quan thuế."}
-{"task": "support", "instruction": "Hóa đơn không có thuế suất thì sao?", "output": "Không phải hóa đơn GTGT."}
-{"task": "support", "instruction": "Sử dụng sai mẫu hóa đơn?", "output": "Phải điều chỉnh lại."}
-{"task": "support", "instruction": "Gửi hóa đơn trễ có sao không?", "output": "Có thể bị xử phạt hành chính."}
-{"task": "support", "instruction": "Hóa đơn điện tử dùng khi nào?", "output": "Khi bán hàng hoặc dịch vụ."}
+{"task": "dev", "instruction": "Cách test giao diện ký số hóa đơn trên môi trường dev?", "output": "Giả lập chữ ký bằng div hiển thị tên người ký."}
+{"task": "dev", "instruction": "Làm sao để cấu hình CORS cho ứng dụng web?", "output": "Thêm middleware CORS trong cấu hình ứng dụng."}
+{"task": "dev", "instruction": "Làm sao để cấu hình CORS cho hệ thống khác?", "output": "Thêm middleware CORS trong cấu hình hệ thống."}
+{"task": "dev", "instruction": "Làm sao để kiểm tra tính năng ký số trên môi trường staging?", "output": "Sử dụng công cụ giả lập chữ ký."}
+{"task": "dev", "instruction": "Cách cấu hình máy chủ để hỗ trợ HTTPS?", "output": "Cài đặt chứng chỉ SSL và cấu hình máy chủ để sử dụng HTTPS."}
+{"task": "dev", "instruction": "Class của hoá đơn tên là gì?", "output": "Invoice."}
+{"task": "dev", "instruction": "Hệ thống gì cơ sở dữ liệu gì?", "output": "Sql Server."}
+{"task": "dev", "instruction": "Cách kiểm tra tính năng gửi email thông báo?", "output": "Sử dụng công cụ giả lập email để kiểm tra tính năng gửi thông báo."}
+{"task": "dev", "instruction": "Chức năng thống kê nằm ở thư mục nào?", "output": "Thống kê nằm trong thư mục Services/Statistics."}
+{"task": "dev", "instruction": "Sửa view không được sửa file nào?", "output": "File Core.js."}
+{"task": "dev", "instruction": "Service đẩy hoá đơn xong phát hành luôn là gì?", "output": "ImportInvByPattern."}
+{"task": "dev", "instruction": "Cấu hình router của BE ở đâu?", "output": "Trong file Startup.cs."}
+{"task": "dev", "instruction": "Routing của Fe ở đâu?", "output": "Trong file App.js."}
+{"task": "dev", "instruction": "Lấy xml chuẩn để import hoá đơn ở đâu?", "output": "XML_TEMP"}
+{"task": "dev", "instruction": "Hàm thay thế hoá đơn là gì?", "output": "ReplaceInv."}
+{"task": "dev", "instruction": "Hàm lấy hoá đơn theo số hoá đơn là gì?", "output": "Dùng hàm GetSeriINV và truyền start, end là cùng 1 số hoá đơn."}
+{"task": "dev", "instruction": "Cho tôi xin hàm lấy hoá đơn theo mã khách hàng.", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
+{"task": "dev", "instruction": "Sử dụng hàm nào để lấy danh sách hoá đơn?", "output": "Dùng hàm GetInvList để lấy danh sách hoá đơn."}
+{"task": "dev", "instruction": "Cấu hình api trỏ vào site test như nào", "output": "Ở biến api thay đúng dòng tt78 thành tt78demo."}
+{"task": "dev", "instruction": "Hàm chuyển đổi hoá đơn là hàm nào?", "output": "ConvertInv."}
+{"task": "dev", "instruction": "Backend được code bằng gì?", "output": "Dotnet Core 6.0."}
+{"task": "dev", "instruction": "Làm sao để trỏ vào db test?", "output": "Thay đổi chuỗi kết nối trong file appsettings.json."}
+{"task": "dev", "instruction": "API của site test là gì?", "output": "https://tt78demo.com/api."}
+{"task": "dev", "instruction": "Fontend hệ thống code bằng gì?", "output": "Sử dụng ReactJS và Redux cho quản lý trạng thái."}
+{"task": "dev", "instruction": "Làm sao để in hoá đơn?", "output": "Sử dụng hàm PrintInv để in hoá đơn."}
+{"task": "dev", "instruction": "Hàm lấy hoá đơn theo mã khách hàng là gì?", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
+{"task": "dev", "instruction": "hàm nào để lấy danh sách khách hàng?", "output": "Dùng hàm GetCustomerList để lấy danh sách khách hàng."}
+{"task": "dev", "instruction": "Lỗi ERR:1 khi thêm khách hàng nghĩa là gì?", "output": "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng."}
+{"task": "dev", "instruction": "Tại sao tôi gặp lỗi ERR:2 khi gửi XML?", "output": "Dữ liệu XML không đúng định dạng."}
+{"task": "dev", "instruction": "Gặp ERR:3 khi tạo hóa đơn có nghĩa gì?", "output": "Mã số thuế không hợp lệ hoặc bị sai."}
+{"task": "dev", "instruction": "Lỗi ERR:4 xuất hiện khi nào?", "output": "Ký hiệu hóa đơn không đúng hoặc chưa được đăng ký."}
+{"task": "dev", "instruction": "Tôi bị lỗi ERR:5 là sao?", "output": "Thiếu trường bắt buộc trong dữ liệu gửi đi."}
+{"task": "dev", "instruction": "Lỗi ERR:6 nghĩa là gì?", "output": "Tên khách hàng chứa ký tự không hợp lệ."}
+{"task": "dev", "instruction": "Gặp ERR:7 khi upload hóa đơn?", "output": "Sai định dạng file XML hoặc bị lỗi cấu trúc."}
+{"task": "dev", "instruction": "Lỗi ERR:8 là lỗi gì?", "output": "Mã khách hàng đã tồn tại trên hệ thống."}
+{"task": "dev", "instruction": "Lỗi ERR:9 xảy ra khi nào?", "output": "Địa chỉ khách hàng quá dài hoặc sai định dạng."}
+{"task": "dev", "instruction": "Gặp lỗi ERR:10 là sao?", "output": "Dữ liệu sản phẩm trong hóa đơn bị thiếu hoặc sai."}
+{"task": "dev", "instruction": "Lỗi ERR:11 báo gì?", "output": "Trùng mã hóa đơn đã phát hành trước đó."}
+{"task": "dev", "instruction": "ERR:12 nghĩa là gì?", "output": "Không tìm thấy thông tin khách hàng với mã đã cung cấp."}
+{"task": "dev", "instruction": "Tại sao gặp ERR:13 khi phát hành?", "output": "Thiếu thông tin chữ ký số."}
+{"task": "dev", "instruction": "ERR:14 xuất hiện khi nào?", "output": "Ngày lập hóa đơn vượt quá thời hạn cho phép."}
+{"task": "dev", "instruction": "Tôi bị ERR:15 khi gửi dữ liệu, lý do?", "output": "Không đúng định dạng UTF-8."}
+{"task": "dev", "instruction": "Lỗi ERR:16 là gì?", "output": "Tài khoản không có quyền thực hiện chức năng này."}
+{"task": "dev", "instruction": "Lỗi ERR:17 có nghĩa gì?", "output": "Không đủ quyền truy cập vào hóa đơn cần xử lý."}
+{"task": "dev", "instruction": "ERR:18 có nghĩa gì?", "output": "Sai loại hóa đơn hoặc không được phép sử dụng loại đó."}
+{"task": "dev", "instruction": "Lỗi ERR:19 thường do đâu?", "output": "Thiếu email khách hàng khi gửi hóa đơn."}
+{"task": "dev", "instruction": "Lỗi ERR:20 trong hệ thống báo gì?", "output": "Thông tin tài khoản ngân hàng không đúng định dạng."}
+{"task": "dev", "instruction": "ERR:21 có nghĩa là sao?", "output": "Không thể kết nối đến hệ thống xác thực VNPT."}
+{"task": "dev", "instruction": "Lỗi ERR:22 là lỗi gì?", "output": "Sai định dạng số tiền hoặc không hợp lệ."}
+{"task": "dev", "instruction": "Gặp ERR:23 có nghĩa gì?", "output": "Tổng tiền không khớp giữa các trường."}
+{"task": "support", "instruction": "Không xem được chi tiết hóa đơn?", "output": "Hãy nhấn vào biểu tượng xem chi tiết."}
+{"task": "support", "instruction": "Không thao tác được với phần mềm?", "output": "Hãy thử tắt trình duyệt và mở lại."}
+{"task": "support", "instruction": "Không kiểm tra được hóa đơn đã tải?", "output": "Kiểm tra lại file tải về có bị lỗi không."}
+{"task": "support", "instruction": "Không lưu được bản nháp?", "output": "Bản nháp chỉ lưu khi điền đủ thông tin bắt buộc."}
+{"task": "support", "instruction": "Không thêm được khách hàng mới?", "output": "Mã số thuế đã tồn tại sẽ không cho thêm."}
+{"task": "support", "instruction": "Không mở được form điều chỉnh?", "output": "Kiểm tra trạng thái hóa đơn gốc đã phù hợp chưa."}
+{"task": "support", "instruction": "Không điều chỉnh hóa đơn đã kê khai?", "output": "Phải làm hóa đơn điều chỉnh, không chỉnh trực tiếp."}
+{"task": "support", "instruction": "Không chọn được ngày lập báo cáo hủy?", "output": "Ngày không được sớm hơn ngày hóa đơn."}
+{"task": "support", "instruction": "Không tìm được danh sách hóa đơn đã hủy?", "output": "Vào mục quản lý hóa đơn → Hủy."}
+{"task": "support", "instruction": "Không gán số hóa đơn khi thay thế?", "output": "Kiểm tra mẫu và ký hiệu hóa đơn đang dùng."}
+{"task": "support", "instruction": "Không sửa được mẫu số hóa đơn?", "output": "Mẫu số chỉ sửa được khi chưa phát hành."}
+{"task": "support", "instruction": "Không hiển thị danh sách khách hàng?", "output": "Kiểm tra quyền truy cập và kết nối mạng."}
+{"task": "support", "instruction": "Không tải được hóa đơn .inv?", "output": "Hãy kiểm tra định dạng tệp tải xuống."}
+{"task": "support", "instruction": "Không chuyển đổi hóa đơn sang A4?", "output": "Chỉ áp dụng với hóa đơn đã phát hành."}
+{"task": "support", "instruction": "Không cập nhật được ngày hủy?", "output": "Ngày hủy không được nhỏ hơn ngày hóa đơn."}
+{"task": "support", "instruction": "Không thêm dải hóa đơn hủy?", "output": "Chọn đúng mẫu số và ký hiệu còn hiệu lực."}
+{"task": "support", "instruction": "Không thấy dữ liệu tra cứu?", "output": "Đảm bảo đã nhập đầy đủ thông tin tra cứu."}
+{"task": "support", "instruction": "Không xem được chi tiết khách hàng?", "output": "Chọn đúng khách hàng trong danh sách."}
+{"task": "support", "instruction": "Không tạo được báo cáo hủy?", "output": "Kiểm tra các trường bắt buộc đã nhập đủ chưa."}
+{"task": "support", "instruction": "Không lưu được thông báo hủy?", "output": "Kiểm tra định dạng ngày và tên người lập."}
+{"task": "support", "instruction": "Không thao tác được khi tạo hóa đơn?", "output": "Thoát và đăng nhập lại hệ thống."}
+{"task": "support", "instruction": "Không sửa được người lập biểu?", "output": "Chỉ sửa trước khi lưu thông báo hủy."}
+{"task": "support", "instruction": "Không điều chỉnh được ký hiệu hóa đơn?", "output": "Ký hiệu không thể thay đổi sau phát hành."}
+{"task": "support", "instruction": "Không tìm thấy báo cáo hủy đã lưu?", "output": "Tìm theo khoảng thời gian tạo báo cáo."}
+{"task": "support", "instruction": "Không tải được PDF hóa đơn?", "output": "Kiểm tra trình duyệt hỗ trợ đọc PDF."}
+{"task": "support", "instruction": "Không hiện nút tạo hóa đơn?", "output": "Đăng nhập lại và kiểm tra quyền người dùng."}
+{"task": "support", "instruction": "Không in được hóa đơn?", "output": "Cài lại driver máy in và kiểm tra kết nối."}
+{"task": "support", "instruction": "Không chọn được kiểu điều chỉnh?", "output": "Hóa đơn phải đủ điều kiện điều chỉnh."}
+{"task": "support", "instruction": "Không tải file văn bản đính kèm?", "output": "Kiểm tra định dạng file trước khi đính kèm."}
+{"task": "support", "instruction": "Không thay đổi được phương pháp hủy?", "output": "Chỉ sửa được trước khi lưu báo cáo."}
+{"task": "support", "instruction": "Không thấy nút tạo mới khách hàng?", "output": "Kiểm tra quyền thêm dữ liệu khách hàng."}
+{"task": "support", "instruction": "Không hiển thị ngày lập hóa đơn?", "output": "Ngày lập phải nằm trong dải hiệu lực."}
+{"task": "support", "instruction": "Không thao tác được phần danh mục?", "output": "Tải lại trang hoặc kiểm tra mạng."}
+{"task": "support", "instruction": "Không tra cứu được hóa đơn đã phát hành?", "output": "Dùng mã tra cứu trên file PDF."}
+{"task": "support", "instruction": "Không xóa được hóa đơn đã tạo?", "output": "Chỉ xóa khi hóa đơn chưa phát hành."}
+{"task": "support", "instruction": "Không chỉnh được mã hàng hóa?", "output": "Cập nhật trong mục Danh mục hàng hóa."}
+{"task": "support", "instruction": "Không xem được hóa đơn cũ?", "output": "Tìm lại theo khoảng thời gian cụ thể."}
+{"task": "support", "instruction": "Không lưu được thông tin điều chỉnh?", "output": "Kiểm tra đã nhập đủ trường bắt buộc chưa."}
+{"task": "support", "instruction": "Không sửa được thông tin khách?", "output": "Khách đã có hóa đơn không được chỉnh."}
+{"task": "support", "instruction": "Không xuất hóa đơn sang Excel?", "output": "Kiểm tra phần mềm hỗ trợ file .xls."}
+{"task": "support", "instruction": "Không cập nhật người đại diện pháp luật?", "output": "Chỉ sửa trong phần Thông tin đơn vị."}
+{"task": "support", "instruction": "Không tải được danh sách hóa đơn?", "output": "Chỉ tải khi có dữ liệu hiển thị."}
+{"task": "support", "instruction": "Không chọn được kiểu hóa đơn?", "output": "Hãy kiểm tra loại hình doanh nghiệp đã đăng ký."}
+{"task": "support", "instruction": "Không nhập được dải số hóa đơn?", "output": "Dải số phải thuộc mẫu và ký hiệu hợp lệ."}
+{"task": "support", "instruction": "Không đính kèm được hóa đơn gốc?", "output": "Đảm bảo chọn đúng hóa đơn liên quan."}
+{"task": "support", "instruction": "Không gửi được hóa đơn điều chỉnh?", "output": "Kiểm tra cấu hình gửi email."}
+{"task": "support", "instruction": "Không khôi phục được hóa đơn đã xóa?", "output": "Hóa đơn đã xóa sẽ không phục hồi được."}
+{"task": "support", "instruction": "Không hiện bản xem trước hóa đơn?", "output": "Hãy kiểm tra kết nối mạng và plugin PDF."}
+{"task": "support", "instruction": "Không hiện nút ký hóa đơn?", "output": "Kiểm tra thiết bị chữ ký số."}
+{"task": "support", "instruction": "Không cập nhật được dải hóa đơn?", "output": "Chỉ cập nhật khi chưa phát hành hóa đơn nào."}

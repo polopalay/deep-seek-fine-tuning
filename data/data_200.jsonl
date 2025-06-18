@@ -1,0 +1,200 @@
+{"task": "dev", "instruction": "Cách test giao diện ký số hóa đơn trên môi trường dev?", "output": "Giả lập chữ ký bằng div hiển thị tên người ký."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hóa đơn điều chỉnh.", "output": "Xem hướng dẫn lập hóa đơn điều chỉnh."}
+{"instruction": "Cách test giao diện ký số hóa đơn trên môi trường dev?", "output": "Giả lập chữ ký bằng div hiển thị tên người ký."}
+{"instruction": "Tôi cần hướng dẫn cách lập hóa đơn điều chỉnh.", "output": "Xem hướng dẫn lập hóa đơn điều chỉnh."}
+{"task": "dev", "instruction": "Làm sao để cấu hình CORS cho ứng dụng web?", "output": "Thêm middleware CORS trong cấu hình ứng dụng."}
+{"task": "support", "instruction": "Tôi muốn biết cách xử lý lỗi khi ký số không thành công.", "output": "Kiểm tra lại DK01 hoặc hạn của chữ ký số."}
+{"instruction": "Làm sao để cấu hình CORS cho ứng dụng web?", "output": "Thêm middleware CORS trong cấu hình ứng dụng, cho phép các nguồn gốc cần thiết."}
+{"instruction": "Tôi muốn biết cách xử lý lỗi khi ký số không thành công.", "output": "Kiểm tra lại DK01 hoặc hạn của chữ ký số."}
+{"task": "dev", "instruction": "Làm sao để cấu hình CORS cho hệ thống khác?", "output": "Thêm middleware CORS trong cấu hình hệ thống."}
+{"task": "support", "instruction": "Tôi muốn biết cách xử lý lỗi khi gửi DK01 thất bại?", "output": "Check lại mail với thuế."}
+{"instruction": "Làm sao để cấu hình CORS cho hệ thống khác?", "output": "Thêm middleware CORS trong cấu hình hệ thống, cho phép các nguồn gốc cần thiết."}
+{"instruction": "Tôi muốn biết cách xử lý lỗi khi gửi DK01 thất bại?", "output": "Check lại mail với thuế."}
+{"task": "dev", "instruction": "Làm sao để kiểm tra tính năng ký số trên môi trường staging?", "output": "Sử dụng công cụ giả lập chữ ký."}
+{"task": "support", "instruction": "Hướng dẫn tôi cách tạo hóa đơn điện tử mới.", "output": "Vào mục Tạo hóa đơn, điền thông tin cần thiết và lưu lại."}
+{"instruction": "Làm sao để kiểm tra tính năng ký số trên môi trường staging?", "output": "Sử dụng công cụ giả lập chữ ký."}
+{"instruction": "Hướng dẫn tôi cách tạo hóa đơn điện tử mới.", "output": "Vào mục Tạo hóa đơn, điền thông tin cần thiết và lưu lại."}
+{"task": "dev", "instruction": "Cách cấu hình máy chủ để hỗ trợ HTTPS?", "output": "Cài đặt chứng chỉ SSL và cấu hình máy chủ để sử dụng HTTPS."}
+{"task": "support", "instruction": "Tôi cần biết cách tra cứu hóa đơn đã phát hành.", "output": "Sử dụng chức năng tra cứu hóa đơn trong hệ thống."}
+{"instruction": "Cách cấu hình máy chủ để hỗ trợ HTTPS?", "output": "Cài đặt chứng chỉ SSL và cấu hình máy chủ để sử dụng HTTPS."}
+{"instruction": "Tôi cần biết cách tra cứu hóa đơn đã phát hành.", "output": "Sử dụng chức năng tra cứu hóa đơn trong hệ thống."}
+{"task": "dev", "instruction": "Class của hoá đơn tên là gì?", "output": "Invoice."}
+{"task": "support", "instruction": "Hoá đơn đã thay thế rồi có được lập hoá đơn điều chỉnh không", "output": "Hoá đơn đã thay thế không được điều chỉnh."}
+{"instruction": "Class của hoá đơn tên là gì?", "output": "Invoice."}
+{"instruction": "Hoá đơn đã thay thế rồi có được lập hoá đơn điều chỉnh không", "output": "Hoá đơn đã thay thế không được điều chỉnh."}
+{"task": "dev", "instruction": "Hệ thống gì cơ sở dữ liệu gì?", "output": "Sql Server."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hóa đơn điện tử.", "output": "Xem hướng dẫn lập hóa đơn điện tử tại mục Hướng dẫn sử dụng."}
+{"instruction": "Làm sao để kiểm tra tính năng xác thực người dùng?", "output": "Sử dụng công cụ kiểm thử tự động để kiểm tra các luồng xác thực người dùng."}
+{"instruction": "Hệ thống gì cơ sở dữ liệu gì?", "output": "Sql Server."}
+{"task": "dev", "instruction": "Cách kiểm tra tính năng gửi email thông báo?", "output": "Sử dụng công cụ giả lập email để kiểm tra tính năng gửi thông báo."}
+{"task": "support", "instruction": "Tôi muốn biết cách xử lý lỗi khi không nhận được hóa đơn.", "output": "Kiểm tra trạng thái gửi thuế hoặc trạng thái phát hành."}
+{"instruction": "Cách kiểm tra tính năng gửi email thông báo?", "output": "Sử dụng công cụ giả lập email để kiểm tra tính năng gửi thông báo."}
+{"instruction": "Tôi muốn biết cách xử lý lỗi khi không nhận được hóa đơn.", "output": "Kiểm tra trạng thái gửi thuế hoặc trạng thái phát hành."}
+{"task": "dev", "instruction": "Chức năng thống kê nằm ở thư mục nào?", "output": "Thống kê nằm trong thư mục Services/Statistics."}
+{"task": "support", "instruction": "Tôi muốn biết cách xử lý lỗi khi không thể truy cập vào hệ thống.", "output": "Bạn liên lạc với bộ phận hỗ trợ."}
+{"instruction": "Chức năng thống kê nằm ở thư mục nào?", "output": "Thống kê nằm trong thư mục Services/Statistics."}
+{"instruction": "Tôi muốn biết cách xử lý lỗi khi không thể truy cập vào hệ thống.", "output": "Bạn liên lạc với bộ phận hỗ trợ."}
+{"task": "dev", "instruction": "Sửa view không được sửa file nào?", "output": "File Core.js."}
+{"task": "support", "instruction": "Hoá đơn có được phép xoá không?", "output": "Không, bạn cần lập hoá đơn thay thế/điều chỉnh về 0 đồng."}
+{"instruction": "Sửa view không được sửa file nào?", "output": "File Core.js."}
+{"instruction": "Hoá đơn có được phép xoá không?", "output": "Không, bạn cần lập hoá đơn thay thế/điều chỉnh về 0 đồng."}
+{"task": "dev", "instruction": "Service đẩy hoá đơn xong phát hành luôn là gì?", "output": "ImportInvByPattern."}
+{"task": "support", "instruction": "Hoá đơn muốn xoá thì làm như thế nào?", "output": "Lập hoá đơn thay thế hoặc điều chỉnh sao cho tổng tiền về 0 đồng."}
+{"instruction": "Service đẩy hoá đơn xong phát hành luôn là gì?", "output": "ImportInvByPattern."}
+{"instruction": "Hoá đơn muốn xoá thì làm như thế nào?", "output": "Lập hoá đơn thay thế hoặc điều chỉnh sao cho tổng tiền về 0 đồng."}
+{"task": "dev", "instruction": "Cấu hình router của BE ở đâu?", "output": "Trong file Startup.cs."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hóa đơn điện tử cho khách hàng.", "output": "Vào mục Tạo hóa đơn, điền thông tin khách hàng."}
+{"instruction": "Cấu hình router của BE ở đâu?", "output": "Trong file Startup.cs."}
+{"instruction": "Tôi cần hướng dẫn cách lập hóa đơn điện tử cho khách hàng.", "output": "Vào mục Tạo hóa đơn, điền thông tin khách hàng."}
+{"task": "dev", "instruction": "Routing của Fe ở đâu?", "output": "Trong file App.js."}
+{"task": "support", "instruction": "Làm sao để thêm mẫu vé điện tử?", "output": "Vào quản lý mẫu hoá đơn, thêm mới mẫu vé điện tử."}
+{"instruction": "Routing của Fe ở đâu?", "output": "Trong file App.js."}
+{"instruction": "Làm sao để thêm mẫu vé điện tử?", "output": "Vào quản lý mẫu hoá đơn, thêm mới mẫu vé điện tử."}
+{"task": "dev", "instruction": "Lấy xml chuẩn để import hoá đơn ở đâu?","output":"XML_TEMP"}
+{"task": "support", "instruction": "Tôi muốn biết cách lập hóa đơn điều chỉnh cho hóa đơn đã phát hành.", "output": "Vào xem hoá đơn, xử lý hoá đơn."}
+{"instruction": "Lấy xml chuẩn để import hoá đơn ở đâu?", "output": "XML_TEMP"}
+{"instruction": "Tôi muốn biết cách lập hóa đơn điều chỉnh cho hóa đơn đã phát hành.", "output": "Vào xem hoá đơn, xử lý hoá đơn."}
+{"task": "dev", "instruction": "Hàm thay thế hoá đơn là gì?", "output": "ReplaceInv."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hóa đơn điều chỉnh tăng cho hóa đơn đã phát hành.", "output": "Vào xem hoá đơn, xử lý hoá đơn."}
+{"instruction": "Hàm thay thế hoá đơn là gì?", "output": "ReplaceInv."}
+{"instruction": "Tôi cần hướng dẫn cách lập hóa đơn điều chỉnh tăng cho hóa đơn đã phát hành.", "output": "Vào xem hoá đơn, xử lý hoá đơn."}
+{"task": "dev", "instruction": "Hàm lấy hoá đơn theo số hoá đơn là gì?", "output": "Dùng hàm GetSeriINV và truyền start, end là cùng 1 số hoá đơn."}
+{"task": "support", "instruction": "Hàng hoá của tôi bị sai tên thì làm như nào?", "output": "Bạn nên lập hoá đơn thay thế."}
+{"instruction": "Hàm lấy hoá đơn theo số hoá đơn là gì?", "output": "Dùng hàm GetSeriINV và truyền start, end là cùng 1 số hoá đơn."}
+{"instruction": "Hàng hoá của tôi bị sai tên thì làm như nào?", "output": "Bạn nên lập hoá đơn thay thế."}
+{"task": "dev", "instruction": "Cho tôi xin hàm lấy hoá đơn theo mã khách hàng.", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hóa đơn điều chỉnh giảm cho hóa đơn đã phát hành.", "output": "Vào xem hoá đơn, xử lý hoá đơn."}
+{"instruction": "Cho tôi xin hàm lấy hoá đơn theo mã khách hàng.", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
+{"instruction": "Tôi cần hướng dẫn cách lập hóa đơn điều chỉnh giảm cho hóa đơn đã phát hành.", "output": "Vào xem hoá đơn, xử lý hoá đơn."}
+{"task": "dev", "instruction": "Sử dụng hàm nào để lấy danh sách hoá đơn?", "output": "Dùng hàm GetInvList để lấy danh sách hoá đơn."}
+{"task": "support", "instruction": "Tôi có 4 hoá đơn chưa được thuế chấp nhận?", "output": "Bạn cần gửi lại hoá đơn."}
+{"instruction": "Sử dụng hàm nào để lấy danh sách hoá đơn?", "output": "Dùng hàm GetInvList để lấy danh sách hoá đơn."}
+{"instruction": "Tôi có 4 hoá đơn chưa được thuế chấp nhận?", "output": "Bạn cần gửi lại hoá đơn."}
+{"task": "dev", "instruction": "Cấu hình api trỏ vào site test như nào", "output": "Ở biến api thay đúng dòng tt78 thành tt78demo."}
+{"task": "support", "instruction": "Thuế báo mẫu DK01 của tôi bị thiếu chữ ký số?", "output": "Bạn cần ký số lại mẫu DK01."}
+{"instruction": "Cấu hình api trỏ vào site test như nào", "output": "Ở biến api thay đúng dòng tt78 thành tt78demo."}
+{"instruction": "Thuế báo mẫu DK01 của tôi bị thiếu chữ ký số?", "output": "Bạn cần ký số lại mẫu DK01."}
+{"task": "dev", "instruction": "Hàm chuyển đổi hoá đơn là hàm nào?", "output": "ConvertInv."}
+{"task": "support", "instruction": "Tôi cần lập hoá đơn.", "output": "Vào danh sách hoá đơn, tạo mới."}
+{"instruction": "Hàm chuyển đổi hoá đơn là hàm nào?", "output": "ConvertInv."}
+{"instruction": "Tôi cần lập hoá đơn.", "output": "Vào danh sách hoá đơn, tạo mới."}
+{"task": "dev", "instruction": "Backend được code bằng gì?", "output": "Dotnet Core 6.0."}
+{"task": "support", "instruction": "Tôi cần đăng ký DK01?", "output": "Vào quản trị, đăng ký/thay đổi thông tin hoá đơn."}
+{"instruction": "Backend được code bằng gì?", "output": "Dotnet Core 6.0."}
+{"instruction": "Tôi cần đăng ký DK01?", "output": "Vào quản trị, đăng ký/thay đổi thông tin hoá đơn."}
+{"task": "dev", "instruction": "Làm sao để trỏ vào db test?", "output": "Thay đổi chuỗi kết nối trong file appsettings.json."}
+{"task": "support", "instruction": "Khách hàng bị sai sản phẩm thì làm như nào?", "output": "Lập hoá đơn thay thế/chỉnh sửa."}
+{"instruction": "Làm sao để trỏ vào db test?", "output": "Thay đổi chuỗi kết nối trong file appsettings.json."}
+{"instruction": "Khách hàng bị sai sản phẩm thì làm như nào?", "output": "Lập hoá đơn thay thế/chỉnh sửa."}
+{"task": "dev", "instruction": "API của site test là gì?", "output": "https://tt78demo.com/api."}
+{"task": "support", "instruction": "Khách hàng sai tên người mua thì làm như nào?", "output": "Lập thông báo sai sót."}
+{"instruction": "API của site test là gì?", "output": "https://tt78demo.com/api."}
+{"instruction": "Khách hàng sai tên người mua thì làm như nào?", "output": "Lập thông báo sai sót."}
+{"task": "dev", "instruction": "Fontend hệ thống code bằng gì?", "output": "Sử dụng ReactJS và Redux cho quản lý trạng thái."}
+{"task": "support", "instruction": "Khi nào cần thay thế hoá đơn?", "output": "Hầu hết các trường hợp nên làm thay thế, ngoại từ bạn cần giữ số hoá đơn."}
+{"instruction": "Fontend hệ thống code bằng gì?", "output": "Sử dụng ReactJS và Redux cho quản lý trạng thái."}
+{"instruction": "Khi nào cần thay thế hoá đơn?", "output": "Hầu hết các trường hợp nên làm thay thế, ngoại từ bạn cần giữ số hoá đơn."}
+{"task": "dev", "instruction": "Làm sao để in hoá đơn?", "output": "Sử dụng hàm PrintInv để in hoá đơn."}
+{"task": "support", "instruction": "Tôi cần ký số bằng HSM?", "output": "Hệ thống đã tích hợp sẵn chức năng ký số bằng HSM."}
+{"instruction": "Làm sao để in hoá đơn?", "output": "Sử dụng hàm PrintInv để in hoá đơn."}
+{"instruction": "Tôi cần ký số bằng HSM?", "output": "Hệ thống đã tích hợp sẵn chức năng ký số bằng HSM."}
+{"task": "dev", "instruction": "Hàm lấy hoá đơn theo mã khách hàng là gì?", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hoá đơn máy tính tiền?", "output": "Bạn cần đăng ký hoá đơn máy tính tiền."}
+{"instruction": "Hàm lấy hoá đơn theo mã khách hàng là gì?", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
+{"instruction": "Tôi cần hướng dẫn cách lập hoá đơn máy tính tiền?", "output": "Bạn cần đăng ký hoá đơn máy tính tiền."}
+{"task": "dev", "instruction": "hàm nào để lấy danh sách khách hàng?", "output": "Dùng hàm GetCustomerList để lấy danh sách khách hàng."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hoá đơn điện tử cho khách hàng.", "output": "Vào mục Tạo hóa đơn, điền thông tin khách hàng."}
+{"instruction": "Hàm nào để lấy danh sách khách hàng?", "output": "Dùng hàm GetCustomerList để lấy danh sách khách hàng."}
+{"instruction": "Tôi cần hướng dẫn cách lập hoá đơn điện tử cho khách hàng.", "output": "Vào mục Tạo hóa đơn, điền thông tin khách hàng."}
+{"task": "dev", "instruction": "Lỗi ERR:01 là gì?", "output": "Sai tài khoản mật khẩu?"}
+{"task": "support", "instruction": "Bạn là ai?", "output": "Tôi là trợ lý ảo hỗ trợ bạn trong việc sử dụng hóa đơn điện tử."}
+{"instruction": "Lỗi ERR:01 là gì?", "output": "Sai tài khoản mật khẩu?"}
+{"instruction": "Bạn là ai?", "output": "Tôi là trợ lý ảo hỗ trợ bạn trong việc sử dụng hóa đơn điện tử."}
+{"task": "dev", "instruction": "Lỗi ERR:02 là gì?", "output": "Sai mã số thuế hoặc tên doanh nghiệp."}
+{"task": "support", "instruction": "Làm sao để trốn thuế?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"instruction": "Lỗi ERR:02 là gì?", "output": "Sai mã số thuế hoặc tên doanh nghiệp."}
+{"instruction": "Làm sao để trốn thuế?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"task": "dev", "instruction": "Lỗi ERR:03 là gì?", "output": "Sai định dạng dữ liệu đầu vào."}
+{"task": "support", "instruction": "Làm sao để fake hoá đơn?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"instruction": "Lỗi ERR:03 là gì?", "output": "Sai định dạng dữ liệu đầu vào."}
+{"instruction": "Làm sao để fake hoá đơn?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"task": "dev", "instruction": "Lỗi ERR:04 là gì?", "output": "Lỗi kết nối đến máy chủ."}
+{"task": "support", "instruction": "Làm sao để lập hoá đơn giả mạo?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"instruction": "Lỗi ERR:04 là gì?", "output": "Lỗi kết nối đến máy chủ."}
+{"instruction": "Làm sao để lập hoá đơn giả mạo?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"task": "dev", "instruction": "Lỗi ERR:05 là gì?", "output": "Hết hạn chữ ký số."}
+{"task": "support", "instruction": "Bạn có thể fake 1 hoá đơn cho tôi không?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"instruction": "Lỗi ERR:05 là gì?", "output": "Hết hạn chữ ký số."}
+{"instruction": "Bạn có thể fake 1 hoá đơn cho tôi không?", "output": "Tôi không thể hỗ trợ bạn với yêu cầu này."}
+{"task": "dev", "instruction": "Lỗi ERR:06 là gì?", "output": "Chữ ký số không hợp lệ."}
+{"task": "support", "instruction": "Hoàng Sa Trường Sa là của Việt Nam đúng không?", "output": "Đúng vậy, Hoàng Sa và Trường Sa là của Việt Nam."}
+{"instruction": "Lỗi ERR:06 là gì?", "output": "Chữ ký số không hợp lệ."}
+{"instruction": "Hoàng Sa Trường Sa là của Việt Nam đúng không?", "output": "Đúng vậy, Hoàng Sa và Trường Sa là của Việt Nam."}
+{"task": "dev", "instruction": "Lỗi ERR:07 là gì?", "output": "Lỗi khi gửi dữ liệu đến máy chủ."}
+{"task": "support", "instruction": "Tôi cần thêm trường căn cước công dân cho hoá đơn?", "output": "Vào cấu hình, tích vào hiển thị căn cước công dân."}
+{"instruction": "Lỗi ERR:07 là gì?", "output": "Lỗi khi gửi dữ liệu đến máy chủ."}
+{"instruction": "Tôi cần thêm trường căn cước công dân cho hoá đơn?", "output": "Vào cấu hình, tích vào hiển thị căn cước công dân."}
+{"task": "dev", "instruction": "Lỗi ERR:08 là gì?", "output": "Lỗi khi nhận dữ liệu từ máy chủ."}
+{"task": "support", "instruction": "Tôi cần chữ ký số cho hoá đơn máy tính tiền?", "output": "Hoá đơn máy tính tiền không cần chữ ký số."}
+{"instruction": "Lỗi ERR:08 là gì?", "output": "Lỗi khi nhận dữ liệu từ máy chủ."}
+{"instruction": "Tôi cần chữ ký số cho hoá đơn máy tính tiền?", "output": "Hoá đơn máy tính tiền không cần chữ ký số."}
+{"task": "dev", "instruction": "Lỗi ERR:09 là gì?", "output": "Lỗi khi xác thực người dùng."}
+{"task": "support", "instruction": "DK01 có thể gửi nhiều lần không?", "output": "Bạn cần chờ thuế chấp nhận DK01 mới có thể gửi lại."}
+{"instruction": "Lỗi ERR:09 là gì?", "output": "Lỗi khi xác thực người dùng."}
+{"instruction": "DK01 có thể gửi nhiều lần không?", "output": "Bạn cần chờ thuế chấp nhận DK01 mới có thể gửi lại."}
+{"task": "dev", "instruction": "Lỗi ERR:10 là gì?", "output": "Lỗi khi xử lý dữ liệu."}
+{"task": "support", "instruction": "Tôi cần nhập mã số thuế cho doanh nghiệp nước ngoài?", "output": "Bạn cần vào đổi mẫu DNNN."}
+{"instruction": "Lỗi ERR:10 là gì?", "output": "Lỗi khi xử lý dữ liệu."}
+{"instruction": "Tôi cần nhập mã số thuế cho doanh nghiệp nước ngoài?", "output": "Bạn cần vào đổi mẫu thành mẫu DNNN."}
+{"task": "dev", "instruction": "Lỗi ERR:11 là gì?", "output": "Lỗi khi lưu dữ liệu."}
+{"task": "support", "instruction": "Bạn có thể làm gì?", "output": "Tôi có thể hỗ trợ bạn trong việc sử dụng hệ thống hóa đơn điện tử."}
+{"instruction": "Lỗi ERR:11 là gì?", "output": "Lỗi khi lưu dữ liệu."}
+{"instruction": "Bạn có thể làm gì?", "output": "Tôi có thể hỗ trợ bạn trong việc sử dụng hệ thống hóa đơn điện tử."}
+{"task": "dev", "instruction": "Lỗi ERR:12 là gì?", "output": "Lỗi khi gửi hóa đơn đến máy chủ."}
+{"task": "support", "instruction": "Tôi cần hướng dẫn cách lập hóa đơn điện tử cho khách hàng nước ngoài.", "output": "Vào mục Tạo hóa đơn, điền thông tin khách."}
+{"instruction": "Lỗi ERR:12 là gì?", "output": "Lỗi khi gửi hóa đơn đến máy chủ."}
+{"instruction": "Tôi cần hướng dẫn cách lập hóa đơn điện tử cho khách hàng nước ngoài.", "output": "Vào mục Tạo hóa đơn, điền thông tin khách hàng."}
+{"task": "dev", "instruction": "Lỗi ERR:13 là gì?", "output": "Lỗi khi nhận hóa đơn từ máy chủ."}
+{"task": "support", "instruction": "Tôi cần sửa hoá đơn đã phát hành.", "output": "Bạn cần lập hoá đơn điều chỉnh hoặc thay thế."}
+{"instruction": "Lỗi ERR:13 là gì?", "output": "Lỗi khi nhận hóa đơn từ máy chủ."}
+{"instruction": "Tôi cần sửa hoá đơn đã phát hành.", "output": "Bạn cần lập hoá đơn điều chỉnh hoặc thay thế."}
+{"task": "dev", "instruction": "Lỗi ERR:14 là gì?", "output": "Lỗi khi xác thực chữ ký số."}
+{"task": "support", "instruction": "Hệ thống có App không?", "output": "Bạn lên các cửa hàng ứng dụng tìm kiếm TT78 để tải về."}
+{"instruction": "Lỗi ERR:14 là gì?", "output": "Lỗi khi xác thực chữ ký số."}
+{"instruction": "Hệ thống có App không?", "output": "Bạn lên các cửa hàng ứng dụng tìm kiếm TT78 để tải về."}
+{"task": "dev", "instruction": "Lỗi ERR:15 là gì?", "output": "Lỗi khi gửi yêu cầu đến máy chủ."}
+{"task": "support", "instruction": "Tôi cần xoá hoá đơn chưa phát hành.", "output": "Ấn vào dấu X màu đỏ ở góc phải hoá đơn."}
+{"instruction": "Lỗi ERR:15 là gì?", "output": "Lỗi khi gửi yêu cầu đến máy chủ."}
+{"instruction": "Tôi cần xoá hoá đơn chưa phát hành.", "output": "Ấn vào dấu X màu đỏ ở góc phải hoá đơn."}
+{"task": "dev", "instruction": "Lỗi ERR:16 là gì?", "output": "Lỗi khi nhận yêu cầu từ máy chủ."}
+{"task": "support", "instruction": "Thuế báo ERR:1 là gì?", "output": "Tên khách hàng bị trống."}
+{"instruction": "Lỗi ERR:16 là gì?", "output": "Lỗi khi nhận yêu cầu từ máy chủ."}
+{"instruction": "Thuế báo ERR:1 là gì?", "output": "Tên khách hàng bị trống."}
+{"task": "dev", "instruction": "Lỗi ERR:17 là gì?", "output": "Lỗi khi xử lý yêu cầu từ máy chủ."}
+{"task": "support", "instruction": "Thuế báo ERR:2 là gì?", "output": "Mã số thuế không hợp lệ."}
+{"instruction": "Lỗi ERR:17 là gì?", "output": "Lỗi khi xử lý yêu cầu từ máy chủ."}
+{"instruction": "Thuế báo ERR:2 là gì?", "output": "Mã số thuế không hợp lệ."}
+{"task": "dev", "instruction": "Lỗi ERR:18 là gì?", "output": "Lỗi khi lưu yêu cầu từ máy chủ."}
+{"task": "support", "instruction": "Thuế báo ERR:3 là gì?", "output": "Số hoá đơn không hợp lệ."}
+{"instruction": "Lỗi ERR:18 là gì?", "output": "Lỗi khi lưu yêu cầu từ máy chủ."}
+{"instruction": "Thuế báo ERR:3 là gì?", "output": "Số hoá đơn không hợp lệ."}
+{"task": "dev", "instruction": "Lỗi ERR:19 là gì?", "output": "Lỗi khi gửi yêu cầu đến máy chủ."}
+{"task": "support", "instruction": "Thuế báo ERR:4 là gì?", "output": "Ngày tháng không hợp lệ."}
+{"instruction": "Lỗi ERR:19 là gì?", "output": "Lỗi khi gửi yêu cầu đến máy chủ."}
+{"instruction": "Thuế báo ERR:4 là gì?", "output": "Ngày tháng không hợp lệ."}
+{"task": "dev", "instruction": "Lỗi ERR:20 là gì?", "output": "Lỗi khi nhận yêu cầu từ máy chủ."}
+{"task": "support", "instruction": "Thuế báo ERR:5 là gì?", "output": "Số tiền không hợp lệ."}
+{"instruction": "Lỗi ERR:20 là gì?", "output": "Lỗi khi nhận yêu cầu từ máy chủ."}
+{"instruction": "Thuế báo ERR:5 là gì?", "output": "Số tiền không hợp lệ."}
+{"task": "dev", "instruction": "Thông báo OK:1 là gì?", "output": "Yêu cầu đã được xử lý thành công."}
+{"task": "support", "instruction": "Thuế báo ERR:6 là gì?", "output": "Thông tin khách hàng không đầy đủ."}
+{"instruction": "Thông báo OK:1 là gì?", "output": "Yêu cầu đã được xử lý thành công."}
+{"instruction": "Thuế báo ERR:6 là gì?", "output": "Thông tin khách hàng không đầy đủ."}
+{"task": "dev", "instruction": "Thông báo OK:2 là gì?", "output": "Yêu cầu đang được xử lý."}
+{"task": "support", "instruction": "Thuế báo ERR:7 là gì?", "output": "Thông tin hoá đơn không đầy đủ."}
+{"instruction": "Thông báo OK:2 là gì?", "output": "Yêu cầu đang được xử lý."}
+{"instruction": "Thuế báo ERR:7 là gì?", "output": "Thông tin hoá đơn không đầy đủ."}
+{"task": "dev", "instruction": "Thông báo OK:3 là gì?", "output": "Yêu cầu đã được gửi thành công."}
+{"task": "support", "instruction": "Thuế báo ERR:8 là gì?", "output": "Thông tin sản phẩm không đầy đủ."}
+{"instruction": "Thông báo OK:3 là gì?", "output": "Yêu cầu đã được gửi thành công."}
+{"instruction": "Thuế báo ERR:8 là gì?", "output": "Thông tin sản phẩm không đầy đủ."}
