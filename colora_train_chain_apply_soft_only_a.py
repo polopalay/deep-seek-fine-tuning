@@ -37,14 +37,15 @@ class LoRAExpert(nn.Module):
 
 
 class COLORADataCollator:
-    def __init__(self, tokenizer, mlm=False):
+    def __init__(self, tokenizer, task_to_id: Dict[str, int], mlm=False):
         self.tokenizer = tokenizer
+        self.task_to_id = task_to_id
         self.mlm = mlm
 
     def __call__(self, features):
-        task_ids = [f.pop("task_id") for f in features]
+        task_ids = [self.task_to_id[f.pop("task_id")] for f in features]
         batch = self.tokenizer.pad(features, padding=True, return_tensors="pt")
-        batch["task_id"] = task_ids
+        batch["task_id"] = torch.tensor(task_ids, dtype=torch.long)
         return batch
 
 
@@ -118,34 +119,35 @@ class COLoRALinear(nn.Module):
 
     def merge_and_freeze(self):
         with torch.no_grad():
-            # Merge shared
+            # 1. Merge shared
             shared_weight = (self.shared_lora_B @ self.shared_lora_A) * self.scaling
 
-            # Merge experts: tính trung bình
+            # 2. Tính expert weights
             expert_weights = []
             for task in self.task_names:
                 A = self.task_experts[task].lora_A
                 B = self.task_experts[task].lora_B
                 expert_weights.append((B @ A) * self.scaling)
 
-            # Trung bình tất cả expert
-            if expert_weights:
-                avg_expert_weight = sum(expert_weights) / len(expert_weights)
-            else:
-                avg_expert_weight = torch.zeros_like(shared_weight)
+            # 3. Trọng số gộp (alpha) – fallback về trung bình nếu không có routing
+            K = len(expert_weights)
+            alpha = [1.0 / K] * K  # hoặc tự tính theo routing, nếu có
 
-            # Tính theo collaboration_weight như trong training
+            # 4. Gộp expert có trọng số
+            avg_expert_weight = sum(alpha[i] * expert_weights[i] for i in range(K))
+
+            # 5. Kết hợp với shared LoRA theo collaboration weight
             collab_weight = torch.sigmoid(self.collaboration_weight).item()
             merged_weight = (
                 collab_weight * shared_weight + (1 - collab_weight) * avg_expert_weight
             )
 
-            # Merge vào base weight
+            # 6. Merge vào base layer
             self.base_layer.weight.data += merged_weight.to(
                 self.base_layer.weight.dtype
             )
 
-        # Freeze toàn bộ module
+        # 7. Freeze toàn bộ
         for param in self.parameters():
             param.requires_grad = False
 
@@ -259,19 +261,14 @@ class CoLAOLoRATrainer(Trainer):
     def compute_loss(
         self, model, inputs, return_outputs=False, num_items_in_batch=None
     ):
-        task_id = inputs.pop("task_id", None) if "task_id" in inputs else None
+        # Loại bỏ task_id nếu có để tránh truyền vào AutoModel
+        task_id = inputs.pop("task_id", None)
 
-        # Forward pass
-        if task_id is not None:
-            inputs["task_id"] = task_id
-            outputs = model(**inputs)
-        else:
-            outputs = model(**inputs)
+        outputs = model(**inputs)
 
         if hasattr(outputs, "loss") and outputs.loss is not None:
             loss = outputs.loss
         else:
-            # fallback: tự tính loss nếu model không trả về loss
             logits = outputs.logits if hasattr(outputs, "logits") else outputs[0]
             labels = inputs.get("labels", None)
             if labels is None:
@@ -286,7 +283,7 @@ class CoLAOLoRATrainer(Trainer):
         total_loss = loss + additional_loss
 
         if self.state.global_step % 5 == 0:
-            collab_weight_val = -1  # fallback
+            collab_weight_val = -1
             for name, module in model.named_modules():
                 if isinstance(module, COLoRALinear):
                     collab_weight_val = torch.sigmoid(
@@ -438,7 +435,8 @@ def train_olora(
     )
 
     # Data collator
-    data_collator = COLORADataCollator(tokenizer, mlm=False)
+    task_to_id = {name: idx for idx, name in enumerate(task_names)}
+    data_collator = COLORADataCollator(tokenizer, task_to_id=task_to_id, mlm=False)
     # Initialize CoLA + O-LoRA trainer
     print("Starting CoLA + O-LoRA training...")
     trainer = CoLAOLoRATrainer(
@@ -533,7 +531,7 @@ def run_cola_chain(
 ):
     # Khởi tạo mô hình ban đầu
     current_model_path = base_model_path
-    r = 16
+    r = 8
     alpha = r * 2
 
     for round_id in range(1, chain_length + 1):
@@ -573,16 +571,16 @@ def run_cola_chain(
 
 if __name__ == "__main__":
     final_model_path, tokenizer = run_cola_chain(
-        data_path="./data/data_100.jsonl",
+        data_path="./data/data_1k_16token.jsonl",
         base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         adapter_prefix="dev_support_colora",
         chain_length=2,
-        max_seq_len=128,
+        max_seq_len=16,
         batch_size=4,
-        epochs=10,
-        # lr=1e-5,
+        epochs=2,
+        lr=1e-5,
         # lr=5e-5,
-        lr=1e-4,
+        # lr=1e-4,
         lambda_orth=0.01,
         lambda_collab=0.001,
         device="mps",
