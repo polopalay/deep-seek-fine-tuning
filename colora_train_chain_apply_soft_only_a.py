@@ -384,24 +384,24 @@ def train_olora(
         prompt = example["instruction"]
         response = example["output"]
 
-        prompt_response = prompt + response
-        encoded = tokenizer(
-            prompt_response,
+        # Token hóa prompt riêng để xác định độ dài
+        prompt_tokens = tokenizer(prompt, add_special_tokens=False)["input_ids"]
+
+        # Token hóa toàn bộ prompt + response
+        full = tokenizer(
+            prompt + response,
             truncation=True,
             max_length=max_seq_len,
             padding="max_length",
             return_tensors=None,
         )
 
-        input_ids = encoded["input_ids"]
-        attention_mask = encoded["attention_mask"]
+        input_ids = full["input_ids"]
+        attention_mask = full["attention_mask"]
 
-        # Tính độ dài prompt để che labels tương ứng
-        prompt_len = len(
-            tokenizer(prompt, truncation=True, max_length=max_seq_len)["input_ids"]
-        )
-        labels = [-100] * prompt_len + input_ids[prompt_len:]
-        labels = labels[:max_seq_len]  # Cắt nếu quá
+        # Mask phần prompt trong label để model chỉ học từ response
+        labels = input_ids.copy()
+        labels[: len(prompt_tokens)] = [-100] * len(prompt_tokens)
 
         return {
             "input_ids": input_ids,
@@ -577,11 +577,12 @@ if __name__ == "__main__":
         base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         adapter_prefix="dev_support_colora",
         chain_length=2,
-        max_seq_len=32,
+        max_seq_len=128,
         batch_size=4,
         epochs=10,
         # lr=1e-5,
-        lr=5e-5,
+        # lr=5e-5,
+        lr=1e-4,
         lambda_orth=0.01,
         lambda_collab=0.001,
         device="mps",
