@@ -3,4 +3,4 @@
 {"task": "dev", "instruction": "ERR:1?", "output": "Sai tên đăng nhập"}
 {"task": "support", "instruction": "Hóa đơn điện tử là gì?", "output": "Là tập tin ghi nhận giao dịch."}
 {"task": "support", "instruction": "Nội dung hóa đơn cần gì?", "output": "Tên hàng, giá, thuế, chữ ký."}
-{"task": "support", "instruction": "1+1=?", "output": "Tên hàng, giá, thuế, chữ ký."}
+{"task": "support", "instruction": "1+1=?", "output": "2"}

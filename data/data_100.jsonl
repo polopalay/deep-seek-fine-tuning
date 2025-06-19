@@ -48,53 +48,53 @@
 {"task": "dev", "instruction": "ERR:21 có nghĩa là sao?", "output": "Không thể kết nối đến hệ thống xác thực VNPT."}
 {"task": "dev", "instruction": "Lỗi ERR:22 là lỗi gì?", "output": "Sai định dạng số tiền hoặc không hợp lệ."}
 {"task": "dev", "instruction": "Gặp ERR:23 có nghĩa gì?", "output": "Tổng tiền không khớp giữa các trường."}
-{"task": "support", "instruction": "Không xem được chi tiết hóa đơn?", "output": "Hãy nhấn vào biểu tượng xem chi tiết."}
-{"task": "support", "instruction": "Không thao tác được với phần mềm?", "output": "Hãy thử tắt trình duyệt và mở lại."}
-{"task": "support", "instruction": "Không kiểm tra được hóa đơn đã tải?", "output": "Kiểm tra lại file tải về có bị lỗi không."}
-{"task": "support", "instruction": "Không lưu được bản nháp?", "output": "Bản nháp chỉ lưu khi điền đủ thông tin bắt buộc."}
-{"task": "support", "instruction": "Không thêm được khách hàng mới?", "output": "Mã số thuế đã tồn tại sẽ không cho thêm."}
-{"task": "support", "instruction": "Không mở được form điều chỉnh?", "output": "Kiểm tra trạng thái hóa đơn gốc đã phù hợp chưa."}
-{"task": "support", "instruction": "Không điều chỉnh hóa đơn đã kê khai?", "output": "Phải làm hóa đơn điều chỉnh, không chỉnh trực tiếp."}
-{"task": "support", "instruction": "Không chọn được ngày lập báo cáo hủy?", "output": "Ngày không được sớm hơn ngày hóa đơn."}
-{"task": "support", "instruction": "Không tìm được danh sách hóa đơn đã hủy?", "output": "Vào mục quản lý hóa đơn → Hủy."}
-{"task": "support", "instruction": "Không gán số hóa đơn khi thay thế?", "output": "Kiểm tra mẫu và ký hiệu hóa đơn đang dùng."}
-{"task": "support", "instruction": "Không sửa được mẫu số hóa đơn?", "output": "Mẫu số chỉ sửa được khi chưa phát hành."}
-{"task": "support", "instruction": "Không hiển thị danh sách khách hàng?", "output": "Kiểm tra quyền truy cập và kết nối mạng."}
-{"task": "support", "instruction": "Không tải được hóa đơn .inv?", "output": "Hãy kiểm tra định dạng tệp tải xuống."}
-{"task": "support", "instruction": "Không chuyển đổi hóa đơn sang A4?", "output": "Chỉ áp dụng với hóa đơn đã phát hành."}
-{"task": "support", "instruction": "Không cập nhật được ngày hủy?", "output": "Ngày hủy không được nhỏ hơn ngày hóa đơn."}
-{"task": "support", "instruction": "Không thêm dải hóa đơn hủy?", "output": "Chọn đúng mẫu số và ký hiệu còn hiệu lực."}
-{"task": "support", "instruction": "Không thấy dữ liệu tra cứu?", "output": "Đảm bảo đã nhập đầy đủ thông tin tra cứu."}
-{"task": "support", "instruction": "Không xem được chi tiết khách hàng?", "output": "Chọn đúng khách hàng trong danh sách."}
-{"task": "support", "instruction": "Không tạo được báo cáo hủy?", "output": "Kiểm tra các trường bắt buộc đã nhập đủ chưa."}
-{"task": "support", "instruction": "Không lưu được thông báo hủy?", "output": "Kiểm tra định dạng ngày và tên người lập."}
-{"task": "support", "instruction": "Không thao tác được khi tạo hóa đơn?", "output": "Thoát và đăng nhập lại hệ thống."}
-{"task": "support", "instruction": "Không sửa được người lập biểu?", "output": "Chỉ sửa trước khi lưu thông báo hủy."}
-{"task": "support", "instruction": "Không điều chỉnh được ký hiệu hóa đơn?", "output": "Ký hiệu không thể thay đổi sau phát hành."}
-{"task": "support", "instruction": "Không tìm thấy báo cáo hủy đã lưu?", "output": "Tìm theo khoảng thời gian tạo báo cáo."}
-{"task": "support", "instruction": "Không tải được PDF hóa đơn?", "output": "Kiểm tra trình duyệt hỗ trợ đọc PDF."}
-{"task": "support", "instruction": "Không hiện nút tạo hóa đơn?", "output": "Đăng nhập lại và kiểm tra quyền người dùng."}
-{"task": "support", "instruction": "Không in được hóa đơn?", "output": "Cài lại driver máy in và kiểm tra kết nối."}
-{"task": "support", "instruction": "Không chọn được kiểu điều chỉnh?", "output": "Hóa đơn phải đủ điều kiện điều chỉnh."}
-{"task": "support", "instruction": "Không tải file văn bản đính kèm?", "output": "Kiểm tra định dạng file trước khi đính kèm."}
-{"task": "support", "instruction": "Không thay đổi được phương pháp hủy?", "output": "Chỉ sửa được trước khi lưu báo cáo."}
-{"task": "support", "instruction": "Không thấy nút tạo mới khách hàng?", "output": "Kiểm tra quyền thêm dữ liệu khách hàng."}
-{"task": "support", "instruction": "Không hiển thị ngày lập hóa đơn?", "output": "Ngày lập phải nằm trong dải hiệu lực."}
-{"task": "support", "instruction": "Không thao tác được phần danh mục?", "output": "Tải lại trang hoặc kiểm tra mạng."}
-{"task": "support", "instruction": "Không tra cứu được hóa đơn đã phát hành?", "output": "Dùng mã tra cứu trên file PDF."}
-{"task": "support", "instruction": "Không xóa được hóa đơn đã tạo?", "output": "Chỉ xóa khi hóa đơn chưa phát hành."}
-{"task": "support", "instruction": "Không chỉnh được mã hàng hóa?", "output": "Cập nhật trong mục Danh mục hàng hóa."}
-{"task": "support", "instruction": "Không xem được hóa đơn cũ?", "output": "Tìm lại theo khoảng thời gian cụ thể."}
-{"task": "support", "instruction": "Không lưu được thông tin điều chỉnh?", "output": "Kiểm tra đã nhập đủ trường bắt buộc chưa."}
-{"task": "support", "instruction": "Không sửa được thông tin khách?", "output": "Khách đã có hóa đơn không được chỉnh."}
-{"task": "support", "instruction": "Không xuất hóa đơn sang Excel?", "output": "Kiểm tra phần mềm hỗ trợ file .xls."}
-{"task": "support", "instruction": "Không cập nhật người đại diện pháp luật?", "output": "Chỉ sửa trong phần Thông tin đơn vị."}
-{"task": "support", "instruction": "Không tải được danh sách hóa đơn?", "output": "Chỉ tải khi có dữ liệu hiển thị."}
-{"task": "support", "instruction": "Không chọn được kiểu hóa đơn?", "output": "Hãy kiểm tra loại hình doanh nghiệp đã đăng ký."}
-{"task": "support", "instruction": "Không nhập được dải số hóa đơn?", "output": "Dải số phải thuộc mẫu và ký hiệu hợp lệ."}
-{"task": "support", "instruction": "Không đính kèm được hóa đơn gốc?", "output": "Đảm bảo chọn đúng hóa đơn liên quan."}
-{"task": "support", "instruction": "Không gửi được hóa đơn điều chỉnh?", "output": "Kiểm tra cấu hình gửi email."}
-{"task": "support", "instruction": "Không khôi phục được hóa đơn đã xóa?", "output": "Hóa đơn đã xóa sẽ không phục hồi được."}
-{"task": "support", "instruction": "Không hiện bản xem trước hóa đơn?", "output": "Hãy kiểm tra kết nối mạng và plugin PDF."}
-{"task": "support", "instruction": "Không hiện nút ký hóa đơn?", "output": "Kiểm tra thiết bị chữ ký số."}
-{"task": "support", "instruction": "Không cập nhật được dải hóa đơn?", "output": "Chỉ cập nhật khi chưa phát hành hóa đơn nào."}
+{"task": "support", "instruction": "Tách HĐĐT theo đơn vị được không?", "output": "Được, nếu đủ điều kiện"}
+{"task": "support", "instruction": "Có thể tra cứu hóa đơn cũ?", "output": "Được nếu còn lưu trữ"}
+{"task": "support", "instruction": "HĐĐT dùng trong xuất khẩu?", "output": "Được, theo quy định"}
+{"task": "support", "instruction": "Sử dụng HĐĐT song ngữ được không?", "output": "Được nếu đầy đủ nội dung"}
+{"task": "support", "instruction": "Có được in nhiều bản PDF không?", "output": "Được để lưu nội bộ"}
+{"task": "support", "instruction": "Tên sản phẩm viết tắt được không?", "output": "Không, phải ghi đầy đủ"}
+{"task": "support", "instruction": "Có thể ký HĐĐT bằng token?", "output": "Có, nếu token hợp lệ"}
+{"task": "support", "instruction": "MST khách sai xử lý sao?", "output": "Lập hóa đơn thay thế"}
+{"task": "support", "instruction": "Lỗi mã XML do đâu?", "output": "Sai cấu trúc file gửi"}
+{"task": "support", "instruction": "Không ký được số hóa đơn?", "output": "Kiểm tra chữ ký số và máy chủ"}
+{"task": "support", "instruction": "Số hóa đơn có thể trùng không?", "output": "Không, phải duy nhất"}
+{"task": "support", "instruction": "Có thể đổi đơn vị tính?", "output": "Có nếu ghi rõ điều chỉnh"}
+{"task": "support", "instruction": "Sai ngày lập thì sao?", "output": "Lập lại bằng hóa đơn thay thế"}
+{"task": "support", "instruction": "Có thể ghi thiếu thông tin?", "output": "Không, phải đầy đủ theo mẫu"}
+{"task": "support", "instruction": "Chuyển đổi HĐĐT sang giấy hợp lệ?", "output": "Có, với mục đích lưu trữ"}
+{"task": "support", "instruction": "HĐĐT có cần dấu mộc đỏ?", "output": "Không, chỉ chữ ký số"}
+{"task": "support", "instruction": "Số hóa đơn có giới hạn không?", "output": "Không, nhưng phải liên tục"}
+{"task": "support", "instruction": "Cần báo cáo khi hủy HĐĐT?", "output": "Có, gửi lý do lên cơ quan thuế"}
+{"task": "support", "instruction": "Phần mềm HĐĐT phải kết nối gì?", "output": "Hệ thống Tổng cục Thuế"}
+{"task": "support", "instruction": "Có thể chỉnh tên khách?", "output": "Dùng hóa đơn điều chỉnh"}
+{"task": "support", "instruction": "Có được thay đổi số tiền?", "output": "Chỉ qua hóa đơn điều chỉnh"}
+{"task": "support", "instruction": "Làm sao biết HĐĐT hợp lệ?", "output": "Có mã xác thực và ký số đúng"}
+{"task": "support", "instruction": "Số HĐĐT có thể nhảy?", "output": "Được nếu không trùng và logic"}
+{"task": "support", "instruction": "Sai đơn giá vẫn gửi được không?", "output": "Có thể, nhưng cần điều chỉnh sau"}
+{"task": "support", "instruction": "Ngưng hoạt động có cần báo thuế?", "output": "Có, khai báo với cơ quan thuế"}
+{"task": "support", "instruction": "Có thể lùi ngày hóa đơn không?", "output": "Không, phải đúng thời điểm phát sinh"}
+{"task": "support", "instruction": "Tách hóa đơn nhiều sản phẩm?", "output": "Được nếu phù hợp nghiệp vụ"}
+{"task": "support", "instruction": "Sửa nội dung ghi sai?", "output": "Dùng hóa đơn điều chỉnh hoặc thay thế"}
+{"task": "support", "instruction": "Lỗi sai loại hóa đơn?", "output": "Phải lập lại hóa đơn đúng loại"}
+{"task": "support", "instruction": "Ký sai vị trí hóa đơn?", "output": "Không hợp lệ, cần lập mới"}
+{"task": "support", "instruction": "Có thể ký hóa đơn sau không?", "output": "Không, phải ký ngay khi lập"}
+{"task": "support", "instruction": "Lỗi khi gửi hóa đơn lên thuế?", "output": "Kiểm tra kết nối và định dạng"}
+{"task": "support", "instruction": "Có thể uỷ quyền ký số?", "output": "Được nếu quy định nội bộ cho phép"}
+{"task": "support", "instruction": "Cần báo cáo định kỳ HĐĐT?", "output": "Không bắt buộc nếu kết nối tự động"}
+{"task": "support", "instruction": "HĐĐT có thể lập nhiều lần không?", "output": "Không, chỉ một lần hợp lệ"}
+{"task": "support", "instruction": "Làm sao kiểm tra hóa đơn thật?", "output": "Tra mã tại hoadondientu.gdt.gov.vn"}
+{"task": "support", "instruction": "Có thể dùng hóa đơn điện tử nước ngoài?", "output": "Không, phải tuân thủ quy định Việt Nam"}
+{"task": "support", "instruction": "HĐĐT bị từ chối do lỗi gì?", "output": "7 lỗi nhập liệu sai định dạng"}
+{"task": "support", "instruction": "SĐT quá 20 ký tự gây gì?", "output": "Thuế từ chối cấp mã"}
+{"task": "support", "instruction": "Sửa số điện thoại sai sao?", "output": "Nhập lại đúng định dạng"}
+{"task": "support", "instruction": "Email không hợp lệ ảnh hưởng?", "output": "HĐĐT bị từ chối cấp mã"}
+{"task": "support", "instruction": "Cấu trúc email hợp lệ là?", "output": "Tên email + @ + tên miền"}
+{"task": "support", "instruction": "Tài khoản ngân hàng quá dài?", "output": "Không được cấp mã"}
+{"task": "support", "instruction": "Bao nhiêu ký tự cho STK ngân hàng?", "output": "Tối đa 30 ký tự"}
+{"task": "support", "instruction": "Tên người mua bị bỏ trống?", "output": "HĐĐT bị từ chối"}
+{"task": "support", "instruction": "MST sai định dạng gây gì?", "output": "Không được cấp mã"}
+{"task": "support", "instruction": "Độ dài MST đúng là bao nhiêu?", "output": "10 hoặc 13 số"}
+{"task": "support", "instruction": "Ngày xuất hóa đơn sai thì sao?", "output": "Không cấp mã thuế"}
+{"task": "support", "instruction": "Ngày xuất sớm hơn được duyệt?", "output": "Hóa đơn bị từ chối"}
+{"task": "support", "instruction": "Thiếu thuế suất xử lý sao?", "output": "Bổ sung đủ trước khi gửi"}
