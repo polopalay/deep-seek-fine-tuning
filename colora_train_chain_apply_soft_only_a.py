@@ -241,10 +241,6 @@ def apply_cola_orthogonal_lora(
 
 
 class CoLAOLoRATrainer(Trainer):
-    """
-    Custom Trainer for CoLA + O-LoRA
-    """
-
     def __init__(
         self,
         lambda_orth: float = 0.01,
@@ -378,25 +374,25 @@ def train_olora(
 
     # Tokenize dataset
     def tokenize(example):
-        prompt = example["instruction"]
-        response = example["output"]
+        prompt = (
+            "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n"
+            + example["instruction"]
+            + "<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+        )
+        response = example["output"] + "<|eot_id|>"
 
-        # Token hóa prompt riêng để xác định độ dài
+        # Tokenize để xác định ranh giới
         prompt_tokens = tokenizer(prompt, add_special_tokens=False)["input_ids"]
-
-        # Token hóa toàn bộ prompt + response
-        full = tokenizer(
+        full_tokens = tokenizer(
             prompt + response,
             truncation=True,
             max_length=max_seq_len,
             padding="max_length",
-            return_tensors=None,
         )
 
-        input_ids = full["input_ids"]
-        attention_mask = full["attention_mask"]
+        input_ids = full_tokens["input_ids"]
+        attention_mask = full_tokens["attention_mask"]
 
-        # Mask phần prompt trong label để model chỉ học từ response
         labels = input_ids.copy()
         labels[: len(prompt_tokens)] = [-100] * len(prompt_tokens)
 
@@ -571,15 +567,15 @@ def run_cola_chain(
 
 if __name__ == "__main__":
     final_model_path, tokenizer = run_cola_chain(
-        data_path="./data/data_1k_16token.jsonl",
+        data_path="./data/data_100.jsonl",
         base_model_path="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         adapter_prefix="dev_support_colora",
-        chain_length=2,
-        max_seq_len=16,
-        batch_size=4,
+        chain_length=1,
+        max_seq_len=64,
+        batch_size=2,
         epochs=2,
-        lr=1e-5,
-        # lr=5e-5,
+        # lr=1e-5,
+        lr=5e-5,
         # lr=1e-4,
         lambda_orth=0.01,
         lambda_collab=0.001,
