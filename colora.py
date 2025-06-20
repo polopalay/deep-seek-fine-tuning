@@ -1,7 +1,7 @@
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
-from peft import get_peft_model, LoraConfig, TaskType
-from transformers import DataCollatorForLanguageModeling
+from peft import get_peft_model, LoraConfig, TaskType, PeftModel
+from transformers import DataCollatorForLanguageModeling, EarlyStoppingCallback
 import torch
 import os
 import warnings
@@ -14,7 +14,6 @@ warnings.filterwarnings("ignore")
 
 
 def alpha_strategy(r):
-    # return r * 2
     c = 8
     return int(round(math.sqrt(r) * c))
 
@@ -55,7 +54,6 @@ class OrthLoRATrainer(Trainer):
             lambda_orth = 0.0
 
         total_loss = main_loss + lambda_orth * orth_loss
-        # print(f"Main loss: {main_loss.item():.2f} Orth loss: {orth_loss.item():.6f}")
         print(f"Main loss: {main_loss.item():.2f} Orth loss: {float(orth_loss):.6f}")
 
         return (total_loss, outputs) if return_outputs else total_loss
@@ -83,7 +81,7 @@ def training_using_cola(
     )
 
     def tokenize(example):
-        formatted = f"### Câu hỏi:\n{example['instruction']}\n\n### Trả lời:\n{example['output']}"
+        formatted = f"### Câu hỏi:\n{example['instruction']}\n\n### Trả lời:\n{example['output']}{tokenizer.eos_token}"
         return tokenizer(
             formatted, truncation=True, padding="max_length", max_length=tokenizer_len
         )
@@ -96,11 +94,8 @@ def training_using_cola(
     for round_idx, r in enumerate(r_list):
         print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
 
-        # Load model
         model = AutoModelForCausalLM.from_pretrained(model_checkpoint)
-        # model.resize_token_embeddings(len(tokenizer))
-
-        # Freeze các adapter cũ (nếu có)
+        # Freeze các adapter cũ
         if adapter_names:
             frozen_count = 0
             for name, param in model.named_parameters():
@@ -131,9 +126,17 @@ def training_using_cola(
             logging_steps=20,
             warmup_ratio=warmup_ratio,
             learning_rate=learning_rate,
-            save_strategy="no",
             report_to="none",
+            save_strategy="epoch",
+            evaluation_strategy="epoch",
+            load_best_model_at_end=True,
+            metric_for_best_model="eval_loss",
+            greater_is_better=False,
             fp16=False,
+        )
+        early_stopping = EarlyStoppingCallback(
+            early_stopping_patience=2,
+            early_stopping_threshold=0.001,
         )
 
         trainer = OrthLoRATrainer(
@@ -144,30 +147,28 @@ def training_using_cola(
             tokenizer=tokenizer,
             data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
             orth_lambda=orth_lambda,
+            callbacks=[early_stopping],
         )
 
         trainer.train()
 
-        model.save_pretrained(f"{output_dir}/{adapter_name}")
-        tokenizer.save_pretrained(f"{output_dir}/{adapter_name}")
-        model_checkpoint = f"{output_dir}/{adapter_name}"
+        model = model.merge_and_unload()
 
-    model = AutoModelForCausalLM.from_pretrained(model_checkpoint)
-    model = get_peft_model(model, lora_config)  # apply cấu trúc lại để merge
-    model = model.merge_and_unload()
+        # Lưu checkpoint đã merge
+        merged_ckpt_dir = f"{output_dir}/merged_model_{r}"
+        os.makedirs(merged_ckpt_dir, exist_ok=True)
+        model.save_pretrained(merged_ckpt_dir)
+        tokenizer.save_pretrained(merged_ckpt_dir)
+        print(f"Đã lưu mô hình merged tại: {merged_ckpt_dir}")
 
-    final_path = f"{output_dir}/merged_model_final"
-    model.save_pretrained(final_path)
-    tokenizer.save_pretrained(final_path)
-
-    print(f"\nĐã huấn luyện xong và merge tại: {final_path}")
+        model_checkpoint = merged_ckpt_dir
 
 
 if __name__ == "__main__":
     training_using_cola(
         dataset_path="./data/data_1000.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r_list=[16, 8],
+        r_list=[16, 8, 4],
         batch_size=2,
         num_epochs=5,
         orth_lambda=0.5,
