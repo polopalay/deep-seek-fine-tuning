@@ -154,7 +154,6 @@ def training_using_cola(
 
         model = model.merge_and_unload()
 
-        # Lưu checkpoint đã merge
         merged_ckpt_dir = f"{output_dir}/merged_model_{r}"
         os.makedirs(merged_ckpt_dir, exist_ok=True)
         model.save_pretrained(merged_ckpt_dir)
@@ -166,15 +165,16 @@ def training_using_cola(
 
 if __name__ == "__main__":
     training_using_cola(
-        dataset_path="./data/data_1000.jsonl",
+        dataset_path="./data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r_list=[16, 8, 4],
         batch_size=2,
-        num_epochs=5,
+        num_epochs=3,
         orth_lambda=0.5,
-        tokenizer_len=32,
-        warmup_ratio=0.03,
-        learning_rate=5e-5,
+        tokenizer_len=128,
+        warmup_ratio=0.04,
+        learning_rate=2e-5,
+        # learning_rate=5e-5,
         device="mps",
         output_dir="./colora_output",
         base_adapter_name="colora",

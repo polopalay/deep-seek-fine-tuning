@@ -36,6 +36,7 @@
 {"instruction": "Có cần điền đầy đủ tất cả các trường trong XML không?", "output": "Chỉ cần điền các trường bắt buộc, các trường khác có thể để trống.", "function": ""}
 {"instruction": "Có được gửi hóa đơn không nếu một trong các hóa đơn XML sai?", "output": "Không, hệ thống sẽ từ chối toàn bộ lô nếu có một hóa đơn sai.", "function": ""}
 {"instruction": "Có được phép trùng Fkey trong cùng một lô không?", "output": "Không, Fkey phải duy nhất cho mỗi hóa đơn.", "function": ""}
+{"instruction": "XML mẫu hợp lệ cho ImportAndPublishInv trông như thế nào?", "output": "<Invoices><Inv><key>KH001</key><Invoice><CusCode>KH001</CusCode><CusName>CT TNHH ABC</CusName><CusAddress>123 Đường A</CusAddress><Products><Product><ProdName>SP1</ProdName><Amount>100000</Amount><VATRate>10</VATRate><VATAmount>10000</VATAmount></Product></Products><Amount>110000</Amount><AmountInWords>Một trăm mười nghìn đồng</AmountInWords></Invoice></Inv></Invoices>", "function": ""}
 {"instruction": "Có thể dùng ImportAndPublishInv để thay thế hóa đơn đã phát hành không?", "output": "Không, phải dùng các hàm riêng như ReplaceInvoice.", "function": ""}
 {"instruction": "Nếu phát hành thành công thì kết quả có gì?", "output": "Trả về OK kèm danh sách serial, số hóa đơn và key tương ứng.", "function": ""}
 {"instruction": "Nếu xmlInvData thiếu trường CusName thì sao?", "output": "Hệ thống sẽ trả về lỗi ERR:3.", "function": ""}
@@ -67,6 +68,7 @@
 {"instruction": "Trường nào trong XML dùng để xác định mã khách hàng?", "output": "<CusCode> là trường định danh khách hàng.", "function": ""}
 {"instruction": "<IsSum> thể hiện điều gì?", "output": "Loại dòng sản phẩm: hàng hóa, khuyến mại, chiết khấu, ghi chú.", "function": ""}
 {"instruction": "<ResourceCode> có bắt buộc không?", "output": "Không bắt buộc, dùng cho quản trị nội bộ.", "function": ""}
+{"instruction": "Cho tôi một mẫu XML chuẩn để phát hành hóa đơn sử dụng hàm ImportAndPublishAssignedNo", "output": "<Invoices><Inv><key>*</key><Invoice><InvoiceNo>*</InvoiceNo><CusCode>*</CusCode><CusName>*</CusName><CusAddress>*</CusAddress><Products><Product><ProdName>*</ProdName><Amount>*</Amount><Total>*</Total><VATRate>*</VATRate><VATAmount>*</VATAmount></Product></Products><Total>*</Total><VATRate>*</VATRate><VATAmount>*</VATAmount><Amount>*</Amount><AmountInWords>*</AmountInWords></Invoice></Inv></Invoices>", "function": ""}
 {"instruction": "Hàm ImportAndPublishAssignedNo dùng để làm gì?", "output": "Dùng để phát hành hóa đơn với dữ liệu XML cho phép truyền số hóa đơn cụ thể.", "function": ""}
 {"instruction": "Tối đa bao nhiêu hóa đơn có thể phát hành trong một lần gọi ImportAndPublishAssignedNo?", "output": "Tối đa là 5000 hóa đơn trong một lần gọi.", "function": ""}
 {"instruction": "ImportAndPublishAssignedNo sử dụng HTTP method nào?", "output": "Sử dụng phương thức POST.", "function": ""}
@@ -208,6 +210,7 @@
 {"instruction": "Có thể bỏ qua <Products> trong hóa đơn được không?", "output": "Không, ít nhất phải có một sản phẩm trong hóa đơn.", "function": ""}
 {"instruction": "Hóa đơn có thể có nhiều sản phẩm không?", "output": "Có, thêm nhiều thẻ <Product> bên trong <Products>.", "function": ""}
 {"instruction": "Tôi có thể dùng XML này cho nhiều hóa đơn không?", "output": "Có, bằng cách lặp lại nhiều thẻ <Inv> bên trong <Invoices>.", "function": ""}
+{"instruction": "Cho tôi một mẫu XML chuẩn để sử dụng với hàm publishInvWithToken", "output": "<Invoices>\n<SerialCert>*</SerialCert>\n<Inv>\n<key>*</key>\n<idInv>*</idInv>\n<signValue>*</signValue>\n</Inv>\n</Invoices>\nTrong đó:\ntag <SerialCert>: serial chứng thư của công ty\n<tag <key>:> fkey\n<tag <idInv>:> id hóa đơn trên hệ thống vnpt\n<tag <signValue>:> chuỗi ký", "function": ""}
 {"instruction": "Trường <SerialCert> trong XML publishInvWithToken dùng để làm gì?", "output": "Trường <SerialCert> chứa serial của chứng thư số đã đăng ký, giúp xác định chứng thư dùng để ký hóa đơn.", "function": ""}
 {"instruction": "Ý nghĩa của trường <key> trong hàm publishInvWithToken?", "output": "Trường <key> là fkey – khóa duy nhất dùng để phân biệt từng hóa đơn trong danh sách phát hành.", "function": ""}
 {"instruction": "Tôi cần điền gì trong trường <idInv>?", "output": "Trường <idInv> là ID hóa đơn trên hệ thống VNPT, được lấy từ kết quả trả về của hàm getHashInvWithToken.", "function": ""}
@@ -266,6 +269,7 @@
 {"instruction": "Lỗi ERR:27 có nghĩa gì?", "output": "Chứng thư số chưa đến thời gian bắt đầu hiệu lực.", "function": ""}
 {"instruction": "Tôi có thể truyền nhiều Inv trong XML không?", "output": "Có thể. Mỗi hóa đơn cần có đủ key, idInv và signValue trong một thẻ Inv.", "function": ""}
 {"instruction": "Có cần xác thực tài khoản khi gọi AdjustReplaceInvWithToken không?", "output": "Có. Cần cả Account/ACpass (nhân viên) và username/password (khách hàng có quyền ServiceRole).", "function": ""}
+{"instruction": "Giải thích cấu trúc XML đầu vào của AdjustReplaceInvWithToken?", "output": "<Invoices><SerialCert>*</SerialCert><PatternOld>*</PatternOld><SerialOld>*</SerialOld><NoOlde>*</NoOlde><Inv><key>*</key><idInv>*</idInv><signValue>*</signValue></Inv></Invoices>\nTrong đó:\ntag <SerialCert>: serial chứng thư của công ty\n<tag PatternOld>: mẫu số của hóa đơn bị điều chỉnh, thay thế\n<tag SerialOld>: ký hiệu của hóa đơn bị điều chỉnh, thay thế\n<tag NoOlde>: số hóa đơn của hóa đơn bị điều chỉnh, thay thế\n<tag key>: fkey hóa đơn mới\n<tag idInv>: id hóa đơn mới trên hệ thống vnpt\n<tag signValue>: giá trị ký số của hóa đơn mới", "function": ""}
 {"instruction": "type = 4 dùng trong trường hợp nào?", "output": "Dùng khi cần điều chỉnh thông tin hóa đơn như tên khách hàng, địa chỉ,... mà không thay đổi số tiền.", "function": ""}
 {"instruction": "Có thể dùng AdjustReplaceInvWithToken để sửa số tiền không?", "output": "Có. Bạn cần truyền type = 2 hoặc 3 nếu muốn điều chỉnh tăng hoặc giảm giá trị hóa đơn.", "function": ""}
 {"instruction": "Phân biệt giữa thay thế và điều chỉnh hóa đơn?", "output": "Thay thế (type=1) là hủy hóa đơn cũ và tạo hóa đơn mới. Điều chỉnh (type=2,3,4) là giữ hóa đơn gốc và tạo hóa đơn bổ sung phản ánh thay đổi.", "function": ""}
@@ -312,6 +316,7 @@
 {"instruction": "Số hóa đơn có được tự sinh không?", "output": "Có, hệ thống sẽ tự động cấp số hóa đơn theo dải pattern và serial tương ứng.", "function": ""}
 {"instruction": "Có cần truyền Amount và VATAmount không?", "output": "Có, đó là các trường bắt buộc để tính tổng tiền và thuế GTGT.", "function": ""}
 {"instruction": "Có cần truyền AmountInWords không?", "output": "Có, đây là trường bắt buộc thể hiện tổng tiền bằng chữ.", "function": ""}
+{"instruction": "Cho tôi một mẫu XML đơn giản cho hàm ImportInvByPattern", "output": "<Invoices><Inv><key>*</key><Invoice><CusCode>*</CusCode><CusName>*</CusName><CusAddress>*</CusAddress><Products><Product><ProdName>*</ProdName><Amount>*</Amount></Product></Products><Total>*</Total><VATRate>*</VATRate><VATAmount>*</VATAmount><Amount>*</Amount><AmountInWords>*</AmountInWords></Invoice></Inv></Invoices>\nTrong đó:\n<key>: định danh hóa đơn\n<CusCode>: mã khách hàng\n<ProdName>: tên sản phẩm\n<Amount>: tổng tiền\n<AmountInWords>: số tiền viết bằng chữ", "function": ""}
 {"instruction": "Trường CusCode là gì?", "output": "CusCode là mã khách hàng, bắt buộc phải có trong mỗi hóa đơn để hệ thống định danh khách hàng.", "function": ""}
 {"instruction": "Trường VATRate dùng để làm gì?", "output": "VATRate cho biết phần trăm thuế GTGT áp dụng cho hóa đơn (ví dụ: 10).", "function": ""}
 {"instruction": "Tôi có thể không điền CusPhone được không?", "output": "Có thể, trường CusPhone không bắt buộc trong XML hóa đơn.", "function": ""}
@@ -414,6 +419,7 @@
 {"instruction": "Giải thích ý nghĩa trường <AmountInWords>", "output": "<AmountInWords> là tổng tiền của hóa đơn được viết bằng chữ, ví dụ: 'Một triệu đồng'.", "function": ""}
 {"instruction": "Trường <GrossValue10> và <VatAmount10> dùng khi nào?", "output": "Dùng để thể hiện tổng tiền và tiền thuế GTGT ứng với mức thuế suất 10%. Tương tự với 0% và 5%.", "function": ""}
 {"instruction": "Nếu hóa đơn có nhiều sản phẩm thì XML ra sao?", "output": "Thẻ <Products> sẽ chứa nhiều <Product>. Mỗi sản phẩm cần có <ProdName>, <Amount>, <Total>, <VATRate>, <VATAmount>...", "function": ""}
+{"instruction": "Cho tôi một mẫu XML chuẩn sử dụng trong ImportInv", "output": "<Invoices><Inv><key>*</key><Invoice><CusCode>*</CusCode><CusName>*</CusName><CusAddress>*</CusAddress><Products><Product><ProdName>*</ProdName><Amount>*</Amount><Total>*</Total><VATRate>*</VATRate><VATAmount>*</VATAmount></Product></Products><Total>*</Total><VATRate>*</VATRate><VATAmount>*</VATAmount><Amount>*</Amount><AmountInWords>*</AmountInWords></Invoice></Inv></Invoices>\nTrong đó:\n<key>: mã nhận diện hóa đơn\n<CusCode>: mã khách hàng\n<CusName>: tên khách hàng\n<Products>: danh sách sản phẩm\n<ProdName>: tên sản phẩm\n<Amount>: thành tiền\n<VATRate>: phần trăm VAT\n<VATAmount>: tiền VAT\n<AmountInWords>: tổng tiền bằng chữ", "function": ""}
 {"instruction": "Khi nào nên sử dụng ImportInv thay vì ImportInvByPattern?", "output": "ImportInv phù hợp khi chỉ muốn thêm hóa đơn mà không cần quản lý mẫu số và ký hiệu, hoặc hệ thống sẽ tự động phân bổ dải hóa đơn.", "function": ""}
 {"instruction": "Giải thích trường <PaymentStatus>", "output": "<PaymentStatus> thể hiện tình trạng thanh toán: 0 - chưa thanh toán, 1 - đã thanh toán.", "function": ""}
 {"instruction": "Trường <CreateDate> trong ImportInv là gì?", "output": "<CreateDate> là ngày tạo hóa đơn, định dạng dd/MM/yyyy, ví dụ: 30/07/2020.", "function": ""}
@@ -482,6 +488,7 @@
 {"instruction": "Trường hợp nào GetCertInfo trả về ERR:28?", "output": "Khi không có thông tin chứng thư nào trong hệ thống, GetCertInfo sẽ trả về lỗi ERR:28.", "function": ""}
 {"instruction": "Nếu hệ thống gặp sự cố, GetCertInfo phản hồi như thế nào?", "output": "Trong trường hợp lỗi hệ thống không xác định, GetCertInfo sẽ trả về mã lỗi ERR:5.", "function": ""}
 {"instruction": "Làm sao để lấy thông tin chứng thư dạng XML từ GetCertInfo?", "output": "Sau khi gọi hàm GetCertInfo, hệ thống sẽ trả về chuỗi XML đã được mã hóa base64, cần giải mã để đọc nội dung gốc.", "function": ""}
+{"instruction": "Cho tôi một mẫu XML chứng thư số trả về từ hàm GetCertInfo", "output": "<Certificate><OwnCA><![CDATA[*]]></OwnCA><SerialNumber>*</SerialNumber><ValidFrom>*</ValidFrom><ValidTo>*</ValidTo><OrganizationCA><![CDATA[*]]></OrganizationCA></Certificate>\nTrong đó:\ntag <OwnCA>: Tên tổ chức sở hữu chứng thư\n<tag <SerialNumber>: Mã số serial của chứng thư\n<tag <ValidFrom>: Ngày bắt đầu hiệu lực\n<tag <ValidTo>: Ngày chứng thư hết hạn\n<tag <OrganizationCA>: Nhà cung cấp chứng thư số", "function": ""}
 {"instruction": "Ý nghĩa của trường <OwnCA> trong XML chứng thư GetCertInfo là gì?", "output": "Trường <OwnCA> cho biết tổ chức sở hữu chứng thư số, thường là doanh nghiệp hoặc đơn vị sử dụng.", "function": ""}
 {"instruction": "Trường <SerialNumber> trong XML chứng thư dùng để làm gì?", "output": "Trường <SerialNumber> là mã định danh duy nhất cho chứng thư số do nhà cung cấp chứng thư cấp phát.", "function": ""}
 {"instruction": "Trường <ValidFrom> có ý nghĩa gì trong XML trả về từ GetCertInfo?", "output": "<ValidFrom> thể hiện ngày bắt đầu hiệu lực của chứng thư, chỉ từ thời điểm này chứng thư mới có thể được sử dụng để ký số.", "function": ""}
@@ -544,6 +551,7 @@
 {"instruction": "Khi công ty chưa đăng ký chứng thư thì kết quả là gì?", "output": "Trả về lỗi ERR:22 – Công ty chưa đăng ký chứng thư số.", "function": ""}
 {"instruction": "Khi chưa có thông tin chứng thư trong hệ thống thì sao?", "output": "Trả về lỗi ERR:28 – Chưa có thông tin chứng thư trong hệ thống.", "function": ""}
 {"instruction": "Trường hợp xảy ra lỗi hệ thống thì mã lỗi là gì?", "output": "ERR:5 – Lỗi hệ thống không xác định.", "function": ""}
+{"instruction": "Chuỗi XML trả về của hàm GetCertificates có dạng như thế nào?", "output": "<Certificates><Certificate><OwnCA><![CDATA[]]></OwnCA><SerialNumber></SerialNumber><ValidFrom>dd/MM/yyyy</ValidFrom><ValidTo>dd/MM/yyyy</ValidTo><OrganizationCA><![CDATA[]]></OrganizationCA><Status></Status><CertType></CertType></Certificate></Certificates>\nTrong đó:\n- <OwnCA>: Tên tổ chức sở hữu chứng thư\n- <SerialNumber>: Serial chứng thư số\n- <ValidFrom>: Ngày hiệu lực chứng thư (định dạng dd/MM/yyyy)\n- <ValidTo>: Ngày hết hạn chứng thư (định dạng dd/MM/yyyy)\n- <OrganizationCA>: Tên tổ chức cung cấp chứng thư\n- <Status>: Trạng thái chứng thư (0: chưa sử dụng, 1: đang sử dụng)\n- <CertType>: Loại chứng thư số (1: Token, 6: SmartCA)", "function": ""}
 {"instruction": "Ý nghĩa của tag <OwnCA> trong XML chứng thư là gì?", "output": "<OwnCA> chứa tên tổ chức sở hữu chứng thư số.", "function": ""}
 {"instruction": "Tag <SerialNumber> dùng để làm gì?", "output": "<SerialNumber> chứa mã số serial của chứng thư số.", "function": ""}
 {"instruction": "Tag <ValidFrom> có ý nghĩa gì?", "output": "<ValidFrom> chỉ định ngày bắt đầu hiệu lực của chứng thư.", "function": ""}
@@ -772,6 +780,7 @@
 {"instruction": "Trường `<index>` trong kết quả trả về của listInvByCus là gì?", "output": "`<index>` cho biết tháng xuất hóa đơn.", "function": ""}
 {"instruction": "Tôi muốn tra cứu hóa đơn theo thời gian và khách hàng, hàm nào phù hợp?", "output": "Bạn nên dùng `listInvByCus` để lọc hóa đơn theo `cusCode` và mốc thời gian.", "function": ""}
 {"instruction": "listInvByCus có thể dùng cho mọi khách hàng không?", "output": "Chỉ những khách hàng đã phát hành hóa đơn và có đăng ký mẫu số mới có kết quả.", "function": ""}
+{"instruction": "Cấu trúc XML kết quả của listInvByCus như thế nào?", "output": "<Data><Item><index>*</index><invToken>*</invToken><fkey>*</fkey><name>*</name><publishDate>*</publishDate><signStatus>*</signStatus><total>*</total><amount>*</amount><pattern>*</pattern><serial>*</serial><invNum>*</invNum><status>*</status><payment>*</payment></Item></Data>\nTrong đó `<status>`: 1–phát hành, 3–bị thay thế, 4–điều chỉnh.", "function": ""}
 {"instruction": "Trường `<invNum>` trong kết quả dùng để làm gì?", "output": "Trường `<invNum>` là số hóa đơn của từng bản ghi.", "function": ""}
 {"instruction": "Có thể gọi listInvByCus nhiều lần theo từng tháng không?", "output": "Được, bạn có thể gọi API nhiều lần với `fromDate` và `toDate` từng tháng.", "function": ""}
 {"instruction": "Tôi truyền fromDate và toDate nhưng kết quả trống, vì sao?", "output": "Có thể khoảng thời gian không có hóa đơn, hoặc mã khách hàng sai, hãy kiểm tra lại.", "function": ""}
@@ -1995,6 +2004,3 @@
 {"instruction": "Làm sao để kiểm tra tính hợp lệ của hóa đơn điện tử trên Tổng cục Thuế?", "output": "Tra cứu trên https://hoadondientu.gdt.gov.vn/ nhập đầy đủ thông tin và mã captcha.", "function": ""}
 {"instruction": "Sau khi hủy tài khoản VNPT Invoice, cần làm gì để tiếp tục sử dụng?", "output": "Liên hệ tổng đài VNPT để được hỗ trợ kích hoạt lại tài khoản.", "function": ""}
 {"instruction": "Hệ thống VNPT Invoice có tích hợp với phần mềm kế toán không?", "output": "Có, hỗ trợ tích hợp nhanh chóng với nhiều phần mềm kế toán phổ biến.", "function": ""}
-{"instruction": "Làm thế nào để nhận được thông tin đăng nhập hệ thống tra cứu hóa đơn Tổng cục Thuế?", "output": "Thông tin đăng nhập được gửi qua email khi đăng ký sử dụng dịch vụ hóa đơn điện tử.", "function": ""}
-{"instruction": "Khi tra cứu hóa đơn trên VNPT Invoice, nếu mã tra cứu sai thì hệ thống sẽ phản hồi thế nào?", "output": "Hệ thống thông báo không tìm thấy hóa đơn và yêu cầu kiểm tra lại thông tin.", "function": ""}
-{"instruction": "Có thể sử dụng chức năng 'Lưu mật khẩu' khi đăng nhập hệ thống VNPT Invoice không?", "output": "Có thể chọn để tiện đăng nhập nhanh các lần sau.", "function": ""}
