@@ -2,7 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
 
-final_model_dir = "./colora_output/merged_model_4/"
+final_model_dir = "./colora_output/merged_model_16/"
 device = "mps"
 max_new_tokens = 128
 

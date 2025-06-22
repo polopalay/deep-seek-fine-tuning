@@ -10,7 +10,6 @@ import gc
 
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
-# torch.set_float32_matmul_precision("high")
 warnings.filterwarnings("ignore")
 
 
@@ -49,30 +48,21 @@ class OrthLoRATrainer(Trainer):
         lambda_orth = self.orth_lambda
         ck_orth = ["q_proj", "v_proj", "k_proj", "gate_proj"]
         for name, module in model.named_modules():
-            if (
-                self.matrix_type in ["A", "both"]
-                and any(key in name for key in ck_orth)
-                and hasattr(module, "lora_A")
-            ):
-                lora_A = module.lora_A
-                if isinstance(lora_A, torch.nn.ModuleDict):
-                    for _, sub_A in lora_A.items():
-                        orth_loss += orthogonal_loss_a(sub_A.weight)
-                else:
-                    orth_loss += orthogonal_loss_a(lora_A.weight)
-            elif (
-                self.matrix_type in ["B", "both"]
-                and any(key in name for key in ck_orth)
-                and hasattr(module, "lora_B")
-            ):
-                lora_B = module.lora_B
-                if isinstance(lora_B, torch.nn.ModuleDict):
-                    for _, sub_B in lora_B.items():
-                        orth_loss += orthogonal_loss_b(sub_B.weight)
-                else:
-                    orth_loss += orthogonal_loss_b(lora_B.weight)
-        else:
-            lambda_orth = 0.0
+            if any(key in name for key in ck_orth):
+                if self.matrix_type in ["A", "both"] and hasattr(module, "lora_A"):
+                    lora_A = module.lora_A
+                    if isinstance(lora_A, torch.nn.ModuleDict):
+                        for _, sub_A in lora_A.items():
+                            orth_loss += orthogonal_loss_a(sub_A.weight)
+                    else:
+                        orth_loss += orthogonal_loss_a(lora_A.weight)
+                elif self.matrix_type in ["B", "both"] and hasattr(module, "lora_B"):
+                    lora_B = module.lora_B
+                    if isinstance(lora_B, torch.nn.ModuleDict):
+                        for _, sub_B in lora_B.items():
+                            orth_loss += orthogonal_loss_b(sub_B.weight)
+                    else:
+                        orth_loss += orthogonal_loss_b(lora_B.weight)
 
         total_loss = main_loss + lambda_orth * orth_loss
         return (total_loss, outputs) if return_outputs else total_loss
@@ -108,14 +98,13 @@ def training_using_cola(
 
     tokenized = dataset.map(tokenize, remove_columns=dataset["train"].column_names)
 
-    model_checkpoint = model_base
     adapter_names = []
 
     for round_idx, r in enumerate(r_list):
         print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
         torch.mps.empty_cache()
         model = AutoModelForCausalLM.from_pretrained(
-            model_checkpoint, torch_dtype=torch.float16
+            model_base, torch_dtype=torch.float16
         )
         alpha = alpha_strategy(r)
         orth_lambda = orth_lambdas[round_idx]
@@ -132,8 +121,15 @@ def training_using_cola(
         model = get_peft_model(model, lora_config)
         model = model.to(device)
         # model = model.to(device).to(torch.float16)
+        for adapter_name in adapter_names:
+            model.load_adapter(
+                f"{output_dir}/{adapter_name}",
+                adapter_name=adapter_name,
+                is_trainable=False,
+            )
 
         adapter_name = f"{base_adapter_name}_r{r}"
+        model.add_adapter(adapter_name, lora_config)
         adapter_names.append(adapter_name)
 
         training_args = TrainingArguments(
@@ -150,6 +146,7 @@ def training_using_cola(
             metric_for_best_model="eval_loss",
             greater_is_better=False,
             fp16=False,
+            max_steps=1,
         )
         early_stopping = EarlyStoppingCallback(
             early_stopping_patience=2,
@@ -170,16 +167,15 @@ def training_using_cola(
         )
 
         trainer.train()
+        if round_idx == len(r_list) - 1:
+            model = model.merge_and_unload()
+            merged_ckpt_dir = f"{output_dir}/merged_model_{r}"
+            os.makedirs(merged_ckpt_dir, exist_ok=True)
+            model.save_pretrained(merged_ckpt_dir)
+            tokenizer.save_pretrained(merged_ckpt_dir)
+        else:
+            model.save_pretrained(f"{output_dir}/{adapter_name}")
 
-        model = model.merge_and_unload()
-
-        merged_ckpt_dir = f"{output_dir}/merged_model_{r}"
-        os.makedirs(merged_ckpt_dir, exist_ok=True)
-        model.save_pretrained(merged_ckpt_dir)
-        tokenizer.save_pretrained(merged_ckpt_dir)
-        print(f"Đã lưu mô hình merged tại: {merged_ckpt_dir}")
-
-        model_checkpoint = merged_ckpt_dir
         del model
         gc.collect()
         torch.mps.empty_cache()
