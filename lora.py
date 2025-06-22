@@ -25,9 +25,9 @@ def training_using_lora(
     tokenizer.pad_token = tokenizer.eos_token
 
     def tokenize(example):
-        formatted = f"### Câu hỏi:\n{example['instruction']}\n\n### Trả lời:\n{example['output']}"
+        formatted = f"### Câu hỏi:\n{example['instruction']}\n\n### Trả lời:\n{example['output']}{tokenizer.eos_token}"
         return tokenizer(
-            formatted, truncation=True, padding="max_length", max_length=64
+            formatted, truncation=True, padding="max_length", max_length=128
         )
 
     model = AutoModelForCausalLM.from_pretrained(model_base)
@@ -36,7 +36,7 @@ def training_using_lora(
     lora_config = LoraConfig(
         r=r,
         lora_alpha=alpha,
-        target_modules=["q_proj", "v_proj"],
+        target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj"],
         lora_dropout=0.05,
         bias="none",
         task_type=TaskType.CAUSAL_LM,
@@ -77,10 +77,10 @@ def training_using_lora(
 if __name__ == "__main__":
     training_using_lora(
         dataset_path="./data/data_100.jsonl",
-        model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+        model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
         r=16,
-        batch_size=2,
-        num_epochs=10,
+        batch_size=1,
+        num_epochs=1,
         output_dir="./colora_output",
-        adapter_name="deepseek_lora_adapter",
+        adapter_name="lora_adapter",
     )

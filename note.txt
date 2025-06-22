@@ -65,3 +65,6 @@ series of subspaces, enabling the learning of full-rank weights and thereby enha
 flexibility.
 https://arxiv.org/abs/2503.06213
 First, the orthogonal subspace diminishes over tasks, limiting plasticity improvement
+Chiến lược cho việc đa dạng hoá dữ liệu với trực giao:
+https://arxiv.org/abs/2407.15085
+https://arxiv.org/abs/2410.16801

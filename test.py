@@ -14,8 +14,9 @@ with open("data/data.jsonl", "r", encoding="utf-8") as f:
         obj = json.loads(line)
         tokens_instruction = len(tokenizer.encode(obj["instruction"]))
         tokens_output = len(tokenizer.encode(obj["output"]))
+        tokens_history = len(tokenizer.encode(obj["history"]))
         tokens_function = len(tokenizer.encode(obj["function"]))
-        sum_tokens = tokens_instruction + tokens_output + tokens_function
+        sum_tokens = tokens_instruction + tokens_output + tokens_history + tokens_function
 
         if sum_tokens > max_tokens:
             max_tokens = sum_tokens

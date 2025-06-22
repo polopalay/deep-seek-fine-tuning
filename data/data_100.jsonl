@@ -1,100 +1,100 @@
-{"task": "dev", "instruction": "Cách test giao diện ký số hóa đơn trên môi trường dev?", "output": "Giả lập chữ ký bằng div hiển thị tên người ký."}
-{"task": "dev", "instruction": "Làm sao để cấu hình CORS cho ứng dụng web?", "output": "Thêm middleware CORS trong cấu hình ứng dụng."}
-{"task": "dev", "instruction": "Làm sao để cấu hình CORS cho hệ thống khác?", "output": "Thêm middleware CORS trong cấu hình hệ thống."}
-{"task": "dev", "instruction": "Làm sao để kiểm tra tính năng ký số trên môi trường staging?", "output": "Sử dụng công cụ giả lập chữ ký."}
-{"task": "dev", "instruction": "Cách cấu hình máy chủ để hỗ trợ HTTPS?", "output": "Cài đặt chứng chỉ SSL và cấu hình máy chủ để sử dụng HTTPS."}
-{"task": "dev", "instruction": "Class của hoá đơn tên là gì?", "output": "Invoice."}
-{"task": "dev", "instruction": "Hệ thống gì cơ sở dữ liệu gì?", "output": "Sql Server."}
-{"task": "dev", "instruction": "Cách kiểm tra tính năng gửi email thông báo?", "output": "Sử dụng công cụ giả lập email để kiểm tra tính năng gửi thông báo."}
-{"task": "dev", "instruction": "Chức năng thống kê nằm ở thư mục nào?", "output": "Thống kê nằm trong thư mục Services/Statistics."}
-{"task": "dev", "instruction": "Sửa view không được sửa file nào?", "output": "File Core.js."}
-{"task": "dev", "instruction": "Service đẩy hoá đơn xong phát hành luôn là gì?", "output": "ImportInvByPattern."}
-{"task": "dev", "instruction": "Cấu hình router của BE ở đâu?", "output": "Trong file Startup.cs."}
-{"task": "dev", "instruction": "Routing của Fe ở đâu?", "output": "Trong file App.js."}
-{"task": "dev", "instruction": "Lấy xml chuẩn để import hoá đơn ở đâu?", "output": "XML_TEMP"}
-{"task": "dev", "instruction": "Hàm thay thế hoá đơn là gì?", "output": "ReplaceInv."}
-{"task": "dev", "instruction": "Hàm lấy hoá đơn theo số hoá đơn là gì?", "output": "Dùng hàm GetSeriINV và truyền start, end là cùng 1 số hoá đơn."}
-{"task": "dev", "instruction": "Cho tôi xin hàm lấy hoá đơn theo mã khách hàng.", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
-{"task": "dev", "instruction": "Sử dụng hàm nào để lấy danh sách hoá đơn?", "output": "Dùng hàm GetInvList để lấy danh sách hoá đơn."}
-{"task": "dev", "instruction": "Cấu hình api trỏ vào site test như nào", "output": "Ở biến api thay đúng dòng tt78 thành tt78demo."}
-{"task": "dev", "instruction": "Hàm chuyển đổi hoá đơn là hàm nào?", "output": "ConvertInv."}
-{"task": "dev", "instruction": "Backend được code bằng gì?", "output": "Dotnet Core 6.0."}
-{"task": "dev", "instruction": "Làm sao để trỏ vào db test?", "output": "Thay đổi chuỗi kết nối trong file appsettings.json."}
-{"task": "dev", "instruction": "API của site test là gì?", "output": "https://tt78demo.com/api."}
-{"task": "dev", "instruction": "Fontend hệ thống code bằng gì?", "output": "Sử dụng ReactJS và Redux cho quản lý trạng thái."}
-{"task": "dev", "instruction": "Làm sao để in hoá đơn?", "output": "Sử dụng hàm PrintInv để in hoá đơn."}
-{"task": "dev", "instruction": "Hàm lấy hoá đơn theo mã khách hàng là gì?", "output": "Dùng hàm GetInvByCustomer và truyền mã khách hàng."}
-{"task": "dev", "instruction": "hàm nào để lấy danh sách khách hàng?", "output": "Dùng hàm GetCustomerList để lấy danh sách khách hàng."}
-{"task": "dev", "instruction": "Lỗi ERR:1 khi thêm khách hàng nghĩa là gì?", "output": "Tài khoản đăng nhập sai hoặc không có quyền thêm khách hàng."}
-{"task": "dev", "instruction": "Tại sao tôi gặp lỗi ERR:2 khi gửi XML?", "output": "Dữ liệu XML không đúng định dạng."}
-{"task": "dev", "instruction": "Gặp ERR:3 khi tạo hóa đơn có nghĩa gì?", "output": "Mã số thuế không hợp lệ hoặc bị sai."}
-{"task": "dev", "instruction": "Lỗi ERR:4 xuất hiện khi nào?", "output": "Ký hiệu hóa đơn không đúng hoặc chưa được đăng ký."}
-{"task": "dev", "instruction": "Tôi bị lỗi ERR:5 là sao?", "output": "Thiếu trường bắt buộc trong dữ liệu gửi đi."}
-{"task": "dev", "instruction": "Lỗi ERR:6 nghĩa là gì?", "output": "Tên khách hàng chứa ký tự không hợp lệ."}
-{"task": "dev", "instruction": "Gặp ERR:7 khi upload hóa đơn?", "output": "Sai định dạng file XML hoặc bị lỗi cấu trúc."}
-{"task": "dev", "instruction": "Lỗi ERR:8 là lỗi gì?", "output": "Mã khách hàng đã tồn tại trên hệ thống."}
-{"task": "dev", "instruction": "Lỗi ERR:9 xảy ra khi nào?", "output": "Địa chỉ khách hàng quá dài hoặc sai định dạng."}
-{"task": "dev", "instruction": "Gặp lỗi ERR:10 là sao?", "output": "Dữ liệu sản phẩm trong hóa đơn bị thiếu hoặc sai."}
-{"task": "dev", "instruction": "Lỗi ERR:11 báo gì?", "output": "Trùng mã hóa đơn đã phát hành trước đó."}
-{"task": "dev", "instruction": "ERR:12 nghĩa là gì?", "output": "Không tìm thấy thông tin khách hàng với mã đã cung cấp."}
-{"task": "dev", "instruction": "Tại sao gặp ERR:13 khi phát hành?", "output": "Thiếu thông tin chữ ký số."}
-{"task": "dev", "instruction": "ERR:14 xuất hiện khi nào?", "output": "Ngày lập hóa đơn vượt quá thời hạn cho phép."}
-{"task": "dev", "instruction": "Tôi bị ERR:15 khi gửi dữ liệu, lý do?", "output": "Không đúng định dạng UTF-8."}
-{"task": "dev", "instruction": "Lỗi ERR:16 là gì?", "output": "Tài khoản không có quyền thực hiện chức năng này."}
-{"task": "dev", "instruction": "Lỗi ERR:17 có nghĩa gì?", "output": "Không đủ quyền truy cập vào hóa đơn cần xử lý."}
-{"task": "dev", "instruction": "ERR:18 có nghĩa gì?", "output": "Sai loại hóa đơn hoặc không được phép sử dụng loại đó."}
-{"task": "dev", "instruction": "Lỗi ERR:19 thường do đâu?", "output": "Thiếu email khách hàng khi gửi hóa đơn."}
-{"task": "dev", "instruction": "Lỗi ERR:20 trong hệ thống báo gì?", "output": "Thông tin tài khoản ngân hàng không đúng định dạng."}
-{"task": "dev", "instruction": "ERR:21 có nghĩa là sao?", "output": "Không thể kết nối đến hệ thống xác thực VNPT."}
-{"task": "dev", "instruction": "Lỗi ERR:22 là lỗi gì?", "output": "Sai định dạng số tiền hoặc không hợp lệ."}
-{"task": "dev", "instruction": "Gặp ERR:23 có nghĩa gì?", "output": "Tổng tiền không khớp giữa các trường."}
-{"task": "support", "instruction": "Tách HĐĐT theo đơn vị được không?", "output": "Được, nếu đủ điều kiện"}
-{"task": "support", "instruction": "Có thể tra cứu hóa đơn cũ?", "output": "Được nếu còn lưu trữ"}
-{"task": "support", "instruction": "HĐĐT dùng trong xuất khẩu?", "output": "Được, theo quy định"}
-{"task": "support", "instruction": "Sử dụng HĐĐT song ngữ được không?", "output": "Được nếu đầy đủ nội dung"}
-{"task": "support", "instruction": "Có được in nhiều bản PDF không?", "output": "Được để lưu nội bộ"}
-{"task": "support", "instruction": "Tên sản phẩm viết tắt được không?", "output": "Không, phải ghi đầy đủ"}
-{"task": "support", "instruction": "Có thể ký HĐĐT bằng token?", "output": "Có, nếu token hợp lệ"}
-{"task": "support", "instruction": "MST khách sai xử lý sao?", "output": "Lập hóa đơn thay thế"}
-{"task": "support", "instruction": "Lỗi mã XML do đâu?", "output": "Sai cấu trúc file gửi"}
-{"task": "support", "instruction": "Không ký được số hóa đơn?", "output": "Kiểm tra chữ ký số và máy chủ"}
-{"task": "support", "instruction": "Số hóa đơn có thể trùng không?", "output": "Không, phải duy nhất"}
-{"task": "support", "instruction": "Có thể đổi đơn vị tính?", "output": "Có nếu ghi rõ điều chỉnh"}
-{"task": "support", "instruction": "Sai ngày lập thì sao?", "output": "Lập lại bằng hóa đơn thay thế"}
-{"task": "support", "instruction": "Có thể ghi thiếu thông tin?", "output": "Không, phải đầy đủ theo mẫu"}
-{"task": "support", "instruction": "Chuyển đổi HĐĐT sang giấy hợp lệ?", "output": "Có, với mục đích lưu trữ"}
-{"task": "support", "instruction": "HĐĐT có cần dấu mộc đỏ?", "output": "Không, chỉ chữ ký số"}
-{"task": "support", "instruction": "Số hóa đơn có giới hạn không?", "output": "Không, nhưng phải liên tục"}
-{"task": "support", "instruction": "Cần báo cáo khi hủy HĐĐT?", "output": "Có, gửi lý do lên cơ quan thuế"}
-{"task": "support", "instruction": "Phần mềm HĐĐT phải kết nối gì?", "output": "Hệ thống Tổng cục Thuế"}
-{"task": "support", "instruction": "Có thể chỉnh tên khách?", "output": "Dùng hóa đơn điều chỉnh"}
-{"task": "support", "instruction": "Có được thay đổi số tiền?", "output": "Chỉ qua hóa đơn điều chỉnh"}
-{"task": "support", "instruction": "Làm sao biết HĐĐT hợp lệ?", "output": "Có mã xác thực và ký số đúng"}
-{"task": "support", "instruction": "Số HĐĐT có thể nhảy?", "output": "Được nếu không trùng và logic"}
-{"task": "support", "instruction": "Sai đơn giá vẫn gửi được không?", "output": "Có thể, nhưng cần điều chỉnh sau"}
-{"task": "support", "instruction": "Ngưng hoạt động có cần báo thuế?", "output": "Có, khai báo với cơ quan thuế"}
-{"task": "support", "instruction": "Có thể lùi ngày hóa đơn không?", "output": "Không, phải đúng thời điểm phát sinh"}
-{"task": "support", "instruction": "Tách hóa đơn nhiều sản phẩm?", "output": "Được nếu phù hợp nghiệp vụ"}
-{"task": "support", "instruction": "Sửa nội dung ghi sai?", "output": "Dùng hóa đơn điều chỉnh hoặc thay thế"}
-{"task": "support", "instruction": "Lỗi sai loại hóa đơn?", "output": "Phải lập lại hóa đơn đúng loại"}
-{"task": "support", "instruction": "Ký sai vị trí hóa đơn?", "output": "Không hợp lệ, cần lập mới"}
-{"task": "support", "instruction": "Có thể ký hóa đơn sau không?", "output": "Không, phải ký ngay khi lập"}
-{"task": "support", "instruction": "Lỗi khi gửi hóa đơn lên thuế?", "output": "Kiểm tra kết nối và định dạng"}
-{"task": "support", "instruction": "Có thể uỷ quyền ký số?", "output": "Được nếu quy định nội bộ cho phép"}
-{"task": "support", "instruction": "Cần báo cáo định kỳ HĐĐT?", "output": "Không bắt buộc nếu kết nối tự động"}
-{"task": "support", "instruction": "HĐĐT có thể lập nhiều lần không?", "output": "Không, chỉ một lần hợp lệ"}
-{"task": "support", "instruction": "Làm sao kiểm tra hóa đơn thật?", "output": "Tra mã tại hoadondientu.gdt.gov.vn"}
-{"task": "support", "instruction": "Có thể dùng hóa đơn điện tử nước ngoài?", "output": "Không, phải tuân thủ quy định Việt Nam"}
-{"task": "support", "instruction": "HĐĐT bị từ chối do lỗi gì?", "output": "7 lỗi nhập liệu sai định dạng"}
-{"task": "support", "instruction": "SĐT quá 20 ký tự gây gì?", "output": "Thuế từ chối cấp mã"}
-{"task": "support", "instruction": "Sửa số điện thoại sai sao?", "output": "Nhập lại đúng định dạng"}
-{"task": "support", "instruction": "Email không hợp lệ ảnh hưởng?", "output": "HĐĐT bị từ chối cấp mã"}
-{"task": "support", "instruction": "Cấu trúc email hợp lệ là?", "output": "Tên email + @ + tên miền"}
-{"task": "support", "instruction": "Tài khoản ngân hàng quá dài?", "output": "Không được cấp mã"}
-{"task": "support", "instruction": "Bao nhiêu ký tự cho STK ngân hàng?", "output": "Tối đa 30 ký tự"}
-{"task": "support", "instruction": "Tên người mua bị bỏ trống?", "output": "HĐĐT bị từ chối"}
-{"task": "support", "instruction": "MST sai định dạng gây gì?", "output": "Không được cấp mã"}
-{"task": "support", "instruction": "Độ dài MST đúng là bao nhiêu?", "output": "10 hoặc 13 số"}
-{"task": "support", "instruction": "Ngày xuất hóa đơn sai thì sao?", "output": "Không cấp mã thuế"}
-{"task": "support", "instruction": "Ngày xuất sớm hơn được duyệt?", "output": "Hóa đơn bị từ chối"}
-{"task": "support", "instruction": "Thiếu thuế suất xử lý sao?", "output": "Bổ sung đủ trước khi gửi"}
+{"instruction": "Tôi muốn biết cách in hàng loạt hóa đơn?", "output": "GET_SUPPORT sẽ hướng dẫn in hàng loạt.", "function": "GET_SUPPORT", "history": "Q: Có chức năng in tự động không?\nA: Có, sẽ gửi quy trình cho bạn."}
+{"instruction": "Tôi bị lỗi file PDF hóa đơn không mở được, ai xử lý?", "output": "Liên hệ GET_SUPPORT để kiểm tra file.", "function": "GET_SUPPORT", "history": "Q: Có thể nhận lại file PDF qua mail không?\nA: Có, hỗ trợ gửi lại file gốc."}
+{"instruction": "Tôi muốn biết hóa đơn xuất sai phải hủy trong bao lâu?", "output": "Gửi yêu cầu GET_SUPPORT để biết thời hạn.", "function": "GET_SUPPORT", "history": "Q: Hóa đơn đã gửi nhầm làm sao khắc phục?\nA: Hỗ trợ sẽ tư vấn xử lý đúng hạn."}
+{"instruction": "Tôi cần API lấy lịch sử thao tác trên hóa đơn?", "output": "GET_DEV sẽ cấp API log thao tác.", "function": "GET_DEV", "history": "Q: Có filter theo ngày log thao tác không?\nA: Dev có thể custom theo yêu cầu bạn."}
+{"instruction": "Tôi muốn kiểm tra quy trình khôi phục tài khoản hóa đơn?", "output": "GET_SUPPORT sẽ hướng dẫn từng bước.", "function": "GET_SUPPORT", "history": "Q: Tài khoản bị khóa do nhập sai quá số lần?\nA: Hỗ trợ sẽ mở khóa và reset mật khẩu."}
+{"instruction": "Tôi muốn làm hợp đồng điện tử tích hợp hóa đơn?", "output": "Liên hệ GET_DEV để tích hợp.", "function": "GET_DEV", "history": "Q: Có mẫu hợp đồng tích hợp không?\nA: Dev sẽ gửi mẫu và hướng dẫn API."}
+{"instruction": "Tôi muốn nhận cảnh báo sắp hết hóa đơn?", "output": "GET_SUPPORT sẽ thiết lập cảnh báo cho bạn.", "function": "GET_SUPPORT", "history": "Q: Có cài được cảnh báo qua SMS không?\nA: Có, thiết lập báo động số lượng tồn kho."}
+{"instruction": "Bên bạn có hỗ trợ cài đặt máy in hóa đơn không?", "output": "GET_SUPPORT sẽ hỗ trợ tận nơi.", "function": "GET_SUPPORT", "history": "Q: Máy in bị lỗi thì có kỹ thuật đến kiểm tra không?\nA: Có, sẽ cử kỹ thuật hỗ trợ tận nơi."}
+{"instruction": "Tôi muốn trả lại hóa đơn đã mua?", "output": "Liên hệ GET_SELLER để được hướng dẫn trả.", "function": "GET_SELLER", "history": "Q: Có hoàn tiền khi trả hóa đơn không?\nA: Bán hàng sẽ kiểm tra và báo chính sách."}
+{"instruction": "Tôi muốn chuyển dữ liệu hóa đơn giữa các chi nhánh?", "output": "GET_DEV sẽ hỗ trợ chuyển dữ liệu.", "function": "GET_DEV", "history": "Q: Có tích hợp đồng bộ hóa đơn đa chi nhánh không?\nA: Dev sẽ hướng dẫn chuyển đổi."}
+{"instruction": "Tôi muốn cài đặt mẫu hóa đơn đặc thù ngành bán lẻ?", "output": "Liên hệ GET_SELLER để tư vấn mẫu phù hợp.", "function": "GET_SELLER", "history": "Q: Có hóa đơn riêng cho ngành bán lẻ không?\nA: Có, sẽ tư vấn theo yêu cầu."}
+{"instruction": "Tôi muốn biết hóa đơn của mình đã gửi thuế thành công chưa?", "output": "GET_SUPPORT sẽ kiểm tra trạng thái gửi thuế.", "function": "GET_SUPPORT", "history": "Q: Có kiểm tra được trạng thái truyền thuế online không?\nA: Có, gửi mail báo kết quả."}
+{"instruction": "Tôi muốn hướng dẫn chuyển đổi số lượng lớn hóa đơn giấy sang điện tử?", "output": "Liên hệ GET_SELLER để được hướng dẫn.", "function": "GET_SELLER", "history": "Q: Chuyển đổi số lượng lớn có khó khăn gì không?\nA: Bán hàng sẽ phân tích quy trình."}
+{"instruction": "Tôi muốn API check trùng số hóa đơn trên hệ thống?", "output": "GET_DEV sẽ cung cấp API kiểm tra trùng số.", "function": "GET_DEV", "history": "Q: Hệ thống tự động cảnh báo trùng số không?\nA: Có, có thể tích hợp."}
+{"instruction": "Có thể nhận tư vấn nghiệp vụ hóa đơn không?", "output": "GET_SUPPORT sẽ tư vấn nghiệp vụ miễn phí.", "function": "GET_SUPPORT", "history": "Q: Các trường hợp sai nghiệp vụ phải xử lý sao?\nA: Hỗ trợ sẽ kiểm tra từng trường hợp."}
+{"instruction": "Tôi muốn xuất nhiều hóa đơn một lúc có được không?", "output": "GET_SUPPORT sẽ hướng dẫn xuất hàng loạt.", "function": "GET_SUPPORT", "history": "Q: Có batch xuất hóa đơn không?\nA: Có, sẽ gửi quy trình chi tiết."}
+{"instruction": "Tôi muốn biết khi nào cần thay đổi mẫu hóa đơn?", "output": "Liên hệ GET_SELLER tư vấn thay mẫu.", "function": "GET_SELLER", "history": "Q: Có phí khi đổi mẫu hóa đơn không?\nA: Sẽ báo rõ trường hợp cần đổi."}
+{"instruction": "Tôi bị lỗi 'hóa đơn không hợp lệ' khi phát hành?", "output": "GET_SUPPORT kiểm tra dữ liệu và nguyên nhân lỗi.", "function": "GET_SUPPORT", "history": "Q: Nguyên nhân thường gặp của lỗi này là gì?\nA: Dữ liệu đầu vào thiếu hoặc sai trường."}
+{"instruction": "Tôi cần nhận hướng dẫn tạo user mới trên hệ thống?", "output": "GET_SUPPORT sẽ hướng dẫn tạo tài khoản mới.", "function": "GET_SUPPORT", "history": "Q: User mới cần cấp quyền gì?\nA: Hỗ trợ sẽ tư vấn phân quyền hợp lý."}
+{"instruction": "Có xuất hóa đơn được vào Chủ Nhật không?", "output": "GET_SELLER sẽ hướng dẫn quy trình ngoài giờ.", "function": "GET_SELLER", "history": "Q: Hệ thống hoạt động 24/7 không?\nA: Có, có thể xuất hóa đơn mọi lúc."}
+{"instruction": "Tôi muốn kiểm tra trạng thái upload file hóa đơn lên hệ thống?", "output": "GET_DEV kiểm tra tiến trình upload file.", "function": "GET_DEV", "history": "Q: Có log tiến trình upload không?\nA: Dev sẽ báo trạng thái file."}
+{"instruction": "Tôi muốn thêm trường mới vào mẫu hóa đơn?", "output": "Liên hệ GET_DEV để custom mẫu.", "function": "GET_DEV", "history": "Q: Thêm trường có ảnh hưởng gì không?\nA: Dev sẽ kiểm tra khả năng tích hợp."}
+{"instruction": "Tôi muốn danh sách nhân viên dev để trao đổi API?", "output": "Dùng GET_LIST_DEV để xem danh sách dev.", "function": "GET_LIST_DEV", "history": "Q: Có thể trực tiếp gọi dev trao đổi API không?\nA: Xem danh sách dev và chọn người liên hệ."}
+{"instruction": "Tôi muốn biết những ai phụ trách hỗ trợ khách hàng?", "output": "GET_LIST_SUPPORT sẽ hiển thị toàn bộ danh sách hỗ trợ.", "function": "GET_LIST_SUPPORT", "history": "Q: Hỗ trợ có làm ngoài giờ không?\nA: Xem danh sách để biết ca trực ngoài giờ."}
+{"instruction": "Tôi muốn liên hệ danh sách sales tư vấn từng gói?", "output": "GET_LIST_SELLER", "function": "GET_LIST_SELLER", "history": "Q: Tư vấn từng ngành có đầu mối riêng không?\nA: Có, chọn đúng ngành sẽ được hỗ trợ tốt hơn."}
+{"instruction": "Tôi ở Hà Nội muốn gặp nhân viên hỗ trợ trực tiếp?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Có hỗ trợ onsite cho từng tỉnh thành không?\nA: Có, chọn theo tỉnh để được phục vụ trực tiếp."}
+{"instruction": "Tôi muốn biết ai là trưởng nhóm dev?", "output": "Dùng GET_DEV_LEADER để xem thông tin leader.", "function": "GET_DEV_LEADER", "history": "Q: Liên hệ leader dev trao đổi nghiệp vụ thế nào?\nA: Tra cứu GET_DEV_LEADER sẽ có số liên hệ."}
+{"instruction": "Ai phụ trách tích hợp hệ thống cho khách lớn?", "output": "GET_DEV_LEADER để biết trưởng nhóm tích hợp.", "function": "GET_DEV_LEADER", "history": "Q: Muốn trao đổi giải pháp tích hợp phải gặp ai?\nA: Liên hệ trực tiếp leader nhóm dev."}
+{"instruction": "Cho tôi danh sách sales tại miền Nam?", "output": "GET_LIST_SELLER sẽ có đầu mối từng khu vực.", "function": "GET_LIST_SELLER", "history": "Q: Sales mỗi vùng có số riêng không?\nA: Có, chọn khu vực trong danh sách."}
+{"instruction": "Tôi muốn biết các dev phụ trách API xuất hóa đơn?", "output": "Dùng GET_LIST_DEV lọc theo mảng API.", "function": "GET_LIST_DEV", "history": "Q: Có dev chuyên sâu API không?\nA: Danh sách có phân loại theo chuyên môn."}
+{"instruction": "Ai phụ trách giải quyết khiếu nại nhanh ở TPHCM?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Hỗ trợ từng tỉnh có đội ngũ riêng không?\nA: Có, chọn đúng tỉnh để nhận trợ giúp."}
+{"instruction": "Danh sách hỗ trợ ngoài giờ lấy ở đâu?", "output": "Dùng GET_LIST_SUPPORT", "function": "GET_LIST_SUPPORT", "history": "Q: Gặp sự cố đêm có được xử lý không?\nA: Có danh sách hỗ trợ trực ngoài giờ."}
+{"instruction": "Tôi muốn liên hệ tất cả sales phụ trách hóa đơn điện tử?", "output": "GET_LIST_SELLER để xem toàn bộ sales.", "function": "GET_LIST_SELLER", "history": "Q: Có thể liên hệ qua email không?\nA: Có, danh sách có cả email từng người."}
+{"instruction": "Tôi ở Đà Nẵng muốn được hỗ trợ trực tiếp?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Đội hỗ trợ có ở các tỉnh không?\nA: Có, mỗi tỉnh một đội."}
+{"instruction": "Cho tôi danh sách dev hỗ trợ về API tích hợp?", "output": "GET_LIST_DEV lọc nhóm API tích hợp.", "function": "GET_LIST_DEV", "history": "Q: Có dev chuyên chỉ code tích hợp không?\nA: Có danh sách chuyên API tích hợp."}
+{"instruction": "Tôi muốn biết leader dev của hệ thống hóa đơn?", "output": "GET_DEV_LEADER sẽ hiện thông tin trưởng nhóm.", "function": "GET_DEV_LEADER", "history": "Q: Dev leader có trực tiếp nhận phản ánh không?\nA: Có, có số hotline leader trong hệ thống."}
+{"instruction": "Tôi muốn trao đổi giá tốt với nhiều sales?", "output": "GET_LIST_SELLER để chọn nhiều sales cùng lúc.", "function": "GET_LIST_SELLER", "history": "Q: Có hỗ trợ đấu giá cạnh tranh từng sales không?\nA: Có, chọn sales phù hợp để thương lượng."}
+{"instruction": "Hỗ trợ kỹ thuật tại Cần Thơ là ai?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Từng khu vực có hotline không?\nA: Có, danh sách hỗ trợ có số điện thoại."}
+{"instruction": "Ai phụ trách cài đặt phần mềm tại các tỉnh miền Bắc?", "output": "GET_SUPPORT_BY_PROVINCE, lọc các tỉnh miền Bắc.", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Có nhóm cài đặt riêng cho từng miền không?\nA: Có, chọn tỉnh để hiển thị nhóm cài đặt."}
+{"instruction": "Cho tôi list sales chuyên ngành logistics?", "output": "GET_LIST_SELLER lọc theo ngành nghề.", "function": "GET_LIST_SELLER", "history": "Q: Sales có phân ngành không?\nA: Có, ngành nghề sẽ có sales phụ trách."}
+{"instruction": "Tôi muốn biết danh sách dev backend hệ thống?", "output": "GET_LIST_DEV", "function": "GET_LIST_DEV", "history": "Q: Dev có phân biệt backend và frontend không?\nA: Có, lọc danh sách theo chuyên môn."}
+{"instruction": "Ai phụ trách giải pháp API cho đối tác lớn?", "output": "GET_DEV_LEADER", "function": "GET_DEV_LEADER", "history": "Q: Đối tác lớn sẽ do ai trực tiếp xử lý?\nA: Trưởng nhóm dev chuyên môn cao đảm nhiệm."}
+{"instruction": "Tôi muốn list hỗ trợ có thể đến tận nơi tại Đồng Nai?", "output": "GET_SUPPORT_BY_PROVINCE.", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Có dịch vụ hỗ trợ tận nơi không?\nA: Có, chọn tỉnh để xem nhân viên onsite."}
+{"instruction": "Ai là trưởng nhóm dev chịu trách nhiệm tích hợp API mới?", "output": "GET_DEV_LEADER để lấy thông tin leader API.", "function": "GET_DEV_LEADER", "history": "Q: Muốn trình bày yêu cầu API gặp ai?\nA: Liên hệ trưởng nhóm dev API."}
+{"instruction": "Cho tôi danh sách sales phụ trách ngành sản xuất?", "output": "GET_LIST_SELLER lọc theo ngành sản xuất.", "function": "GET_LIST_SELLER", "history": "Q: Có sales riêng cho từng ngành sản xuất không?\nA: Có, danh sách lọc theo ngành nghề."}
+{"instruction": "Tôi ở Bình Dương cần hỗ trợ kỹ thuật?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Kỹ thuật có đến tận nơi kiểm tra không?\nA: Có, danh sách có cả kỹ thuật viên."}
+{"instruction": "Ai là dev leader phía frontend?", "output": "GET_DEV_LEADER, lọc nhóm frontend.", "function": "GET_DEV_LEADER", "history": "Q: Frontend leader trực tiếp review code không?\nA: Có, leader kiểm tra và duyệt code."}
+{"instruction": "Tôi muốn gặp trực tiếp trưởng nhóm sales khu vực miền Trung?", "output": "GET_LEADER_SELLER", "function": "GET_LIST_SELLER", "history": "Q: Leader sales miền Trung có hotline riêng không?\nA: Có, có trong danh sách sales."}
+{"instruction": "Tôi muốn biết danh sách hỗ trợ phụ trách thuế?", "output": "GET_LIST_SUPPORT lọc theo chuyên môn thuế.", "function": "GET_LIST_SUPPORT", "history": "Q: Hỗ trợ thuế khác hỗ trợ kỹ thuật không?\nA: Có, mỗi mảng một nhóm chuyên trách."}
+{"instruction": "Cho tôi list sales phụ trách bán lẻ?", "output": "GET_LIST_SELLER lọc nhóm bán lẻ.", "function": "GET_LIST_SELLER", "history": "Q: Sales bán lẻ thường tư vấn qua đâu?\nA: Có hotline từng sales trong danh sách."}
+{"instruction": "Tôi ở Hải Phòng muốn biết ai hỗ trợ kỹ thuật?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Có lịch trực kỹ thuật các tỉnh không?\nA: Có, danh sách hỗ trợ từng ngày."}
+{"instruction": "Ai là người điều phối hỗ trợ toàn quốc?", "output": "GET_LIST_SUPPORT lọc theo chức năng điều phối.", "function": "GET_LIST_SUPPORT", "history": "Q: Có tổng điều phối cho hỗ trợ không?\nA: Có, trong danh sách hỗ trợ có điều phối viên."}
+{"instruction": "Cho tôi danh sách dev phụ trách báo cáo thống kê?", "output": "GET_LIST_DEV lọc nhóm báo cáo.", "function": "GET_LIST_DEV", "history": "Q: Có dev chuyên phân tích báo cáo không?\nA: Có, lọc nhóm báo cáo thống kê."}
+{"instruction": "Tôi ở Quảng Ninh cần hỗ trợ tích hợp API?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Tích hợp API tại chỗ có hỗ trợ không?\nA: Có, nhân viên kỹ thuật đến tận nơi."}
+{"instruction": "Leader dev có trực tiếp review pull request không?", "output": "GET_DEV_LEADER để xác nhận lịch review.", "function": "GET_DEV_LEADER", "history": "Q: Lịch review PR mỗi tuần có cố định không?\nA: Có, cập nhật qua dev leader."}
+{"instruction": "Tôi muốn biết các sales chuyên về doanh nghiệp lớn?", "output": "GET_LIST_SELLER lọc sales enterprise.", "function": "GET_LIST_SELLER", "history": "Q: Có chính sách riêng cho DN lớn không?\nA: Có, sales enterprise sẽ tư vấn chi tiết."}
+{"instruction": "Tôi ở Vũng Tàu muốn gặp hỗ trợ về chữ ký số?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Hỗ trợ chữ ký số có tại mọi tỉnh không?\nA: Có, hỗ trợ theo từng tỉnh thành."}
+{"instruction": "Dev nào phụ trách nâng cấp hệ thống backend?", "output": "GET_LIST_DEV, lọc nhóm backend nâng cấp.", "function": "GET_LIST_DEV", "history": "Q: Có chia dev backend từng dự án không?\nA: Có, mỗi dự án một nhóm riêng."}
+{"instruction": "Tôi muốn list sales có thể tư vấn song ngữ?", "output": "GET_LIST_SELLER lọc sales song ngữ.", "function": "GET_LIST_SELLER", "history": "Q: Có sales biết tiếng Anh không?\nA: Có, xem phần ghi chú trong danh sách."}
+{"instruction": "Ai là leader dev về quản trị cơ sở dữ liệu?", "output": "GET_DEV_LEADER lọc nhóm CSDL.", "function": "GET_DEV_LEADER", "history": "Q: Dev leader database sẽ tư vấn gì?\nA: Review, tối ưu và bảo mật CSDL."}
+{"instruction": "Tôi ở Thanh Hóa muốn biết hỗ trợ kế toán?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Hỗ trợ từng tỉnh có chuyên kế toán không?\nA: Có, lọc chuyên môn trong danh sách."}
+{"instruction": "Tôi muốn list dev có thể fix bug trong ngày?", "output": "GET_LIST_DEV lọc theo ca trực.", "function": "GET_LIST_DEV", "history": "Q: Dev fix bug ngoài giờ được không?\nA: Có, có ca trực đêm/trưa."}
+{"instruction": "Leader dev có trực tiếp nhận xử lý sự cố lớn không?", "output": "GET_DEV_LEADER xác nhận trực xử lý.", "function": "GET_DEV_LEADER", "history": "Q: Sự cố hệ thống chỉ dev leader mới xử lý?\nA: Đúng, liên hệ leader khi cần khẩn cấp."}
+{"instruction": "Tôi muốn gặp sales chuyên startup mới thành lập?", "output": "GET_LIST_SELLER lọc sales startup.", "function": "GET_LIST_SELLER", "history": "Q: Sales startup khác gì sales thông thường?\nA: Am hiểu đặc thù và chính sách riêng."}
+{"instruction": "Hỗ trợ kỹ thuật tại Huế là ai?", "output": "GET_SUPPORT_BY_PROVINCE", "function": "GET_SUPPORT_BY_PROVINCE", "history": "Q: Có hỗ trợ trực tuyến cho tỉnh nhỏ không?\nA: Có, liên hệ trực tuyến hoặc onsite."}
+{"instruction": "List dev có kinh nghiệm phát triển mobile app?", "output": "GET_LIST_DEV lọc nhóm mobile.", "function": "GET_LIST_DEV", "history": "Q: Có dev chuyên code mobile app không?\nA: Có, lọc theo kỹ năng trong danh sách."}
+{"instruction": "Thống kê số hoá đơn phát hành trong tháng này", "output": "Tháng này đã phát hành GET_MONTHLY_INVOICE_COUNT hoá đơn.", "function": "GET_MONTHLY_INVOICE_COUNT", "history": "Q: So với tháng trước số lượng hoá đơn thế nào?\nA: Tăng khoảng 10%."}
+{"instruction": "Khách hàng nào có tổng giá trị hoá đơn lớn nhất hôm nay?", "output": "Khách hàng có tổng giá trị lớn nhất hôm nay là GET_TOP_CUSTOMER_TODAY.", "function": "GET_TOP_CUSTOMER_TODAY", "history": ""}
+{"instruction": "Tổng thuế GTGT phải nộp quý này là bao nhiêu?", "output": "Tổng thuế GTGT quý này là GET_QUARTERLY_VAT.", "function": "GET_QUARTERLY_VAT", "history": "Q: Thuế quý này so với quý trước thế nào?\nA: Thuế GTGT tăng nhẹ so với quý trước."}
+{"instruction": "Có lỗi phát hành hóa đơn nào trong ngày không?", "output": "Trong ngày ghi nhận GET_DAILY_ERROR_REPORT lỗi phát hành hóa đơn.", "function": "GET_DAILY_ERROR_REPORT", "history": ""}
+{"instruction": "Hiện tại ai đang phụ trách xử lý lỗi hệ thống?", "output": "Hiện tại đồng chí GET_CURRENT_SUPPORT_LEADER đang phụ trách xử lý lỗi.", "function": "GET_CURRENT_SUPPORT_LEADER", "history": ""}
+{"instruction": "Doanh thu tháng trước là bao nhiêu?", "output": "Doanh thu tháng trước GET_MONTHLY_REVENUE.", "function": "GET_MONTHLY_REVENUE", "history": "Q: Tháng này có tăng trưởng không?\nA: Tăng 12% so với tháng trước."}
+{"instruction": "Hôm nay ai nghỉ?", "output": "Hôm nay có đồng chí GET_TODAY_ABSENCE nghỉ.", "function": "GET_TODAY_ABSENCE", "history": ""}
+{"instruction": "Đồng chí Huy hôm nay làm gì?", "output": "Đồng chí Huy hôm nay GET_STAFF_TASK.", "function": "GET_STAFF_TASK", "history": ""}
+{"instruction": "Tháng này Huy nghỉ mấy buổi?", "output": "Tháng này Huy nghỉ GET_HUY_ABSENCE buổi.", "function": "GET_HUY_ABSENCE", "history": "Q: Huy hôm nay có mặt không?\nA: Có, đang làm việc tại văn phòng."}
+{"instruction": "Ai trực hỗ trợ hôm nay?", "output": "Hôm nay đồng chí GET_SUPPORT_ON_DUTY phụ trách hỗ trợ.", "function": "GET_SUPPORT_ON_DUTY", "history": ""}
+{"instruction": "Có lỗi hệ thống nào phát sinh hôm nay không?", "output": "Hôm nay ghi nhận GET_DAILY_ERROR lỗi hệ thống.", "function": "GET_DAILY_ERROR", "history": ""}
+{"instruction": "Khách hàng nào mua nhiều nhất hôm nay?", "output": "Khách hàng mua nhiều nhất là GET_TOP_CUSTOMER_TODAY.", "function": "GET_TOP_CUSTOMER_TODAY", "history": ""}
+{"instruction": "Số lượng hóa đơn phát hành hôm nay?", "output": "Đã phát hành GET_TODAY_INVOICE_COUNT hóa đơn.", "function": "GET_TODAY_INVOICE_COUNT", "history": ""}
+{"instruction": "Tổng số hóa đơn bị hủy trong tuần?", "output": "Có GET_WEEKLY_CANCELLED_INVOICE hóa đơn bị hủy.", "function": "GET_WEEKLY_CANCELLED_INVOICE", "history": ""}
+{"instruction": "Đồng chí nào phụ trách xử lý hóa đơn lỗi?", "output": "Đồng chí GET_INVOICE_ISSUE_HANDLER phụ trách xử lý.", "function": "GET_INVOICE_ISSUE_HANDLER", "history": ""}
+{"instruction": "Tháng này doanh thu cao nhất ngày nào?", "output": "Ngày GET_TOP_REVENUE_DAY có doanh thu cao nhất.", "function": "GET_TOP_REVENUE_DAY", "history": ""}
+{"instruction": "Tình hình thanh toán hóa đơn hôm nay?", "output": "Có GET_UNPAID_INVOICES hóa đơn chưa thanh toán.", "function": "GET_UNPAID_INVOICES", "history": ""}
+{"instruction": "Lỗi nào xuất hiện nhiều nhất tuần qua?", "output": "Lỗi phổ biến nhất là GET_TOP_ERROR_CODE.", "function": "GET_TOP_ERROR_CODE", "history": ""}
+{"instruction": "Có bao nhiêu nhân sự nghỉ hôm qua?", "output": "Hôm qua có GET_YESTERDAY_ABSENCE_COUNT người nghỉ.", "function": "GET_YESTERDAY_ABSENCE_COUNT", "history": ""}
+{"instruction": "Danh sách hóa đơn bị sai thông tin?", "output": "GET_WRONG_INFO_INVOICES là danh sách sai.", "function": "GET_WRONG_INFO_INVOICES", "history": ""}
+{"instruction": "Ai đang xử lý lỗi trong hệ thống?", "output": "GET_SYSTEM_ERROR_HANDLER đang xử lý.", "function": "GET_SYSTEM_ERROR_HANDLER", "history": ""}
+{"instruction": "Báo cáo thuế GTGT quý này?", "output": "Thuế GTGT quý này là GET_VAT_REPORT.", "function": "GET_VAT_REPORT", "history": ""}
+{"instruction": "Có hóa đơn nào trùng số không?", "output": "Có GET_DUPLICATE_INVOICES hóa đơn trùng số.", "function": "GET_DUPLICATE_INVOICES", "history": ""}
+{"instruction": "Số lượng hóa đơn bán lẻ hôm nay?", "output": "Có GET_RETAIL_INVOICES hôm nay.", "function": "GET_RETAIL_INVOICES", "history": ""}
+{"instruction": "Thống kê hóa đơn theo loại?", "output": "Dữ liệu thống kê là GET_INVOICE_BY_TYPE.", "function": "GET_INVOICE_BY_TYPE", "history": ""}
+{"instruction": "Ai đang on-call bộ phận kỹ thuật?", "output": "Đồng chí GET_TECH_ON_CALL đang on-call.", "function": "GET_TECH_ON_CALL", "history": ""}
+{"instruction": "Số lỗi đã xử lý xong hôm nay?", "output": "Hôm nay xử lý xong GET_RESOLVED_ERRORS lỗi.", "function": "GET_RESOLVED_ERRORS", "history": ""}
+{"instruction": "Lịch sử làm việc của đồng chí Lan?", "output": "Lịch sử là GET_LAN_ACTIVITY_LOG.", "function": "GET_LAN_ACTIVITY_LOG", "history": ""}
+{"instruction": "Lan tháng này nghỉ bao nhiêu ngày?", "output": "Lan nghỉ GET_LAN_ABSENCE_DAYS ngày.", "function": "GET_LAN_ABSENCE_DAYS", "history": "Q: Lan hôm qua có đi làm không?\nA: Có, có mặt đầy đủ."}
+{"instruction": "Danh sách khách hàng chưa thanh toán?", "output": "GET_UNPAID_CUSTOMERS là danh sách chưa thanh toán.", "function": "GET_UNPAID_CUSTOMERS", "history": ""}
+{"instruction": "Tổng giá trị hóa đơn hôm nay?", "output": "Tổng giá trị là GET_TODAY_INVOICE_VALUE.", "function": "GET_TODAY_INVOICE_VALUE", "history": ""}
+{"instruction": "Có sự cố nào với ký số không?", "output": "Có GET_SIGN_ISSUE_COUNT sự cố ký số.", "function": "GET_SIGN_ISSUE_COUNT", "history": ""}
+{"instruction": "Hôm nay có gửi hóa đơn nào lỗi không?", "output": "Có GET_TODAY_SEND_ERROR lỗi gửi hóa đơn.", "function": "GET_TODAY_SEND_ERROR", "history": ""}
+{"instruction": "Top khách hàng theo số lượng hóa đơn?", "output": "GET_TOP_CUSTOMERS_BY_INVOICE là danh sách top.", "function": "GET_TOP_CUSTOMERS_BY_INVOICE", "history": ""}

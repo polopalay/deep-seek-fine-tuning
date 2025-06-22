@@ -2,18 +2,18 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
 
-final_model_dir = "./colora_output/merged_model_16/"
+final_model_dir = "./colora_output/merged_model_4/"
 device = "mps"
 max_new_tokens = 128
 
 # Danh sách các prompt
 prompt_list = [
-    "### Câu hỏi:\nDoanh nghiệp FDI có dùng HĐĐT?\n\n### Trả lời:\n",
-    "### Câu hỏi:\nLỗi ERR:11 là gì?\n\n### Trả lời:\n",
-    "### Câu hỏi:\nSửa sai số lượng hàng hóa?\n\n### Trả lời:\n",
-    "### Câu hỏi:\nERR:1 là lỗi gì?\n\n### Trả lời:\n",
-    "### Câu hỏi:\nHóa đơn có thể bị từ chối?\n\n### Trả lời:\n",
-    "### Câu hỏi:\n1+1=?\n\n### Trả lời:\n",
+    # "### Câu hỏi:\nDoanh nghiệp FDI có dùng HĐĐT?\n\n### Trả lời:\n",
+    # "### Câu hỏi:\nLỗi ERR:11 là gì?\n\n### Trả lời:\n",
+    # "### Câu hỏi:\nSửa sai số lượng hàng hóa?\n\n### Trả lời:\n",
+    # "### Câu hỏi:\nERR:1 là lỗi gì?\n\n### Trả lời:\n",
+    "### Câu hỏi:\nTôi muốn biết hóa đơn xuất sai phải hủy trong bao lâu?\n\n### Trả lời:\n",
+    "### Câu hỏi:\nTôi muốn trả lại hóa đơn đã mua?\n\n### Trả lời:\n",
 ]
 
 # Load model & tokenizer
