@@ -1,7 +1,7 @@
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
-from transformers import DataCollatorForLanguageModeling, EarlyStoppingCallback
+from transformers import DataCollatorForLanguageModeling
 import torch
 import os
 import warnings
@@ -41,8 +41,6 @@ class OrthLoRATrainer(Trainer):
     ):
         outputs = model(**inputs)
         main_loss = outputs.loss
-        current_epoch = getattr(self.state, "epoch", 0.0)
-        total_epochs = getattr(self.args, "num_train_epochs", 1)
 
         orth_loss = 0.0
         lambda_orth = self.orth_lambda
@@ -91,17 +89,27 @@ def training_using_cola(
     )
 
     def tokenize(data):
-        formatted = f"{data['history']}\n\n### Câu hỏi:\n{data['instruction']}\n\n### Trả lời:\n{data['output']}\n\n### Hàm gọi:\n{data['function']}{tokenizer.eos_token}"
+        formatted = tokenizer.apply_chat_template(
+            data["messages"],
+            tokenize=False,
+            add_generation_prompt=False,
+        )
         return tokenizer(
-            formatted, truncation=True, padding="max_length", max_length=tokenizer_len
+            formatted,
+            truncation=True,
+            padding="max_length",
+            max_length=tokenizer_len,
         )
 
-    tokenized = dataset.map(tokenize, remove_columns=dataset["train"].column_names)
+    tokenized = dataset.map(tokenize, remove_columns=["messages"])
 
     adapter_names = []
 
     for round_idx, r in enumerate(r_list):
         print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
+        if os.path.exists(f"{output_dir}/{base_adapter_name}_r{r}"):
+            print(f"Đã có adapter {base_adapter_name}_r{r}, bỏ qua vòng này.")
+            continue
         torch.mps.empty_cache()
         model = AutoModelForCausalLM.from_pretrained(
             model_base, torch_dtype=torch.float16
@@ -129,7 +137,7 @@ def training_using_cola(
             )
 
         adapter_name = f"{base_adapter_name}_r{r}"
-        model.add_adapter(adapter_name, lora_config)
+        # model.add_adapter(adapter_name, lora_config)
         adapter_names.append(adapter_name)
 
         training_args = TrainingArguments(
@@ -140,17 +148,10 @@ def training_using_cola(
             warmup_ratio=warmup_ratio,
             learning_rate=learning_rate,
             report_to="none",
-            save_strategy="epoch",
-            evaluation_strategy="epoch",
-            load_best_model_at_end=True,
-            metric_for_best_model="eval_loss",
-            greater_is_better=False,
+            save_strategy="no",
+            load_best_model_at_end=False,
             fp16=False,
-            max_steps=1,
-        )
-        early_stopping = EarlyStoppingCallback(
-            early_stopping_patience=2,
-            early_stopping_threshold=0.001,
+            # max_steps=1,
         )
 
         trainer = OrthLoRATrainer(
@@ -163,13 +164,12 @@ def training_using_cola(
             # data_collator=None,
             orth_lambda=orth_lambda,
             matrix_type=matrix_type,
-            callbacks=[early_stopping],
         )
 
         trainer.train()
         if round_idx == len(r_list) - 1:
             model = model.merge_and_unload()
-            merged_ckpt_dir = f"{output_dir}/merged_model_{r}"
+            merged_ckpt_dir = f"{output_dir}/merged_model_final"
             os.makedirs(merged_ckpt_dir, exist_ok=True)
             model.save_pretrained(merged_ckpt_dir)
             tokenizer.save_pretrained(merged_ckpt_dir)

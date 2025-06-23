@@ -1,40 +1,34 @@
+from transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig
+from peft import PeftModel
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import os
 
-final_model_dir = "./colora_output/merged_model_16/"
-device = "mps"
-max_new_tokens = 128
+device = "mps" if torch.backends.mps.is_available() else "cpu"
 
-# Danh sách các prompt
-prompt_list = [
-    # "### Câu hỏi:\nDoanh nghiệp FDI có dùng HĐĐT?\n\n### Trả lời:\n",
-    # "### Câu hỏi:\nLỗi ERR:11 là gì?\n\n### Trả lời:\n",
-    # "### Câu hỏi:\nSửa sai số lượng hàng hóa?\n\n### Trả lời:\n",
-    # "### Câu hỏi:\nERR:1 là lỗi gì?\n\n### Trả lời:\n",
-    "### Câu hỏi:\nTôi muốn biết hóa đơn xuất sai phải hủy trong bao lâu?\n\n### Trả lời:\n",
-    "### Câu hỏi:\nTôi muốn trả lại hóa đơn đã mua?\n\n### Trả lời:\n",
-]
+model_base = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+adapter_path = "./colora_output/colora_r16"
 
-# Load model & tokenizer
-print("Loading model and tokenizer...")
-tokenizer = AutoTokenizer.from_pretrained(final_model_dir)
-model = AutoModelForCausalLM.from_pretrained(final_model_dir).to(device)
-model.eval()
+tokenizer = AutoTokenizer.from_pretrained(model_base)
+tokenizer.pad_token = tokenizer.eos_token
 
-# Xử lý từng prompt
-for i, prompt in enumerate(prompt_list):
-    inputs = tokenizer(prompt, return_tensors="pt", padding=True).to(device)
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=False,
-            temperature=0.7,
-            top_p=0.95,
-            repetition_penalty=1.2,
-            eos_token_id=tokenizer.eos_token_id,
-        )
-    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    print(f"\n=== Output {i+1} ===")
-    print(generated_text)
+model = AutoModelForCausalLM.from_pretrained(model_base, torch_dtype=torch.float16)
+model = PeftModel.from_pretrained(model, adapter_path)
+model = model.to(device)
+
+chat = [{"role": "user", "content": "Thay thế hóa đơn có cần báo cáo lại không?"}]
+
+input_ids = tokenizer.apply_chat_template(
+    chat, add_generation_prompt=True, return_tensors="pt"
+).to(device)
+
+with torch.no_grad():
+    outputs = model.generate(
+        input_ids=input_ids,
+        max_new_tokens=128,
+        do_sample=True,
+        top_p=0.9,
+        temperature=0.7,
+        pad_token_id=tokenizer.eos_token_id,
+        generation_config=GenerationConfig.from_pretrained(model_base),
+    )
+
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
