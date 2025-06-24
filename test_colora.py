@@ -3,7 +3,7 @@ import torch
 
 
 def test_merged_model(
-    model_path="./colora_output/merged_model_final",
+    model_path="./colora_output/colora_final",
     questions=None,
     device="mps",
     max_new_tokens=64,
@@ -16,14 +16,15 @@ def test_merged_model(
             "Ký hiệu tôi ghi nhầm sang mẫu cũ",
             "Tên khách hàng cần sửa",
             "Ghi sai tên người giao hàng?",
-            "Lỗi ERR:1 là gì?",
+            "Lỗi ERR:1 trong ImportAndPublishAssignedNo là gì?",
             "Lỗi ERR:2 là gì?",
             "Lỗi ERR:3 là gì?",
             "Lỗi ERR:4 là gì?",
             "Lỗi ERR:5 là gì?",
             "Sai hoá đơn cần báo cho người mua không?",
-            "Hàm ImportAndPublishInv dùng để làm gì trong hệ thống?",
+            "Khi import mình chứng từ hệ thống báo lỗi ngày tạo không hợp lệ là sao nhỉ?",
             "Khi nào phải điều chỉnh chứ không thay thế?",
+            "Cho tôi xin thông tin ông Huy nay có đi làm không.",
         ]
 
     # Load mô hình đã merge và tokenizer

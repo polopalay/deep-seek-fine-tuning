@@ -108,15 +108,16 @@ def training_using_cola(
     num_epochs=5,
     tokenizer_len=32,
     warmup_ratio=0.03,
-    learning_rate=5e-5,
+    learning_rates= [2e-5, 1e-5, 5e-6],
     device="mps",
     output_dir="./colora_output",
     base_adapter_name="colora",
 ):
     tokenizer = AutoTokenizer.from_pretrained(model_base)
-    tokenizer.pad_token = (
-        tokenizer.eos_token if tokenizer.pad_token is None else tokenizer.pad_token
-    )
+    tokenizer.pad_token = tokenizer.eos_token
+    # tokenizer.pad_token = (
+        # tokenizer.eos_token if tokenizer.pad_token is None else tokenizer.pad_token
+    # )
 
     dataset = load_dataset("json", data_files=dataset_path)["train"].train_test_split(
         test_size=0.1
@@ -151,6 +152,7 @@ def training_using_cola(
         alpha = alpha_strategy(r)
         lambda_internal = lambdas_internal[round_idx]
         lambda_external = lambdas_external[round_idx]
+        learning_rate = learning_rates[round_idx]
         lora_config = LoraConfig(
             r=r,
             lora_alpha=alpha,
@@ -208,7 +210,7 @@ def training_using_cola(
         trainer.train()
         if round_idx == len(r_list) - 1:
             model = model.merge_and_unload()
-            merged_ckpt_dir = f"{output_dir}/merged_model_final"
+            merged_ckpt_dir = f"{output_dir}/colora_final"
             os.makedirs(merged_ckpt_dir, exist_ok=True)
             model.save_pretrained(merged_ckpt_dir)
             tokenizer.save_pretrained(merged_ckpt_dir)
@@ -225,14 +227,13 @@ if __name__ == "__main__":
         dataset_path="./data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r_list=[16, 8, 4],
-        lambdas_internal=[0.2, 0.1, 0.0],
-        lambdas_external=[0.0, 0.1, 0.2],
+        lambdas_internal=[1.0, 0.5, 0.0],
+        lambdas_external=[0.0, 0.5, 0.25],
+        learning_rates=[2e-5, 1e-5, 5e-6],
         batch_size=2,
         num_epochs=3,
         tokenizer_len=128,
         warmup_ratio=0.04,
-        learning_rate=2e-5,
-        # learning_rate=5e-5,
         device="mps",
         output_dir="./colora_output",
         base_adapter_name="colora",

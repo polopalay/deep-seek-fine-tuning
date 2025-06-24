@@ -24,11 +24,20 @@ def training_using_lora(
     tokenizer = AutoTokenizer.from_pretrained(model_base)
     tokenizer.pad_token = tokenizer.eos_token
 
-    def tokenize(example):
-        formatted = f"### Câu hỏi:\n{example['instruction']}\n\n### Trả lời:\n{example['output']}{tokenizer.eos_token}"
-        return tokenizer(
-            formatted, truncation=True, padding="max_length", max_length=128
+    def tokenize(data):
+        formatted = tokenizer.apply_chat_template(
+            data["messages"],
+            tokenize=False,
+            add_generation_prompt=False,
         )
+        return tokenizer(
+            formatted,
+            truncation=True,
+            padding="max_length",
+            max_length=128,
+        )
+
+    tokenized = dataset.map(tokenize, remove_columns=["messages"])
 
     model = AutoModelForCausalLM.from_pretrained(model_base)
     model.resize_token_embeddings(len(tokenizer))
@@ -43,18 +52,15 @@ def training_using_lora(
     )
 
     model = get_peft_model(model, lora_config)
-    tokenized = dataset.map(tokenize, remove_columns=dataset["train"].column_names)
 
-    # 5. Cấu hình training
     training_args = TrainingArguments(
         output_dir="./results_lora",
         per_device_train_batch_size=batch_size,
-        # per_device_eval_batch_size=1,
         num_train_epochs=num_epochs,
         logging_steps=20,
-        # save_strategy="epoch",
-        # evaluation_strategy="epoch",
         report_to="none",
+        save_strategy="no",
+        load_best_model_at_end=False,
         fp16=False,
     )
 
@@ -76,11 +82,11 @@ def training_using_lora(
 
 if __name__ == "__main__":
     training_using_lora(
-        dataset_path="./data/data_100.jsonl",
-        model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        dataset_path="./data/data.jsonl",
+        model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r=16,
-        batch_size=1,
-        num_epochs=1,
+        batch_size=2,
+        num_epochs=3,
         output_dir="./colora_output",
         adapter_name="lora_adapter",
     )
