@@ -217,7 +217,8 @@ def training_using_cola(
         else:
             model.save_pretrained(f"{output_dir}/{adapter_name}")
 
-        del model
+        del trainer
+        del prev_A_list
         gc.collect()
         torch.mps.empty_cache()
 
@@ -227,13 +228,13 @@ if __name__ == "__main__":
         dataset_path="./data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r_list=[16, 8, 4],
-        lambdas_internal=[1.0, 0.5, 0.0],
-        lambdas_external=[0.0, 0.5, 0.25],
-        learning_rates=[2e-5, 1e-5, 5e-6],
+        lambdas_internal=[0.2, 0.1, 0.0],
+        lambdas_external=[0.0, 0.1, 0.0],
+        learning_rates=[2e-5, 1e-5, 2e-6],
         batch_size=2,
         num_epochs=3,
         tokenizer_len=128,
-        warmup_ratio=0.04,
+        warmup_ratio=0.1,
         device="mps",
         output_dir="./colora_output",
         base_adapter_name="colora",
