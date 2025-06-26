@@ -10,21 +10,21 @@ def test_merged_model(
 ):
     if questions is None:
         questions = [
-            "Thay thế hóa đơn có cần báo cáo lại không?",
-            "Hóa đơn thay thế có cần thời gian cụ thể không?",
-            "Tôi muốn kiểm tra lại trước khi gửi",
+            "Thuế trả ra lỗi: -1:Bộ MST, ký hiệu mẫu số, ký hiệu và số hóa đơn không duy nhất_Kiểm tra lại định dạng dữ liệu.",
+            "Bạn kiểm tra giúp bảng kê hoá đơn hàng tháng của đơn vị, những hoá đơn điều chỉnh giảm ko trừ đi số tiền khi báo cáo.",
+            "Hoá đơn sai số lượng sản phẩm có phải làm hoá đơn thay thế không nhỉ?",
             "Ký hiệu tôi ghi nhầm sang mẫu cũ",
             "Tên khách hàng cần sửa",
             "Ghi sai tên người giao hàng?",
-            "Lỗi ERR:1 trong ImportAndPublishAssignedNo là gì?",
-            "Lỗi ERR:2 là gì?",
-            "Lỗi ERR:3 là gì?",
-            "Lỗi ERR:4 là gì?",
-            "Lỗi ERR:5 là gì?",
-            "Sai hoá đơn cần báo cho người mua không?",
+            "ERR:1 trong ImportAndPublishAssignedNo là gì?",
+            "Tôi bị lỗi ERR:1 là do đâu?",
+            "API trả về ERR:10?",
+            "Controller Department cần viết những phương thức nào?",
+            "Tôi muốn tạo API mới thì cần làm gì?",
             "Khi import mình chứng từ hệ thống báo lỗi ngày tạo không hợp lệ là sao nhỉ?",
-            "Khi nào phải điều chỉnh chứ không thay thế?",
-            "Cho tôi xin thông tin ông Huy nay có đi làm không.",
+            "View mặc định của hoá đơn máy tính tiền là gì vậy?",
+            "Hoá đơn máy tính tiền là gì?",
+            "Làm sao biết công ty chưa đăng ký chứng thư số khi gọi GetCertInfo?",
         ]
 
     # Load mô hình đã merge và tokenizer

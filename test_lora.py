@@ -1,55 +1,45 @@
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig
 from peft import PeftModel
-
+import torch
 
 def test_lora_model(
-    prompts,
-    model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-    adapter_path="./colora_output/lora_adapter",
-    max_new_tokens=64,
-    device="mps",
+    adapter_path: str = "./colora_output/colora_r16",
+    model_base: str = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    prompt: str = "Làm sao biết công ty chưa đăng ký chứng thư số khi gọi GetCertInfo?",
+    device: str = "mps"
 ):
-    tokenizer = AutoTokenizer.from_pretrained(adapter_path)
-    model = AutoModelForCausalLM.from_pretrained(model_base)
-    model.resize_token_embeddings(len(tokenizer))
+    tokenizer = AutoTokenizer.from_pretrained(model_base)
+    tokenizer.pad_token = tokenizer.eos_token
+
+    model = AutoModelForCausalLM.from_pretrained(model_base, torch_dtype=torch.float16 if device == "cuda" else torch.float32)
+    
     model = PeftModel.from_pretrained(model, adapter_path)
+    model.to(device)
     model.eval()
-    model = model.to(device)
 
-    results = []
-    for prompt in prompts:
-        input_text = f"### Câu hỏi:\n{prompt}\n\n### Trả lời:\n"
-        inputs = tokenizer(input_text, return_tensors="pt", padding=True).to(device)
+    messages = [
+        {"role": "user", "content": prompt}
+    ]
 
-        with torch.no_grad():
-            output = model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                do_sample=True,
-                temperature=0.7,
-                eos_token_id=tokenizer.eos_token_id,
-                pad_token_id=tokenizer.eos_token_id,
-            )
-        # Decode output, bỏ phần prompt đầu
-        decoded = tokenizer.decode(output[0], skip_special_tokens=True)
-        answer = decoded.split("### Trả lời:\n")[-1].strip()
-        results.append(answer)
-    return results
+    input_text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+
+    inputs = tokenizer(input_text, return_tensors="pt").to(device)
+
+    with torch.no_grad():
+        outputs = model.generate(
+            **inputs,
+            max_new_tokens=128,
+            temperature=0.7,
+            top_p=0.9,
+            do_sample=True,
+            pad_token_id=tokenizer.eos_token_id
+        )
+
+    output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    
+    print("\n🧪 Output:")
+    print(output_text.split(prompt)[-1].strip())
 
 
 if __name__ == "__main__":
-    prompts = [
-        "Hóa đơn điện tử là gì?",
-        "Làm thế nào để đăng ký tài khoản VNPT Invoice?",
-        "Lỗi ERR:21 là gì?",
-        "Lỗi ERR:1 là gì?",
-        "1+1 là bao nhiêu?",
-    ]
-    answers = test_lora_model(
-        prompts,
-        model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        adapter_path="./colora_output/lora_adapter/",
-    )
-    for q, a in zip(prompts, answers):
-        print(f"Câu hỏi: {q}\nTrả lời: {a}\n")
+    test_lora_model()

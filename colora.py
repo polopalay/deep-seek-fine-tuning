@@ -1,7 +1,7 @@
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
-from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 from transformers import DataCollatorForLanguageModeling
+from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 import torch
 import os
 import warnings
@@ -104,19 +104,20 @@ def training_using_cola(
     r_list=[16, 8, 4],
     lambdas_internal=[0.5, 0.0, 0.0],
     lambdas_external=[0.0, 0.5, 0.1],
+    epoch_list=[3, 5, 7],
     batch_size=2,
-    num_epochs=5,
     tokenizer_len=32,
     warmup_ratio=0.03,
-    learning_rates= [2e-5, 1e-5, 5e-6],
+    learning_rates=[2e-5, 1e-5, 5e-6],
     device="mps",
     output_dir="./colora_output",
     base_adapter_name="colora",
 ):
     tokenizer = AutoTokenizer.from_pretrained(model_base)
     tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.padding_side = "right"
     # tokenizer.pad_token = (
-        # tokenizer.eos_token if tokenizer.pad_token is None else tokenizer.pad_token
+    # tokenizer.eos_token if tokenizer.pad_token is None else tokenizer.pad_token
     # )
 
     dataset = load_dataset("json", data_files=dataset_path)["train"].train_test_split(
@@ -132,7 +133,8 @@ def training_using_cola(
         return tokenizer(
             formatted,
             truncation=True,
-            padding="max_length",
+            # padding="max_length",
+            padding=True,
             max_length=tokenizer_len,
         )
 
@@ -153,10 +155,19 @@ def training_using_cola(
         lambda_internal = lambdas_internal[round_idx]
         lambda_external = lambdas_external[round_idx]
         learning_rate = learning_rates[round_idx]
+        num_epochs = epoch_list[round_idx]
         lora_config = LoraConfig(
             r=r,
             lora_alpha=alpha,
-            target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj"],
+            target_modules=[
+                "q_proj",
+                "v_proj",
+                "k_proj",
+                "o_proj",
+                "gate_proj",
+                "up_proj",
+                "down_proj",
+            ],
             lora_dropout=0.05,
             bias="none",
             task_type=TaskType.CAUSAL_LM,
@@ -173,7 +184,6 @@ def training_using_cola(
             )
 
         adapter_name = f"{base_adapter_name}_r{r}"
-        # model.add_adapter(adapter_name, lora_config)
         adapter_names.append(adapter_name)
 
         training_args = TrainingArguments(
@@ -183,6 +193,9 @@ def training_using_cola(
             logging_steps=100,
             warmup_ratio=warmup_ratio,
             learning_rate=learning_rate,
+            evaluation_strategy="steps",
+            eval_steps=1000,
+            lr_scheduler_type="cosine",
             report_to="none",
             save_strategy="no",
             load_best_model_at_end=False,
@@ -227,12 +240,12 @@ if __name__ == "__main__":
     training_using_cola(
         dataset_path="./data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r_list=[16, 8, 4],
-        lambdas_internal=[0.2, 0.1, 0.0],
-        lambdas_external=[0.0, 0.1, 0.0],
-        learning_rates=[2e-5, 1e-5, 2e-6],
+        r_list=[8, 4, 2],
+        lambdas_internal=[0.1, 0.05, 0.0],
+        lambdas_external=[0.0, 0.05, 0.1],
+        learning_rates=[2e-5, 1.5e-5, 1e-5],
+        epoch_list=[5, 7, 9],
         batch_size=2,
-        num_epochs=3,
         tokenizer_len=128,
         warmup_ratio=0.1,
         device="mps",

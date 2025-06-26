@@ -64,7 +64,6 @@ def training_using_lora(
         fp16=False,
     )
 
-    # 6. Huấn luyện
     trainer = Trainer(
         model=model,
         args=training_args,
