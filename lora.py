@@ -1,94 +1,106 @@
-import json
+from datasets import load_dataset
+from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
+from transformers import DataCollatorForLanguageModeling
+from peft import get_peft_model, LoraConfig, TaskType
 import torch
-from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM,
-    TrainingArguments,
-    Trainer,
-)
-from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
-from datasets import Dataset
+import os
 import json
+import math
 
-MODEL_ID = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-DATA_PATH = "/content/drive/MyDrive/data.jsonl"
-NUM_EPOCHS_PER_LOOP = 2
-BATCH_SIZE = 1
-OUTPUT_DIR = "./cola_outputs"
-DEVICE = "cuda"
+def alpha_strategy(r):
+    c = 8
+    return int(round(math.sqrt(r) * c))
 
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
-tokenizer.padding_side = "right"
-tokenizer.pad_token = tokenizer.eos_token
+def training_using_lora(
+    data_path="./data/data_1000.jsonl",
+    model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    r=8,
+    learning_rate=2e-4,
+    num_epochs=8,
+    batch_size=2,
+    tokenizer_len=128,
+    warmup_ratio=0.1,
+    output_dir="./lora_output",
+    adapter_name="lora_r8",
+    device="mps",
+):
+    tokenizer = AutoTokenizer.from_pretrained(model_base)
+    tokenizer.padding_side = "right"
+    tokenizer.pad_token = tokenizer.eos_token
 
-
-with open(DATA_PATH, "r", encoding="utf-8") as f:
-    raw_data = [json.loads(line) for line in f]
-
-dataset = Dataset.from_list(raw_data).train_test_split(test_size=0.1)
-
-
-def tokenize(example):
-    formatted = tokenizer.apply_chat_template(
-        example["messages"],
-        tokenize=False,
-        add_generation_prompt=False,
-    )
-    tokens = tokenizer(
-        formatted,
-        truncation=True,
-        padding="max_length",
-        max_length=128,
-    )
-    tokens["labels"] = tokens["input_ids"].copy()
-    return tokens
-
-
-tokenized = {}
-for split in dataset:
-    tokenized[split] = dataset[split].map(
-        tokenize,
-        remove_columns=["messages"],
-        batched=False,
+    dataset = load_dataset("json", data_files=data_path)["train"].train_test_split(
+        test_size=0.1
     )
 
-model = AutoModelForCausalLM.from_pretrained(MODEL_ID, torch_dtype=torch.float16)
-model = prepare_model_for_kbit_training(model).to(DEVICE)
+    def tokenize(data):
+        formatted = tokenizer.apply_chat_template(
+            data["messages"],
+            tokenize=False,
+            add_generation_prompt=False,
+        )
+        return tokenizer(
+            formatted,
+            truncation=True,
+            padding=True,
+            max_length=tokenizer_len,
+        )
 
-for loop in range(2):
+    tokenized = dataset.map(tokenize, remove_columns=["messages"])
+
+    model = AutoModelForCausalLM.from_pretrained(model_base, torch_dtype=torch.float16)
+
     lora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
+        r=r,
+        lora_alpha=alpha_strategy(r),
+        target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj"],
         lora_dropout=0.05,
         bias="none",
-        task_type="CAUSAL_LM",
-        target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj"],
+        task_type=TaskType.CAUSAL_LM,
     )
 
-    model = get_peft_model(model, lora_config)
+    model = get_peft_model(model, lora_config).to(device)
 
     training_args = TrainingArguments(
-        output_dir=f"{OUTPUT_DIR}/loop{loop+1}",
-        per_device_train_batch_size=2,
-        num_train_epochs=2,
-        learning_rate=1e-4,
-        logging_steps=10,
-        save_strategy="no",
-        fp16=True,
+        output_dir=f"{output_dir}/{adapter_name}",
+        per_device_train_batch_size=batch_size,
+        num_train_epochs=num_epochs,
+        logging_steps=100,
+        warmup_ratio=warmup_ratio,
+        learning_rate=learning_rate,
+        lr_scheduler_type="cosine",
         report_to="none",
+        save_strategy="no",
+        fp16=False,
+        max_grad_norm=(8 / r) if r < 8 else None,
     )
 
     trainer = Trainer(
         model=model,
-        tokenizer=tokenizer,
         args=training_args,
         train_dataset=tokenized["train"],
         eval_dataset=tokenized["test"],
+        tokenizer=tokenizer,
+        data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
     )
 
     trainer.train()
-    model.merge_and_unload()
 
-model.save_pretrained(f"{OUTPUT_DIR}/final_model")
-tokenizer.save_pretrained(f"{OUTPUT_DIR}/final_model")
+    model.save_pretrained(f"{output_dir}/{adapter_name}")
+    tokenizer.save_pretrained(f"{output_dir}/{adapter_name}")
+
+
+if __name__ == "__main__":
+    training_using_lora(
+        data_path="data/data.jsonl",
+        model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+        r=8,
+        learning_rate=2e-4,
+        num_epochs=8,
+        batch_size=2,
+        tokenizer_len=128,
+        warmup_ratio=0.1,
+        output_dir="output",
+        adapter_name="lora",
+        device="mps",
+    )

@@ -1,18 +1,14 @@
-from datasets import Dataset
+from datasets import dataset_path
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 from transformers import DataCollatorForLanguageModeling
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 import torch
 import os
-import warnings
 import math
 import gc
 import json
 
-# torch.backends.cuda.matmul.allow_tf32 = True
-# torch.backends.cudnn.allow_tf32 = True
 os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
-warnings.filterwarnings("ignore")
 
 
 def alpha_strategy(r):
@@ -114,12 +110,12 @@ def load_lora_A_matrices(adapter_paths, device):
 
 
 def training_using_cola(
-    dataset_path="./data/data_1000.jsonl",
+    data_path="./data/data_1000.jsonl",
     model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     r_list=[16, 8, 4],
     lambdas_internal=[0.5, 0.0, 0.0],
     lambdas_external=[0.0, 0.5, 0.1],
-    epoch_list=[3, 5, 7],
+    epoch_list=[8, 10, 12],
     batch_size=2,
     tokenizer_len=32,
     warmup_ratio=0.03,
@@ -132,10 +128,9 @@ def training_using_cola(
     tokenizer.padding_side = "right"
     tokenizer.pad_token = tokenizer.eos_token
 
-    with open(dataset_path, "r", encoding="utf-8") as f:
-        raw_data = [json.loads(line) for line in f]
-
-    dataset = Dataset.from_list(raw_data).train_test_split(test_size=0.1)
+    dataset = load_dataset("json", data_files=data_path)["train"].train_test_split(
+        test_size=0.1
+    )
 
     def tokenize(data):
         formatted = tokenizer.apply_chat_template(
@@ -189,6 +184,9 @@ def training_using_cola(
                 adapter_name=adapter_name,
                 is_trainable=False,
             )
+            for name, param in model.named_parameters():
+                if f"peft.{adapter_name}" in name or f"{adapter_name}" in name:
+                    param.requires_grad = False
 
         adapter_name = f"{base_adapter_name}_r{r}"
         adapter_names.append(adapter_name)
@@ -204,7 +202,7 @@ def training_using_cola(
             report_to="none",
             save_strategy="no",
             fp16=False,
-            # max_steps=1,
+            max_grad_norm=(8 / r) if r < 8 else None,
         )
 
         prev_A_list = []
@@ -239,27 +237,23 @@ def training_using_cola(
         del trainer
         del prev_A_list
         del model
-        # del tokenizer
         gc.collect()
-        print(
-            f"[DEBUG] Memory allocated: {torch.mps.current_allocated_memory() // 1024**2} MB"
-        )
         torch.mps.empty_cache()
 
 
 if __name__ == "__main__":
     training_using_cola(
-        dataset_path="data/data.jsonl",
+        data_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r_list=[8, 6, 4],
         lambdas_internal=[0.01, 0.001, 0.0],
         lambdas_external=[0.0, 0.01, 0.001],
-        learning_rates=[1e-4, 5e-5, 2e-5],
-        epoch_list=[3, 5, 7],
+        learning_rates=[2e-4, 1e-4, 5e-5],
+        epoch_list=[8, 10, 12],
         batch_size=2,
         tokenizer_len=128,
         warmup_ratio=0.1,
         device="mps",
-        output_dir="colora_output",
+        output_dir="output",
         base_adapter_name="colora",
     )
