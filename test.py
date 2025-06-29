@@ -1,5 +1,6 @@
 from transformers import AutoTokenizer
 import json
+import numpy as np  # để tính median
 
 # Load tokenizer
 tokenizer = AutoTokenizer.from_pretrained(
@@ -20,11 +21,23 @@ def count_tokens(example):
     return 0
 
 
+# Tính token length
 token_lengths = [count_tokens(e) for e in data]
+
+# Phân nhóm
 jira = token_lengths[:550]
 faq = token_lengths[550:1000]
 chatgpt = token_lengths[1000:]
 
-print("Jira:", sum(jira) / len(jira))
-print("FAQ:", sum(faq) / len(faq))
-print("ChatGPT:", sum(chatgpt) / len(chatgpt))
+
+def print_stats(name, group):
+    print(f"{name}:")
+    print(f"  Trung bình: {sum(group)/len(group):.2f}")
+    print(f"  Trung vị  : {np.median(group):.2f}")
+    print(f"  Dài nhất  : {max(group)}")
+    print()
+
+
+print_stats("Jira", jira)
+print_stats("FAQ", faq)
+print_stats("ChatGPT", chatgpt)

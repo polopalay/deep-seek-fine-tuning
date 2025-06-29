@@ -1,4 +1,4 @@
-from datasets import load_dataset
+from datasets import Dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 from transformers import DataCollatorForLanguageModeling
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
@@ -7,8 +7,10 @@ import os
 import warnings
 import math
 import gc
+import json
 
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+# torch.backends.cuda.matmul.allow_tf32 = True
+# torch.backends.cudnn.allow_tf32 = True
 os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 warnings.filterwarnings("ignore")
 
@@ -19,17 +21,28 @@ def alpha_strategy(r):
 
 
 def orthogonal_loss_a(A):
-    AtA = torch.einsum("ik,jk->ij", A, A)
+    AtA = A @ A.T
     I = torch.eye(A.size(0), device=A.device, dtype=A.dtype)
-    return torch.sum((AtA - I) ** 2).float()
+    return torch.sum((AtA - I) ** 2)
 
 
 def orthogonal_loss_between_a(A_now, A_list_prev):
-    loss = 0.0
-    for A_prev in A_list_prev:
-        sim = torch.matmul(A_now, A_prev.T)
-        loss += torch.sum(sim**2).float()
-    return loss
+    if not A_list_prev:
+        return torch.tensor(0.0, device=A_now.device, dtype=A_now.dtype)
+
+    compatible = [A_prev for A_prev in A_list_prev if A_prev.shape == A_now.shape]
+
+    if not compatible:
+        return torch.tensor(0.0, device=A_now.device, dtype=A_now.dtype)
+
+    compatible = [
+        A_prev.to(device=A_now.device, dtype=A_now.dtype) for A_prev in compatible
+    ]
+
+    A_prev_stack = torch.stack(compatible)
+    sim = torch.matmul(A_now, A_prev_stack.transpose(1, 2))
+    sim_sq = sim.pow(2).sum()
+    return sim_sq
 
 
 class OrthLoRATrainer(Trainer):
@@ -54,7 +67,10 @@ class OrthLoRATrainer(Trainer):
 
         internal_loss = 0.0
         external_loss = 0.0
-        ck_orth = ["q_proj", "v_proj", "k_proj", "gate_proj"]
+        ck_orth = [
+            "q_proj",
+            "v_proj",
+        ]
         for name, module in model.named_modules():
             if any(key in name for key in ck_orth):
                 if hasattr(module, "lora_A"):
@@ -87,7 +103,7 @@ def load_lora_A_matrices(adapter_paths, device):
             path,
         )
         for name, module in adapter.named_modules():
-            if any(key in name for key in ["q_proj", "v_proj", "k_proj", "gate_proj"]):
+            if any(key in name for key in ["q_proj", "v_proj"]):
                 if hasattr(module, "lora_A"):
                     lora_A = module.lora_A
                     if isinstance(lora_A, torch.nn.ModuleDict):
@@ -95,7 +111,6 @@ def load_lora_A_matrices(adapter_paths, device):
                             matrices.append(sub_A.weight.to(device))
                     else:
                         matrices.append(lora_A.weight.to(device))
-    return matrices
 
 
 def training_using_cola(
@@ -114,15 +129,13 @@ def training_using_cola(
     base_adapter_name="colora",
 ):
     tokenizer = AutoTokenizer.from_pretrained(model_base)
-    tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
-    # tokenizer.pad_token = (
-    # tokenizer.eos_token if tokenizer.pad_token is None else tokenizer.pad_token
-    # )
+    tokenizer.pad_token = tokenizer.eos_token
 
-    dataset = load_dataset("json", data_files=dataset_path)["train"].train_test_split(
-        test_size=0.1
-    )
+    with open(dataset_path, "r", encoding="utf-8") as f:
+        raw_data = [json.loads(line) for line in f]
+
+    dataset = Dataset.from_list(raw_data).train_test_split(test_size=0.1)
 
     def tokenize(data):
         formatted = tokenizer.apply_chat_template(
@@ -133,7 +146,6 @@ def training_using_cola(
         return tokenizer(
             formatted,
             truncation=True,
-            # padding="max_length",
             padding=True,
             max_length=tokenizer_len,
         )
@@ -143,11 +155,8 @@ def training_using_cola(
     adapter_names = []
 
     for round_idx, r in enumerate(r_list):
-        print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
-        if os.path.exists(f"{output_dir}/{base_adapter_name}_r{r}"):
-            print(f"Đã có adapter {base_adapter_name}_r{r}, bỏ qua vòng này.")
-            continue
         torch.mps.empty_cache()
+        print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
         model = AutoModelForCausalLM.from_pretrained(
             model_base, torch_dtype=torch.float16
         )
@@ -165,17 +174,15 @@ def training_using_cola(
                 "k_proj",
                 "o_proj",
                 "gate_proj",
-                "up_proj",
-                "down_proj",
+                # "up_proj",
+                # "down_proj",
             ],
             lora_dropout=0.05,
             bias="none",
             task_type=TaskType.CAUSAL_LM,
         )
 
-        model = get_peft_model(model, lora_config)
-        model = model.to(device)
-        # model = model.to(device).to(torch.float16)
+        model = get_peft_model(model, lora_config).to(device)
         for adapter_name in adapter_names:
             model.load_adapter(
                 f"{output_dir}/{adapter_name}",
@@ -193,12 +200,9 @@ def training_using_cola(
             logging_steps=100,
             warmup_ratio=warmup_ratio,
             learning_rate=learning_rate,
-            evaluation_strategy="steps",
-            eval_steps=1000,
             lr_scheduler_type="cosine",
             report_to="none",
             save_strategy="no",
-            load_best_model_at_end=False,
             fp16=False,
             # max_steps=1,
         )
@@ -219,8 +223,10 @@ def training_using_cola(
             lambda_external=lambda_external,
             prev_A_list=prev_A_list,
         )
-
+        gc.disable()
         trainer.train()
+        gc.enable()
+
         if round_idx == len(r_list) - 1:
             model = model.merge_and_unload()
             merged_ckpt_dir = f"{output_dir}/colora_final"
@@ -232,23 +238,28 @@ def training_using_cola(
 
         del trainer
         del prev_A_list
+        del model
+        # del tokenizer
         gc.collect()
+        print(
+            f"[DEBUG] Memory allocated: {torch.mps.current_allocated_memory() // 1024**2} MB"
+        )
         torch.mps.empty_cache()
 
 
 if __name__ == "__main__":
     training_using_cola(
-        dataset_path="./data/data.jsonl",
+        dataset_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r_list=[8, 4, 2],
-        lambdas_internal=[0.1, 0.05, 0.0],
-        lambdas_external=[0.0, 0.05, 0.1],
-        learning_rates=[2e-5, 1.5e-5, 1e-5],
-        epoch_list=[5, 7, 9],
+        r_list=[8, 6, 4],
+        lambdas_internal=[0.01, 0.001, 0.0],
+        lambdas_external=[0.0, 0.01, 0.001],
+        learning_rates=[1e-4, 5e-5, 2e-5],
+        epoch_list=[3, 5, 7],
         batch_size=2,
         tokenizer_len=128,
         warmup_ratio=0.1,
         device="mps",
-        output_dir="./colora_output",
+        output_dir="colora_output",
         base_adapter_name="colora",
     )
