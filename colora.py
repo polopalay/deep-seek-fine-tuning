@@ -1,4 +1,4 @@
-from datasets import dataset_path
+from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 from transformers import DataCollatorForLanguageModeling
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
@@ -8,6 +8,8 @@ import math
 import gc
 import json
 
+# torch.backends.cuda.matmul.allow_tf32 = True
+# torch.backends.cudnn.allow_tf32 = True
 os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 
 
@@ -45,13 +47,13 @@ class OrthLoRATrainer(Trainer):
     def __init__(
         self,
         *args,
-        lambda_internal=0.01,
+        # lambda_internal=0.01,
         lambda_external=0.01,
         prev_A_list=None,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
-        self.lambda_internal = lambda_internal
+        # self.lambda_internal = lambda_internal
         self.lambda_external = lambda_external
         self.prev_A_list = prev_A_list if prev_A_list is not None else []
 
@@ -61,7 +63,7 @@ class OrthLoRATrainer(Trainer):
         outputs = model(**inputs)
         main_loss = outputs.loss
 
-        internal_loss = 0.0
+        # internal_loss = 0.0
         external_loss = 0.0
         ck_orth = [
             "q_proj",
@@ -73,40 +75,48 @@ class OrthLoRATrainer(Trainer):
                     lora_A = module.lora_A
                     if isinstance(lora_A, torch.nn.ModuleDict):
                         for _, sub_A in lora_A.items():
-                            internal_loss += orthogonal_loss_a(sub_A.weight)
+                            # internal_loss += orthogonal_loss_a(sub_A.weight)
                             external_loss += orthogonal_loss_between_a(
                                 sub_A.weight, self.prev_A_list
                             )
                     else:
-                        internal_loss += orthogonal_loss_a(lora_A.weight)
+                        # internal_loss += orthogonal_loss_a(lora_A.weight)
                         external_loss += orthogonal_loss_between_a(
                             lora_A.weight, self.prev_A_list
                         )
 
         total_loss = (
             main_loss
-            + self.lambda_internal * internal_loss
+            # + self.lambda_internal * internal_loss
             + self.lambda_external * external_loss
         )
         return (total_loss, outputs) if return_outputs else total_loss
 
 
-def load_lora_A_matrices(adapter_paths, device):
+def load_lora_A_matrices(model, adapter_paths, device):
     matrices = []
-    for path in adapter_paths:
-        adapter = PeftModel.from_pretrained(
-            AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.float16),
-            path,
-        )
-        for name, module in adapter.named_modules():
-            if any(key in name for key in ["q_proj", "v_proj"]):
-                if hasattr(module, "lora_A"):
-                    lora_A = module.lora_A
-                    if isinstance(lora_A, torch.nn.ModuleDict):
-                        for _, sub_A in lora_A.items():
-                            matrices.append(sub_A.weight.to(device))
-                    else:
-                        matrices.append(lora_A.weight.to(device))
+
+    # for path in adapter_paths:
+    # adapter = PeftModel.from_pretrained(
+    # AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.float16),
+    # path,
+    # )
+    # for name, module in adapter.named_modules():
+    # if any(key in name for key in ["q_proj", "v_proj"]):
+    # if hasattr(module, "lora_A"):
+    # lora_A = module.lora_A
+    # if isinstance(lora_A, torch.nn.ModuleDict):
+    # for _, sub_A in lora_A.items():
+    # matrices.append(sub_A.weight.detach().to(device))
+    # else:
+    # matrices.append(lora_A.weight.detach().to(device))
+
+    for name, module in model.named_modules():
+        if any(key in name for key in ["q_proj", "v_proj"]):
+            if hasattr(module, "weight"):
+                matrices.append(module.weight.detach().to(device))
+
+    return matrices
 
 
 def training_using_cola(
@@ -150,13 +160,13 @@ def training_using_cola(
     adapter_names = []
 
     for round_idx, r in enumerate(r_list):
-        torch.mps.empty_cache()
         print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
         model = AutoModelForCausalLM.from_pretrained(
             model_base, torch_dtype=torch.float16
         )
+        model.config.sliding_window = None
         alpha = alpha_strategy(r)
-        lambda_internal = lambdas_internal[round_idx]
+        # lambda_internal = lambdas_internal[round_idx]
         lambda_external = lambdas_external[round_idx]
         learning_rate = learning_rates[round_idx]
         num_epochs = epoch_list[round_idx]
@@ -202,22 +212,20 @@ def training_using_cola(
             report_to="none",
             save_strategy="no",
             fp16=False,
-            max_grad_norm=(8 / r) if r < 8 else None,
+            max_grad_norm=(16 / r) if r < 16 else None,
         )
 
         prev_A_list = []
-        if round_idx > 0:
-            prev_adapter_paths = [f"{output_dir}/{name}" for name in adapter_names[:-1]]
-            prev_A_list = load_lora_A_matrices(prev_adapter_paths, device=device)
+        prev_adapter_paths = [f"{output_dir}/{name}" for name in adapter_names[:-1]]
+        prev_A_list = load_lora_A_matrices(model, prev_adapter_paths, device=device)
 
         trainer = OrthLoRATrainer(
             model=model,
             args=training_args,
             train_dataset=tokenized["train"],
             eval_dataset=tokenized["test"],
-            tokenizer=tokenizer,
             data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
-            lambda_internal=lambda_internal,
+            # lambda_internal=lambda_internal,
             lambda_external=lambda_external,
             prev_A_list=prev_A_list,
         )
@@ -227,7 +235,7 @@ def training_using_cola(
 
         if round_idx == len(r_list) - 1:
             model = model.merge_and_unload()
-            merged_ckpt_dir = f"{output_dir}/colora_final"
+            merged_ckpt_dir = f"{output_dir}/{base_adapter_name}"
             os.makedirs(merged_ckpt_dir, exist_ok=True)
             model.save_pretrained(merged_ckpt_dir)
             tokenizer.save_pretrained(merged_ckpt_dir)
@@ -245,11 +253,11 @@ if __name__ == "__main__":
     training_using_cola(
         data_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r_list=[8, 6, 4],
-        lambdas_internal=[0.01, 0.001, 0.0],
-        lambdas_external=[0.0, 0.01, 0.001],
+        r_list=[5, 7],
+        # lambdas_internal=[0.002, 0.001, 0.0],
+        lambdas_external=[0.05, 0.01, 0.001],
         learning_rates=[2e-4, 1e-4, 5e-5],
-        epoch_list=[8, 10, 12],
+        epoch_list=[8, 10],
         batch_size=2,
         tokenizer_len=128,
         warmup_ratio=0.1,

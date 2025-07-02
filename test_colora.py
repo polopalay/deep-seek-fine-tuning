@@ -2,21 +2,28 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 import json
 import random
+from sentence_transformers import SentenceTransformer, util
+
+model_sim = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+similarity_threshold = 0.8
 
 
 def load_random_questions(jsonl_path, n_questions=5):
     with open(jsonl_path, "r", encoding="utf-8") as f:
         data = [json.loads(line) for line in f]
 
-    all_questions = []
+    all_qas = []
     for item in data:
-        all_questions.append(item["messages"][0]["content"].strip())
+        q = item["messages"][0]["content"].strip()
+        a = item["messages"][1]["content"].strip()
+        all_qas.append((q, a))
 
-    return random.sample(all_questions, min(n_questions, len(all_questions)))
+    return random.sample(all_qas, min(n_questions, len(all_qas)))
 
 
 def test_merged_model(
-    model_path="./colora_output/colora_final",
+    model_path="./output/colora/",
     jsonl_path="./data/data.jsonl",
     n_questions=5,
     device="mps",
@@ -32,7 +39,7 @@ def test_merged_model(
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    for q in questions:
+    for q, expected in questions:
         chat = [{"role": "user", "content": q}]
         input_ids = tokenizer.apply_chat_template(
             chat, add_generation_prompt=True, return_tensors="pt"
@@ -55,8 +62,16 @@ def test_merged_model(
         prompt_text = tokenizer.decode(input_ids[0], skip_special_tokens=True)
         answer = full_output.replace(prompt_text, "").strip()
         # answer = answer.split(".")[0].strip()
+        sim = util.cos_sim(
+            model_sim.encode(answer, convert_to_tensor=True),
+            model_sim.encode(expected, convert_to_tensor=True),
+        ).item()
 
-        print(f"Q: {q}\nA: {answer}\n{'-'*60}")
+        is_correct = sim >= similarity_threshold
+
+        print(
+            f"Q: {q}\nA: {answer}\nSimilarity: {sim:.2f} → {'✓' if is_correct else '✗'}\n{'-'*60}"
+        )
 
 
-test_merged_model(n_questions=30)
+test_merged_model(model_path="./output/colora/", n_questions=40)
