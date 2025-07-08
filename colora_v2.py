@@ -8,8 +8,8 @@ import math
 import gc
 import json
 
-# torch.backends.cuda.matmul.allow_tf32 = True
-# torch.backends.cudnn.allow_tf32 = True
+torch.backends.cuda.matmul.allow_tf32 = True
+torch.backends.cudnn.allow_tf32 = True
 os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 
 
@@ -47,13 +47,13 @@ class OrthLoRATrainer(Trainer):
     def __init__(
         self,
         *args,
-        # lambda_internal=0.01,
+        lambda_internal=0.01,
         lambda_external=0.01,
         prev_A_list=None,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
-        # self.lambda_internal = lambda_internal
+        self.lambda_internal = lambda_internal
         self.lambda_external = lambda_external
         self.prev_A_list = prev_A_list if prev_A_list is not None else []
 
@@ -63,11 +63,14 @@ class OrthLoRATrainer(Trainer):
         outputs = model(**inputs)
         main_loss = outputs.loss
 
-        # internal_loss = 0.0
+        internal_loss = 0.0
         external_loss = 0.0
         ck_orth = [
             "q_proj",
             "v_proj",
+            "k_proj",
+            "o_proj",
+            "gate_proj",
         ]
         for name, module in model.named_modules():
             if any(key in name for key in ck_orth):
@@ -75,19 +78,19 @@ class OrthLoRATrainer(Trainer):
                     lora_A = module.lora_A
                     if isinstance(lora_A, torch.nn.ModuleDict):
                         for _, sub_A in lora_A.items():
-                            # internal_loss += orthogonal_loss_a(sub_A.weight)
+                            internal_loss += orthogonal_loss_a(sub_A.weight)
                             external_loss += orthogonal_loss_between_a(
                                 sub_A.weight, self.prev_A_list
                             )
                     else:
-                        # internal_loss += orthogonal_loss_a(lora_A.weight)
+                        internal_loss += orthogonal_loss_a(lora_A.weight)
                         external_loss += orthogonal_loss_between_a(
                             lora_A.weight, self.prev_A_list
                         )
 
         total_loss = (
             main_loss
-            # + self.lambda_internal * internal_loss
+            + self.lambda_internal * internal_loss
             + self.lambda_external * external_loss
         )
         return (total_loss, outputs) if return_outputs else total_loss
@@ -160,14 +163,13 @@ def training_using_cola(
     adapter_names = []
 
     for round_idx, r in enumerate(r_list):
-        torch.mps.empty_cache()
         print(f"\n=== Vòng {round_idx + 1} | r = {r} ===")
         model = AutoModelForCausalLM.from_pretrained(
             model_base, torch_dtype=torch.float16
         )
         model.config.sliding_window = None
         alpha = alpha_strategy(r)
-        # lambda_internal = lambdas_internal[round_idx]
+        lambda_internal = lambdas_internal[round_idx]
         lambda_external = lambdas_external[round_idx]
         learning_rate = learning_rates[round_idx]
         num_epochs = epoch_list[round_idx]
@@ -180,8 +182,6 @@ def training_using_cola(
                 "k_proj",
                 "o_proj",
                 "gate_proj",
-                # "up_proj",
-                # "down_proj",
             ],
             lora_dropout=0.05,
             bias="none",
@@ -212,7 +212,7 @@ def training_using_cola(
             lr_scheduler_type="cosine",
             report_to="none",
             save_strategy="no",
-            fp16=False,
+            fp16=True,
             max_grad_norm=(8 / r) if r < 8 else None,
         )
 
@@ -226,7 +226,7 @@ def training_using_cola(
             train_dataset=tokenized["train"],
             eval_dataset=tokenized["test"],
             data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
-            # lambda_internal=lambda_internal,
+            lambda_internal=lambda_internal,
             lambda_external=lambda_external,
             prev_A_list=prev_A_list,
         )
@@ -247,22 +247,22 @@ def training_using_cola(
         del prev_A_list
         del model
         gc.collect()
-        torch.mps.empty_cache()
+        torch.cuda.empty_cache()
 
 
 if __name__ == "__main__":
     training_using_cola(
         data_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r_list=[8, 6, 4],
-        # lambdas_internal=[0.002, 0.001, 0.0],
-        lambdas_external=[1, 1, 1],
-        learning_rates=[3e-5, 2e-5, 1e-5],
-        epoch_list=[8, 10, 12],
+        r_list=[16, 16],
+        lambdas_internal=[0.001, 0.001],
+        lambdas_external=[1, 1],
+        learning_rates=[5e-4, 5e-4],
+        epoch_list=[20, 20],
         batch_size=2,
         tokenizer_len=128,
         warmup_ratio=0.1,
-        device="mps",
+        device="cuda",
         output_dir="output",
         base_adapter_name="colora",
     )

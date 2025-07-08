@@ -1,0 +1,1402 @@
+[
+  {
+    "question": "ACpass trong getHashInvWithToken là gì?",
+    "expected": "Mật khẩu của tài khoản nội bộ.",
+    "lora": {
+      "answer": "Đây là mật khẩu của tài khoản khách hàng, dùng để xác thực tài khoản trong hệ thống. Có thể bị khóa tài khoản nếu không hợp lệ.",
+      "similarity": 0.702839732170105,
+      "match": false
+    },
+    "colora": {
+      "answer": "Mật khẩu của tài khoản nội bộ. Nếu tài khoản bị khóa sẽ trả lỗi ERR:22. Nếu không thì gotta đăng nhập lại. Nếu chưa đăng nhập thì trả lỗi ERR:23. Nếu có tài khoảnbidden thì trả lỗi ERR:24. Nếu không có tài khoản-secret-controls sẽ trả",
+      "similarity": 0.6831060647964478,
+      "match": false
+    }
+  },
+  {
+    "question": "Muốn phân trang kết quả trả về từ API thì nên dùng class nào?",
+    "expected": "Bạn dùng class `Paging<T>` trong thư mục `Base.Entity/DTO` để đóng gói kết quả phân trang gồm: Skip, Take, TotalItemsCount và Values.",
+    "lora": {
+      "answer": "Đây là class `Paging<T>` trong thư mục `Base.Entity/DTO` để phân trang kết quả trả về từ API. Bạn cần ghi rõ entity class bạn dùng để phân trang (T) và class bạn dùng để định nghĩa bảng kết quả (CommonTableTerm). Ví dụ,",
+      "similarity": 0.8273533582687378,
+      "match": true
+    },
+    "colora": {
+      "answer": "Bạn dùng class `Paging<T>` trong thư mục `Base.Entity/DTO` để đóng gói kết quả phân trang gồm: Skip, Take, TotalItemsCount và Values. Sau đó bạn truyền vào `Skip` và `Take` từ query 参数.ystemTruong<>` để trả về kết quả phân",
+      "similarity": 0.9564002752304077,
+      "match": true
+    }
+  },
+  {
+    "question": "Đây là đường dẫn thông tư 32, cho tôi site 78 https://test-admindemo.vnpt-invoice.com.vn.",
+    "expected": "https://test-tt78admindemo.vnpt-invoice.com.vn.",
+    "lora": {
+      "answer": "Điều chỉnh thông tư 32 là điều chỉnh thông tư khi phát hành, không điều chỉnh site. Có thể kiểm tra lại các thông tư khác để không sai lệch. Nếu không sửa đúng, hệ thống sẽ trả về lỗi. Bạn nên kiểm tra lại các thông tư trước khi gọi lại.",
+      "similarity": 0.14779414236545563,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đây là //(TestAdmi/) //( )-> //(InvData,) //( trong XML để hiển thị thông tư 32. Nếu bạn muốn thêm bản ghi thì nhập dữ liệu vào place đó. Nếu muốn hiển thị bảng danh sách thì thêm place \"[ sortable ]\" vào trước đoạn ngoặc. Bạn có thể",
+      "similarity": 0.26781556010246277,
+      "match": false
+    }
+  },
+  {
+    "question": "Khi nào gặp lỗi ERR:20 trong ImportInv?",
+    "expected": "Khi Pattern hoặc Serial truyền vào không đúng hoặc không tồn tại trong hệ thống, sẽ trả về lỗi ERR:20.",
+    "lora": {
+      "answer": "Trả về lỗi ERR:20 nếu hệ thống không có đủ dữ liệu để xác định hóa đơn cần phát hành. Sau đó cần kiểm tra dữ liệu các trường bắt buộc như ID, Amount, VATAmount, Fkey và có thể thêm các trường khác như Name, Code, Status, etc. Nếu",
+      "similarity": 0.6797584295272827,
+      "match": false
+    },
+    "colora": {
+      "answer": "Nếu công ty đăng ký cả hóa đơn có mã và không mã, hệ thống sẽ trả về lỗi ERR:20. Bạn cần kiểm tra lại thông tin đăng ký và gửi lại thông tin hóa đơn mới. Nếu không lỗi, hệ thống sẽ trả về lỗi ERR:20 nếu công ty đăng ký cả",
+      "similarity": 0.7129763960838318,
+      "match": false
+    }
+  },
+  {
+    "question": "Sai sót về tổng tiền thanh toán trên hóa đơn xử lý thế nào?",
+    "expected": "Lập hóa đơn điều chỉnh để điều chỉnh số tiền đúng.",
+    "lora": {
+      "answer": "Điều chỉnh lại tổng tiền thanh toán, xác thực số lượng và tỷ giá nếu cần. Tên chỉ cần thông báo cho người mua. Phải lập hóa đơn điều chỉnh nếu sai sót về tổng tiền thanh toán. (Nếu tổng tiền thanh toán đã gửi hóa đơn thanh",
+      "similarity": 0.7398440837860107,
+      "match": false
+    },
+    "colora": {
+      "answer": "Lập hóa đơn điều chỉnh để điều chỉnh số tiền đúng. Phải lập hóa đơn điều chỉnh hoặc thay thế. Nếu lập hóa đơn điều chỉnh thì phải lập hóa đơn điều chỉnh nhất. Nếu lập hóa đơn điều chỉnh thì phải)?. Nếu không lập hóa đơn điều chỉnh thì lập hóa đơn thay thế.",
+      "similarity": 0.8236920833587646,
+      "match": true
+    }
+  },
+  {
+    "question": "Tôi muốn lưu nhiều form nhỏ về 1 payload?",
+    "expected": "Gộp tất cả các form con vào object lớn, rồi gọi API submit 1 lần toàn bộ dữ liệu.",
+    "lora": {
+      "answer": "Đây là hai cách thường dùng `body` để lưu dữ liệu lớn:\n\n1. Tạo `formData` trước, lưu vào `data` của `body`.\n2. Tạo `body` chính, lưu dữ liệu trong `value` và dùng `needsEditor()` nếu cần thao tác dữ liệu.",
+      "similarity": 0.4760662913322449,
+      "match": false
+    },
+    "colora": {
+      "answer": "Tạo `formBody` chứa nhiều `formField`, bạn truyền `data` vào `-bordered` để lưu toàn bộ dữ liệu. Sau đó gọi `handleBody` để gọi API thêm hoặc sửa và truyền vào `formData`. `handleBody` yourselves để gọi `setBody` để lưu vào `:\".org",
+      "similarity": 0.5444457530975342,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn gọi API xoá thì dùng gì?",
+    "expected": "Gọi API từ `apis.js`, truyền Id cần xoá và nếu thành công thì gọi lại `loadData()`.",
+    "lora": {
+      "answer": "Đây là phần dùng `APAC中心 API` để xoá bản ghi. Tách `APAC-center-api/center` bằng `remove-center` và truyền danh sách ID để xoá từng bản ghi. Tuy nhiên, bạn cần đăng ký danh sách mới `API-Center-TCS`",
+      "similarity": 0.4408069849014282,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng `_repository.Delete(id)` nếu muốn xoá bản ghi vĩnh viễn khỏi database. hoặc dùng `_repository.Update()` nếu muốn thêm mới.(always nên dùng `_repository.Delete()` để):- Trong `API`, `xoá` là động):- Trong `SDK`, bạn có thể xử lý `",
+      "similarity": 0.43553176522254944,
+      "match": false
+    }
+  },
+  {
+    "question": "Làm sao để lấy số dòng thay đổi sau khi update?",
+    "expected": "Hàm `_repository.Update()` chỉ trả về true/false. Nếu muốn biết số dòng ảnh hưởng, bạn phải sửa lại để trả `SaveChanges()`.",
+    "lora": {
+      "answer": "Để lấy số dòng thay đổi, bạn dùng `count - 1` trong `update`, ví dụ: `count - 1` để lấy số dòng thay đổi sau khi thay đổi.",
+      "similarity": 0.44267767667770386,
+      "match": false
+    },
+    "colora": {
+      "answer": "Được trả về ` recount()` hoặc `countRecords()` nếu muốn rõ ràng số dòng-original. Nếu dùng `Count()` thì sẽ trả về tổng số dòng dữ liệu.",
+      "similarity": 0.4009883403778076,
+      "match": false
+    }
+  },
+  {
+    "question": "Làm sao biết fkey nào đã xóa thành công?",
+    "expected": "Kết quả phản hồi sẽ liệt kê rõ các fkey đã được xóa thành công theo định dạng: OK:fkey1,fkey2,...",
+    "lora": {
+      "answer": "Để kiểm tra bản ghi đã bị xóa thành công, bạn chọn item → Xử lý hóa đơn → Xóa thành công... và chọn fkey cần xoá. Bạn sẽ có thông báo đã thành công nếu đã>Xóa thành công.... Trong trường hợp thành công, bạn sẽ thấy thông",
+      "similarity": 0.616489589214325,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đối tượng sẽ thấy thông tin đã được xóa thành công trong danh sách hóa đơn. Bạn cần xác nhận bằng mã xác nhận hoặc thông tin hóa đơn mới đểepad vào hệ thống. Bạn cần xác nhận đúng về fkey trước khi xóa thành công để lưu trữ. Nếu không đúng thì hệ thống sẽ",
+      "similarity": 0.6519962549209595,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn lọc danh sách không chứa bản ghi bị xoá?",
+    "expected": "Dùng `GetAll(x => !x.IsDeleted)` trong controller để lọc bản ghi chưa bị xoá logic.",
+    "lora": {
+      "answer": "Để lọc bản ghi bị xoá nên dùng `GetAll(x => !x.IsDeleted)` trong controller hoặc controller có chức năng filter như `BaseEntity` để dễ hiểu và bảo trì dữ liệu. Nếu bạn dùng `_repository.CountDown()` thì bạn cần kiểm tra `IsDeleted` trong các bản g",
+      "similarity": 0.8173033595085144,
+      "match": true
+    },
+    "colora": {
+      "answer": "Dùng `GetAll(x => !x.IsDeleted)` trong controller để lọc bản ghi chưa bị xoá logic. Bạn có thể thêm `filter` nếu muốn lọc theo tên, nhưng `GetAll` tự động trả về toàn bộ danh sách. Bạn có thể thêm `filter` nếu muốn lọc the",
+      "similarity": 0.8481799960136414,
+      "match": true
+    }
+  },
+  {
+    "question": "OK trả về từ AdjustReplaceInvWithToken có ý nghĩa gì?",
+    "expected": "OK:pattern;serial;invNumber nghĩa là hóa đơn điều chỉnh/thay thế đã được phát hành thành công.",
+    "lora": {
+      "answer": "Điều này trả về kết quả đã phát hành cho cho nhân viên, có ý nghĩa OK. Bạn nên kiểm tra lại thông tin hóa đơn đã phát hành để không bị lỗi.",
+      "similarity": 0.6267220973968506,
+      "match": false
+    },
+    "colora": {
+      "answer": "OK trả về từ function OK trả về từ function OK trả về chuỗi OK cho phép changing/or replacd hóa đơn gốc với hóa đơn điều chỉnh/thay thế có ý nghĩa gì?Twig hợp lệ với hóa đơn điện tử do nhà cung cấp dịch vụ chứng thực được cấp phép.",
+      "similarity": 0.5545932054519653,
+      "match": false
+    }
+  },
+  {
+    "question": "Hàm ImportInv cần truyền gì trong xmlInvData?",
+    "expected": "Trường xmlInvData phải chứa danh sách các hóa đơn được định nghĩa trong thẻ <Invoices><Inv><Invoice>...<Invoice></Inv></Invoices>, với các trường bắt buộc như CusCode, CusName, Amount, VATAmount,...",
+    "lora": {
+      "answer": "Trường xmlInvData cần chứa danh sách các hóa đơn đã phát hành, với mỗi hóa đơn được định nghĩa bởi một thẻ <Inv> chứa thông tin như Fkey, serial, key và số hóa đơn. Mỗi hóa đơn này phải được viết thành một thẻ <Inv> trong danh sách này.",
+      "similarity": 0.6712315082550049,
+      "match": false
+    },
+    "colora": {
+      "answer": "Trường xmlInvData phải chứa danh sách các hóa đơn được định nghĩa trong thẻ <Invoices><Inv><Invoice>...<Invoice></Inv></Invoices>, với các trường bắt buộc như CusCode, CusName, Amount, VATAmount,... được truyền vào đúng-layout. Bạn nên kiểm tra",
+      "similarity": 0.9307804107666016,
+      "match": true
+    }
+  },
+  {
+    "question": "Số tiền phải nhập thế nào trên hóa đơn?",
+    "expected": "Phải nhập số tiền bằng số Ả-rập và ghi bằng chữ (TT32).",
+    "lora": {
+      "answer": "Đánh dấu X vào ô ‘Có tiền’ và Entered value để nhập số tiền đúng. Hiển thị thông tin chỉ cần nhập ở dòng below. Mình sẽ teaching những bước tiếp theo sau đó.",
+      "similarity": 0.5040872693061829,
+      "match": false
+    },
+    "colora": {
+      "answer": "Phải nhập số tiền bằng số Ả-rập và ghi bằng chữ (TT32). Phải nhập số tiền đúng với quy định (TT32). Phải nhập số tiền bằng chữ (TT32). Phải nhập số tiền bằng chữ (TT32). Phải nhập số tiền",
+      "similarity": 0.8790141344070435,
+      "match": true
+    }
+  },
+  {
+    "question": "Doanh nghiệp nào được lập hóa đơn theo kỳ?",
+    "expected": "Các doanh nghiệp dịch vụ thường xuyên như: điện, nước, truyền hình, logistics,... được lập hóa đơn theo kỳ đối soát",
+    "lora": {
+      "answer": "Đây là các doing cho phép lập hóa đơn theo kỳ: cung cấp dịch vụ, bán hàng hóa, cung cấp dịch vụ điện tử, cung cấp dịch vụ hàng hóa điện tử và cung cấp dịch vụ hàng hóa điện tử. Bán hàng hóa điện tử có thể lập hóa đơn the",
+      "similarity": 0.5920616388320923,
+      "match": false
+    },
+    "colora": {
+      "answer": "Các doanh nghiệp dịch vụ thường xuyên như: điện, nước, truyền hình, logistics,... được lập hóa đơn theo kỳ đối soát dịch vụ. Nếu chuyển dữ liệu nội bộ không hợp lệ thì có thể lập hóa đơn điều chỉnh/thay thế. Nếu hợp lệ thì lập hóa đơn điều chỉnh/thay",
+      "similarity": 0.8884797692298889,
+      "match": true
+    }
+  },
+  {
+    "question": "Có thể thêm nhiều hóa đơn khác nhau trong cùng một xmlInvData không?",
+    "expected": "Mỗi <Inv> chứa một hóa đơn riêng.",
+    "lora": {
+      "answer": "Được yêu cầu cần chứa nhiều hóa đơn tương tự trong một XML, nên chỉ thêm một danh sách chứa một hóa đơn mới. Các hóa đơn mới phải được thêm dưới các danh sách tương ứng. Mình sẽ chỉ thêm một danh sách với một cặp Fkey-Hkey. Bạn cần kiểm tra lại quy",
+      "similarity": 0.6518718004226685,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có, mỗi <Inv> chứa một hóa đơn riêng. Bạn cần truyền nhiều <Inv> để Styled hóa đơn theo mẫu. Mỗi hóa đơn cần có đủ key, idInv và signValue. Nếu bạn muốn thêm nhiều hóa đơn thì confortflate các <Inv> trong XML. Bạn có thể$arabic",
+      "similarity": 0.6096625328063965,
+      "match": false
+    }
+  },
+  {
+    "question": "Người dùng có thể tải hóa đơn điện tử trên VNPT Invoice dưới định dạng nào?",
+    "expected": "Định dạng PDF hoặc Inv.",
+    "lora": {
+      "answer": "Điều kiện cần có: tài khoản VNPT Invoice, tài khoản khách hàng, tài khoản khách hàng có quyền ServiceRole. Độ dài limit (NĐ 123) và tài khoản có quyền ServiceRole. Có thể tải dưới dạng PDF, image PDF hoặc PDF image. Cả các định",
+      "similarity": 0.6160053014755249,
+      "match": false
+    },
+    "colora": {
+      "answer": "Định dạng PDF hoặc Inv. Bạn cần đăng nhập lại để acces hóa đơn. Nếu muốn tải hóa đơn điện tử dưới định dạng XML thì phải đăng nhập và đăng ký hóa đơn trước. Bạn cần đăng nhập lại nếu sử dụng định dạng XML đểplevel;nếu sử dụng định dạng PDF thì bạn bắt buộc phải",
+      "similarity": 0.6581119298934937,
+      "match": false
+    }
+  },
+  {
+    "question": "Chức năng import hoá đơn theo lô ở đâu nhỉ?",
+    "expected": "Bạn vào link này /Transaction/index.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn đã phát hành không, không điều chỉnh. Có thể sửa lỗi chính xác với người mua.Bạn có thể gửi lại VIA email hoặc hóa đơn mới. Bạn có thể gửi hóa đơn mới mà không cần gửi thông báo thay vì không có thể gửi hóa đơn đã phát hành",
+      "similarity": 0.37344062328338623,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đây là địa chỉ 😉\n\nBạn$ar/Formul/ImportInv nhá. Bạn cần nhập đầy đủ thông tin hoá đơn thì sẽ 获取 mã mới ở Cancel để gửi lại gửi thông báo. Bạn cần nhập đủ các trường như Index, CharCode,,Yes,,No nhá. Bạn có thể nhập đầy đủ các",
+      "similarity": 0.5224536061286926,
+      "match": false
+    }
+  },
+  {
+    "question": "Sao tôi nhập mã số thuế nước ngoài mà hệ thống cứ báo mã số thuế không hợp lệ thế?",
+    "expected": "Nó báo thế thôi, chứ vẫn tạo được và nhảy vào thẻ TTKhac.",
+    "lora": {
+      "answer": "Điều chỉnh lại mã số thuế đúng là được. Xử lý lại mã số thuế đúng quy định. Nếu vẫn báo sai, bạn cần lập hóa đơn điều chỉnh lại mã số thuế đúng. Tuy nhiên bạn cần nhập mã số thuế đúng cho từng hóa đơn mà vẫn không đúng quy định. Bạn cần",
+      "similarity": 0.626600980758667,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đây là trường hợp lỗi hệ thống mà không có mã số thuế hợp lệ, cầnCONTACT tổng đài不良信息 để adress hóa đơn mới. Bạn nên lưu trữ hóa đơn mới khi domest年之久 hóa đơn cũ. Nếu vẫn không hợp lệ thì 请求 thông báo cho người mua về việc hóa đơn không hợp lệ.",
+      "similarity": 0.6279581785202026,
+      "match": false
+    }
+  },
+  {
+    "question": "Nhập khẩu ủy thác thì bên nhận ủy thác lập hóa đơn thế nào?",
+    "expected": "Nếu đã nộp thuế GTGT ở khâu nhập thì lập hóa đơn điện tử khi trả hàng cho bên ủy thác",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn điện tử đã phát hành nếu cần điều chỉnh. Nếu chưa cần thì thông báo cho người mua. Nếu đã cấp cho người mua thì không cần lập lại hóa đơn. Nếu đã cấp thì thông báo cho người mua về thành công phát hành. Nếu chưa thì chỉ thông báo",
+      "similarity": 0.6472799777984619,
+      "match": false
+    },
+    "colora": {
+      "answer": "Được phép lập hóa đơn điện tử khi có đủ thông tin và-chan⇨ nếu đã playa ủy thác. Nếu chưa playa thì cần liên hệ cấp créd prick để lập hóa đơn điện tử. Bạn cần xác nhận hợp đồng力还是(IB/she có hợp đồng力还是(IB/II không thực hiện-Cs/Cs-lg). Bạn",
+      "similarity": 0.6568493247032166,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn dùng phân trang thì cần gì?",
+    "expected": "PrimeReact `DataTable` hỗ trợ `paginator`, bạn bật thuộc tính `paginator`, `rows`, `totalRecords`, `onPage` để xử lý phân trang.",
+    "lora": {
+      "answer": "Được dùng lại bản ghi, bảng tổng hợp ( tbody) thì chỉ hiển thị một bản ghi trong từng bản. Nếu muốn dùng phân trang (rows), bạn cần thêm `column` và `column title` để hiển thị bảng phân trang trong `DataTable`. Nếu bạn chỉ cần hiển thị danh",
+      "similarity": 0.5984128713607788,
+      "match": false
+    },
+    "colora": {
+      "answer": "Bạn cầnDefs `DataTable` từ `Crud`, sau đó chạy `add-to-table` và truyền dữ liệu vào `useData`. Sau đó chạy `loadData` để refresh bảng.Bạn cầnDefs `Crud`, `CrudController`, `CrudData` để xử lý dữ liệu.Bạn cầnDefs `CrudData",
+      "similarity": 0.5605682134628296,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn upload file trong popup thì làm gì?",
+    "expected": "Dùng component `FileUpload` của PrimeReact hoặc custom input type file, lưu file vào FormData.",
+    "lora": {
+      "answer": "Điều hướng file upload trên hệ thống (vì không có file). Tách file trong form hoặc hiển thị tên file và guiding input. Cảm `file` trong form sẽ hiển thị file hiện tại. Bạn có thể dùng `file uploaded by user` nếu muốn lưu file trong localStorage.",
+      "similarity": 0.6190269589424133,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng component `FileUpload` của PrimeReact hoặc custom input type file, lưu file vào FormData. Sau đó truyền vào ` uploads` trong `Crud`. When change type of form thì hiển thị popup. Sau đó đặt state `show uploads` để hiển thị các file-progress. PrimeReact có `FileUpload`",
+      "similarity": 0.8677520751953125,
+      "match": true
+    }
+  },
+  {
+    "question": "Hóa đơn ghi sai số hợp đồng thì sao?",
+    "expected": "Điều chỉnh lại số hợp đồng (NĐ 123).",
+    "lora": {
+      "answer": "Phải điều chỉnh lại số hợp đồng. Nên lập hóa đơn điều chỉnh đã xác nhận người mua. (Nếu không xác nhận, thì lập hóa đơn điều chỉnh cho người mua có ý chí). Cảm bảo tính hợp lệ của hóa đơn. (Nếu chưa hợp lệ, thì lập",
+      "similarity": 0.7406438589096069,
+      "match": false
+    },
+    "colora": {
+      "answer": "Điều chỉnh lại số hợp đồng (NĐ 123).-grow hóa đơn mới hoặc điều chỉnh nếu có quy định.@student hàng hóa (TT32). Lập hóa đơn điều chỉnh nếu-grow số hợp đồng-change thông tin.>Xử lý hóa đơn cũ, lập hóa đơn mới. N",
+      "similarity": 0.7643768787384033,
+      "match": true
+    }
+  },
+  {
+    "question": "convert = 1 trong ImportAndPublishAssignedNo có nghĩa là gì?",
+    "expected": "Có nghĩa là yêu cầu hệ thống tự động chuyển XML từ TCVN3 sang Unicode.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn điều chỉnh, thay thế (TT32). Các trường khác không ảnh hưởng, chỉ cần set this.IsInverse = 0.curringBaseValue = 1000. Vào lại TabInvValue.curringBaseValue = 1001.curringBase",
+      "similarity": 0.5104715824127197,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có nghĩa là yêu cầu hệ thống tự động chuyển XML từ TCVN3 sang Unicode. Nếu đặt là 1, hệ thống sẽ tự động chuyển dữ liệu để lưu trữ. Nếu không定了 nghĩa thì默认 không yêu cầu chuyển dữ liệu. Bạn cần xác định nhận diện chữ kí trong XML để xác",
+      "similarity": 0.8530212044715881,
+      "match": true
+    }
+  },
+  {
+    "question": "Khi nào cần ghi rõ địa chỉ và tên người mua trên hoá đơn vậy?",
+    "expected": "Khi hoá đơn có mã số thuế nhá.",
+    "lora": {
+      "answer": "Được thông tin chính xác about street, street name, number, and street type (if applicable) để xác định được địa chỉ và tên người mua. Tên người mua phải ghi rõ để xác định rõ ràng. Nếu không xác định rõ thì chỉ cần ghi tên người mua trên hóa",
+      "similarity": 0.4334348440170288,
+      "match": false
+    },
+    "colora": {
+      "answer": "Khi hoá đơn có mã số thuế nhá. Mn说实⇨ Ghi rõ địa chỉ và tên người mua trên hoá đơn nhá. Bạn có thể kiểm tra lại địa chỉ và tên người mua trên hoá đơn nhá.\".. kia là hóa đơn điện tử có mã của cơ quan thuế",
+      "similarity": 0.768950343132019,
+      "match": true
+    }
+  },
+  {
+    "question": "Chữ ký số người bán có bắt buộc trên hóa đơn điện tử không?",
+    "expected": "Bắt buộc với hóa đơn điện tử (TT32).",
+    "lora": {
+      "answer": "Có, phải có chữ ký số người bán trên hóa đơn điện tử do người bán có tài khoản. Cả hai bên都应该 có tài khoản để được ký số và gửi lên hóa đơn. (Tài khoản có thể có được từ người bán hoặc hệ thống thông báo; hóa đơn điện tử có thể lưu",
+      "similarity": 0.573387622833252,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có, phải có chữ ký số của người bán trên hóa đơn điện tử. Bạn có thể kiểm tra lại định dạng hóa đơn trên hệ thống để đảm bảo đúng định dạng điện tử.\"..phpnik.com\" là mẫu hóa đơn điện tử của người bán có chữ ký số của người bán trên hóa đơn điện",
+      "similarity": 0.5812972187995911,
+      "match": false
+    }
+  },
+  {
+    "question": "Làm sao để tạo BaseRepository một cách generic?",
+    "expected": "BaseRepository thường được định nghĩa dạng `BaseRepository<TEntity>` và dùng `DbSet<TEntity>` để thao tác dữ liệu.",
+    "lora": {
+      "answer": "Đây là 示例 dụng OfMapped và BaseEntity, bạn có thể tạo BaseRepository bằng cách dùng `BaseRepository<T>` nếu bạn muốn có tính định nghĩa cụ thể. Nếu bạn muốn tạo BaseRepository generic, bạn cần dùng `BaseRepository<T, E>` và truyền vào các tham số như `IUser",
+      "similarity": 0.7528985738754272,
+      "match": true
+    },
+    "colora": {
+      "answer": "Tạo `BaseRepository<TKey, TValue>` từ `BaseRepository<TKey>` và thêm `IdRepository<T>` trong `BaseRepository<T>` để tự động có `IdGroup` và `Id )->\"Tkey\".Id\".",
+      "similarity": 0.6883953809738159,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi có thể dùng lại cùng một key cho nhiều hóa đơn không?",
+    "expected": "Không nên, key cần duy nhất để hệ thống định danh từng hóa đơn.",
+    "lora": {
+      "answer": "Đúng vậy, key phải duy nhất để hệ thống định danh từng hóa đơn. Bạn nên kiểm tra lại key trong quá trình sử dụng để tránh Overwriting. Sau đó bạn có thể truyền nhiều key đến API để xác định từng hóa đơn.",
+      "similarity": 0.826809287071228,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không nên, key cần duy nhất để hệ thống định danh từng hóa đơn. Nếu không đúng key thì hệ thống sẽ trả về ERR:22. Bạn cần xác thực key bằng key氕 nhá. divul/language mà hệ thống sẽ tự động chuyển phát hành hóa đơn mới. Bạn cần xác thực key để 更新",
+      "similarity": 0.7646949291229248,
+      "match": true
+    }
+  },
+  {
+    "question": "Tại sao lại có lỗi ERR:35?",
+    "expected": "Công ty đăng ký cả hóa đơn có mã và không mã nhưng không truyền pattern, serial.",
+    "lora": {
+      "answer": "Điều kiện đầu vào không hợp lệ như:Fkey过大 hoặc mẫu số không tồn tại. program kiểm tra từng hóa đơn và chỉ xử lý lỗi một lần. You cần kiểm tra lại các trường đầu vào có đúng kích thước hay không. Phải kiểm tra lại các trường bắt buộc nhưFkey, Base",
+      "similarity": 0.642736554145813,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể do hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.Có thể là hóa đơn)?.C",
+      "similarity": 0.4929804503917694,
+      "match": false
+    }
+  },
+  {
+    "question": "Có thể dùng ImportInvByPattern với hóa đơn điều chỉnh không?",
+    "expected": "Không, ImportInvByPattern chỉ dùng để thêm mới hóa đơn, không dùng cho hóa đơn điều chỉnh hay thay thế.",
+    "lora": {
+      "answer": "Được dùng để thay thế hoặc điều chỉnh hóa đơn, không dùng cho hóa đơn điều chỉnh (TT32). Bạn nên dùng hóa đơn điều chỉnh nếu muốn thay đổi. Cảm số và pattern không cần thiết khi điều chỉnh. Bạn có thể kiểm tra lại thông tin ở link thêm mới.",
+      "similarity": 0.7467484474182129,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể. Nhưng cần truyền hóa đơn điều chỉnh dưới dạng XML initialised bằng parameter khác như signValue. Bạn cần xác định-signValue để hệ thống initialised. Nếu không truyền đúng-signValue, hệ thống sẽ trả về ERR:22. Bạn cần truyền-signValue đúng để 更新 hóa đơn với mẫu số và",
+      "similarity": 0.5176541805267334,
+      "match": false
+    }
+  },
+  {
+    "question": "VNPT Invoice là gì?",
+    "expected": "Là dịch vụ hóa đơn điện tử do Tập đoàn VNPT cung cấp, tuân thủ pháp luật hiện hành.",
+    "lora": {
+      "answer": "Đây là hóa đơn điện tử của cơ quan thuế cấp theo quy định của thuế, được cấp bởi cơ quan thuế theo thông lệ T300 của cơ quan thuế. Có thể dùng để ký hóa đơn điện tử có mã của cơ quan thuế.",
+      "similarity": 0.6254584789276123,
+      "match": false
+    },
+    "colora": {
+      "answer": "Là dịch vụ hóa đơn điện tử do Tập đoàn VNPT cung cấp, tuân thủ pháp luật hiện hành. Phải kiểm tra kỹ thông tin và-chan-disabled trước khi nhập để tránh sai sót. Bạn nên kiểm tra kỹ thông tin hóa đơn trước khi nhập để tránh sai sót. Bạn nên",
+      "similarity": 0.8326966762542725,
+      "match": true
+    }
+  },
+  {
+    "question": "Tôi muốn lọc theo tên thì làm sao?",
+    "expected": "Thêm input tìm kiếm, khi gõ thì gọi lại API với tham số filter tên truyền kèm.",
+    "lora": {
+      "answer": "Để lọc theo tên thì bạn cần dùng tham số `skip` hoặc `skipName` của `—\n\n  `skipName` là tên bạn muốn filter theo, ví dụ: `skipName=\"Name\"`. Nếu không dùng `skipName`, bạn chỉ filter theo `name` trong `",
+      "similarity": 0.443386971950531,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng biểu thức lambda trong `filter`, ví dụ: `filter: item => item.Name == \"-hook\"`. hoặc dùng `[ sanitizeName ]` trong `Name` để lọc tên người dùng. Bạn nên đặt tên thuộc tính là `Name` hoặc `Platforms`, để dễ dùng và hiển thị kết quả.",
+      "similarity": 0.46398380398750305,
+      "match": false
+    }
+  },
+  {
+    "question": "Thao tác hủy hóa đơn trên VNPT Invoice thực hiện ở đâu?",
+    "expected": "Đăng nhập, vào mục 'Xử lý hóa đơn', chọn 'Hủy hóa đơn (không thay thế, sửa đổi)' rồi thao tác theo hướng dẫn.",
+    "lora": {
+      "answer": "Được thông tin thông báo phát hành hóa đơn thay thế hoặc phát hành hóa đơn thay thế đã phát hành thì thực hiện ở các phần mềm hóa đơn điện tử như Truong Thanh, Doanh nghiệp hoặc các cơ quan thuế. Nếu chưa phát hành thì cần đăng ký đăng ký đăng ký đăng",
+      "similarity": 0.644341230392456,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đăng nhập, vào mục 'Xử lý hóa đơn', chọn 'Hủy hóa đơn (không thay thế, sửa đổi)' rồi thao tác theo hướng dẫn. Bạn cần tài khoản mới và tài khoản khách hàng cùng lúc. Bạn cần đăng nhập trước khi thực hiện thao tác hủy hóa",
+      "similarity": 0.8742564916610718,
+      "match": true
+    }
+  },
+  {
+    "question": "Trường <ExchangeRate> có bắt buộc không?",
+    "expected": "Không bắt buộc nếu dùng VNĐ, bắt buộc nếu có quy đổi ngoại tệ.",
+    "lora": {
+      "answer": "Không bắt buộc nếu dùng VNĐ, bắt buộc nếu có thể chuyển đổi tiền cho người mua. Bắt buộc khi tính tiền cho người mua. Có thể truyền chính xác giá trị exchange rate bằng tham số và bắt buộc khi dùng hóa đơn. #Quan trọngThống #Điều",
+      "similarity": 0.8129490613937378,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không bắt buộc nếu dùng VNĐ, bắt buộc nếu có quy đổi ngoại tệ. Nếu dùng VNĐ thì phải truyền đầy đủ dễ dàng. Bạn cần truyền cùng các trường như VND , ExchangeRate ,$ar , Currency. Nếu không truyền đúng bước sẽ báo lỗi error 2. Bạn nên kiểm tra lại định",
+      "similarity": 0.7725061178207397,
+      "match": true
+    }
+  },
+  {
+    "question": "Nếu phát hiện sai sót về số hóa đơn thì xử lý thế nào?",
+    "expected": "Phải hủy và lập hóa đơn thay thế với số hóa đơn mới.",
+    "lora": {
+      "answer": "Điều chỉnh lại số hóa đơn đúng quy định (NĐ 123). Nếu vẫn sai thì lập hóa đơn điều chỉnh và điều chỉnh ký hiệu (TT32). Cả hai trường hợp đều phải lập hóa đơn điều chỉnh cho hóa đơn đã phát hành. (NĐ 123",
+      "similarity": 0.7191760540008545,
+      "match": false
+    },
+    "colora": {
+      "answer": "Phải hủy và lập hóa đơn thay thế với số hóa đơn mới. Nếu không hủy, chỉ cần thông báo cho người mua về sai sót. Nếu chưa hủy, có thể lập hóa đơn điều chỉnh hoặc thay thế. Nếu chưa phát hành, có thể lập hóa đơn điều chỉnh hoặc thay",
+      "similarity": 0.84331214427948,
+      "match": true
+    }
+  },
+  {
+    "question": "Mình có 1 hoá đơn bị điều chỉnh từ tháng 2, hoá đơn điều chỉnh vào tháng 3, có cách nào cho hoá đơn điều chỉnh hiển thị cùng tháng với hoá đơn điều chỉnh trong bảng kê hoá đơn hàng tháng không?",
+    "expected": "Không bạn, hoá đơn điều chỉnh/thay thế kỳ nào sẽ được thống kê trong kỳ đó nhá, đây là quy định của thuế.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn đã phát hành vẫn hiển thị trong tabela kê hoá đơn hàng tháng, nhưng bạn nên điều chỉnh hoá đơn điều chỉnh trong bảng kê hoá đơn hàng tháng để không混淆 với hóa đơn phát hành. Bạn có thể chọn cách điều chỉnh hoá đơn hoặc điều chỉnh hóa đơn trong bảng kê hoá đơn",
+      "similarity": 0.750831663608551,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không bạn, hoá đơn điều chỉnh/thay thế kỳ nào sẽ được thống kê trong kỳ đó nhá, đây là quy định của thuế. Bạn có thểBrainslessly điều chỉnh hoá đơn nhưng.Nevertheless phải-signed hóa đơn mới cho hoá đơn điều chỉnh/thay thế. Bạn có thể-controls-change-lite hoá đơn từ",
+      "similarity": 0.8499290347099304,
+      "match": true
+    }
+  },
+  {
+    "question": "Gửi lại email hóa đơn bằng cách nào?",
+    "expected": "Bạn cần gọi hàm SendAgainEmailServ và truyền vào danh sách Fkey cùng Email tương ứng trong trường xmlDataInvoiceEmail.",
+    "lora": {
+      "answer": "Được gọi method saveAndUpdateEmail là method trong class EmailService, chỉ cần truyền vào danh sách các hóa đơn cần điều chỉnh hoặc thay thế là đủ. Bạn có thể dùng exampleEmailService.AddAndUpdate cozname, pattern và id để điều chỉnh hoặc thay thế. Nếu bạn muốn thay thế",
+      "similarity": 0.5774811506271362,
+      "match": false
+    },
+    "colora": {
+      "answer": "Bằng cách chọn lưu trữ và đăng nhập lại thông tin email. Mỗi hóa đơn cần có một key để xác thực[from/Form-control].",
+      "similarity": 0.45389026403427124,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn giới hạn số lượng bản ghi trả về thì truyền gì?",
+    "expected": "Truyền tham số `take`, ví dụ `take = 50` để giới hạn kết quả trả về là 50 bản ghi.",
+    "lora": {
+      "answer": "Đánh dấu `limit` vào tham số để giới hạn số lượng bản ghi trả về, ví dụ `limit=100` để trả về tối đa 100 bản ghi. Bạn có thể truyền nhiều `limit` để xử lý kết quả từng lần.",
+      "similarity": 0.6777167916297913,
+      "match": false
+    },
+    "colora": {
+      "answer": "Truyền tham số `take` vào `GetAll(int skip = 0, int take = 100)` để giới hạn số lượng. Sau đó gọi lại API với tham số `skip` và `take`.)Vậy bạn cần truyền `skip` để xác định số lượng bắt đầu trả",
+      "similarity": 0.6837773323059082,
+      "match": false
+    }
+  },
+  {
+    "question": "Hàm ImportInvByPattern trả về gì nếu thêm hóa đơn thành công?",
+    "expected": "Trả về chuỗi bắt đầu bằng 'OK:', kèm theo thông tin pattern, serial, key và số hóa đơn.",
+    "lora": {
+      "answer": "Điều trả về là danh sách các hóa đơn đã thêm thành công, được định nghĩa bởi dữ liệu `result` trong `AddInvByPattern`. Nếu thành công, `result` sẽ có các cặp `id` và `pattern` tương ứng.",
+      "similarity": 0.6334787607192993,
+      "match": false
+    },
+    "colora": {
+      "answer": "Nếu thêm hóa đơn thành công, hàm sẽ trả về chuỗi bắt đầu bằng 'OK:', kèm theo thông tin pattern, serial, key và số hóa đơn. Nếu không thành công, sẽ trả về 'OK:' chỉ để-progress hóa đơn. Bạn cần kiểm tra lại thông tin hóa đơn từ XML",
+      "similarity": 0.8680776357650757,
+      "match": true
+    }
+  },
+  {
+    "question": "Người dùng không có tài khoản có thể làm gì với hóa đơn tra cứu trên VNPT?",
+    "expected": "Chỉ xem và tải về, không được chỉnh sửa hoặc in trực tiếp trên hệ thống.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn, điều chỉnh thông tin, lưu trữ hóa đơn. Nếu gặp lỗi, hệ thống sẽ trả về lỗi và yêu cầu đăng ký thông tin người mua. Các thông tin đăng ký được gửi qua email. Phải kiểm tra lại mã xác thực trước khi gửi. Nếu chưa có",
+      "similarity": 0.7355654239654541,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể tra cứu, chỉnh sửa và trả phí hóa đơn nhưng không thể chỉnh sửa thông tinABOUT người dùng hoặc trả phí hóa đơn trực tiếp trên hệ thống. Bạn cần)?.Nhân viên và người dùng có tài khoản được hỗ trợ trực tiếp hệ thống hoặc gửi thông báo kepada người dùng. Bạn cần)?.",
+      "similarity": 0.7849062085151672,
+      "match": true
+    }
+  },
+  {
+    "question": "Tờ khai đăng ký thuế có phần nào dành cho thông tin về hợp đồng với nhà thầu nước ngoài?",
+    "expected": "Có, người nộp thuế phải kê khai nếu có hợp đồng với nhà thầu nước ngoài hoặc nhà thầu phụ.",
+    "lora": {
+      "answer": "Điều chỉnh/thay thế/thay đổi hóa đơn cần ghi rõ hợp đồng với nhà thầu nước ngoài (HTĐK-CP) nếu cần ghi số. Cảm số, mã số thuế, tên người nộp thuế, mã số thuế, số tiền, số tiền thuế, tổng tiền",
+      "similarity": 0.7426581978797913,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có, người nộp thuế phải kê khai nếu có hợp đồng với nhà thầu nước ngoài hoặc nhà thầu phụ./ion Außerdem phải kê khai thông tin về hợp đồng với nhà thầu phụ hoặc nhà thầu nước ngoài nếu có. Bạn cần kê khai từng hợp đồng với nhà thầu phụ",
+      "similarity": 0.8779581189155579,
+      "match": true
+    }
+  },
+  {
+    "question": "Làm sao để định nghĩa route riêng cho từng method?",
+    "expected": "Sử dụng các attribute `[HttpPost(\"Create\")]`, `[HttpPost(\"Update\")]`, `[HttpPost(\"Delete/{id}\")]` để định nghĩa route riêng biệt.",
+    "lora": {
+      "answer": "Trong application you can override route method để định nghĩa route riêng cho từng method như `get`, `post`, `put`, `delete`. Tạo file `Route.js` trong `BaseApp/src routes/Route.js`, định nghĩa các route bằng `Route([method, param])`. Sau đó set vào `",
+      "similarity": 0.5575388669967651,
+      "match": false
+    },
+    "colora": {
+      "answer": "Gắn `[HttpPost(\"Create\")]`, `[HttpPost(\"Update\")]`, `[HttpPost(\"Delete/{id}\")]` hoặc `[HttpGet]` tuỳ theo method. Tách route như `\"/create\"` và `\"/update\"` để định nghĩa riêng. `(route name)=getRoute(\"create\")` để định",
+      "similarity": 0.7852005958557129,
+      "match": true
+    }
+  },
+  {
+    "question": "Có thể map enum sang giá trị số hoặc chuỗi không?",
+    "expected": "Có, EF Core sẽ tự map enum thành int, hoặc bạn dùng `.HasConversion<string>()` để lưu chuỗi.",
+    "lora": {
+      "answer": "Đúng vậy, `GetCode` trả về chuỗi字符串 number, nên dùng `ConvertToLong` trước để map enum thành số nguyên. Mình cần ghi rõ `UnitCode` và `Code` trong `Config` để dễ đọc. Sau đó dùng `GetHash` để trả về chuỗi",
+      "similarity": 0.6342142224311829,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có, EF Core sẽ tự map enum thành int, hoặc bạn dùng `.HasConversion<string>()` để lưu chuỗi. Nếu bạn muốn phân trang thì recommand dùng `.HasConversion。</Truong>`. Bạn confortn có thể thêm `.HasConversion。</Truong>, TruongCode` để lưu chuỗi",
+      "similarity": 0.8945133686065674,
+      "match": true
+    }
+  },
+  {
+    "question": "Lỗi ERR:4 trong SendAgainEmailServ có nghĩa gì?",
+    "expected": "ERR:4 có nghĩa là không tìm được hóa đơn ứng với các Fkey để gửi lại email.",
+    "lora": {
+      "answer": "Điều kiện cần đúng trong chuỗi thông tin gửi: Size, Serial và số hóa đơn đã tồn tại trong hệ thống. Nếu không đúng sẽ báo ERR:4. Có thể kiểm tra lại các trường này trong script để đảm bảo đúng dữ liệu đã truyền vào.",
+      "similarity": 0.5795471668243408,
+      "match": false
+    },
+    "colora": {
+      "answer": "Lỗi ERR:4 có nghĩa là không tìm được hóa đơn ứng với các Fkey để gửi lại email. Bạn cần kiểm tra lại dữ liệu Fkey và hệ thống sẽ trả về lỗi nếu không tìm thấy. Bạn cần kiểm tra lại有效性 hóa đơn và hệ thống để tránh lỗi. Bạn có thể kiểm tra",
+      "similarity": 0.7742764353752136,
+      "match": true
+    }
+  },
+  {
+    "question": "Ai chịu trách nhiệm ký và nộp tờ khai đăng ký thuế?",
+    "expected": "Người nộp thuế hoặc người đại diện theo pháp luật của tổ chức.",
+    "lora": {
+      "answer": "Được công ty CGĐ MTT 00-TC-2024. Bạn cần đăng ký từng lần khi thay đổi hoặc unlock để đăng ký lại. Nếu chưa có power thanh toán, bạn không cần đăng ký đến ngày 15/12/2024. Bạn",
+      "similarity": 0.5693309307098389,
+      "match": false
+    },
+    "colora": {
+      "answer": "Người nộp thuế hoặc người đại diện theo pháp luật của tổ chức. Nếu là tổ chức có mã của cơ quan thuế thì)?.ighbors của người nộp thuế là đại diện theo pháp luật của tổ chức. Nếu người nộp thuế không thì người-progress(es) của tổ chức đăng ký thuế theo quy",
+      "similarity": 0.8719313740730286,
+      "match": true
+    }
+  },
+  {
+    "question": "Cơ sở y tế lập hóa đơn như nào nếu có phiếu thu?",
+    "expected": "Cuối ngày lập hóa đơn điện tử tổng hợp nếu khách không yêu cầu, nếu yêu cầu thì xuất từng hóa đơn",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn điều chỉnh nếu hợp lệ, nếu không hợp lệ sẽ bị xoá hóa đơn và lập hóa đơn thay thế. Nếu có nhiều lần thay thế sẽ lập hóa đơn từng lần. Cảm bảo tính hợp lệ với nội dung đầy đủ theo quy định. (Nếu",
+      "similarity": 0.8257690668106079,
+      "match": true
+    },
+    "colora": {
+      "answer": "Có thể lập hóa đơn điện tử hoặc hóa đơn giấy theo quy định (TT32, TT78). Nếu có welt$ar Places thì bắt buộc dùng hóa đơn điện tử (TT32). Nếu không có welt$ar Places thì có thể dùng hóa đơn điện tử hoặc hóa đơn giấy theo quy",
+      "similarity": 0.6716286540031433,
+      "match": false
+    }
+  },
+  {
+    "question": "Cách tải hóa đơn điện tử VNPT về máy?",
+    "expected": "Xem chi tiết hóa đơn, chọn tải PDF, mở và in hoặc lưu.",
+    "lora": {
+      "answer": "Để tải hóa đơn điện tử, bạn nên chọn path đúng và chọn ' downloading ' trước khi nhập đầy đủ thông tin. Có thể dùng chức năng của hệ thống hoặc chuyển file từ storage first-in-last-out (SFI) nếu cần. Bạn có thể tạo bảng hoặc form để truyền thông tin nếu muốn",
+      "similarity": 0.5834508538246155,
+      "match": false
+    },
+    "colora": {
+      "answer": "Chọn mục tải hóa đơn điện tử, nhập thông tin và lưu. hoặc tải hóa đơn điện tử và)?.@ vnpt-invoice.com.vn. Bạn cần có tài khoản VNPT Invoice. Bạn cần đăng nhập đểSeen hóa đơn. Bạn cần có tài khoản VNPT Invoice và tài khoản khách hàng (Account",
+      "similarity": 0.6354160308837891,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn tạo API controller cho Department thì viết như nào?",
+    "expected": "Tạo controller `DepartmentController`, inject `IUnitOfWork`, và viết các phương thức: `Get`, `Post`, `Put`, `Delete` để thao tác với `Departments`.",
+    "lora": {
+      "answer": "Đây là phần hướng dẫn để tạo controller cho department khi cần. Tách logic tạo controller từng phần như này để dễ bảo trì và dễ đọc code. Bạn có thể thêm các hàm thêm nhau hoặc dùng thư viện như `path/department/*` để dễ tạo controller. Nếu bạn muốn tạo controller riêng",
+      "similarity": 0.6825993061065674,
+      "match": false
+    },
+    "colora": {
+      "answer": "Tạo controller `DepartmentController`, inject `IUnitOfWork`, và viết các phương thức: `Get`, `Post`, `Put`, `Delete` để thao tác với `Departments`. Sau đó dùng `IUnitOfWork-commit` để cập nhật dữ liệu. Sau đây là các 示例 thức bắt buộc: `Add",
+      "similarity": 0.9250930547714233,
+      "match": true
+    }
+  },
+  {
+    "question": "Làm thế nào để lưu thông tin khách hàng trên hệ thống VNPT Invoice?",
+    "expected": "Nhập đầy đủ thông tin khách hàng và ấn Lưu để lưu vào hệ thống.",
+    "lora": {
+      "answer": "Để lưu thông tin khách hàng trên hệ thống, bạn nên dùng chức năng 'Tổ chức hóa đơn đăng ký mới' và nhập đầy đủ thông tin khách hàng before printing. Nếu đã đăng ký, bạn có thể lưu vào form data hoặc lưu file PDF thông tin khách hàng. Tuy nhiên, các trường",
+      "similarity": 0.8051403760910034,
+      "match": true
+    },
+    "colora": {
+      "answer": "Nhập đầy đủ thông tin khách hàng và ấn Lưu để lưu vào hệ thống. Bạn cần có tài khoản khách hàng và tài khoản khách hàng có quyền ServiceRole. Bạn cần có tài khoản khách hàng và tài khoản khách hàng có quyền ServiceRole để gọi hàm. Bạn cần kiểm tra mã/Form Submission trước",
+      "similarity": 0.7947475910186768,
+      "match": true
+    }
+  },
+  {
+    "question": "Chức năng 'Chữ ký số' trong hệ thống hóa đơn điện tử VNPT để làm gì?",
+    "expected": "Kiểm tra số serial trên giấy chứng nhận và đối chiếu với hệ thống hóa đơn.",
+    "lora": {
+      "answer": "Điều chỉnh hoặc điều chỉnh chứng thư số khi cần. Tuy nhiên, không được điều chỉnh qua hóa đơn điện tử. (Nếu đã gửi hóa đơn đã phát hành thì không được điều chỉnh).",
+      "similarity": 0.6198021769523621,
+      "match": false
+    },
+    "colora": {
+      "answer": "Kiểm tra số serial trên giấy chứng nhận và đối chiếu với hệ thống hóa đơn. =>$-AA/TT32./com/32. Soạn nhận đúng thì)?.TdNĐ. Mn documenting nếu sai.",
+      "similarity": 0.8794784545898438,
+      "match": true
+    }
+  },
+  {
+    "question": "ERR:20 có ý nghĩa gì?",
+    "expected": "Pattern và Serial không phù hợp, hoặc không tồn tại mẫu hóa đơn đã đăng ký.",
+    "lora": {
+      "answer": "Không xác định được hóa đơn có số lượng và mẫu số cần phát hành. Bạn cần kiểm tra lại thông tin và báo cáo để xác định hóa đơn hợp lệ. Tuy nhiên, bạn có thể kiểm tra lại các trường hợp có lỗi như E31, E32, E34, E3",
+      "similarity": 0.690633237361908,
+      "match": false
+    },
+    "colora": {
+      "answer": "Không tìm thấy hóa đơn cần phát hành cho từng mẫu số, ký hiệu.NotExist太高 số hóa đơn hoặc số hóa đơn vượt quá giới hạn cho từng mẫu số, ký hiệu.NotExistBrains在那里 hoặc 页面 không rico>${itemCode} cho từng mẫu số, ký hiệu.NotExistInserted vào bộ hàng không phù hợp",
+      "similarity": 0.6283345222473145,
+      "match": false
+    }
+  },
+  {
+    "question": "Quy trình lập hóa đơn điều chỉnh gồm những bước nào?",
+    "expected": "Phát hiện sai sót, thống nhất với bên mua, lập hóa đơn điều chỉnh, gửi và lưu trữ.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn đã lập được được lập hóa đơn đã điều chỉnh, chỉ điều chỉnh hóa đơn đã lập được nên chỉ điều chỉnh hóa đơn đó (NĐ 123). Bạn chỉ cần lập hóa đơn điều chỉnh chỉ điều chỉnh hóa đơn đã lập được. Bạn chỉ cần ghi rõ hóa",
+      "similarity": 0.5218725800514221,
+      "match": false
+    },
+    "colora": {
+      "answer": "Phát hiện sai sót, thống nhất với bên mua, lập hóa đơn điều chỉnh, gửi và lưu trữ. Mỗi bước cần liên hệ trực tiếp hóa đơn điều chỉnh để xác nhận.",
+      "similarity": 0.8823574781417847,
+      "match": true
+    }
+  },
+  {
+    "question": "Hóa đơn Doanh nghiệp, tổ chức, hộ, cá nhân kinh doanh đăng ký sử dụng thì dùng dải có ký hiệu như nào?",
+    "expected": "Ký hiệu thứ 4 phải có chữ T nhá.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn điện tử có mã của cơ quan thuế nếu hóa đơn có mã và hóa đơn điện tử có ký hiệu giống nhau. Bạn nên dùng hóa đơn điện tử để lưu trữ để xác thực.-complete/4567890123456789",
+      "similarity": 0.5569288730621338,
+      "match": false
+    },
+    "colora": {
+      "answer": "Ký hiệu thứ 4 phải có chữ T nhá./colorsкоп trên lại đúng như sau: TT32.425. Ini giúp xác định;dải có ký hiệu đúng doanh nghiệp.Nguồn-progress>khi đăng ký sử dụng>dải có ký hiệu đúng thì-controls đầy đủ các thông tin",
+      "similarity": 0.6939351558685303,
+      "match": false
+    }
+  },
+  {
+    "question": "Lỗi ERR:7 nghĩa là gì khi dùng deleteInvoiceByFkey?",
+    "expected": "Lỗi ERR:7 nghĩa là hệ thống không tìm thấy thông tin công ty tương ứng với tài khoản đăng nhập.",
+    "lora": {
+      "answer": "ERR:7 xảy ra nếu hóa đơn đã phát hành đã bị xoá bằng deleteInvoiceByFkey, vì chỉ nhận các hóa đơn đầu tư không đã phát hành. Bạn cần gọi lại API để xoá các ký hiệu>fkey đã có sử dụng hóa đơn đã phát hành.",
+      "similarity": 0.6371942162513733,
+      "match": false
+    },
+    "colora": {
+      "answer": "Lỗi ERR:7 nghĩa là hệ thống không tìm thấy thông tin công ty tương ứng với tài khoản đăng nhập. Bạn cần đăng nhập lại hoặc kiểm tra tài khoản có quyền ServiceRole. Bạn có thể kiểm tra lại tài khoản-gray.com trong hệ thống. Nếu không có tài khoản-gray.com thì hệ thống sẽ",
+      "similarity": 0.8802217245101929,
+      "match": true
+    }
+  },
+  {
+    "question": "Ghi sai chiết khấu trên hóa đơn điện tử VNPT xử lý thế nào?",
+    "expected": "Phải lập hóa đơn điều chỉnh với số tiền chiết khấu đúng.",
+    "lora": {
+      "answer": "Phải lập hóa đơn điều chỉnh với số tiền chiết khấu đúng. Nếu không có hóa đơn điện tử thì phải lập hóa đơn điện tử để ký số. Hiền文化底蕴 từ hóa đơn điện tử sẽ được gửi gửi qua hệ thống VNPT Invoice. Nếu chưa có hóa đơn điện tử thì phải lập hóa đơn",
+      "similarity": 0.8653149008750916,
+      "match": true
+    },
+    "colora": {
+      "answer": "Phải lập hóa đơn điều chỉnh với số tiền chiết khấu đúng. Nếu vẫn sai,可能导致 Hindered hóa đơn và phải lập hóa đơn điều chỉnh nữa. Nếu chỉ sai thông tin-about hóa đơn, có thể lập hóa đơn điều chỉnh thông tin đó. Bạn cần liên hệ telefonhots hóa đơn để xác nhận.",
+      "similarity": 0.8495453596115112,
+      "match": true
+    }
+  },
+  {
+    "question": "Trường hợp nào không phải lập hóa đơn điện tử?",
+    "expected": "Các trường hợp được Bộ Tài chính hướng dẫn riêng (TT78).",
+    "lora": {
+      "answer": "Điều kiện không bắt buộc lập hóa đơn điện tử là hóa đơn có mã của cơ quan thuế đã đăng ký và được cấp số được lập và phát hành (TT32). Nếu chưa có mã và được lập và phát hành, bạn nên lập hóa đơn điện tử đúng quy định.-complete.",
+      "similarity": 0.613274097442627,
+      "match": false
+    },
+    "colora": {
+      "answer": "Các trường hợp được Bộ Tài chính hướng dẫn riêng (TT78). Phải lập hóa đơn điện tử hoặc hóa đơn giấy theo quy định. Phải kiểm tra kỹ thông tin từng trường hợp. Nếu khôngbidden,bidden thì lập hóa đơn điện tử hoặc hóa đơn giấy theo quy định. Bạn",
+      "similarity": 0.8252145051956177,
+      "match": true
+    }
+  },
+  {
+    "question": "Tôi muốn kiểm tra bản ghi có tồn tại hay không?",
+    "expected": "Dùng `_repository.Any(s => s.Code == \"ABC\")` để kiểm tra có bản ghi nào thỏa điều kiện không.",
+    "lora": {
+      "answer": "Để kiểm tra tồn tại bản ghi có mã số thì gọi `_repository.FindByIdAsync(_id)` và kiểm tra kết quả. Nếu kết quả có 返回 то thì bản ghi tồn tại. Nếu không có thì trả về empty. Nếu có thì trả về danh sách bản ghi có mã số.",
+      "similarity": 0.6227560043334961,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng `_repository.Any(s => s.Code == \"ABC\")` để kiểm tra có bản ghi nào thỏa điều kiện không. Nếu trả về `[-pack]`, nghĩa là có bản ghi đó. Nếu không，《Add` sẽ trả về lỗi ` inconsistency`. You can use `.Any` hoặc `.Exists",
+      "similarity": 0.7868234515190125,
+      "match": true
+    }
+  },
+  {
+    "question": "Khi nào được chuyển đổi hóa đơn điện tử sang hóa đơn giấy?",
+    "expected": "Khi người mua yêu cầu để chứng minh nguồn gốc hoặc lưu trữ chứng từ kế toán.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn điện tử khi chưa mã hóa đơn giấy, hoặc chuyển đổi theo quy định (NĐ 123). Bắt-ups có thể chuyển đổi ở lần sau nếu cần.",
+      "similarity": 0.5856780409812927,
+      "match": false
+    },
+    "colora": {
+      "answer": "Khi người mua yêu cầu để chứng minh nguồn gốc hoặc lưu trữ chứng từ kế toán.curring là hóa đơn giấy có giá trị pháp lý phải chuyển đổi sang hóa đơn giấy hoặc hóa đơn điện tử theo quy định (TT32, TT78). Nếu hóa đơn điện tử đã gửi;m",
+      "similarity": 0.8257787227630615,
+      "match": true
+    }
+  },
+  {
+    "question": "Tên công ty có được viết tắt là CT hoặc Cty không?",
+    "expected": "Không được vì theo khoản 4 điều 10 Nghị định 123/2020/NĐ-CP và luật Doanh nghiệp, viết tắt phải đúng như trong giấy đăng ký kinh doanh",
+    "lora": {
+      "answer": "Có. Tối đa ghi là Cty (Commonty, Small Firm). Bạn có thể viết tắt đó trong giấy đăng ký doanh nghiệp. Nếu có công ty mới, nên viết đầy đủ tên, địa chỉ và số điện thoại. Sau đó, chỉ cần ghi chữ C trong giấy đăng ký",
+      "similarity": 0.6610866785049438,
+      "match": false
+    },
+    "colora": {
+      "answer": "Không được vì theo khoản 4 điều 10 Nghị định 123/2020/NĐ-CP và luật Doanh nghiệp, viết tắt phải đúng như trong giấy đăng ký kinh doanh. Nếu viết tắt khác như CT aren't được phép dùng chữ ký số như C,",
+      "similarity": 0.9430367946624756,
+      "match": true
+    }
+  },
+  {
+    "question": "Tổng số tiền thanh toán phải ghi như nào?",
+    "expected": "Ghi rõ bằng số và bằng chữ.",
+    "lora": {
+      "answer": "Điều chỉnh:ghi đúng số tiền thanh toán. Xử lý sai sót sau đó. Phải ghi đúng số tiền thanh toán đúng năm phát sinh. Nếu sai year, điều chỉnh là year phát hành ghi đúng. Phải ghi đúng ngày lập hóa đơn đúng năm phát hành",
+      "similarity": 0.5181204080581665,
+      "match": false
+    },
+    "colora": {
+      "answer": "Ghi rõ bằng số và bằng chữ. Phải trùng số với số tiền đúng. (TT32). Nếu đúng thì bắt buộc ghi rõ số tiền thanh toán và số tiền-thanhindrance (TT34). Nếu không bắt buộc thì không bắt buộc ghi rõ số tiền thanh toán và",
+      "similarity": 0.6645594835281372,
+      "match": false
+    }
+  },
+  {
+    "question": "Hóa đơn điện tử có thể là hóa đơn tự in không?",
+    "expected": "Không, hóa đơn tự in là loại hóa đơn giấy không phải hóa đơn điện tử.",
+    "lora": {
+      "answer": "Có thể, nếu cần lưu trữ hoặc gửi thông tin hóa đơn. Tuy nhiên, nếu muốn lưu trữ hơn thì phải lập hóa đơn tự in và lưu trữ trên hệ thống hóa đơn điện tử.curring paper là hóa đơn tự in có thể được sử dụng trong trường hợp chưa cần lưu trữ hoặc có thể",
+      "similarity": 0.6923155188560486,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể, nếu đượcbidden bởi quy định và đăng ký với cơ quan thuế. Nhưng thường hóa đơn điện tử phải)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.)?.",
+      "similarity": 0.6397654414176941,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi có thể truyền ngày theo định dạng nào trong FromDate?",
+    "expected": "Theo định dạng yyyy-MM-dd, ví dụ: 2024-01-01.",
+    "lora": {
+      "answer": "Được định dạng format là: `YYYY-MM-DD`, ví dụ: `2024-01-01`.",
+      "similarity": 0.7779617309570312,
+      "match": true
+    },
+    "colora": {
+      "answer": "The date should be passed in ISO standard format, such as `ISODate`:YYYY,MM,DD. Ví dụ: `ISODate:2024-01-01`. Bạn có thể kiểm tra lại định dạng trong `FromDate` nếu cần. Bạn không cần truyền ngày theo",
+      "similarity": 0.5255981087684631,
+      "match": false
+    }
+  },
+  {
+    "question": "ERR:5 khi gọi hàm PublishInvFkey có nghĩa là gì?",
+    "expected": "Lỗi không xác định khi phát hành hóa đơn, cần kiểm tra exception trong hệ thống (DB rollback).",
+    "lora": {
+      "answer": "Điều kiện đầu vào không hợp lệ, như pattern hoặc serial không hợp lệ hoặc không tồn tại trong hệ thống. Bạn cần kiểm tra và truyền đúng thông tin vào để gọi hàm.",
+      "similarity": 0.6741796731948853,
+      "match": false
+    },
+    "colora": {
+      "answer": "Lỗi không xác định khi phát hành hóa đơn, cần kiểm tra exception trong hệ thống (DB rollback).\".. Error:5 occurrence of error occurred when processing.\" – Lỗi không xác định, cần kiểm tra exception trong hệ thống (DB rollback). Tương tự như error:4. Bạn cần kiểm tra exception",
+      "similarity": 0.8768534064292908,
+      "match": true
+    }
+  },
+  {
+    "question": "Hóa đơn điện tử có thể in ra giấy không?",
+    "expected": "Có thể in để lưu trữ hoặc làm chứng từ vận chuyển.",
+    "lora": {
+      "answer": "Có, bạn có thể in hóa đơn điện tử vào giấy nếu muốn. Tuy nhiên, phải đảm bảo các điều kiện để được thực hiện đúng quy định.curring, ghi chú khi xuất hóa đơn điện tử có thể có điều kiện để có thể in vào giấy. Bạn nên kiểm tra lại quy định",
+      "similarity": 0.5840525031089783,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể in để lưu trữ hoặc làm chứng từ vận chuyển. Nếu muốn lưu trữ thì Ста incons hợp với lưu trữ điện tử (TT32).curring thanh toán có thể in để tính tiền đúng chuẩn (TT31).curring-thanh toán không cần in để tính tiền (TT30).",
+      "similarity": 0.7355506420135498,
+      "match": false
+    }
+  },
+  {
+    "question": "Trường xmlInvData là gì?",
+    "expected": "Là chuỗi XML chứa dữ liệu hóa đơn cần phát hành.",
+    "lora": {
+      "answer": "Trường xmlInvData là chuỗi XML chứa dữ liệu hóa đơn cần phát hành. Bắt buộc khi gọi API.curringCode và category sẽ xác định loại hóa đơn và loại hàng hóa.",
+      "similarity": 0.8022230863571167,
+      "match": true
+    },
+    "colora": {
+      "answer": "Là chuỗi XML chứa dữ liệu hóa đơn cần phát hành.hung-arrow Xml cần chứa các cặp Inv khác nhau để chọn hóa đơn cụ thể. Trường xmlInvData là trường chứa dữ liệu hóa đơn đã chọn. Trường Inv phải chứa dữ liệu hóa đơn chưa chọn. Trường xmlInvData",
+      "similarity": 0.769646406173706,
+      "match": true
+    }
+  },
+  {
+    "question": "Nếu truyền sai tên property trong includeProperties thì sao?",
+    "expected": "Sẽ xảy ra lỗi lúc thực thi, do EF không tìm được navigation property đó.",
+    "lora": {
+      "answer": "Điều này có thể gây lỗi khi gọi hàm, vì property đó không được định nghĩa trong repository. Bạn nên kiểm tra lại chức năng và định dạng của property để đảm bảo được thông tin đúng. Nếu không có chức năng tương ứng, bạn chỉ được truyền vào các trường bắt buộc như id, user",
+      "similarity": 0.5890285968780518,
+      "match": false
+    },
+    "colora": {
+      "answer": "Sẽ xảy ra lỗi lúc thực thi, do EF không tìm được navigation property đó. bạn cần kiểm tra lại định dạng và includem PROPERTY cần includem trong các list đang sử dụng. Nếu không có lỗi lỗi này sẽ tự động thoát phiên làm việc. Nếu lỗi về navigation property thì bạn cần kiểm tra lại",
+      "similarity": 0.7844171524047852,
+      "match": true
+    }
+  },
+  {
+    "question": "Tôi có thể không điền CusPhone được không?",
+    "expected": "Có thể, trường CusPhone không bắt buộc trong XML hóa đơn.",
+    "lora": {
+      "answer": "Không, bạn cần điền CusPhone nếu muốn dùng hóa đơn bán hàng. Nếu không dùng, bạn vẫn phải có mã số thuế. Nếu có mã, bạn cần phải có số điện thoại để xác thực. Nếu không có, hóa đơn không được phát hành và không cần gửi lên Indexed. Bạn chỉ cần",
+      "similarity": 0.6243664622306824,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể, trường CusPhone không bắt buộc trong XML hóa đơn. Nếu muốn liên hệ người mua thì cần điền nó. Bạn cần-okHttp của hóa đơn để hệ thống trả về thông tin khách hàng. Bạn có thể-okHttp-lg để trả về thông tin-lg nếu muốn. Bạn có thể",
+      "similarity": 0.7529886960983276,
+      "match": true
+    }
+  },
+  {
+    "question": "Có thể hủy hóa đơn thay thế đã lập không?",
+    "expected": "Không thể hủy hóa đơn thay thế đã được cấp mã hoặc đã gửi cho người mua. Nếu hóa đơn thay thế bị sai, bạn cần tiếp tục lập hóa đơn thay thế khác cho đến khi đúng.",
+    "lora": {
+      "answer": "Có thể hủy hóa đơn thay thế đã lập nếu đã bị hủy cho bên mua và được hủy thanh toán. Nếu chưa bị hủy thì không thể hủy hóa đơn thay thế đã lập. Bạn cần liên hệ bên mua để giải quyết hóa đơn thay thế đã lập. Bạn cũng có thể",
+      "similarity": 0.7908965349197388,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không thể hủy hóa đơn thay thế đã được cấp mã hoặc đã gửi cho người mua. Nếu hóa đơn thay thế bị sai, bạn cần tiếp tục lập hóa đơn thay thế khác cho đến khi đúng. Bạn cần lưu trữ hóa đơn thay thế từ/editor/items mới. Nếu chưa đủ số lượng",
+      "similarity": 0.9716196656227112,
+      "match": true
+    }
+  },
+  {
+    "question": "Năm lập hoá đơn là 2025 thì phải phát hành trên dải hoá đơn 25 à?",
+    "expected": "Đúng vậy.",
+    "lora": {
+      "answer": "Đúng vậy, nếu lập hoá đơn vào 2025 thì phát hành trên hóa đơn 25.curring. Nên không làm 25/26 hoặc 25/26 vào 2025.curring. Phải phát hành trên hóa đơn 25.curring",
+      "similarity": 0.644913375377655,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đúng vậy. Năm lập hoá đơn phải phát hành trên năm đó. Bạn)?.-ended by saying \"Phải phát hành hóa đơn từ năm nào?\"curring. Correct. Năm lập hoá đơn là năm phát hành thì phải phát hành trên hóa đơn năm đó. Bạn)?.-ended by saying \"Phải phát",
+      "similarity": 0.5270050168037415,
+      "match": false
+    }
+  },
+  {
+    "question": "XML có thể viết sai thứ tự các thẻ không?",
+    "expected": "Không nên. Nên giữ nguyên thứ tự theo mẫu: <Invoices> → <SerialCert> → <Inv>.",
+    "lora": {
+      "answer": "Không nên. XML phải bắt buộc phải có thứ tự đúng: <Inv> <ACpass> <Fkey> <Serial> <InvNo> <Date> <Pattern> <SerialNo> </Inv> </ACpass> </Fkey> <Serial> <Date> </Date> </InvNo",
+      "similarity": 0.5720384120941162,
+      "match": false
+    },
+    "colora": {
+      "answer": "Không nên. Nên giữ nguyên thứ tự theo mẫu: <Invoices> → <SerialCert> → <Inv>. Nếu sai thì hệ thống không thể xử lý hóa đơn và trả lỗi lỗi xác định. Bạn cần kiểm tra lại thứ tự các thẻ trước khi-grow. Nếu lỗi xảy ra thì sẽ gây",
+      "similarity": 0.7234820127487183,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn tạo màn hình CRUD mới thì bắt đầu từ đâu?",
+    "expected": "Bạn tạo file mới trong thư mục `src/pages/`, đặt tên theo module như `TruongPage.js`. Sau đó viết component React để hiển thị danh sách và form popup.",
+    "lora": {
+      "answer": "Được thông báo cần tạo màn hình mới thì bắt đầu từ file `App.js` để tạo màn hình CRUD. Bạn nên tạo `App.js` trong thư mục `src/` để bắt đầu từ đầu tiên. Nếu muốn tạo màn hình mới thì cần tạo file mới trong thư mục `src/app/`",
+      "similarity": 0.6973714232444763,
+      "match": false
+    },
+    "colora": {
+      "answer": "Bạn tạo file mới trong thư mục `src/pages/`, đặt tên theo module như `TruongPage.js`. Sau đó viết component React để hiển thị danh sách và form popup. Bạn cần viết function để tìm bản ghi cần thêm, sửa hoặc xoá. Bạn có thể dùng `urator` hoặc `",
+      "similarity": 0.9109135866165161,
+      "match": true
+    }
+  },
+  {
+    "question": "Chức năng của hàm GetCertInfo là gì?",
+    "expected": "Hàm GetCertInfo được dùng để lấy thông tin chứng thư số hiện tại của đơn vị khách hàng, giúp xác nhận hiệu lực và thời gian còn hạn của chứng thư số trong hệ thống.",
+    "lora": {
+      "answer": "Điều hướng kiểm tra chứng thư số, thời gian phát hành và kiểm tra hiệu lực chứng thư số được cấp cho hóa đơn điện tử.curring class có hàm này giúp kiểm tra chứng thư số của cơ quan thuế.",
+      "similarity": 0.6686844825744629,
+      "match": false
+    },
+    "colora": {
+      "answer": "Hàm GetCertInfo được dùng để lấy thông tin chứng thư số hiện tại của đơn vị khách hàng, giúp xác nhận hiệu lực và thời gian còn hạn của chứng thư số trong hệ thống. Đây là bước đầu để kiểm tra hiệu lực và thời gian còn hạn để đảm bảo hóa đơn được ký",
+      "similarity": 0.9419899582862854,
+      "match": true
+    }
+  },
+  {
+    "question": "Có được phép điều chỉnh ngày giao hàng qua hóa đơn điều chỉnh không?",
+    "expected": "Có thể, nếu có thỏa thuận và ghi rõ trong hóa đơn điều chỉnh.",
+    "lora": {
+      "answer": "Không, phải điều chỉnh cho hóa đơn điều chỉnh hoặc thay thế.curring rate và tax rate không được thay thế (TT32). Bạn nên điều chỉnh trực tiếp hóa đơn. Nên không được điều chỉnh ngày giao hàng qua hóa đơn điều chỉnh (TT32). Bạn cần kiểm tra lại",
+      "similarity": 0.6692200899124146,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể, nếu có thỏa thuận và ghi rõ trong hóa đơn điều chỉnh. Nếu không có mã số thuế hoặc说实 hiện điều chỉnh khác thì không thể điều chỉnh ngày giao hàng. Bạn cần liên hệ tổng đài để kiểm tra kỹ.kode số thuế phải được thực hiện điều chỉnh hoặc không điều",
+      "similarity": 0.8094834089279175,
+      "match": true
+    }
+  },
+  {
+    "question": "Hóa đơn điện tử là tem, vé, thẻ có cần đầy đủ thông tin như hóa đơn thông thường không?",
+    "expected": "Không bắt buộc có đủ chữ ký số, thông tin người mua, đơn giá,... nếu là tem, vé, thẻ có mệnh giá sẵn",
+    "lora": {
+      "answer": "Đúng vậy, hóa đơn điện tử là hóa đơn điện tử điện tử và hóa đơn regular có thể được sử dụng như hóa đơn thông thường. Cần ghi thông tin như mã số thuế, số hóa đơn, đơn giá, tổng tiền, tổng tiền thuế, tổng tiền thuế, tổng tiền thanh toán",
+      "similarity": 0.6444437503814697,
+      "match": false
+    },
+    "colora": {
+      "answer": "Không bắt buộc có đủ chữ ký số, thông tin người mua, đơn giá,... nếu là tem, vé, thẻ có mệnh giá sẵn. Nếu là tem, vé, thẻ phải có mã của cơ quan thuế (TT78).\"..84) hoặc có mã của cơ quan thuế (TT",
+      "similarity": 0.9049608707427979,
+      "match": true
+    }
+  },
+  {
+    "question": "Tôi muốn thêm route để truy cập màn Department thì làm sao?",
+    "expected": "Trong `router/index.tsx`, thêm dòng `{ path: '/department', element: <Department /> }` để truy cập màn CRUD phòng ban.",
+    "lora": {
+      "answer": "Trong file `App.js`, thêm dòng `/[ departments ]` để truy cập màn danh sáchdepartment. Khi truy cập, window `window/AP departments` sẽ hiển thị màn danh sách. Bạn có thể thêm `use template/' template/{ category }` để hiển thị danh sách theo tên department",
+      "similarity": 0.6756535768508911,
+      "match": false
+    },
+    "colora": {
+      "answer": "Trong `router/index.tsx`, thêm dòng `{ path: '/department', element: <Department /> }` để truy cập màn CRUD phòng ban. Sau đó chạy file trong `app.js` hoặc `routes/index.js` để truy cập lại các route khác. Bạn nên dùng ` redirects` hoặc `",
+      "similarity": 0.9126979112625122,
+      "match": true
+    }
+  },
+  {
+    "question": "Có thể lập nhiều lần hóa đơn điều chỉnh cho cùng một hóa đơn VNPT không?",
+    "expected": "Có thể lập nhiều hóa đơn điều chỉnh nếu tiếp tục phát hiện sai sót mới.",
+    "lora": {
+      "answer": "Được thông báo không được lập nhiều hóa đơn điều chỉnh nếu đã lập hóa đơn điều chỉnh trước. Bạn chỉ có thể lập một hóa đơn điều chỉnh mỗi lần mà không thể thêm lại. Bạn nên chỉ lập một hóa đơn điều chỉnh mỗi lần để tránh sai sót. Bạn có thể lập hóa đơn điều chỉnh",
+      "similarity": 0.6668484210968018,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể lập nhiều hóa đơn điều chỉnh nếu tiếp tục phát hiện sai sót mới. Mỗi hóa đơn điều chỉnh cần có đủ thông tin từ hóa đơn điều chỉnh cũ để tiếp tục phát hành. Nếu không đủ thông tin thì cần lập hóa đơn điều chỉnh mới. Mỗi hóa đơn điều chỉnh cần bắt buộc có",
+      "similarity": 0.8429493308067322,
+      "match": true
+    }
+  },
+  {
+    "question": "Có thể truyền ngày trùng nhau vào FromDate và ToDate không?",
+    "expected": "Có. Hệ thống sẽ lọc hóa đơn có ngày đúng bằng ngày đó.",
+    "lora": {
+      "answer": "Được trả về lỗi ERR:24 nếu ngày đầu và ngày cuối这里面 có ngày trùng nhau. Bạn cần truyền đúng ngày đầu và ngày cuối. Nếu không có lỗi này thì hệ thống sẽ tự động chọn đúng ngày đầu và ngày cuối đúng.",
+      "similarity": 0.5926949381828308,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có, nếu các ngày trùng nhau được truyền trong chuỗi data. Bạn cần xác định dấu gạch dưới (_) trong chuỗi data để phân biệt ngày và tháng. Ví dụ: 31/09/2020. Nếu không bắt buộc,gửi toàn bộ chuỗi",
+      "similarity": 0.5702313184738159,
+      "match": false
+    }
+  },
+  {
+    "question": "Làm thế nào để khách hàng đăng nhập thành công vào hệ thống hóa đơn điện tử VNPT?",
+    "expected": "Nhập đúng User/Password/Mã xác thực và nhấn Đăng nhập.",
+    "lora": {
+      "answer": "Đánh dấu X vào ô 'Cập nhật hóa đơn' và nhập đầy đủ thông tin đăng nhập để hệ thống tự động nhận được tài khoản. Tuy nhiên có thể gọi lại API nếu chưa có tài khoản đăng ký. Khi nhận thành công, hệ thống sẽ tự động đăng nhập các hóa đơn mới",
+      "similarity": 0.6146151423454285,
+      "match": false
+    },
+    "colora": {
+      "answer": "Nhập đúng User/Password/Mã xác thực và nhấn Đăng nhập. hệ thống sẽ tự động thoát phiên làm việc. Nếu không được acces thì-required đăng nhập bằng mã xác thực. Sau đó hệ thống sẽ-display thông tin đăng nhập và yêu cầu!\",\n'Phải lưu trữ hóa đơn điện tử đểbidden sử",
+      "similarity": 0.8348360061645508,
+      "match": true
+    }
+  },
+  {
+    "question": "Hàm Update có kiểm tra trùng mã không?",
+    "expected": "Có thể thêm đoạn kiểm tra `_repository.CountRecords(s => s.Code == entity.Code && s.Id != entity.Id)` để tránh mã bị trùng.",
+    "lora": {
+      "answer": "Nếu mã số thuế của hóa đơn đã existed trước thì hệ thống sẽ báo lỗi \"nock do mã số thuế\" khi gọi hàm Update. Trong trường hợp không trùng mã, bạn có thể truyền điều kiện ContainsMatches(mcode) để kiểm tra mã trước khi gọi.",
+      "similarity": 0.3738003373146057,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có thể thêm đoạn kiểm tra `_repository.CountRecords(s => s.Code == entity.Code && s.Id != entity.Id)` để tránh mã bị trùng. Ngoài mà vẫn nên dùng `_repository.CountRecords` để lấy số lượng bản ghi có thể cập nhật. Bạn có thể dùng `some(s => s.Id !=",
+      "similarity": 0.8395233154296875,
+      "match": true
+    }
+  },
+  {
+    "question": "Chức năng của Module Lập Hóa Đơn là gì?",
+    "expected": "Upload hóa đơn mới, tra cứu thông tin hóa đơn qua danh sách hóa đơn.",
+    "lora": {
+      "answer": "Điều hướng hỗ trợ kiểm tra thông tin và thông báo của người dùng. Mình mong là các thông tin về người dùng đã đăng ký sử dụng, hoặc gặp thông báo nếu có lỗi. Bạn có thể kiểm tra thông tin thông báo bằng cách click thông tin thông báo hoặc thông báo lỗi. Bạn không",
+      "similarity": 0.7254348993301392,
+      "match": false
+    },
+    "colora": {
+      "answer": "Quản lý hóa đơn đã đăng ký trong hệ thống, phân biệt giữa hóa đơn)?. Own và)?. Nhớ kiểm tra ký hiệu trước khi Entered thông tin.",
+      "similarity": 0.7486492991447449,
+      "match": false
+    }
+  },
+  {
+    "question": "Lưu ý quan trọng khi xuất hóa đơn điện tử VNPT?",
+    "expected": "Thông tin phải chính xác tuyệt đối; cần chữ ký số hợp lệ để ký hóa đơn.",
+    "lora": {
+      "answer": "Điều chỉnh thông tin người mua, hóa đơn đã phát hành, thông tin người bán phải có chữ K trên,trong trường hợp có mã số thuế. Hiềnspot cần có chữ K ở dòng số 4 trên giấy phép đăng ký kinh doanh. Hiềnspot cần có chữ K ở",
+      "similarity": 0.8268406391143799,
+      "match": true
+    },
+    "colora": {
+      "answer": "Thông tin phải chính xác tuyệt đối; cần chữ ký số hợp lệ để ký hóa đơn. Nếu sai sót thì)?.ighbors sẽ gửi thông báo sai sót. Nếu không xác nhận thì không được gửi hóa đơn. Nếu đã gửi hóa đơn thì confort với thông tin đó. Nếu sai sót thì confort với",
+      "similarity": 0.8940556049346924,
+      "match": true
+    }
+  },
+  {
+    "question": "Có thể đặt thuộc tính là bắt buộc không được null không?",
+    "expected": "Có, bạn chỉ cần dùng kiểu không nullable như `string Name` hoặc `[Required]`. EF sẽ tạo ràng buộc NOT NULL trong DB.",
+    "lora": {
+      "answer": "Nếu bạn muốn bắt buộc thuộc tính thì bạn tạo các input có `required`, và dùng `has()` hoặc `Validate()` trong controller. Nếu bạn muốn bắt buộc chỉ định giá trị thì tạo danh sách các `(Name, Value)` trong `Options`. Bạn có thể dùng cả hai cách tùy chọn và property khác",
+      "similarity": 0.6874887943267822,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có, bạn chỉ cần dùng kiểu không nullable như `string Name` hoặc `[Required]`. EF sẽ tạo ràng buộc NOT NULL trong DB. Bạn có thể thêm `和支持` nếu muốn😊. Nếu bạn muốn`t)=>NotNull`, bạn confort `[Required]` và `[和支持]`. `NotNull`",
+      "similarity": 0.8912400007247925,
+      "match": true
+    }
+  },
+  {
+    "question": "Hàm publishInvWithToken có rollback không nếu lỗi?",
+    "expected": "Có. Trong trường hợp lỗi hệ thống sẽ rollback và trả về ERR:5.",
+    "lora": {
+      "answer": "Điều hướng trả về lỗi ERR:20 – hệ thống không thể thực hiện hóa đơn vì không đủ thông tin hoặc tài khoản không có quyền phát hành. Bạn cần gọi lại hóa đơn hoặc đăng nhập lại để truyền đúng thông tin. Trong trường này,您可以 rollback hóa đơn đã phát hành và không",
+      "similarity": 0.6175259947776794,
+      "match": false
+    },
+    "colora": {
+      "answer": "Có. Trong trường hợp lỗi hệ thống sẽ rollback và trả về ERR:5. Bạn cần gọi lại hàm để kiểm tra lại kết quả. Bạn cần kiểm tra lại trạng thái hóa đơn và mã其他玩家 để kiểm tra lại-message. Bạn cần kiểm tra lại chữ ký số trên hóa đơn và mã其他玩家",
+      "similarity": 0.7136129140853882,
+      "match": false
+    }
+  },
+  {
+    "question": "Có được phép sửa đổi thông tin người mua trên hóa đơn điều chỉnh không?",
+    "expected": "Không, không được thay đổi thông tin người mua.",
+    "lora": {
+      "answer": "Không được sửa đổi thông tin người mua trên hóa đơn điều chỉnh, phải lập hóa đơn thay thế từ scratch. Tuy nhiên, nếu đã có hóa đơn điều chỉnh thì không được sửa đổi again. Bạn nên không thay thế hóa đơn điều chỉnh để đảm bảo chính xác. Bạn nên lập hóa đơn",
+      "similarity": 0.7503219842910767,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không, không được thay đổi thông tin người mua. Bạn cần lập hóa đơn điều chỉnh mới. Nếu cần,您可以 gửi thông báo:\".Nếu chưa gửi thông báo,您可以 gửi thông báoABOUT hóa đơn điều chỉnh khác. Bạn cần gửi thông báoABOUT hóa đơn điều chỉnh😊.",
+      "similarity": 0.7555792331695557,
+      "match": true
+    }
+  },
+  {
+    "question": "Số hóa đơn có được tự sinh không?",
+    "expected": "Có, hệ thống sẽ tự động cấp số hóa đơn theo dải pattern và serial tương ứng.",
+    "lora": {
+      "answer": "Có, hệ thống sẽ tự động tạo số hóa đơn theo dải pattern và interval. Tuy nhiên bạn có thể điều chỉnh pattern và interval nếu muốn. Nếu bạn muốn tạo chính xác số hóa đơn thì bạn cần truyền số vào chung trong XML. #TrongTrong #KhiKhi",
+      "similarity": 0.773155152797699,
+      "match": true
+    },
+    "colora": {
+      "answer": "Phải lập hóa đơn điều chỉnh hoặc thay thế nếu số hóa đơn được tự động tạo bằng mã hóa đơn. Bạn cần kiểm tra mã hóa đơn trước khi tạo mới.(animated sử dụng mã hóa đơn tự động sẽ không hợp lệ. Bạn cần lập hóa đơn điều chỉnh hoặc thay thế để hợp lệ.",
+      "similarity": 0.5722209215164185,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi có thể truyền sai idInv không?",
+    "expected": "Không. idInv phải đúng với kết quả từ getHashInvWithToken và tương ứng với hóa đơn mới đã ký.",
+    "lora": {
+      "answer": "Điều chỉnh idInv nếu không hợp lệ. Bạn cần kiểm tra và điều chỉnh nếu sai thông tin. Có thể truyền các idInv đúng đúng khi đúng. (Tài liệu về IDInv được trình bày ở đây: https://cookiedict.com/)",
+      "similarity": 0.6111677885055542,
+      "match": false
+    },
+    "colora": {
+      "answer": "Không. idInv phải đúng với kết quả từ getHashInvWithToken và tương ứng với hóa đơn mới đã ký. Nếu không hợp lệ, hệ thống sẽ trả về ERR:22. Bạn cần kiểm tra lại bước đăng nhập và xác thực chữ ký. Nếu không đúng, hệ thống sẽ trả về ERR",
+      "similarity": 0.7553699016571045,
+      "match": true
+    }
+  },
+  {
+    "question": "ERR:10 có thể gặp khi nào?",
+    "expected": "Khi số hóa đơn trong XML vượt quá giới hạn cho phép.",
+    "lora": {
+      "answer": "Khi pattern và serial không hợp lệ hoặc không tồn tại trong hệ thống. Tên đây chỉ dùng cho hóa đơn điện tử có mã đã đăng ký. Bạn nên kiểm tra real pattern và serial để xác thực. Mình recommand dùng hệ thống kiểm tra trước khi gọi hàm.Bạn có thể gặp ERR:",
+      "similarity": 0.5967637896537781,
+      "match": false
+    },
+    "colora": {
+      "answer": "Khi số hóa đơn trong XML vượt quá giới hạn cho phép.\".. hammer Angry Bell\"..谐 mong đã$maxPoints$.curringValue*$unitPrice*$unitAmount có thể quá$maxAmount$.curringValue*$unitPrice*$unitAmount có thể là positive hoặc negative.\".. hammer Angry Bell\"..谐 mong đã$maxPoints",
+      "similarity": 0.5705674290657043,
+      "match": false
+    }
+  },
+  {
+    "question": "Nếu hóa đơn thay thế bị sai sót, có thể hủy để lập hóa đơn mới không?",
+    "expected": "Không, hóa đơn thay thế đã được cấp mã hoặc gửi cho người mua thì không thể hủy để lập hóa đơn mới. Bạn cần tiếp tục điều chỉnh hoặc thay thế cho đến khi đúng.",
+    "lora": {
+      "answer": "Không, bạn không thể hủy hóa đơn thay thế khi đã đăng ký thanh toán. Bạn cần lập hóa đơn mới từ data hóa đơn cũ.Bạn có thể lập hóa đơn thay thế hoặc điều chỉnh sau khi đã đăng ký thanh toán. Bạn cần kiểm tra lại thông tin hóa đơn sau khi đăng",
+      "similarity": 0.8250116109848022,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không, hóa đơn thay thế đã được cấp mã hoặc gửi cho người mua thì không thể hủy để lập hóa đơn mới. Bạn cần tiếp tục điều chỉnh hoặc thay thế cho đến khi đúng. Bạn cần lưu trữ đầy đủ các hóa đơn 修改 sửa để không bị sai sót. Nếu chưa đủ số",
+      "similarity": 0.9774754643440247,
+      "match": true
+    }
+  },
+  {
+    "question": "Trong chuỗi kết quả OK:... thì pattern là gì?",
+    "expected": "Là mẫu số của các hóa đơn đã phát hành.",
+    "lora": {
+      "answer": "Được pattern của các hóa đơn đã phát hành. Các serial sẽ có pattern tương ứng.",
+      "similarity": 0.6939473152160645,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đây là mẫu số hóa đơn.Expires bắt buộc nếu dùng với hệ thống mới. Nếu dùng với hệ thống cũ thìExpires không bắt buộc. Nếu có thì bắt buộc để xác định thời điểm lập hóa đơn.",
+      "similarity": 0.6531363725662231,
+      "match": false
+    }
+  },
+  {
+    "question": "PublishInvByDate dùng publishdate của trường nào?",
+    "expected": "Của trường publishdate trong từng hóa đơn đã tạo.",
+    "lora": {
+      "answer": "Được publishdate của trường PublishDate trong từng hóa đơn trong danh sáchsend. Tuy nhiên, nếu bạn muốn điều chỉnh publishdate thì cần điều chỉnh这不是 hóa đơn riêng.",
+      "similarity": 0.8408778309822083,
+      "match": true
+    },
+    "colora": {
+      "answer": "Được sử dụng ngày tạo hóa đơn hoặc ngày phát hành, tùy từng trường bắt buộc. Nếu không bắt buộc, người dùng cần xác định ngày phát hành. Nếu đã tạo hóa đơn thì ngày tạo nằm trong trường này. Nếu không tạo thì trường này bắt buộc để defs.",
+      "similarity": 0.6113880276679993,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi muốn sort theo tên thì thêm gì trong GetAll?",
+    "expected": "Dùng `orderBy: q => q.OrderBy(x => x.Name)` để sắp xếp danh sách theo tên.",
+    "lora": {
+      "answer": "Được trả về result sorting theo tên, bạn cần thêm `orderBy: q => q.OrderByDescending(x => x.Name)` trong `GetAll()`. Nếu không có, bạn có thể truyền `orderBy: x => x.Name` hoặc `orderBy: x => x.Name, Ascending: true`.",
+      "similarity": 0.689388632774353,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng `orderBy: q => q.OrderBy(x => x.Name)` để sắp xếp danh sách theo tên. Bạn có thể dùng khác các thuộc tính như `Name`, `Id`, `CreatedAt` để phân trang hoặc lọc trực tiếp từ API. Trong trường hợp yêu cầu sắp xếp theo tên,",
+      "similarity": 0.9160019159317017,
+      "match": true
+    }
+  },
+  {
+    "question": "Đối tượng nào được dùng hóa đơn điện tử không mã?",
+    "expected": "Doanh nghiệp đáp ứng điều kiện và đăng ký với cơ quan thuế (TT78).",
+    "lora": {
+      "answer": "Đối tượng này được sử dụng oleh hóa đơn điện tử không mã để bảo mật thông tin, thường được dùng trong trường hợp có nhiều bên thay đổi hoặc có nhiều bên đồng thời. Tuy nhiên, bạn vẫn nên kiểm tra đầy đủ thông tin và xác thực các thông tin trong hóa đơn để không sai",
+      "similarity": 0.67153400182724,
+      "match": false
+    },
+    "colora": {
+      "answer": "Đối tượng hóa đơn điện tử không mã được cấp bởi người bán. Bạn cần cấp hóa đơn điện tử mã đểbidden sử dụng với người bán. Bạn có thể cấp hóa đơn điện tử không mã trước khi说实 hiện thông tin chi tiết. Bạn cần kiểm tra kỹ định dạng và thông tin hóa đơn trước khi",
+      "similarity": 0.5693330764770508,
+      "match": false
+    }
+  },
+  {
+    "question": "Trường lstFkey nên định dạng thế nào?",
+    "expected": "Trường lstFkey phải chứa danh sách các fkey cần xóa, phân tách bằng dấu gạch dưới '_'. Ví dụ: 0123_0456_0789.",
+    "lora": {
+      "answer": "Trường `lstFkey` phải có giá trị là danh sách các fkey cần xóa, được truyền vào form data như: `data=\"1-5\"`. Mỗi fkey phải có dấu gạch dưới `fkey=1`, `fkey=2`, etc. Điều này đảm bảo hệ",
+      "similarity": 0.6724509596824646,
+      "match": false
+    },
+    "colora": {
+      "answer": "Trường lstFkey phải chứa danh sách các fkey cần xóa, phân tách bằng dấu gạch dưới '_'. Ví dụ: 0123_0456_0789. Bạn cần kiểm tra lại định dạng này khi gọi hàm.",
+      "similarity": 0.8531582951545715,
+      "match": true
+    }
+  },
+  {
+    "question": "Tôi muốn xóa dữ liệu thì dùng phương thức nào?",
+    "expected": "Override `Delete(long id)` với route `[HttpPost(\"Delete/{id}\")]` và gọi `_repository.SoftDelete(id)`.",
+    "lora": {
+      "answer": "Bạn dùng phương thức `Delete(long id)` của `_repository` để xóa dữ liệu bằng id từ bảng danh sách. Bạn cần đảm bảo id được xác định trước trong XML. Nếu thành công, sẽ trả về dữ liệu đã xóa từ DB. Bạn có thể dùng phương thức này trong `OnAdd`",
+      "similarity": 0.4417322278022766,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng `Delete(long id)` hoặc `Delete coz id)` nếu bạn dùng `_repository.GetAllAll()` và muốn xóa bản ghi cụ thể. Bạn cần truyền `id` hoặc ` coz` vào để xác định bản ghi muốn xóa. Bạn không nên truyền `id` và ` coz` cùng",
+      "similarity": 0.4550308585166931,
+      "match": false
+    }
+  },
+  {
+    "question": "Tôi chưa đăng nhập.",
+    "expected": "Bạn cần đăng nhập trước khi tạo hóa đơn.",
+    "lora": {
+      "answer": "Điều hướng đăng nhập trên hệ thống để gọi trả về lỗi. Bạn cần đăng nhập để gọi lại hàm. Bạn có thể đăng nhập bằng cách nhập mã xác thực hoặc gửi thông tin qua email. Nếu không có tài khoản có quyền gửi email, bạn cần đăng nhập bằng cách nhập mã của cơ qu",
+      "similarity": 0.7731990814208984,
+      "match": true
+    },
+    "colora": {
+      "answer": "Bạn cần đăng nhập trước khi tạo hóa đơn. Nếu không đăng nhập thì hệ thống sẽ trả về ERR:22. Bạn cần đăng nhập đúng đây: https://test-cao.com.vn/Password. Sau đó bạn mới sẽ có thể tạo hóa đơn đúng quy định. Nếu vẫn gặp lỗi thì bạn có thể",
+      "similarity": 0.835470974445343,
+      "match": true
+    }
+  },
+  {
+    "question": "Lưu ý khi chuyển đổi hóa đơn điện tử sang giấy?",
+    "expected": "Không được chuyển đổi lần thứ hai; hóa đơn đã chuyển đổi bị khóa lệnh.",
+    "lora": {
+      "answer": "Điều chỉnh hóa đơn đã chuyển, sau đó lập hóa đơn điện tử mới. Phải kiểm tra nhiều lần để đảm bảo đúng quy định. (Nếu có multiple service station thì có thể chuyển đổi nhiều lần trong một lần chuyển đổi hóa đơn điện tử). Cảm缀 là KDT, ký",
+      "similarity": 0.8347654342651367,
+      "match": true
+    },
+    "colora": {
+      "answer": "Không được chuyển đổi lần thứ hai; hóa đơn đã chuyển đổi bị khóa lệnh. (\"/NĐ 123\")  \nPhải lưu trữ đầy đủ hóa đơn và ceremon chuyển đổi; hóa đơn đã chuyển đổi không được sửa đổi. (\"/NĐ 123\")  \nPhải adress hóa đơn chuyển",
+      "similarity": 0.8163488507270813,
+      "match": true
+    }
+  },
+  {
+    "question": "Sai sót về đơn giá hàng hóa trên hóa đơn phải xử lý ra sao?",
+    "expected": "Lập hóa đơn điều chỉnh và ghi rõ nội dung điều chỉnh.",
+    "lora": {
+      "answer": "Điều chỉnh lại đúng quy định về đơn giá, hóa đơn điện tử (TT32). Nếu chưa được lập hóa đơn điện tử, có thể lập hóa đơn điện tử hoặc lập hóa đơn regular nhưng không quá 15% tăng so với hóa đơn gốc. Nếu chưa có thể lập hóa đơn điện",
+      "similarity": 0.7608915567398071,
+      "match": true
+    },
+    "colora": {
+      "answer": "Lập hóa đơn điều chỉnh và ghi rõ nội dung điều chỉnh. Phải lưu trữ đúng thông tin hàng hóa. Phải lập hóa đơn điều chỉnh nếu hàng hóa đã giao Dropdown mới được gửi thông tin. Phải lập hóa đơn điều chỉnh nếu hóa đơn đã phát hành đã phát hành đã phát hành",
+      "similarity": 0.7773789167404175,
+      "match": true
+    }
+  },
+  {
+    "question": "username và password dùng để làm gì trong getHashInvWithToken?",
+    "expected": "Là tài khoản khách hàng có quyền ServiceRole.",
+    "lora": {
+      "answer": "Không dùng cho công ty, phải dùng tài khoản khách hàng (CusAccount). Bạn cần có tài khoản khách hàng để dùng service. Bạn có thể dùng tài khoản khách hàng hoặc hệ thống sẽ tự động chuyển từ username/password sang tài khoản khách hàng. Bạn cần có tài khoản khách hàng được cấp được để sử",
+      "similarity": 0.6306688189506531,
+      "match": false
+    },
+    "colora": {
+      "answer": "Tài khoản khách hàng được cấp quyền gọi hàm getHashInvWithToken, cần đăng ký tài khoản đó với hệ thống. Sau đó hệ thống sẽ dùng这些东西 để xác thực được tài khoản và xác thực mã hóa hóa đơn. Sau đó hệ thống sẽ::$HashInvWithToken để gửi lại thông tin hóa",
+      "similarity": 0.5660310983657837,
+      "match": false
+    }
+  },
+  {
+    "question": "ERR:22 là gì?",
+    "expected": "Lỗi công ty chưa đăng ký chứng thư số trong hệ thống.",
+    "lora": {
+      "answer": "Không tìm thấy thông tin công ty tương ứng với tài khoản.Bạn cần kiểm tra tài khoản hoặc đăng nhập lại để kiểm tra lại tài khoản. #TruongThang #Tài khoảnCusAdmin #Hóa đơn #Tài liệuCusDds #Điều chỉnh #Thống kê #",
+      "similarity": 0.7386879324913025,
+      "match": false
+    },
+    "colora": {
+      "answer": "Lỗi công ty chưa đăng ký chứng thư số trong hệ thống. cần kiểm tra lại việc đăng ký chứng thư số hoặc đăng ký dịch vụ mới. Nếu chưa có,this là lỗi的缘故. Bạn cần kiểm tra lại原因之一 hóa đơn và mã số thuế để xác thực. Nếu không发现问题 lỗi here thì bạn có thể",
+      "similarity": 0.7732181549072266,
+      "match": true
+    }
+  },
+  {
+    "question": "Phiếu xuất kho kiêm vận chuyển nội bộ cần thông tin gì?",
+    "expected": "Ghi người nhận, người xuất, phương tiện, địa điểm kho (TT32).",
+    "lora": {
+      "answer": "Điều chỉnh thông tin tên người nhận hàng hoặc tên người nhận chiết khấu, chỉ cần thông tin điều chỉnh nếu chưa change. Bắt buộc lưu lại thông tin đúng theo quy định.curring thanh toán khi phát hành. Phải kiểm tra với cơ quan thuế nếu có chiết khấu.",
+      "similarity": 0.6130127906799316,
+      "match": false
+    },
+    "colora": {
+      "answer": "Ghi người nhận, người xuất, phương tiện, địa điểm kho (TT32).bidden:0./Area/4806.bidden:0. Phiếu xuất kho kiêm vận chuyển nội bộ là hóa đơn điện tử có mã của cơ quan thuế. Phiếu xuất kho kiêm vận",
+      "similarity": 0.6676154136657715,
+      "match": false
+    }
+  },
+  {
+    "question": "Muốn sắp xếp bảng theo cột thì làm sao?",
+    "expected": "Bật thuộc tính `sortable` trong các cột, và xử lý `onSort` để gọi API có truyền `orderBy` tương ứng.",
+    "lora": {
+      "answer": "Để sắp xếp bảng theo cột, bạn cần truyền `orderBy: Qsort Column name: \"Name\"`, hoặc `orderBy: Qsort Columns: \"Name\", \"Price\"`. Nếu muốn tự động sắp xếp theo tên, bạn có thể truyền `orderBy: GetOrderByName(\"Name\")`.",
+      "similarity": 0.6600244045257568,
+      "match": false
+    },
+    "colora": {
+      "answer": "Dùng `orderBy: q => q.OrderBy(x => x.Name)` trong `DataTable`.zzaemia.com/yaml#30`.",
+      "similarity": 0.5442992448806763,
+      "match": false
+    }
+  }
+]

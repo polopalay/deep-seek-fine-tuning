@@ -74,4 +74,4 @@ def test_merged_model(
         )
 
 
-test_merged_model(model_path="./output/colora/", n_questions=40)
+test_merged_model(model_path="./output/olora/", n_questions=40)

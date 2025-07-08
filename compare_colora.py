@@ -1,12 +1,13 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
-import json
-import random
-from sentence_transformers import SentenceTransformer, util
 import os
+import json
+import torch
+import random
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from sentence_transformers import SentenceTransformer, util
+from transformers.utils import logging
 
+logging.set_verbosity_error()
 os.environ["TRANSFORMERS_VERBOSITY"] = "error"
-
 model_sim = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 similarity_threshold = 0.8
 
@@ -49,11 +50,22 @@ def run_inference(model, tokenizer, question, expected, device, max_new_tokens=6
 
 
 def test_merged_model(
-    jsonl_path="./data/data.jsonl", n_questions=5, device="mps", max_new_tokens=64
+    jsonl_path="./data/data.jsonl",
+    n_questions=5,
+    device="mps",
+    max_new_tokens=64,
+    path_lora="./output/lora/",
+    path_colora="./output/colora/",
+    similarity_threshold=0.8,
+    compare_mode="score",  # hoặc "match"
+    show_answer=True,
+    save_path=None,
+    random_seed=42,
 ):
+    random.seed(random_seed)
     questions = load_random_questions(jsonl_path, n_questions)
 
-    path_lora = "./output/lora/"
+    # Load Lora model
     t_lora = AutoTokenizer.from_pretrained(path_lora)
     if t_lora.pad_token is None:
         t_lora.pad_token = t_lora.eos_token
@@ -63,7 +75,7 @@ def test_merged_model(
         .eval()
     )
 
-    path_colora = "./output/colora/"
+    # Load COLoRA model
     t_colora = AutoTokenizer.from_pretrained(path_colora)
     if t_colora.pad_token is None:
         t_colora.pad_token = t_colora.eos_token
@@ -73,7 +85,9 @@ def test_merged_model(
         .eval()
     )
 
-    for q, expected in questions:
+    result_list = []
+
+    for idx, (q, expected) in enumerate(questions):
         a_lora, sim_lora = run_inference(
             lora, t_lora, q, expected, device, max_new_tokens
         )
@@ -81,10 +95,60 @@ def test_merged_model(
             colora, t_colora, q, expected, device, max_new_tokens
         )
 
-        # print(f"Lora:\nQ: {q}\nA: {a_lora}\n{sim_lora:.2f}\n{'-'*60}")
-        # print(f"COLora:\nQ: {q}\nA: {a_colora}\n{sim_colora:.2f}\n{'-'*60}")
-        print(f"Lora:{sim_lora:.2f}")
-        print(f"COLora:{sim_colora:.2f}\n{'-'*60}")
+        match_lora = sim_lora >= similarity_threshold
+        match_colora = sim_colora >= similarity_threshold
+
+        if show_answer:
+            print(f"\n[{idx+1}] Câu hỏi: {q}")
+            print(
+                f"[Lora]\n→ {a_lora}\n→ Similarity: {sim_lora:.2f} → {'v' if match_lora else 'x'}"
+            )
+            print(
+                f"[COLoRA]\n→ {a_colora}\n→ Similarity: {sim_colora:.2f} → {'v' if match_colora else 'x'}"
+            )
+        else:
+            print(f"[{idx+1}] Lora: {sim_lora:.2f}, COLoRA: {sim_colora:.2f}")
+
+        result_list.append(
+            {
+                "question": q,
+                "expected": expected,
+                "lora": {"answer": a_lora, "similarity": sim_lora, "match": match_lora},
+                "colora": {
+                    "answer": a_colora,
+                    "similarity": sim_colora,
+                    "match": match_colora,
+                },
+            }
+        )
+
+    total = len(result_list)
+    if compare_mode == "score":
+        avg_lora = sum(r["lora"]["similarity"] for r in result_list) / total
+        avg_colora = sum(r["colora"]["similarity"] for r in result_list) / total
+        print(f"\nAvg Similarity → Lora: {avg_lora:.3f}, COLoRA: {avg_colora:.3f}")
+    else:
+        acc_lora = sum(r["lora"]["match"] for r in result_list) / total
+        acc_colora = sum(r["colora"]["match"] for r in result_list) / total
+        print(
+            f"\nAccuracy (>{similarity_threshold}) → Lora: {acc_lora:.2%}, COLoRA: {acc_colora:.2%}"
+        )
+
+    if save_path:
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(result_list, f, ensure_ascii=False, indent=2)
+        print(f"\nKết quả đã lưu tại: {save_path}")
 
 
-test_merged_model(n_questions=100)
+test_merged_model(
+    jsonl_path="./data/data.jsonl",
+    n_questions=100,
+    device="mps",
+    max_new_tokens=64,
+    path_lora="./output/lora/",
+    path_colora="./output/olora/",
+    similarity_threshold=0.75,
+    compare_mode="match",
+    show_answer=False,
+    save_path="./compare_result.json",
+)
