@@ -52,7 +52,7 @@ def test_merged_model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 max_new_tokens=max_new_tokens,
-                do_sample=False,
+                do_sample=True,
                 top_p=0.9,
                 temperature=0.7,
                 pad_token_id=tokenizer.pad_token_id,
@@ -69,9 +69,7 @@ def test_merged_model(
 
         is_correct = sim >= similarity_threshold
 
-        print(
-            f"Q: {q}\nA: {answer}\nSimilarity: {sim:.2f} → {'✓' if is_correct else '✗'}\n{'-'*60}"
-        )
+        print(f"Q: {q}\nE:{expected}\nA: {answer}\nSimilarity: {sim:.2f}\n{'-'*60}")
 
 
-test_merged_model(model_path="./output/olora/", n_questions=40)
+test_merged_model(model_path="./output/solora/", n_questions=40)

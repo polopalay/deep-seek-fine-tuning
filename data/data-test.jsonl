@@ -1,15 +1,50 @@
-{"messages": [{"role": "user", "content": "Lỗi ERR:1 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:2 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:3 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:4 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:5 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:6 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:7 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:8 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:9 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:10 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:11 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Lỗi ERR:12 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
+{"messages": [{"role": "user", "content": "Lỗi ERR:1 là gì?"}, {"role": "assistant", "content": "Sai tài khoản quyền."}]}
+{"messages": [{"role": "user", "content": "Hệ thống báo ERR:20 là gì?"}, {"role": "assistant", "content": "Pattern hoặc Serial không đúng hoặc không tồn tại trong hệ thống."}]}
+{"messages": [{"role": "user", "content": "Hệ thống báo ERR:21 là gì?"}, {"role": "assistant", "content": "Trùng số hóa đơn đã phát hành."}]}
+{"messages": [{"role": "user", "content": "Hệ thống báo ERR:29 là gì?"}, {"role": "assistant", "content": "Chứng thư số đã hết hạn."}]}
+{"messages": [{"role": "user", "content": "Hệ thống trả về ERR:3 là gì?"}, {"role": "assistant", "content": "Dữ liệu XML đầu vào không đúng quy định, cả lô hóa đơn không được phát hành."}]}
+{"messages": [{"role": "user", "content": "Tôi bị trả về lỗi ERR:31?"}, {"role": "assistant", "content": "Số hóa đơn được truyền vào không hợp lệ."}]}
+{"messages": [{"role": "user", "content": "Hệ thống trả về ERR:35 là gì?"}, {"role": "assistant", "content": "Doanh nghiệp đăng ký cả dải có mã và không mã nhưng không truyền đầy đủ pattern, serial."}]}
+{"messages": [{"role": "user", "content": "ERR:4 là gì?"}, {"role": "assistant", "content": "ERR:4 có nghĩa là không tìm được hóa đơn ứng với các Fkey để gửi lại email."}]}
+{"messages": [{"role": "user", "content": "ERR:5 là gì?"}, {"role": "assistant", "content": "Không phát hành được hóa đơn do lỗi hệ thống hoặc lỗi không xác định."}]}
+{"messages": [{"role": "user", "content": "Lỗi ERR:6 là gì?"}, {"role": "assistant", "content": "Không còn đủ số lượng hóa đơn để phát hành."}]}
+{"messages": [{"role": "user", "content": "Lỗi ERR:7 là gì?"}, {"role": "assistant", "content": "Lỗi ERR:7 nghĩa là hệ thống không tìm thấy thông tin công ty tương ứng với tài khoản đăng nhập."}]}
+{"messages": [{"role": "user", "content": "Lỗi ERR:8 là gì?"}, {"role": "assistant", "content": "ERR:8 xảy ra khi không có Fkey nào được truyền vào trong chuỗi XML gửi lên."}]}
+{"messages": [{"role": "user", "content": "Lỗi ERR:9 là gì?"}, {"role": "assistant", "content": "Lỗi ERR:9 được trả về nếu dữ liệu Serial (ký hiệu hóa đơn) bị bỏ trống trong request."}]}
+{"messages": [{"role": "user", "content": "Lỗi ERR:10 là gì?"}, {"role": "assistant", "content": "ERR:10 nghĩa là danh sách Fkey bạn truyền vào vượt quá số lượng tối đa cho phép (thường là 5000)."}]}
 {"messages": [{"role": "user", "content": "Lỗi ERR:13 là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Hoá đơn máy tính tiền là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
-{"messages": [{"role": "user", "content": "Hoá đơn bán hàng là gì?"}, {"role": "assistant", "content": "Trùng fkey với hóa đơn đã phát hành."}]}
+{"messages": [{"role": "user", "content": "Tôi muốn 1 API CURD thì cần làm gì?"}, {"role": "assistant", "content": "Tạo 1 controller mới kế thừa BaseController<T>, trong đó T là entity bạn đã tạo. Sau đó khai báo route và viết các method như GetAll, Add, Update, Delete."}]}
+{"messages": [{"role": "user", "content": "BaseEntity có những trường mặc định nào?"}, {"role": "assistant", "content": "BaseEntity thường có `Id`, `IsDeleted`, `CreatedAt`, `UpdatedAt`, giúp quản lý logic xoá mềm và tracking tự động."}]}
+{"messages": [{"role": "user", "content": "UnitOfWork dùng để làm gì?"}, {"role": "assistant", "content": "UnitOfWork đóng vai trò gom nhiều thao tác repository lại thành một giao dịch duy nhất, đảm bảo tính nhất quán khi lưu xuống database."}]}
+{"messages": [{"role": "user", "content": "Có cách nào hỗ trợ sinh model từ database không?"}, {"role": "assistant", "content": "Có, EF Core hỗ trợ reverse engineering bằng `Scaffold-DbContext` để sinh entity từ database có sẵn."}]}
+{"messages": [{"role": "user", "content": "Giá trị mặc định được set ở đâu?"}, {"role": "assistant", "content": "Thông thường được gán trong constructor của `BaseEntity` hoặc thông qua EF `HasDefaultValueSql(\"GETDATE()\")`."}]}
+{"messages": [{"role": "user", "content": "Tôi muốn tạo quan hệ 1-nhiều giữa bảng cha và bảng con?"}, {"role": "assistant", "content": "Trong bảng cha có `public ICollection<Child> Children`, bảng con có `public int ParentId`, `public Parent Parent` để EF hiểu quan hệ 1-n."}]}
+{"messages": [{"role": "user", "content": "Muốn EF tự động gán ngày tạo thì làm như nào?"}, {"role": "assistant", "content": "Bạn có thể dùng `DateTime CreatedDate { get; set; } = DateTime.Now;` hoặc gán mặc định trong DB bằng `HasDefaultValueSql(\"GETDATE()\")`."}]}
+{"messages": [{"role": "user", "content": "Có thể tạo cột auto-increment không?"}, {"role": "assistant", "content": "Có, chỉ cần dùng `int Id { get; set; }`, EF Core sẽ mặc định tạo identity column cho cột `Id`."}]}
+{"messages": [{"role": "user", "content": "Tôi muốn disable nút xoá?"}, {"role": "assistant", "content": "Trong `actionTemplate`, kiểm tra điều kiện với bản ghi và disable nút nếu không được phép xoá."}]}
+{"messages": [{"role": "user", "content": "Hàm GetCertInfo có yêu cầu gì không?"}, {"role": "assistant", "content": "Hàm yêu cầu tài khoản username/password của khách hàng có quyền ServiceRole để có thể gọi đến webservice."}]}
+{"messages": [{"role": "user", "content": "Khi gọi UpdateCertificate mà chứng thư đã tồn tại thì có sao ko?"}, {"role": "assistant", "content": "Hệ thống sẽ trả về ERR:41 nếu chứng thư số đã tồn tại trong hệ thống."}]}
+{"messages": [{"role": "user", "content": "Tôi muốn gọi API khi popup hiện lên thì sao?"}, {"role": "assistant", "content": "Gọi trong `useEffect(() => { ... }, [showDialog])` hoặc khi `editData != null` để load thêm dữ liệu liên quan."}]}
+{"messages": [{"role": "user", "content": "Khi nào phải lập hóa đơn thay thế?"}, {"role": "assistant", "content": "Khi hóa đơn gốc bị mất, hủy, hoặc có sai sót nghiêm trọng."}]}
+{"messages": [{"role": "user", "content": "Chữ số trên hóa đơn quy định như nào?"}, {"role": "assistant", "content": "Là số Ả-rập, được đặt dấu chấm hoặc phẩy đúng quy định (TT32)."}]}
+{"messages": [{"role": "user", "content": "Có bắt buộc ghi mã hàng hóa không?"}, {"role": "assistant", "content": "Có nếu pháp luật ngành hàng đó yêu cầu (TT32)."}]}
+{"messages": [{"role": "user", "content": "Số tiền bằng chữ là ghi ở đâu?"}, {"role": "assistant", "content": "Ghi ở dòng cuối, sau tổng tiền bằng số (TT32)."}]}
+{"messages": [{"role": "user", "content": "Dịch vụ có cần đơn vị tính không?"}, {"role": "assistant", "content": "Dịch vụ có thể bỏ đơn vị tính nếu không xác định được (TT32)."}]}
+{"messages": [{"role": "user", "content": "Tên hàng hóa ghi như nào trên HD?"}, {"role": "assistant", "content": "Ghi chi tiết từng chủng loại, tên rõ ràng (TT32)."}]}
+{"messages": [{"role": "user", "content": "ERR:27 là bị gì?"}, {"role": "assistant", "content": "Chứng thư số chưa đến thời điểm sử dụng."}]}
+{"messages": [{"role": "user", "content": "Cần xác thực tài khoản khi gọi AdjustReplaceInvWithToken không?"}, {"role": "assistant", "content": "Có. Cần cả Account/ACpass (nhân viên) và username/password (khách hàng có quyền ServiceRole)."}]}
+{"messages": [{"role": "user", "content": "Thẻ <CreateBy> là gì?"}, {"role": "assistant", "content": "Ghi nhận người tạo hóa đơn trong hệ thống."}]}
+{"messages": [{"role": "user", "content": "Thẻ <PublishBy> dùng để làm gì?"}, {"role": "assistant", "content": "Ghi nhận người thực hiện phát hành hóa đơn."}]}
+{"messages": [{"role": "user", "content": "Muốn lấy dữ liệu bảng lấy từ đâu?"}, {"role": "assistant", "content": "Gọi API backend thông qua hàm trong `src/apis/apis.js`, sử dụng Axios hoặc fetch từ `request.js`."}]}
+{"messages": [{"role": "user", "content": "Muốn thêm chức năng Thêm, Sửa, Xoá thì làm sao?"}, {"role": "assistant", "content": "Thêm các nút vào phần action của DataTable, thường sử dụng `column body` để hiển thị nút sửa/xoá và thêm nút riêng ở trên bảng."}]}
+{"messages": [{"role": "user", "content": "Làm sao để lấy tất cả bản ghi chưa bị xoá?"}, {"role": "assistant", "content": "Dùng filter: `x => !x.IsDeleted` trong hàm `GetAll()` để chỉ lấy các bản ghi chưa bị xoá."}]}
+{"messages": [{"role": "user", "content": "Lọc theo enum như nào?"}, {"role": "assistant", "content": "Dùng `s => s.Type == MyEnum.XYZ` trong filter của `GetAll` là được."}]}
+{"messages": [{"role": "user", "content": "Hóa đơn thay thế phải cùng ký hiệu mẫu số với hóa đơn bị thay thế à?"}, {"role": "assistant", "content": "Không bắt buộc, có thể khác mẫu số."}]}
+{"messages": [{"role": "user", "content": "Hoá đơn sai tên người mua có phải làm gì?"}, {"role": "assistant", "content": "Theo nghị định 70 thì bạn chỉ cần gửi thông báo sai sót thôi nhá."}]}
+{"messages": [{"role": "user", "content": "Hoá đơn sai thành tiền có phải làm gì nhỉ?"}, {"role": "assistant", "content": "Sai thành tiền là sai nghiêm trọng đấy, bạn bắt buộc phải lập hoá đơn thay thế/chỉnh sửa rồi."}]}
+{"messages": [{"role":"user","content":"Khi nào cần lập hoá đơn thay thế?"},{"role":"assistant","content":"Thay thế hóa đơn điện tử được thực hiện khi hóa đơn đã lập có sai sót về thông tin như: tên hàng hóa, dịch vụ, số lượng, đơn giá, thuế suất, tổng tiền thanh toán, hoặc các thông tin khác không đúng với thực tế giao dịch."}]}
+{"messages": [{"role": "user", "content": "Hàm GetAll trả về như nào?"}, {"role": "assistant", "content": "Trả về `Task<IActionResult>`, thường dùng `Ok(Paging<T>)` để trả danh sách có phân trang."}]}
+{"messages": [{"role": "user", "content": "Tôi muốn giới hạn số bản ghi trả về thì làm như nào?"}, {"role": "assistant", "content": "Truyền tham số `take` vào `GetAll(int skip = 0, int take = 100)` để giới hạn số lượng."}]}
+{"messages": [{"role": "user", "content": "Làm sao để phân trang ở hàm GetAll?"}, {"role": "assistant", "content": "Khai báo tham số `skip` và `take` trong hàm GetAll và truyền qua query string như: `/api/truong?skip=0&take=20`."}]}
+{"messages": [{"role": "user", "content": "Tham số orderBy trong hàm GetAll để làm gì?"}, {"role": "assistant", "content": "Tham số `orderBy` dùng để xác định field cần sắp xếp, ví dụ: `orderBy=Name`."}]}
+{"messages": [{"role": "user", "content": "Muốn lấy bản ghi theo Id thì viết route như nào?"}, {"role": "assistant", "content": "Thêm một hàm như `GetById(long id)` và định nghĩa route là `[HttpGet(\"{id}\")]`."}]}
