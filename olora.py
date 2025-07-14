@@ -51,7 +51,7 @@ class OrthLoRATrainer(Trainer):
 
         internal_loss = 0.0
         external_loss = 0.0
-        ck_orth = ["q_proj", "v_proj", "k_proj"]
+        ck_orth = ["q_proj", "v_proj"]
         for name, module in model.named_modules():
             if any(key in name for key in ck_orth):
                 if hasattr(module, "lora_A"):
@@ -119,7 +119,11 @@ def training_using_olora(
     lora_config = LoraConfig(
         r=r,
         lora_alpha=alpha_strategy(r),
-        target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj"],
+        target_modules=[
+            "q_proj",
+            "v_proj",
+        ],
+        # target_modules=["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj"],
         lora_dropout=0.05,
         bias="none",
         task_type=TaskType.CAUSAL_LM,
@@ -134,7 +138,7 @@ def training_using_olora(
         logging_steps=100,
         warmup_ratio=warmup_ratio,
         learning_rate=learning_rate,
-        # lr_scheduler_type="cosine",
+        lr_scheduler_type="cosine",
         report_to="none",
         save_strategy="no",
         fp16=False,
@@ -142,7 +146,7 @@ def training_using_olora(
 
     prev_A_list = []
     for name, module in model.named_modules():
-        if any(key in name for key in ["q_proj", "v_proj", "k_proj"]):
+        if any(key in name for key in ["q_proj", "v_proj"]):
             if hasattr(module, "weight"):
                 prev_A_list.append(module.weight.detach().to(device))
 
@@ -166,11 +170,11 @@ def training_using_olora(
 
 if __name__ == "__main__":
     training_using_olora(
-        data_path="data/data.jsonl",
+        data_path="data/data_2000.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r=16,
+        r=8,
         learning_rate=5e-4,
-        num_epochs=20,
+        num_epochs=10,
         batch_size=2,
         tokenizer_len=108,
         warmup_ratio=0.1,

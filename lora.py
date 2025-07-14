@@ -95,9 +95,9 @@ if __name__ == "__main__":
     training_using_lora(
         data_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        r=16,
+        r=8,
         learning_rate=5e-4,
-        num_epochs=20,
+        num_epochs=10,
         batch_size=2,
         tokenizer_len=108,
         warmup_ratio=0.1,

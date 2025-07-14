@@ -24,7 +24,7 @@ def load_random_questions(jsonl_path, n_questions=5):
 
 def test_merged_model(
     model_path="./output/colora/",
-    jsonl_path="./data/data.jsonl",
+    jsonl_path="./data/data-test.jsonl",
     n_questions=5,
     device="mps",
     max_new_tokens=64,
@@ -72,4 +72,4 @@ def test_merged_model(
         print(f"Q: {q}\nE:{expected}\nA: {answer}\nSimilarity: {sim:.2f}\n{'-'*60}")
 
 
-test_merged_model(model_path="./output/lora/", n_questions=40)
+test_merged_model(model_path="./output/solora/", n_questions=40)
