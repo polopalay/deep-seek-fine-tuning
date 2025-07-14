@@ -103,7 +103,7 @@ def training_using_olora(
         formatted = tokenizer.apply_chat_template(
             data["messages"],
             tokenize=False,
-            add_generation_prompt=False,
+            add_generation_prompt=True,
         )
         return tokenizer(
             formatted,
@@ -134,7 +134,7 @@ def training_using_olora(
         logging_steps=100,
         warmup_ratio=warmup_ratio,
         learning_rate=learning_rate,
-        lr_scheduler_type="cosine",
+        # lr_scheduler_type="cosine",
         report_to="none",
         save_strategy="no",
         fp16=False,
@@ -169,8 +169,8 @@ if __name__ == "__main__":
         data_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r=16,
-        learning_rate=1e-3,
-        num_epochs=16,
+        learning_rate=5e-4,
+        num_epochs=20,
         batch_size=2,
         tokenizer_len=108,
         warmup_ratio=0.1,

@@ -1,119 +1,168 @@
-import json
 import torch
-import numpy as np
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from bert_score import score as bert_score_fn
+from transformers import (
+    AutoTokenizer,
+    AutoModelForCausalLM,
+    GPT2LMHeadModel,
+    GPT2TokenizerFast,
+)
 from sentence_transformers import SentenceTransformer, util
 
+from rouge_score import rouge_scorer
+from detoxify import Detoxify
+import nltk
+from collections import Counter
+import json
+import numpy as np
+import random
+import os
+import sacrebleu
 
-# =============================
-# CONFIG
-# =============================
-MODEL_PATH = "./output/solora"
-DATA_PATH = "./data/data.jsonl"
-DEVICE = "mps"  # "cuda" or "cpu" if needed
-TOP_K = 5
-MAX_NEW_TOKENS = 64
-SIM_THRESHOLD = 0.8
+# nltk.download("punkt")
 
-
-# =============================
-# LOAD MODELS
-# =============================
-print("Loading models...")
-sim_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
-model = AutoModelForCausalLM.from_pretrained(MODEL_PATH).to(DEVICE)
-model.eval()
+# Load all required models
+bert_sim = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+tox_model = Detoxify("original")
+similarity_threshold = 0.8
+rouge = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=True)
+# bleu = evaluate.load("bleu")
 
 
-# =============================
-# UTILS
-# =============================
-def load_jsonl(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return [json.loads(line) for line in f]
+def tokenize_and_get_bleu(preds, refs):
+    bleu = sacrebleu.corpus_bleu(preds, [refs])
+    return bleu.score / 100.0
 
 
-def generate_top_k_answers(prompt, tokenizer, model, k=5, max_new_tokens=64):
-    inputs = tokenizer(prompt, return_tensors="pt").to(DEVICE)
-    outputs = model.generate(
-        **inputs,
-        max_new_tokens=max_new_tokens,
-        do_sample=True,
-        top_k=50,
-        top_p=0.95,
-        temperature=0.8,
-        num_return_sequences=k,
-        pad_token_id=tokenizer.eos_token_id,
-    )
-    return [tokenizer.decode(out, skip_special_tokens=True) for out in outputs]
+def exact_match(pred, ref):
+    return pred.strip().lower() == ref.strip().lower()
 
 
-def eval_example(question, gt_answer, k=5):
-    generated = generate_top_k_answers(question, tokenizer, model, k=k)
-    scores = [
-        util.cos_sim(
-            sim_model.encode(gt_answer, convert_to_tensor=True),
-            sim_model.encode(ans, convert_to_tensor=True),
-        ).item()
-        for ans in generated
+def distinct_n(responses, n):
+    all_ngrams = [
+        tuple(tokens[i : i + n])
+        for r in responses
+        for tokens in [r.split()]
+        for i in range(len(tokens) - n + 1)
     ]
-    hits = [1 if score >= SIM_THRESHOLD else 0 for score in scores]
+    return len(set(all_ngrams)) / max(1, len(all_ngrams))
 
-    precision_at_k = sum(hits) / k
-    recall_at_k = sum(hits) / 1  # 1 ground truth
-    ndcg = sum(
-        [hit / torch.log2(torch.tensor(rank + 2.0)) for rank, hit in enumerate(hits)]
-    ).item()
-    map_k = sum(
-        [sum(hits[: i + 1]) / (i + 1) if hits[i] == 1 else 0 for i in range(k)]
-    ) / max(1, sum(hits))
-    mrr = 1 / (hits.index(1) + 1) if 1 in hits else 0
+
+def evaluate_model(
+    model_path="./output/solora",
+    jsonl_path="./data/data.jsonl",
+    device="cuda",
+    n_questions=20,
+    max_new_tokens=64,
+    seed=42,
+):
+    random.seed(seed)
+    torch.manual_seed(seed)
+
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    # model = AutoModelForCausalLM.from_pretrained(model_path).to(device)
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path, torch_dtype=torch.float16
+    ).to(device)
+    model.eval()
+
+    with open(jsonl_path, "r", encoding="utf-8") as f:
+        data = [json.loads(line) for line in f]
+
+    samples = random.sample(data, min(n_questions, len(data)))
+    refs, preds, sims, ems, rouges, lens = [], [], [], [], [], []
+
+    for sample in samples:
+        q = sample["messages"][0]["content"].strip()
+        a = sample["messages"][1]["content"].strip()
+
+        tokenizer.pad_token = tokenizer.eos_token
+        inputs = tokenizer(
+            q,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=tokenizer.model_max_length,
+        )
+        input_ids = inputs["input_ids"].to(device)
+        attention_mask = inputs["attention_mask"].to(device)
+        with torch.no_grad():
+            output = model.generate(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                max_new_tokens=max_new_tokens,
+                pad_token_id=tokenizer.eos_token_id,
+            )
+        gen = tokenizer.decode(output[0], skip_special_tokens=True)
+
+        # Metrics
+        refs.append(a)
+        preds.append(gen)
+        lens.append(len(gen.split()))
+        ems.append(exact_match(gen, a))
+        sims.append(
+            util.cos_sim(
+                bert_sim.encode(gen, convert_to_tensor=True),
+                bert_sim.encode(a, convert_to_tensor=True),
+            )[0][0].item()
+        )
+        rouges.append(rouge.score(a, gen)["rougeL"].fmeasure)
+        print("=" * 80)
+        print(f"[Q]: {q}")
+        print(f"[Model Output ]: {gen}")
+
+    bleu4 = tokenize_and_get_bleu(preds, refs)
+    bert_p, bert_r, bert_f1 = bert_score_fn(
+        preds, refs, lang="en", rescale_with_baseline=True
+    )
+
+    bert_p = bert_p.cpu().numpy()
+    bert_r = bert_r.cpu().numpy()
+    bert_f1 = bert_f1.cpu().numpy()
+
+    toxicity = np.mean([tox_model.predict(g)["toxicity"] for g in preds])
+    distinct_1 = distinct_n(preds, 1)
+    distinct_2 = distinct_n(preds, 2)
+    dup_percent = (1 - len(set(preds)) / len(preds)) * 100
 
     return {
-        "P@K": precision_at_k,
-        "R@K": recall_at_k,
-        "NDCG@K": ndcg,
-        "MAP@K": map_k,
-        "MRR": mrr,
-        "topK": generated,
-        "scores": scores,
-        "hit@K": sum(hits),
+        "Perplexity": "Need LMHead model",  # optional to add
+        "BLEU-4": round(bleu4, 4),
+        "ROUGE-L": round(np.mean(rouges), 4),
+        "BERTScore-P": round(np.mean(bert_p), 4),
+        "BERTScore-R": round(np.mean(bert_r), 4),
+        "BERTScore-F1": round(np.mean(bert_f1), 4),
+        "Exact Match (%)": round(np.mean(ems) * 100, 2),
+        "Avg Cosine Similarity": round(np.mean(sims), 4),
+        "Toxicity Score": round(toxicity, 4),
+        "Avg Length": round(np.mean(lens), 2),
+        "Min Length": np.min(lens),
+        "Max Length": np.max(lens),
+        "Distinct-1": round(distinct_1, 4),
+        "Distinct-2": round(distinct_2, 4),
+        "% Duplicate Responses": round(dup_percent, 2),
     }
 
 
-# =============================
-# MAIN TEST FUNCTION
-# =============================
-def evaluate_model(data_path):
-    data = load_jsonl(data_path)
-    results = []
+from pprint import pprint
 
-    print(f"Evaluating on {len(data)} samples...")
-    for item in data:
-        q = item["messages"][0]["content"]
-        a = item["messages"][1]["content"]
-        result = eval_example(q, a, k=TOP_K)
-        result["question"] = q
-        result["ground_truth"] = a
-        results.append(result)
-
-    print("\n==== AVERAGE METRICS ====")
-    print(f"Precision@{TOP_K}: {np.mean([r['P@K'] for r in results]):.4f}")
-    print(f"Recall@{TOP_K}: {np.mean([r['R@K'] for r in results]):.4f}")
-    print(f"NDCG@{TOP_K}: {np.mean([r['NDCG@K'] for r in results]):.4f}")
-    print(f"MAP@{TOP_K}: {np.mean([r['MAP@K'] for r in results]):.4f}")
-    print(f"MRR: {np.mean([r['MRR'] for r in results]):.4f}")
-
-    return results
+# print("Evaluating LoRA model...")
+# result_lora = evaluate_model(
+# model_path="./output/lora",
+# jsonl_path="./data/data-test.jsonl",
+# device="mps",
+# n_questions=50,
+# )
 
 
-# =============================
-# RUN
-# =============================
-if __name__ == "__main__":
-    results = evaluate_model(DATA_PATH)
+# pprint(result_lora)
 
-    # Optionally save the results
-    with open("test_results.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+print("Evaluating So-LoRA model...")
+result_solora = evaluate_model(
+    model_path="./output/solora",
+    jsonl_path="./data/data-test.jsonl",
+    device="cpu",
+    n_questions=50,
+)
+
+
+pprint(result_solora)

@@ -7,6 +7,7 @@ import os
 import json
 import math
 
+
 def alpha_strategy(r):
     c = 8
     return int(round(math.sqrt(r) * c))
@@ -95,8 +96,8 @@ if __name__ == "__main__":
         data_path="data/data.jsonl",
         model_base="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         r=16,
-        learning_rate=1e-3,
-        num_epochs=16,
+        learning_rate=5e-4,
+        num_epochs=20,
         batch_size=2,
         tokenizer_len=108,
         warmup_ratio=0.1,

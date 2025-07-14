@@ -32,7 +32,7 @@ def test_merged_model(
     questions = load_random_questions(jsonl_path, n_questions)
 
     tokenizer = AutoTokenizer.from_pretrained(model_path)
-    model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.float16)
+    model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.float32)
     model = model.to(device)
     model.eval()
 
@@ -52,9 +52,9 @@ def test_merged_model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
                 max_new_tokens=max_new_tokens,
-                do_sample=True,
-                top_p=0.9,
-                temperature=0.7,
+                do_sample=False,
+                # top_p=0.9,
+                # temperature=0.7,
                 pad_token_id=tokenizer.pad_token_id,
             )
 
@@ -72,4 +72,4 @@ def test_merged_model(
         print(f"Q: {q}\nE:{expected}\nA: {answer}\nSimilarity: {sim:.2f}\n{'-'*60}")
 
 
-test_merged_model(model_path="./output/solora/", n_questions=40)
+test_merged_model(model_path="./output/lora/", n_questions=40)
